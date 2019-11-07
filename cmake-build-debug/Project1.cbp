@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/Aeroporto.h">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/Funcionario.h">
+			<Option target="Project1"/>
+		</Unit>
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/main.cpp">
 			<Option target="Project1"/>
 		</Unit>
