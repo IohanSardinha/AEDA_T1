@@ -173,6 +173,8 @@ class Localizacao{
     string cidade;
     GPS cordenadas;
 public:
+    Localizacao()= default;
+
     Localizacao(string pais, string cidade, GPS coord)
     {
         cordenadas = coord;

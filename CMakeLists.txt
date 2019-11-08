@@ -3,4 +3,4 @@ project(Project1)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Project1 main.cpp utils.h Funcionario.h Aeroporto.h)
+add_executable(Project1 main.cpp utils.h Funcionario.h Aeroporto.h Aeroporto.cpp)

@@ -122,6 +122,33 @@ Project1/fast:
 	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/build
 .PHONY : Project1/fast
 
+Aeroporto.obj: Aeroporto.cpp.obj
+
+.PHONY : Aeroporto.obj
+
+# target to build an object file
+Aeroporto.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Aeroporto.cpp.obj
+.PHONY : Aeroporto.cpp.obj
+
+Aeroporto.i: Aeroporto.cpp.i
+
+.PHONY : Aeroporto.i
+
+# target to preprocess a source file
+Aeroporto.cpp.i:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Aeroporto.cpp.i
+.PHONY : Aeroporto.cpp.i
+
+Aeroporto.s: Aeroporto.cpp.s
+
+.PHONY : Aeroporto.s
+
+# target to generate assembly for a file
+Aeroporto.cpp.s:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Aeroporto.cpp.s
+.PHONY : Aeroporto.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -158,6 +185,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Project1
 	@echo ... edit_cache
+	@echo ... Aeroporto.obj
+	@echo ... Aeroporto.i
+	@echo ... Aeroporto.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
