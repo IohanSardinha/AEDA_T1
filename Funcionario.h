@@ -1,44 +1,44 @@
 #ifndef PROJECT1_FUNCIONARIO_H
 #define PROJECT1_FUNCIONARIO_H
-#pragma once
-#include <iostream>
+
 #include "utils.h"
+#include <iostream>
+#include <utility>
 
 using namespace std;
 
 class Funcionario{
+protected:
     int salario;
 };
 
-class Funcionario_administrativos{
+class Funcionario_administrativos :public Funcionario{
     string funcao;
     string departamento;
     int salario;
 };
 
-class Menbro_tripulacao{
+class Menbro_tripulacao :public Funcionario{
     vector<Voo*> voos_alocados;
-    Informacoes info_voo;
+    vector<Informacao*> info_voos;
     int salario;
 };
 
-class Pessoal_de_Base{
+class Pessoal_de_Base :public Funcionario{
     string nome;
     Data data_nascimento;
     string categoria;
-    //Horario fixo de trabalho respectivo*  trabalha de hora x a hora y ou trabalha k horas?
+    pair<Hora,Hora> horario_de_trabalho;
     int salario;
 };
 
-class Piloto{
+class Piloto :public Funcionario{
     string nome;
     Data data_nascimento;
     string categoria;
     vector<string> tipos_aviao; //vetor com tipos de aviao habilitado a pilotar
-    vector<Voo> voos_realizados;
+    vector<Voo*> voos_realizados;
     int salario; //como o salario depende da categoria, criar um funcao para isso
 };
-
-
 
 #endif //PROJECT1_FUNCIONARIO_H
