@@ -1,13 +1,13 @@
 #include <iostream>
+#include <vector>
 #include "utils.h"
 #include "Funcionario.h"
 #include "Menu.h"
+#include "Aeroporto.h"
 
 using namespace std;
 
 int main() {
-    MainMenu main_menu;
-    main_menu.print();
-    main_menu.getInput();
+    vector<Aeroporto> aeroportos;
     return 0;
 }
