@@ -1,11 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Project1.dir/Aeroporto.cpp.obj"
-  "CMakeFiles/Project1.dir/Menu.cpp.obj"
-  "CMakeFiles/Project1.dir/main.cpp.obj"
-  "Project1.exe"
-  "Project1.exe.manifest"
+  "CMakeFiles/Project1.dir/Aeroporto.cpp.o"
+  "CMakeFiles/Project1.dir/Funcionario.cpp.o"
+  "CMakeFiles/Project1.dir/Menu.cpp.o"
+  "CMakeFiles/Project1.dir/main.cpp.o"
+  "Project1"
   "Project1.pdb"
-  "libProject1.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
