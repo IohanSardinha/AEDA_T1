@@ -54,6 +54,11 @@ public:
         }
         GPS::longitude = longitude;
     }
+
+    friend ostream& operator<<(ostream& os, const GPS& gps){
+        os << "(" << gps.latitude << ", " << gps.longitude << ")";
+        return os;
+    }
 };
 
 class Data{
@@ -114,6 +119,12 @@ public:
     void setAno(int ano) {
         Data::ano = ano;
     }
+
+    friend ostream& operator<<(ostream& os, const Data& dt)
+    {
+        os << dt.dia << "/" << dt.mes << "/" << dt.ano;
+        return os;
+    }
 };
 
 class Hora{
@@ -166,6 +177,12 @@ public:
     void setSegundo(int segundo) {
         Hora::segundo = segundo;
     }
+
+    friend ostream& operator<<(ostream& os, const Hora& hr)
+    {
+        os << hr.hora << ":" << hr.minuto << ":" << hr.segundo;
+        return os;
+    }
 };
 
 class Localizacao{
@@ -204,6 +221,12 @@ public:
 
     void setCordenadas(const GPS &cordenadas) {
         Localizacao::cordenadas = cordenadas;
+    }
+
+    friend ostream& operator<<(ostream& os, const Localizacao& l)
+    {
+        os << l.cidade << ", " << l.cordenadas <<  l.cordenadas;
+        return os;
     }
 
 };
@@ -253,12 +276,21 @@ public:
     void setInfo(Informacao *info) {
         Voo::info = info;
     }
+
+    friend ostream& operator<<(ostream& os, const Voo& v)
+    {
+        os << "Destino: " << v.destino << endl;
+        os << "Dia: " << v.hora << endl;
+        os << v.hora << "horas" << endl;
+        return os;
+    }
 };
 
 class Informacao{
     Voo* voo;
     Hora hora_prevista;
     Hora hora_real;
+    bool cancelado;
 public:
     Informacao(Voo* v, Hora hp, Hora hr)
     {
@@ -299,8 +331,16 @@ public:
         Informacao::cancelado = cancelado;
     }
 
-private:
-    bool cancelado;
+    friend ostream& operator<<(ostream& os, const Informacao& i)
+    {
+        os << "Voo:" << endl;
+        os << *i.voo << endl;
+        os << "Horario previsto: " << i.hora_prevista << endl;
+        os << "Horario real: " << i.hora_real << endl;
+        os << (i.cancelado ? "Cancelado" : "A tempo") << endl;
+        return os;
+    }
+
 };
 
 class Aviao{
@@ -402,6 +442,24 @@ public:
 
     void setCustoOperacao(int custoOperacao) {
         custo_operacao = custoOperacao;
+    }
+
+    friend ostream& operator<<(ostream& os, const Aviao& a)
+    {
+        os << "Modelo: " << a.tipo << endl;
+        os << "Capacidade: " << a.capacidade << endl;
+        os << "Voos:" << endl;
+        for(Voo* voo : a.voos)
+        {
+            cout << *voo << endl;
+        }
+        os << "Tripulacao: " << endl;
+        for(Funcionario* funcionario: a.tripulacao)
+        {
+            funcionario->print();
+        }
+        os << "Custo de operacao: " << a.custo_operacao << endl;
+        return os;
     }
 };
 
