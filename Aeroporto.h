@@ -11,21 +11,21 @@ class Aeroporto{
     vector<Funcionario*> funcionarios;
     vector<Aviao*> avioes;
     vector<Piloto*> pilotos;
-    vector<Menbro_tripulacao*> membros;
+    vector<Membro_tripulacao*> membros;
     vector<Funcionario_administrativos*> funcionarios_administrativos;
 public:
-    Aeroporto(Funcionario* ger, Localizacao loc, vector<Funcionario*> fu, vector<Aviao*> av, vector<Piloto*> pil, vector<Menbro_tripulacao*> mem, vector<Funcionario_administrativos*> f_adm );
+    Aeroporto(Funcionario* ger, Localizacao loc, vector<Funcionario*> fu, vector<Aviao*> av, vector<Piloto*> pil, vector<Membro_tripulacao*> mem, vector<Funcionario_administrativos*> f_adm );
     Funcionario* getGerente() const;
     Localizacao getLocalizacao() const;
     void adicionarFuncionario(Funcionario* f);
     void adicionarPiloto(Piloto* p);
     void adicionarAviao(Aviao* a);
-    void adicionarMembro(Menbro_tripulacao* m);
+    void adicionarMembro(Membro_tripulacao* m);
     void adicionarFuncionarioAdministrativo(Funcionario_administrativos* f);
     void removerFuncionario(Funcionario* f);
     void removerPiloto(Piloto* p);
     void removerAviao(Aviao* a);
-    void removerMembro(Menbro_tripulacao* m);
+    void removerMembro(Membro_tripulacao* m);
     void removerFuncionarioAdministrativo(Funcionario_administrativos* f);
 };
 

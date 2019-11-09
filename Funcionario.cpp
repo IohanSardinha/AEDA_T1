@@ -2,6 +2,7 @@
 #include "Funcionario.h"
 #include <string>
 
+
 using namespace std;
 
 int Funcionario::getSalario() const{

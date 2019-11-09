@@ -1,6 +1,6 @@
 #include "Aeroporto.h"
 
-Aeroporto::Aeroporto(Funcionario* ger, Localizacao loc, vector<Funcionario*> fu, vector<Aviao*> av, vector<Piloto*> pil, vector<Menbro_tripulacao*> mem, vector<Funcionario_administrativos*> f_adm )
+Aeroporto::Aeroporto(Funcionario* ger, Localizacao loc, vector<Funcionario*> fu, vector<Aviao*> av, vector<Piloto*> pil, vector<Membro_tripulacao*> mem, vector<Funcionario_administrativos*> f_adm )
 {
     gerente = ger;
     localizacao = loc;
@@ -35,7 +35,7 @@ void  Aeroporto::adicionarAviao(Aviao* a)
     avioes.push_back(a);
 }
 
-void  Aeroporto::adicionarMembro(Menbro_tripulacao* m)
+void  Aeroporto::adicionarMembro(Membro_tripulacao* m)
 {
     membros.push_back(m);
 }
@@ -81,7 +81,7 @@ void  Aeroporto::removerAviao(Aviao* a)
     }
 }
 
-void  Aeroporto::removerMembro(Menbro_tripulacao* m)
+void  Aeroporto::removerMembro(Membro_tripulacao* m)
 {
     for(int i = 0; i < membros.size(); i++)
     {
