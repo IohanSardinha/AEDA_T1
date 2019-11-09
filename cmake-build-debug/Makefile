@@ -149,6 +149,33 @@ Aeroporto.cpp.s:
 	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Aeroporto.cpp.s
 .PHONY : Aeroporto.cpp.s
 
+Funcionario.obj: Funcionario.cpp.obj
+
+.PHONY : Funcionario.obj
+
+# target to build an object file
+Funcionario.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Funcionario.cpp.obj
+.PHONY : Funcionario.cpp.obj
+
+Funcionario.i: Funcionario.cpp.i
+
+.PHONY : Funcionario.i
+
+# target to preprocess a source file
+Funcionario.cpp.i:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Funcionario.cpp.i
+.PHONY : Funcionario.cpp.i
+
+Funcionario.s: Funcionario.cpp.s
+
+.PHONY : Funcionario.s
+
+# target to generate assembly for a file
+Funcionario.cpp.s:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Funcionario.cpp.s
+.PHONY : Funcionario.cpp.s
+
 Menu.obj: Menu.cpp.obj
 
 .PHONY : Menu.obj
@@ -215,6 +242,9 @@ help:
 	@echo ... Aeroporto.obj
 	@echo ... Aeroporto.i
 	@echo ... Aeroporto.s
+	@echo ... Funcionario.obj
+	@echo ... Funcionario.i
+	@echo ... Funcionario.s
 	@echo ... Menu.obj
 	@echo ... Menu.i
 	@echo ... Menu.s

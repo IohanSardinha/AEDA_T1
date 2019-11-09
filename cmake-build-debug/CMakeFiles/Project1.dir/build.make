@@ -69,9 +69,22 @@ CMakeFiles/Project1.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project1.dir/main.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\main.cpp -o CMakeFiles\Project1.dir\main.cpp.s
 
+CMakeFiles/Project1.dir/Funcionario.cpp.obj: CMakeFiles/Project1.dir/flags.make
+CMakeFiles/Project1.dir/Funcionario.cpp.obj: ../Funcionario.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project1.dir/Funcionario.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project1.dir\Funcionario.cpp.obj -c C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Funcionario.cpp
+
+CMakeFiles/Project1.dir/Funcionario.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project1.dir/Funcionario.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Funcionario.cpp > CMakeFiles\Project1.dir\Funcionario.cpp.i
+
+CMakeFiles/Project1.dir/Funcionario.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project1.dir/Funcionario.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Funcionario.cpp -o CMakeFiles\Project1.dir\Funcionario.cpp.s
+
 CMakeFiles/Project1.dir/Aeroporto.cpp.obj: CMakeFiles/Project1.dir/flags.make
 CMakeFiles/Project1.dir/Aeroporto.cpp.obj: ../Aeroporto.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project1.dir/Aeroporto.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project1.dir/Aeroporto.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project1.dir\Aeroporto.cpp.obj -c C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Aeroporto.cpp
 
 CMakeFiles/Project1.dir/Aeroporto.cpp.i: cmake_force
@@ -84,7 +97,7 @@ CMakeFiles/Project1.dir/Aeroporto.cpp.s: cmake_force
 
 CMakeFiles/Project1.dir/Menu.cpp.obj: CMakeFiles/Project1.dir/flags.make
 CMakeFiles/Project1.dir/Menu.cpp.obj: ../Menu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project1.dir/Menu.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Project1.dir/Menu.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project1.dir\Menu.cpp.obj -c C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu.cpp
 
 CMakeFiles/Project1.dir/Menu.cpp.i: cmake_force
@@ -98,6 +111,7 @@ CMakeFiles/Project1.dir/Menu.cpp.s: cmake_force
 # Object files for target Project1
 Project1_OBJECTS = \
 "CMakeFiles/Project1.dir/main.cpp.obj" \
+"CMakeFiles/Project1.dir/Funcionario.cpp.obj" \
 "CMakeFiles/Project1.dir/Aeroporto.cpp.obj" \
 "CMakeFiles/Project1.dir/Menu.cpp.obj"
 
@@ -105,13 +119,14 @@ Project1_OBJECTS = \
 Project1_EXTERNAL_OBJECTS =
 
 Project1.exe: CMakeFiles/Project1.dir/main.cpp.obj
+Project1.exe: CMakeFiles/Project1.dir/Funcionario.cpp.obj
 Project1.exe: CMakeFiles/Project1.dir/Aeroporto.cpp.obj
 Project1.exe: CMakeFiles/Project1.dir/Menu.cpp.obj
 Project1.exe: CMakeFiles/Project1.dir/build.make
 Project1.exe: CMakeFiles/Project1.dir/linklibs.rsp
 Project1.exe: CMakeFiles/Project1.dir/objects1.rsp
 Project1.exe: CMakeFiles/Project1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Project1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Project1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Project1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -12,6 +12,7 @@ protected:
     int salario;
 public:
     int getSalario() const;
+    virtual void print() = 0;
 };
 
 class Funcionario_administrativos :public Funcionario{

@@ -27,6 +27,7 @@ public:
     void removerAviao(Aviao* a);
     void removerMembro(Membro_tripulacao* m);
     void removerFuncionarioAdministrativo(Funcionario_administrativos* f);
+    friend ostream& operator<<(ostream& os, const Aeroporto& a);
 };
 
 #endif //PROJECT1_AEROPORTO_H

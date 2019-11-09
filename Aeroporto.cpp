@@ -104,3 +104,16 @@ void  Aeroporto::removerFuncionarioAdministrativo(Funcionario_administrativos* f
         }
     }
 }
+
+ostream& operator<<(ostream& os, const Aeroporto& a)
+{
+    os << "Gerente : " << endl;
+    a.gerente->print();
+    os << "Localizacao : " << a.localizacao << endl;
+    os << "Quantidade de funcionarios: " << a.funcionarios.size() << endl;
+    os << "Quantidade de avioes: " << a.avioes.size() << endl;
+    os << "Quantidade de pilotos: " << a.pilotos.size() << endl;
+    os << "Quantidade de membros de tripulacao: " << a.membros.size() << endl;
+    os << "Quantidade de funcionarios administrativos" << a.funcionarios_administrativos.size() << endl;
+    return os;
+}
