@@ -2,7 +2,6 @@
 #include "Funcionario.h"
 #include <string>
 
-
 using namespace std;
 
 int Funcionario::getSalario() const{
@@ -74,7 +73,7 @@ void Pessoal_de_Base::print(){
     cout << "Nome: " << nome << endl;
     cout << "Data: " << data_nascimento << endl;
     cout << "Categoria: " << categoria << endl;
-    cout << "Horario de trabalho: " << horario_de_trabalho << endl;
+    cout << "Horario de trabalho: de " << horario_de_trabalho.first << " as " << horario_de_trabalho.second << endl;
 }
 
 
@@ -103,7 +102,7 @@ void Piloto::setCategoria(const string &categoria) {
 }
 
 Piloto::Piloto(int salario, const string &nome, const Data &dataNascimento, const string &categoria,
-        const vector<string> &tiposAviao, const vector<Voo*> & voosRealizados):
+        const vector<Aviao*> &tiposAviao, const vector<Voo*> & voosRealizados):
         Funcionario(salario), nome(nome), data_nascimento(dataNascimento), categoria(categoria),
         tipos_aviao(tiposAviao), voos_realizados(voosRealizados) {};
 
@@ -112,8 +111,8 @@ void Piloto::print() {
     cout << "Data: " << data_nascimento << endl;
     cout << "Categoria: " << categoria << endl;
     cout << "Avioes pilotados: " << endl;
-    for (string tipo: tipos_aviao)
-         cout << tipo << endl;
+    for (Aviao* a: tipos_aviao)
+         cout << *a << endl;
     cout << "Voos realizados: " << endl;
     for (Voo* voos_realiz : voos_realizados)
         cout << voos_realiz << endl;
@@ -128,4 +127,22 @@ void Membro_tripulacao::print() {
     cout << "Informações de voos: " << endl;
     for (Informacao* informacao : info_voos)
         cout << *informacao << endl;
+}
+
+ostream& operator<<(ostream& os, const Aviao& a)
+{
+    os << "Modelo: " << a.tipo << endl;
+    os << "Capacidade: " << a.capacidade << endl;
+    os << "Voos:" << endl;
+    for(Voo* voo : a.voos)
+    {
+        cout << *voo << endl;
+    }
+    os << "Tripulacao: " << endl;
+    for(Funcionario* funcionario: a.tripulacao)
+    {
+        funcionario->print();
+    }
+    os << "Custo de operacao: " << a.custo_operacao << endl;
+    return os;
 }

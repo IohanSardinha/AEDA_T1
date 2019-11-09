@@ -29,11 +29,10 @@ public:
 };
 
 class Membro_tripulacao :public Funcionario{
-public:
-    Membro_tripulacao(int salario, const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos);
-private:
     vector<Voo*> voos_alocados;
     vector<Informacao*> info_voos;
+public:
+    Membro_tripulacao(int salario, const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos);
     void print();
 };
 
@@ -69,11 +68,11 @@ class Piloto :public Funcionario{
     string nome;
     Data data_nascimento;
     string categoria;
-    vector<string> tipos_aviao; //vetor com tipos de aviao habilitado a pilotar
+    vector<Aviao*> tipos_aviao; //vetor com tipos de aviao habilitado a pilotar
     vector<Voo*> voos_realizados;
 public:
     Piloto(int salario, const string &nome, const Data &dataNascimento, const string &categoria,
-           const vector<string> &tiposAviao, const vector<Voo*> & voosRealizados);
+           const vector<Aviao*> &tiposAviao, const vector<Voo*> & voosRealizados);
 
     const string &getNome() const;
 

@@ -225,7 +225,7 @@ public:
 
     friend ostream& operator<<(ostream& os, const Localizacao& l)
     {
-        os << l.cidade << ", " << l.cordenadas <<  l.cordenadas;
+        os << l.cidade << ", " << l.pais <<  l.cordenadas;
         return os;
     }
 
@@ -444,23 +444,7 @@ public:
         custo_operacao = custoOperacao;
     }
 
-    friend ostream& operator<<(ostream& os, const Aviao& a)
-    {
-        os << "Modelo: " << a.tipo << endl;
-        os << "Capacidade: " << a.capacidade << endl;
-        os << "Voos:" << endl;
-        for(Voo* voo : a.voos)
-        {
-            cout << *voo << endl;
-        }
-        os << "Tripulacao: " << endl;
-        for(Funcionario* funcionario: a.tripulacao)
-        {
-            funcionario->print();
-        }
-        os << "Custo de operacao: " << a.custo_operacao << endl;
-        return os;
-    }
+    friend ostream& operator<<(ostream& os, const Aviao& a);
 };
 
 #endif //PROJECT1_UTILS_H
