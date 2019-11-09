@@ -6,7 +6,11 @@ CMakeFiles/Project1.dir/Aeroporto.cpp.obj: ../Aeroporto.h
 CMakeFiles/Project1.dir/Aeroporto.cpp.obj: ../Funcionario.h
 CMakeFiles/Project1.dir/Aeroporto.cpp.obj: ../utils.h
 
+CMakeFiles/Project1.dir/Menu.cpp.obj: ../Menu.cpp
+CMakeFiles/Project1.dir/Menu.cpp.obj: ../Menu.h
+
 CMakeFiles/Project1.dir/main.cpp.obj: ../Funcionario.h
+CMakeFiles/Project1.dir/main.cpp.obj: ../Menu.h
 CMakeFiles/Project1.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/Project1.dir/main.cpp.obj: ../utils.h
 

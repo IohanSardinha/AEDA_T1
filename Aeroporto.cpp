@@ -44,3 +44,63 @@ void  Aeroporto::adicionarFuncionarioAdministrativo(Funcionario_administrativos*
 {
     funcionarios_administrativos.push_back(f);
 }
+
+void Aeroporto::removerFuncionario(Funcionario* f)
+{
+    for(int i = 0; i < funcionarios.size(); i++)
+    {
+        if(funcionarios.at(i) == f)
+        {
+            funcionarios.erase(funcionarios.begin()+i);
+            break;
+        }
+    }
+}
+
+void  Aeroporto::removerPiloto(Piloto* p)
+{
+    for(int i = 0; i < pilotos.size(); i++)
+    {
+        if(pilotos.at(i) == p)
+        {
+            pilotos.erase(pilotos.begin()+i);
+            break;
+        }
+    }
+}
+
+void  Aeroporto::removerAviao(Aviao* a)
+{
+    for(int i = 0; i < avioes.size(); i++)
+    {
+        if(avioes.at(i) == a)
+        {
+            avioes.erase(avioes.begin()+i);
+            break;
+        }
+    }
+}
+
+void  Aeroporto::removerMembro(Menbro_tripulacao* m)
+{
+    for(int i = 0; i < membros.size(); i++)
+    {
+        if(membros.at(i) == m)
+        {
+            membros.erase(membros.begin()+i);
+            break;
+        }
+    }
+}
+
+void  Aeroporto::removerFuncionarioAdministrativo(Funcionario_administrativos* f)
+{
+    for(int i = 0; i < funcionarios_administrativos.size(); i++)
+    {
+        if(funcionarios_administrativos.at(i) == f)
+        {
+            funcionarios_administrativos.erase(funcionarios_administrativos.begin()+i);
+            break;
+        }
+    }
+}

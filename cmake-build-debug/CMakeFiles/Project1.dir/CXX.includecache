@@ -6,24 +6,22 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/Aeroporto.cpp
-Aeroporto.h
-C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/Aeroporto.h
-
-C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/Aeroporto.h
-iostream
--
-Funcionario.h
-C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/Funcionario.h
-utils.h
-C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/utils.h
-
 C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/Funcionario.h
 utils.h
 C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/utils.h
 iostream
 -
 utility
+-
+
+C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/Menu.cpp
+Menu.h
+C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/Menu.h
+
+C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/Menu.h
+iostream
+-
+vector
 -
 
 C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/main.cpp
@@ -33,6 +31,8 @@ utils.h
 C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/utils.h
 Funcionario.h
 C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/Funcionario.h
+Menu.h
+C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/Menu.h
 
 C:/Users/ioXsa/Documents/FEUP/AEDA/Project1/utils.h
 iostream

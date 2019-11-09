@@ -22,6 +22,11 @@ public:
     void adicionarAviao(Aviao* a);
     void adicionarMembro(Menbro_tripulacao* m);
     void adicionarFuncionarioAdministrativo(Funcionario_administrativos* f);
+    void removerFuncionario(Funcionario* f);
+    void removerPiloto(Piloto* p);
+    void removerAviao(Aviao* a);
+    void removerMembro(Menbro_tripulacao* m);
+    void removerFuncionarioAdministrativo(Funcionario_administrativos* f);
 };
 
 #endif //PROJECT1_AEROPORTO_H
