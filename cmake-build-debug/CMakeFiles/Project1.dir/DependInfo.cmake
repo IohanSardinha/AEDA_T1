@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/up201800169/CLionProjects/aeda 2/Funcionario.cpp" "C:/Users/up201800169/CLionProjects/aeda 2/cmake-build-debug/CMakeFiles/Project1.dir/Funcionario.cpp.obj"
-  "C:/Users/up201800169/CLionProjects/aeda 2/main.cpp" "C:/Users/up201800169/CLionProjects/aeda 2/cmake-build-debug/CMakeFiles/Project1.dir/main.cpp.obj"
+  "/home/bianca/Documentos/AEDA/Projeto_1/Funcionario.cpp" "/home/bianca/Documentos/AEDA/Projeto_1/cmake-build-debug/CMakeFiles/Project1.dir/Funcionario.cpp.o"
+  "/home/bianca/Documentos/AEDA/Projeto_1/main.cpp" "/home/bianca/Documentos/AEDA/Projeto_1/cmake-build-debug/CMakeFiles/Project1.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

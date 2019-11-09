@@ -21,7 +21,7 @@ public:
     string getFuncao() const;
     void setFuncao(const string &funcao);
     string getDepartamento() const;
-    void setDepartamento(const string &departamento)
+    void setDepartamento(const string &departamento);
 };
 
 class Membro_tripulacao :public Funcionario{
