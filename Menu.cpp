@@ -11,6 +11,12 @@ void Menu::print()
     cout << "--------------------------------" << endl;
 }
 
+void Menu::play() {
+    print();
+    getInput();
+    CallMenu();
+}
+
 void Menu::getInput() {
     string string_input;
     cout << "Selecione uma opcao: ";
@@ -35,7 +41,7 @@ void Menu::getInput() {
 }
 
 MainMenu::MainMenu() {
-    opcoes = {"Criar aeroporto","Ver aeroportos","Editar aeroporto", "Remover Aeroporto"};
+    opcoes = {"Criar aeroporto","Listar aeroportos","Acessar aeroporto", "Remover Aeroporto"};
 }
 
 void MainMenu::CallMenu() {
@@ -43,11 +49,12 @@ void MainMenu::CallMenu() {
     {
         case 0:
         {
-
+            criarAeroporto();
             break;
         }
         case 1:
         {
+            menus_to_call["ListarAeroportoMenu"]->play();
             break;
         }
         case 2:
@@ -60,3 +67,103 @@ void MainMenu::CallMenu() {
         }
     }
 }
+
+ListarAeroportoMenu::ListarAeroportoMenu(){
+    opcoes = {"Listar por localização", "Listar por quantidade de funcionario", "Listar por quantidade de funcionario administrativo",
+              "Listar por quantidade de pilotos", "Listar por quantidade de Membro de tripulacao", "Listar por quantidade de avioes",
+              "Escolher um aeroporto"};
+}
+
+void ListarAeroportoMenu::CallMenu() {
+    switch(input){
+        case 0:
+        {
+            porLocalizacao();
+            break;
+        }
+        case 1:
+        {
+            porQuantidadeFuncionario();
+            break;
+        }
+        case 2:
+        {
+            porQuantidadeFuncionarioAdministrativo();
+            break;
+        }
+        case 3:
+        {
+            porQuantidadePilotos();
+            break;
+        }
+        case 4:
+        {
+            porQuantidadeMembroTripulacao();
+            break;
+        }
+        case 5:
+        {
+            porQuantidadeAvioes();
+            break;
+        }
+        case 6:
+        {
+            escolherAeroporto();
+            break;
+        }
+    }
+}
+
+AcessarAeroportoMenu::AcessarAeroportoMenu() {
+    opcoes = {"Alterar gerente", "Alterar localização", "Funcionarios", "Aviões"};
+}
+
+void AcessarAeroportoMenu::CallMenu() {
+    switch(input)
+    {
+        case 0:
+        {
+            alterarGerente();
+            break;
+        }
+        case 1:
+        {
+            alterarLocalizacao();
+            break;
+        }
+        case 2:
+        {
+            menus_to_call["FuncionariosMenu"]->play();
+            break;
+        }
+        case 3:
+        {
+            menus_to_call["AvioesMenu"]->play();
+        }
+    }
+}
+
+void AviaoMenu::CallMenu() {
+    switch(input)
+    {
+        case 0:
+        {
+            criarAviao();
+            break;
+        }
+        case 1:{
+            editarTipo();
+            break;
+        }
+        case 2:
+        {
+            editarCapacidade();
+            break;
+        }
+        case 3:
+        {
+            menus_to_call["VooMenu"]->play();
+        }
+    }
+}
+
