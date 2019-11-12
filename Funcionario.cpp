@@ -118,6 +118,10 @@ vector<Voo*> Membro_tripulacao::getVoos()
     return voos_alocados;
 }
 
+vector<Informacao*> Membro_tripulacao::getInfos() {
+    return info_voos;
+}
+
 void Membro_tripulacao::print() {
     cout << "Voos alocados: " << endl;
     for (Voo* voo : voos_alocados)

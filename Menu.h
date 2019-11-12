@@ -16,8 +16,6 @@ enum tipos_funcionarios
     MEMBRO_TRIPULACAO
 };
 
-vector<Aeroporto*> aeroportos;
-
 class Menu {
 protected:
     vector<string> opcoes;
@@ -80,8 +78,9 @@ public:
     void deletarPiloto();
     void deletarMembroTripulacao();
     void listarFuncionarios();
-    void printarFuncionarios();
-    Funcionario* acharFuncionario();
+    Funcionario_administrativos* acharFuncionarioAdministrativo();
+    Piloto* acharPiloto();
+    Membro_tripulacao* acharMembroTripulacao();
 };
 
 class AviaoMenu:public Menu{
