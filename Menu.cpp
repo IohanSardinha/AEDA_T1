@@ -143,6 +143,169 @@ void AcessarAeroportoMenu::CallMenu() {
     }
 }
 
+FuncionariosMenu::FuncionariosMenu() {
+    switch (tipo)
+    {
+        case TODOS:
+            opcoes = {"Adicionar funcionario","Deletar funcionario","Ver funcionarios","Editar funcionarios"};
+            break;
+        case ADMINISTRATIVO:
+            opcoes = {"Adicionar funcionario administrativo","Deletar funcionario administrativo","Ver funcionarios administrativos","Editar funcionario administrativo"};
+            break;
+        case PILOTO:
+            opcoes = {"Adicionar piloto","Deletar piloto","Ver pilotos","Editar pilotos"};
+            break;
+        case MEMBRO_TRIPULACAO:
+            opcoes = {"Adicionar membro da tripulacao","Deletar membro da tripulacao","Ver membros da tripulacaos","Editar membro da tripulacao"};
+            break;
+    }
+}
+
+void FuncionariosMenu::CallMenu() {
+    switch(input)
+    {
+        case 0:
+        {
+            switch (tipo)
+            {
+                case TODOS:
+
+                    break;
+                case ADMINISTRATIVO:
+                    criarFuncionarioAdministrativo();
+                    break;
+                case PILOTO:
+                    criarPiloto();
+                    break;
+                case MEMBRO_TRIPULACAO:
+                    criarPiloto();
+                    break;
+            }
+            break;
+        }
+        case 1:
+        {
+            switch (tipo)
+            {
+                case TODOS:
+                    break;
+                case ADMINISTRATIVO:
+                    deletarFuncionarioAdministrativo();
+                    break;
+                case PILOTO:
+                    deletarPiloto();
+                    break;
+                case MEMBRO_TRIPULACAO:
+                    deletarMembroTripulacao();
+                    break;
+            }
+            break;
+        }
+        case 2:
+        {
+            printarFuncionarios();
+            break;
+        }
+        case 3:
+        {
+            switch (tipo)
+            {
+                case TODOS:
+                    break;
+                case ADMINISTRATIVO:
+                    editarFuncionarioAdministrativo();
+                    break;
+                case PILOTO:
+                    editarPiloto();
+                    break;
+                case MEMBRO_TRIPULACAO:
+                    editarMembroTripulacao();
+                    break;
+            }
+            break;
+        }
+    }
+}
+
+Funcionario* FuncionariosMenu::acharFuncionario() {
+    string in;
+    while (1) {
+        switch (tipo) {
+            case TODOS:
+                cout << "Tipo de funcionario(Administrativo, Piloto, Tripulacao): ";
+                if(in == "Administrativo")
+                {
+                    cout << "Nome do funcionario: ";
+                    cin >> in;
+                    for (Funcionario_administrativos* funcionario: a->getFuncionariosAdministrativos()) {
+                        if (funcionario->getNome() == in) {
+                            return funcionario;
+                        }
+                    }
+                }
+                else if(in == "Piloto")
+                {
+                    cout << "Nome do funcionario: ";
+                    cin >> in;
+                    for (Piloto* funcionario: a->getPilotos()) {
+                        if (funcionario->getNome() == in) {
+                            return funcionario;
+                        }
+                    }
+                }
+                else if(in == "Tripulacao")
+                {
+                    cout << "Destino para qual o funcionario vai: ";
+                    cin >> in;
+                    for(Membro_tripulacao* funcionario: a->getMembros())
+                    {
+                        for(Voo* voo: funcionario->getVoos())
+                        {
+                            if(voo->getDestino() == in)
+                            {
+                                return funcionario;
+                            }
+                        }
+                    }
+                }
+                break;
+            case ADMINISTRATIVO:
+                cout << "Nome do funcionario: ";
+                cin >> in;
+                for (Funcionario_administrativos* funcionario: a->getFuncionariosAdministrativos()) {
+                    if (funcionario->getNome() == in) {
+                        return funcionario;
+                    }
+                }
+                break;
+            case PILOTO:
+                cout << "Nome do funcionario: ";
+                cin >> in;
+                for (Piloto* funcionario: a->getPilotos()) {
+                    if (funcionario->getNome() == in) {
+                        return funcionario;
+                    }
+                }
+                break;
+            case MEMBRO_TRIPULACAO:
+                cout << "Destino para qual o funcionario vai: ";
+                cin >> in;
+                for(Membro_tripulacao* funcionario: a->getMembros())
+                {
+                    for(Voo* voo: funcionario->getVoos())
+                    {
+                        if(voo->getDestino() == in)
+                        {
+                            return funcionario;
+                        }
+                    }
+                }
+                break;
+        }
+        cout << "Funcionario com parametro requerido nao encontrado, tente novamente" << endl ;
+    }
+}
+
 void AviaoMenu::CallMenu() {
     switch(input)
     {

@@ -45,6 +45,7 @@ class Membro_tripulacao :public Funcionario{
     vector<Informacao*> info_voos;
 public:
     Membro_tripulacao(int salario, const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos);
+    vector<Voo*> getVoos();
     void print();
 };
 

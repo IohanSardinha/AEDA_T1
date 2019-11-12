@@ -114,6 +114,11 @@ void Piloto::print() {
 
 Membro_tripulacao::Membro_tripulacao(int salario, const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos):Funcionario (salario), voos_alocados(voosAlocados), info_voos(infoVoos) {}
 
+vector<Voo*> Membro_tripulacao::getVoos()
+{
+    return voos_alocados;
+}
+
 void Membro_tripulacao::print() {
     cout << "Voos alocados: " << endl;
     for (Voo* voo : voos_alocados)
