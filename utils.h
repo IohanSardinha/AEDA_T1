@@ -237,12 +237,11 @@ class Voo{
     string destino;
     Informacao* info;
 public:
-    Voo(Data D, Hora h, string d, Informacao* i)
+    Voo(Data D, Hora h, string d)
     {
         data = D;
         hora = h;
         destino = d;
-        info = i;
     }
 
     const Data &getData() const {
@@ -292,11 +291,12 @@ class Informacao{
     Hora hora_real;
     bool cancelado;
 public:
-    Informacao(Voo* v, Hora hp, Hora hr)
+    Informacao(Voo* v, Hora hp, Hora hr, bool canc)
     {
         voo = v;
         hora_prevista = hp;
         hora_real = hr;
+        cancelado = canc;
     }
 
     Voo *getVoo() const {

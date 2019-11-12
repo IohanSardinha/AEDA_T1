@@ -50,6 +50,7 @@ public:
     void CallMenu();
     void alterarGerente();
     void alterarLocalizacao();
+    int escolherAviao();
     //classe funcionario e classe AVioes
 };
 
@@ -74,6 +75,8 @@ public:
 
 class AviaoMenu:public Menu{
 public:
+    void escolherAviao();
+    void setPos();
     AviaoMenu();
     void CallMenu();
     void criarAviao();
@@ -83,15 +86,20 @@ public:
 };
 
 class VooMenu:public Menu{
+    Aviao* a;
 public:
     VooMenu();
     void visualizarVoo();
+    Voo* escolherVoo();
     void alterarData();
-    void alterarHora();
+    Hora alterarHora();
+    void alterarHoraPrevista();
+    void alterarHoraReal();
     void alterarDestino();
-    void alterarInformacao();
+    void alterarEstado();
     void criarVoo();
     void CallMenu();
+    void escolherAviao();
 };
 
 
