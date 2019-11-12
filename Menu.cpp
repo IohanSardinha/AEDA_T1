@@ -61,7 +61,6 @@ void MainMenu::CallMenu() {
         }
         case 2:
         {
-            escolherAeroporto();
             menus_to_call["AcessarAeroportoMenu"]->play();
             break;
         }
@@ -74,9 +73,7 @@ void MainMenu::CallMenu() {
 }
 
 void MainMenu::criarAeroporto()
-{
-
-}
+{} //falta fazer
 
 void MainMenu::deletarAeroporto()
 {
@@ -86,27 +83,15 @@ void MainMenu::deletarAeroporto()
     cin >> p;
     cout << "Insira a cidade: " << endl;
     cin >> c;
-    for(int i = 0; )
-    if(a1->getLocalizacao().getPais() == p && a1->getLocalizacao().getCidade() == c)
-        cout << a1;
-}
-
-void MainMenu::escolherAeroporto()
-{
-    string p, c;
-    cout << "Insira o pais: " << endl;
-    cin >> p;
-    cout << "Insira a cidade: " << endl;
-    cin >> c;
     for(int i =0; i < aeroportos.size(); i++)
     {
-        if (aeroportos.at(i)->getLocalizacao().getPais() == p && aeroportos.at(i)->getLocalizacao().getCidade() == c) {
-            cout << aeroportos.at(i);
+        if (aeroportos.at(i)->getLocalizacao().getPais() == p && aeroportos.at(i)->getLocalizacao().getCidade() == c)
+        {
+            aeroportos.erase(aeroportos.begin()+i);
             break;
         }
     }
 }
-
 
 ListarAeroportoMenu::ListarAeroportoMenu(){
     opcoes = {"Listar por localização", "Listar por quantidade de funcionario", "Listar por quantidade de funcionario administrativo",
@@ -166,7 +151,7 @@ void ListarAeroportoMenu::porLocalizacao()
 
 void ListarAeroportoMenu::porQuantidadeFuncionarioAdministrativo()
 {
-    sort(aeroportos.begin(), aeroportos.end(), compQuantidadefuncionariosAdministrativos);
+    sort(aeroportos.begin(), aeroportos.end(), compQuantidadeFuncionariosAdministrativos);
     for(int i = 0; aeroportos.size(); i++)
     {
         cout << *aeroportos.at(i);
@@ -248,6 +233,22 @@ void AcessarAeroportoMenu::CallMenu() {
         case 3:
         {
             menus_to_call["AvioesMenu"]->play();
+        }
+    }
+}
+
+void AcessarAeroportoMenu::escolherAeroporto()
+{
+    string p, c;
+    cout << "Insira o pais: " << endl;
+    cin >> p;
+    cout << "Insira a cidade: " << endl;
+    cin >> c;
+    for(int i = 0; i < aeroportos.size(); i++) {
+        if (aeroportos.at(i)->getLocalizacao().getPais() == p && aeroportos.at(i)->getLocalizacao().getCidade() == c)
+        {
+            aeroporto = aeroportos.at(i);
+            break;
         }
     }
 }

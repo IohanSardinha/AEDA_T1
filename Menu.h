@@ -10,6 +10,7 @@ vector<Aeroporto*> aeroportos;
 
 using namespace std;
 
+
 class Menu {
 protected:
     vector<string> opcoes;
@@ -26,10 +27,9 @@ public:
 class MainMenu :public Menu{
 public:
     MainMenu();
-    void criarAeroporto();
+    void criarAeroporto(); //falta implementars
     void deletarAeroporto();
     void CallMenu();
-    void escolherAeroporto();
 };
 
 class ListarAeroportoMenu: public Menu{
@@ -47,6 +47,7 @@ public:
 };
 
 class AcessarAeroportoMenu: public Menu{
+    Aeroporto* aeroporto;
 public:
     AcessarAeroportoMenu();
     void escolherAeroporto();

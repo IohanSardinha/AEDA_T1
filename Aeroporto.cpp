@@ -137,7 +137,8 @@ vector<Piloto*> & Aeroporto::getPilotos()
 {
 return pilotos;
 }
-const vector<Membro_tripulacao*> & Aeroporto::getMembros()
+
+vector<Membro_tripulacao*> & Aeroporto::getMembros()
 {
     return membros;
 }

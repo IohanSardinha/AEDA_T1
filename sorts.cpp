@@ -1,7 +1,6 @@
 #include "Aeroporto.h"
-#include "Funcionario.h"
 #include <string>
-#include <iostream>
+
 
 bool compLocalizacao(Aeroporto* &a1, Aeroporto* &a2)
 {
@@ -14,7 +13,7 @@ bool compLocalizacao(Aeroporto* &a1, Aeroporto* &a2)
     return false;
 }
 
-bool compQuantidadefuncionariosAdministrativos(Aeroporto* &a1, Aeroporto* &a2)
+bool compQuantidadeFuncionariosAdministrativos(Aeroporto* &a1, Aeroporto* &a2)
 {
     if(a1->getFuncionariosAdministrativos().size() < a2->getFuncionariosAdministrativos().size())
         return true;
