@@ -1,4 +1,6 @@
 #include "Menu.h"
+#include "sorts.h"
+#include <algorithm>
 
 void Menu::print()
 {
@@ -59,14 +61,52 @@ void MainMenu::CallMenu() {
         }
         case 2:
         {
+            escolherAeroporto();
+            menus_to_call["AcessarAeroportoMenu"]->play();
             break;
         }
         case 3:
         {
+            deletarAeroporto();
             break;
         }
     }
 }
+
+void MainMenu::criarAeroporto()
+{
+
+}
+
+void MainMenu::deletarAeroporto()
+{
+    Aeroporto* a1;
+    string p, c;
+    cout << "Insira o pais: " << endl;
+    cin >> p;
+    cout << "Insira a cidade: " << endl;
+    cin >> c;
+    for(int i = 0; )
+    if(a1->getLocalizacao().getPais() == p && a1->getLocalizacao().getCidade() == c)
+        cout << a1;
+}
+
+void MainMenu::escolherAeroporto()
+{
+    string p, c;
+    cout << "Insira o pais: " << endl;
+    cin >> p;
+    cout << "Insira a cidade: " << endl;
+    cin >> c;
+    for(int i =0; i < aeroportos.size(); i++)
+    {
+        if (aeroportos.at(i)->getLocalizacao().getPais() == p && aeroportos.at(i)->getLocalizacao().getCidade() == c) {
+            cout << aeroportos.at(i);
+            break;
+        }
+    }
+}
+
 
 ListarAeroportoMenu::ListarAeroportoMenu(){
     opcoes = {"Listar por localização", "Listar por quantidade de funcionario", "Listar por quantidade de funcionario administrativo",
@@ -114,6 +154,75 @@ void ListarAeroportoMenu::CallMenu() {
     }
 }
 
+void ListarAeroportoMenu::porLocalizacao()
+{
+    sort(aeroportos.begin(), aeroportos.end(), compLocalizacao);
+    for(int i=0; i< aeroportos.size(); i++)
+    {
+        cout << *aeroportos.at(i);
+    }
+
+}
+
+void ListarAeroportoMenu::porQuantidadeFuncionarioAdministrativo()
+{
+    sort(aeroportos.begin(), aeroportos.end(), compQuantidadefuncionariosAdministrativos);
+    for(int i = 0; aeroportos.size(); i++)
+    {
+        cout << *aeroportos.at(i);
+    }
+}
+
+void ListarAeroportoMenu::porQuantidadeFuncionario()
+{
+    sort(aeroportos.begin(), aeroportos.end(), compQuantidadefuncionarios);
+    for(int i = 0; aeroportos.size(); i++)
+    {
+        cout << *aeroportos.at(i);
+    }
+}
+
+void ListarAeroportoMenu::porQuantidadePilotos()
+{
+    sort(aeroportos.begin(), aeroportos.end(), compQuantidadePilotos);
+    for(int i = 0; aeroportos.size(); i++)
+    {
+        cout << *aeroportos.at(i);
+    }
+}
+
+void ListarAeroportoMenu::porQuantidadeMembroTripulacao()
+{
+    sort(aeroportos.begin(), aeroportos.end(), compQuantidadeMembroTripulacao);
+    for(int i = 0; aeroportos.size(); i++)
+    {
+        cout << *aeroportos.at(i);
+    }
+}
+
+void ListarAeroportoMenu::porQuantidadeAvioes()
+{
+    sort(aeroportos.begin(), aeroportos.end(), compQuantidadeAvioes);
+    for(int i = 0; aeroportos.size(); i++)
+    {
+        cout << *aeroportos.at(i);
+    }
+}
+
+void ListarAeroportoMenu::escolherAeroporto()
+{
+    string p, c;
+    cout << "Insira o pais: " << endl;
+    cin >> p;
+    cout << "Insira a cidade: " << endl;
+    cin >> c;
+    for(int i = 0; i < aeroportos.size(); i++)
+    {
+        if (aeroportos.at(i)->getLocalizacao().getPais() == p && aeroportos.at(i)->getLocalizacao().getCidade() == c)
+            cout << aeroportos.at(i);
+    }
+}
+
 AcessarAeroportoMenu::AcessarAeroportoMenu() {
     opcoes = {"Alterar gerente", "Alterar localização", "Funcionarios", "Aviões"};
 }
@@ -149,7 +258,7 @@ void AviaoMenu::CallMenu() {
         case 0:
         {
             criarAviao();
-            break;p
+            break;
         }
         case 1:{
             editarTipo();
@@ -218,5 +327,5 @@ void VooMenu::criarVoo() {
     Hora hora_prevista, hora_real;
     string destino;
     bool cancelado;
-    cout << "Diga a data do novo voo"
+    cout << "Diga a data do novo voo";
 }

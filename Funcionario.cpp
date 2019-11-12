@@ -17,6 +17,7 @@ string Funcionario_administrativos::getFuncao() const {
 void Funcionario_administrativos::setFuncao(const string &funcao) {
     Funcionario_administrativos::funcao = funcao;
 }
+
 string Funcionario_administrativos::getDepartamento() const {
     return departamento;
 }

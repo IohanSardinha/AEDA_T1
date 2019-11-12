@@ -6,6 +6,8 @@
 #include <map>
 #include "Aeroporto.h"
 
+vector<Aeroporto*> aeroportos;
+
 using namespace std;
 
 class Menu {
@@ -27,6 +29,7 @@ public:
     void criarAeroporto();
     void deletarAeroporto();
     void CallMenu();
+    void escolherAeroporto();
 };
 
 class ListarAeroportoMenu: public Menu{
@@ -60,15 +63,12 @@ public:
     void criarFuncionarioAdministrativo();
     void criarPiloto();
     void criarMembroTripulacao();
-    void criarPessoalBase();
     void editarFuncionarioAdministrativo();
     void editarPiloto();
     void editarMembroTripulacao();
-    void editarPessoalBase();
     void deletarFuncionarioAdministrativo();
     void deletarPiloto();
     void deletarMembroTripulacao();
-    void deletarPessoalBase();
     void listarFuncionarios();
 };
 

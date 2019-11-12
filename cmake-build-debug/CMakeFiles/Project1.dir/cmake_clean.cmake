@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Project1.dir/Funcionario.cpp.o"
   "CMakeFiles/Project1.dir/Menu.cpp.o"
   "CMakeFiles/Project1.dir/main.cpp.o"
+  "CMakeFiles/Project1.dir/sorts.cpp.o"
   "Project1"
   "Project1.pdb"
 )
