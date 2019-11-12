@@ -162,6 +162,7 @@ FuncionariosMenu::FuncionariosMenu() {
 }
 
 void FuncionariosMenu::CallMenu() {
+    string in;
     switch(input)
     {
         case 0:
@@ -169,7 +170,20 @@ void FuncionariosMenu::CallMenu() {
             switch (tipo)
             {
                 case TODOS:
-
+                    cout << "Tipo de funcionario(Administrativo, Piloto, Tripulacao): ";
+                    cin >> in;
+                    if(in == "Administrativo")
+                    {
+                        criarFuncionarioAdministrativo();
+                    }
+                    else if(in == "Piloto")
+                    {
+                        criarPiloto();
+                    }
+                    else if(in == "Tripulacao")
+                    {
+                        criarMembroTripulacao();
+                    }
                     break;
                 case ADMINISTRATIVO:
                     criarFuncionarioAdministrativo();
@@ -178,7 +192,7 @@ void FuncionariosMenu::CallMenu() {
                     criarPiloto();
                     break;
                 case MEMBRO_TRIPULACAO:
-                    criarPiloto();
+                    criarMembroTripulacao();
                     break;
             }
             break;
@@ -188,6 +202,26 @@ void FuncionariosMenu::CallMenu() {
             switch (tipo)
             {
                 case TODOS:
+                    cout << "Tipo de funcionario(Administrativo, Piloto, Tripulacao): ";
+                    cin >> in;
+                    if(in == "Administrativo")
+                    {
+                        tipo = ADMINISTRATIVO;
+                        deletarFuncionarioAdministrativo();
+                        tipo = TODOS;
+                    }
+                    else if(in == "Piloto")
+                    {
+                        tipo = PILOTO;
+                        deletarPiloto();
+                        tipo = TODOS;
+                    }
+                    else if(in == "Tripulacao")
+                    {
+                        tipo = MEMBRO_TRIPULACAO;
+                        deletarMembroTripulacao();
+                        tipo = TODOS;
+                    }
                     break;
                 case ADMINISTRATIVO:
                     deletarFuncionarioAdministrativo();
@@ -211,6 +245,26 @@ void FuncionariosMenu::CallMenu() {
             switch (tipo)
             {
                 case TODOS:
+                    cout << "Tipo de funcionario(Administrativo, Piloto, Tripulacao): ";
+                    cin >> in;
+                    if(in == "Administrativo")
+                    {
+                        tipo = ADMINISTRATIVO;
+                        editarFuncionarioAdministrativo();
+                        tipo = TODOS;
+                    }
+                    else if(in == "Piloto")
+                    {
+                        tipo = PILOTO;
+                        editarPiloto();
+                        tipo = TODOS;
+                    }
+                    else if(in == "Tripulacao")
+                    {
+                        tipo = MEMBRO_TRIPULACAO;
+                        editarMembroTripulacao();
+                        tipo = TODOS;
+                    }
                     break;
                 case ADMINISTRATIVO:
                     editarFuncionarioAdministrativo();
@@ -233,6 +287,7 @@ Funcionario* FuncionariosMenu::acharFuncionario() {
         switch (tipo) {
             case TODOS:
                 cout << "Tipo de funcionario(Administrativo, Piloto, Tripulacao): ";
+                cin >> in;
                 if(in == "Administrativo")
                 {
                     cout << "Nome do funcionario: ";
@@ -306,13 +361,54 @@ Funcionario* FuncionariosMenu::acharFuncionario() {
     }
 }
 
+void FuncionariosMenu::criarFuncionarioAdministrativo() {
+    string nome;
+    int data_nascimentoD,data_nascimentoM,data_nascimentoA;
+    string categoria;
+    int horario_de_trabalhoH1,horario_de_trabalhoM1,horario_de_trabalhoS1;
+    int horario_de_trabalhoH2,horario_de_trabalhoM2,horario_de_trabalhoS2;
+    string funcao;
+    string departamento;
+
+    string in;
+    cout << "Nome:";
+    cin >> nome;
+    cout << "Data de nascimento (DD/MM/AAAA)";
+    cin >> in;
+    vector<string> splitted = split(in,"/");
+    data_nascimentoD = stoi(splitted[0]);
+    data_nascimentoM = stoi(splitted[1]);
+    data_nascimentoA = stoi(splitted[2]);
+    cout << "Categoria: ";
+    cin >> categoria;
+    cout << "Hora que comeca o servico: ";
+    cin >> in;
+    splitted = split(in,":");
+    horario_de_trabalhoH1 = stoi(splitted[0]);
+    horario_de_trabalhoM1 = stoi(splitted[1]);
+    horario_de_trabalhoS1 = stoi(splitted[2]);
+    cout << "Hora que acaba o servico: ";
+    cin >> in;
+    splitted = split(in,":");
+    horario_de_trabalhoH2 = stoi(splitted[0]);
+    horario_de_trabalhoM2 = stoi(splitted[1]);
+    horario_de_trabalhoS2 = stoi(splitted[2]);
+    cout << "Funcao: ";
+    cin >> funcao;
+    cout << "Departamento: ";
+    cin >> departamento;
+    Funcionario* novoFuncionario =new Funcionario_administrativos(nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),
+            pair<Hora,Hora>(Hora(horario_de_trabalhoH1,horario_de_trabalhoM1,horario_de_trabalhoS1),
+                    Hora(horario_de_trabalhoH2,horario_de_trabalhoM2,horario_de_trabalhoS2)),funcao,departamento);
+}
+
 void AviaoMenu::CallMenu() {
     switch(input)
     {
         case 0:
         {
             criarAviao();
-            break;p
+            break;
         }
         case 1:{
             editarTipo();
@@ -381,5 +477,5 @@ void VooMenu::criarVoo() {
     Hora hora_prevista, hora_real;
     string destino;
     bool cancelado;
-    cout << "Diga a data do novo voo"
+    cout << "Diga a data do novo voo";
 }

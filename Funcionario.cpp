@@ -32,11 +32,10 @@ void Funcionario_administrativos::print() {
     cout << "Horario de trabalho: de " << horario_de_trabalho.first << " as " << horario_de_trabalho.second << endl;
     cout << "Função: " << funcao << endl;
     cout << "Departamento: " << departamento << endl;
-
 }
 
-Funcionario_administrativos::Funcionario_administrativos(int salario, const string &funcao, const string &departamento)
-        : Funcionario(salario), funcao(funcao), departamento(departamento) {}
+Funcionario_administrativos::Funcionario_administrativos(const string& nome,const Data& data_nascimento,const pair<Hora,Hora> horario_de_trabalho,const string &funcao, const string &departamento)
+        :Funcionario(5000),nome(nome),data_nascimento(data_nascimento),horario_de_trabalho(horario_de_trabalho), funcao(funcao), departamento(departamento) {}
 
 
 const string &Funcionario_administrativos::getNome() const {
