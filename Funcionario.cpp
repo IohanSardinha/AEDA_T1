@@ -26,56 +26,50 @@ void Funcionario_administrativos::setDepartamento(const string &departamento) {
 }
 
 void Funcionario_administrativos::print() {
+    cout << "Nome: " << nome << endl;
+    cout << "Data: " << data_nascimento << endl;
+    cout << "Categoria: " << categoria << endl;
+    cout << "Horario de trabalho: de " << horario_de_trabalho.first << " as " << horario_de_trabalho.second << endl;
     cout << "Função: " << funcao << endl;
     cout << "Departamento: " << departamento << endl;
+
 }
 
 Funcionario_administrativos::Funcionario_administrativos(int salario, const string &funcao, const string &departamento)
         : Funcionario(salario), funcao(funcao), departamento(departamento) {}
 
 
-const string &Pessoal_de_Base::getNome() const {
+const string &Funcionario_administrativos::getNome() const {
     return nome;
 }
 
-void Pessoal_de_Base::setNome(const string &nome) {
-    Pessoal_de_Base::nome = nome;
+void Funcionario_administrativos::setNome(const string &nome) {
+    Funcionario_administrativos::nome = nome;
 }
 
-const Data &Pessoal_de_Base::getDataNascimento() const {
+const Data &Funcionario_administrativos::getDataNascimento() const {
     return data_nascimento;
 }
 
-void Pessoal_de_Base::setDataNascimento(const Data &dataNascimento) {
+void Funcionario_administrativos::setDataNascimento(const Data &dataNascimento) {
     data_nascimento = dataNascimento;
 }
 
-const string &Pessoal_de_Base::getCategoria() const {
+const string &Funcionario_administrativos::getCategoria() const {
     return categoria;
 }
 
-void Pessoal_de_Base::setCategoria(const string &categoria) {
-    Pessoal_de_Base::categoria = categoria;
+void Funcionario_administrativos::setCategoria(const string &categoria) {
+    Funcionario_administrativos::categoria = categoria;
 }
 
-const pair<Hora, Hora> &Pessoal_de_Base::gethorario_de_trabalho() const {
+const pair<Hora, Hora> &Funcionario_administrativos::gethorario_de_trabalho() const {
     return horario_de_trabalho;
 }
 
-void Pessoal_de_Base::setHorarioDeTrabalho(const pair<Hora, Hora> &horarioDeTrabalho) {
+void Funcionario_administrativos::setHorarioDeTrabalho(const pair<Hora, Hora> &horarioDeTrabalho) {
     horario_de_trabalho = horarioDeTrabalho;
 }
-
-Pessoal_de_Base::Pessoal_de_Base(int salario, const string &nome, const Data &dataNascimento, const string &categoria,const pair<Hora, Hora>&horarioDeTrabalho) :
-Funcionario(salario), nome(nome), data_nascimento(dataNascimento),categoria(categoria), horario_de_trabalho(horarioDeTrabalho) {}
-
-void Pessoal_de_Base::print(){
-    cout << "Nome: " << nome << endl;
-    cout << "Data: " << data_nascimento << endl;
-    cout << "Categoria: " << categoria << endl;
-    cout << "Horario de trabalho: de " << horario_de_trabalho.first << " as " << horario_de_trabalho.second << endl;
-}
-
 
 const string &Piloto::getNome() const {
     return nome;

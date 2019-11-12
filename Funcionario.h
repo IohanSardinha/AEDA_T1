@@ -17,6 +17,10 @@ public:
 };
 
 class Funcionario_administrativos :public Funcionario{
+    string nome;
+    Data data_nascimento;
+    string categoria;
+    pair<Hora,Hora> horario_de_trabalho;
     string funcao;
     string departamento;
 public:
@@ -26,6 +30,14 @@ public:
     string getDepartamento() const;
     void setDepartamento(const string &departamento);
     void print();
+    const string &getNome() const;
+    void setNome(const string &nome);
+    const Data &getDataNascimento() const;
+    void setDataNascimento(const Data &dataNascimento);
+    const string &getCategoria() const;
+    void setCategoria(const string &categoria);
+    const pair<Hora,Hora> &gethorario_de_trabalho() const;
+    void setHorarioDeTrabalho(const pair<Hora,Hora> &horario_de_trabalho);
 };
 
 class Membro_tripulacao :public Funcionario{
@@ -33,34 +45,6 @@ class Membro_tripulacao :public Funcionario{
     vector<Informacao*> info_voos;
 public:
     Membro_tripulacao(int salario, const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos);
-    void print();
-};
-
-class Pessoal_de_Base :public Funcionario{
-    string nome;
-    Data data_nascimento;
-    string categoria;
-    pair<Hora,Hora> horario_de_trabalho;
-public:
-    Pessoal_de_Base(int salario, const string &nome, const Data &dataNascimento, const string &categoria,
-                    const pair<Hora,Hora> &horarioDeTrabalho);
-
-    const string &getNome() const;
-
-    void setNome(const string &nome);
-
-    const Data &getDataNascimento() const;
-
-    void setDataNascimento(const Data &dataNascimento);
-
-    const string &getCategoria() const;
-
-    void setCategoria(const string &categoria);
-
-    const pair<Hora,Hora> &gethorario_de_trabalho() const;
-
-    void setHorarioDeTrabalho(const pair<Hora,Hora> &horario_de_trabalho);
-
     void print();
 };
 

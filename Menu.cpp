@@ -149,7 +149,7 @@ void AviaoMenu::CallMenu() {
         case 0:
         {
             criarAviao();
-            break;
+            break;p
         }
         case 1:{
             editarTipo();
@@ -162,8 +162,61 @@ void AviaoMenu::CallMenu() {
         }
         case 3:
         {
-            menus_to_call["VooMenu"]->play();
+          menus_to_call["VooMenu"]->play();
         }
     }
 }
 
+
+//FUNCOES DOS VOOS
+
+VooMenu::VooMenu() {
+    opcoes = {"Alterar data", "Alterar hora", "Alterar destino", "Alterar Informação", "Visualizar voo", "Criar voo"};
+}
+
+void VooMenu::CallMenu() {
+    switch (input)
+    {
+        case 0:
+        {
+            alterarData();
+            break;
+        }
+        case 1:
+        {
+            alterarHora();
+            break;
+        }
+        case 2:
+        {
+            alterarDestino();
+            break;
+        }
+        case 3:
+        {
+            alterarInformacao();
+            break;
+        }
+        case 4:
+        {
+            visualizarVoo();
+            break;
+        }
+        case 5:
+        {
+            criarVoo();
+            break;
+        }
+    }
+}
+
+void VooMenu::criarVoo() {
+    int dia, mes, ano;
+    int min1, hora1, seg1;
+    int min2, hora2, seg2;
+    Data data;
+    Hora hora_prevista, hora_real;
+    string destino;
+    bool cancelado;
+    cout << "Diga a data do novo voo"
+}

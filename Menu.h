@@ -85,10 +85,13 @@ public:
 class VooMenu:public Menu{
 public:
     VooMenu();
+    void visualizarVoo();
     void alterarData();
     void alterarHora();
     void alterarDestino();
     void alterarInformacao();
+    void criarVoo();
+    void CallMenu();
 };
 
 
