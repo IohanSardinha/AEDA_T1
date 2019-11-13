@@ -118,3 +118,27 @@ ostream& operator<<(ostream& os, const Aeroporto& a)
     os << "Quantidade de funcionarios administrativos: " << a.funcionarios_administrativos.size() << endl;
     return os;
 }
+
+vector<Funcionario_administrativos*> & Aeroporto::getFuncionariosAdministrativos()
+{
+    return funcionarios_administrativos;
+}
+
+vector<Funcionario*> & Aeroporto::getFuncionarios()
+{
+    return funcionarios;
+}
+
+vector<Aviao*> & Aeroporto::getAvioes()
+{
+    return avioes;
+}
+
+vector<Piloto*> & Aeroporto::getPilotos()
+{
+    return pilotos;
+}
+vector<Membro_tripulacao*> & Aeroporto::getMembros()
+{
+    return membros;
+}

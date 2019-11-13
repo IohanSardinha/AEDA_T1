@@ -13,6 +13,7 @@ class Aeroporto{
     vector<Piloto*> pilotos;
     vector<Membro_tripulacao*> membros;
     vector<Funcionario_administrativos*> funcionarios_administrativos;
+
 public:
     Aeroporto(Funcionario* ger, Localizacao loc, vector<Funcionario*> fu, vector<Aviao*> av, vector<Piloto*> pil, vector<Membro_tripulacao*> mem, vector<Funcionario_administrativos*> f_adm );
     Funcionario* getGerente() const;
@@ -28,6 +29,12 @@ public:
     void removerMembro(Membro_tripulacao* m);
     void removerFuncionarioAdministrativo(Funcionario_administrativos* f);
     friend ostream& operator<<(ostream& os, const Aeroporto& a);
+    vector<Funcionario*> & getFuncionarios();
+    vector<Aviao*> & getAvioes();
+    vector<Piloto*> & getPilotos();
+    vector<Membro_tripulacao*> & getMembros();
+    vector<Funcionario_administrativos*> & getFuncionariosAdministrativos();
+
 };
 
 #endif //PROJECT1_AEROPORTO_H

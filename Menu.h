@@ -9,6 +9,14 @@
 
 using namespace std;
 
+enum tipos_funcionarios
+{
+    TODOS,
+    ADMINISTRATIVO,
+    PILOTO,
+    MEMBRO_TRIPULACAO
+};
+
 class Menu {
 protected:
     vector<string> opcoes;
@@ -55,22 +63,25 @@ public:
 };
 
 class FuncionariosMenu:public Menu{
-    string tipo;
+    enum tipos_funcionarios tipo;
+    Aeroporto* a;
+
 public:
     FuncionariosMenu();
+    void CallMenu();
     void criarFuncionarioAdministrativo();
     void criarPiloto();
     void criarMembroTripulacao();
-    void criarPessoalBase();
     void editarFuncionarioAdministrativo();
     void editarPiloto();
     void editarMembroTripulacao();
-    void editarPessoalBase();
     void deletarFuncionarioAdministrativo();
     void deletarPiloto();
     void deletarMembroTripulacao();
-    void deletarPessoalBase();
     void listarFuncionarios();
+    Funcionario_administrativos* acharFuncionarioAdministrativo();
+    Piloto* acharPiloto();
+    Membro_tripulacao* acharMembroTripulacao();
 };
 
 class AviaoMenu:public Menu{

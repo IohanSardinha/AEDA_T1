@@ -24,7 +24,7 @@ class Funcionario_administrativos :public Funcionario{
     string funcao;
     string departamento;
 public:
-    Funcionario_administrativos(int salario, const string &funcao, const string &departamento);
+    Funcionario_administrativos(const string& nome,const Data& data_nascimento,const pair<Hora,Hora> horario_de_trabalho,const string &funcao, const string &departamento);
     string getFuncao() const;
     void setFuncao(const string &funcao);
     string getDepartamento() const;
@@ -45,6 +45,8 @@ class Membro_tripulacao :public Funcionario{
     vector<Informacao*> info_voos;
 public:
     Membro_tripulacao(int salario, const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos);
+    vector<Voo*> getVoos();
+    vector<Informacao*> getInfos();
     void print();
 };
 
@@ -55,6 +57,8 @@ class Piloto :public Funcionario{
     vector<Aviao*> tipos_aviao; //vetor com tipos de aviao habilitado a pilotar
     vector<Voo*> voos_realizados;
 public:
+    vector<Voo*> getVoos(){ return voos_realizados;};
+    vector<Aviao*> getAvioes(){ return tipos_aviao;};
     Piloto(int salario, const string &nome, const Data &dataNascimento, const string &categoria,
            const vector<Aviao*> &tiposAviao, const vector<Voo*> & voosRealizados);
 

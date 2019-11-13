@@ -9,6 +9,8 @@ using namespace std;
 class Informacao;
 class Funcionario;
 
+vector<string> split(string str, string delimiter);
+
 class GPS{
     float latitude,
           longitude;
