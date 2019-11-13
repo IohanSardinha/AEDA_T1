@@ -176,6 +176,141 @@ Classes/Funcionario.cpp.s:
 	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Classes/Funcionario.cpp.s
 .PHONY : Classes/Funcionario.cpp.s
 
+Menu/AcessarAeroportoMenu.obj: Menu/AcessarAeroportoMenu.cpp.obj
+
+.PHONY : Menu/AcessarAeroportoMenu.obj
+
+# target to build an object file
+Menu/AcessarAeroportoMenu.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/AcessarAeroportoMenu.cpp.obj
+.PHONY : Menu/AcessarAeroportoMenu.cpp.obj
+
+Menu/AcessarAeroportoMenu.i: Menu/AcessarAeroportoMenu.cpp.i
+
+.PHONY : Menu/AcessarAeroportoMenu.i
+
+# target to preprocess a source file
+Menu/AcessarAeroportoMenu.cpp.i:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/AcessarAeroportoMenu.cpp.i
+.PHONY : Menu/AcessarAeroportoMenu.cpp.i
+
+Menu/AcessarAeroportoMenu.s: Menu/AcessarAeroportoMenu.cpp.s
+
+.PHONY : Menu/AcessarAeroportoMenu.s
+
+# target to generate assembly for a file
+Menu/AcessarAeroportoMenu.cpp.s:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/AcessarAeroportoMenu.cpp.s
+.PHONY : Menu/AcessarAeroportoMenu.cpp.s
+
+Menu/AviaoMenu.obj: Menu/AviaoMenu.cpp.obj
+
+.PHONY : Menu/AviaoMenu.obj
+
+# target to build an object file
+Menu/AviaoMenu.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/AviaoMenu.cpp.obj
+.PHONY : Menu/AviaoMenu.cpp.obj
+
+Menu/AviaoMenu.i: Menu/AviaoMenu.cpp.i
+
+.PHONY : Menu/AviaoMenu.i
+
+# target to preprocess a source file
+Menu/AviaoMenu.cpp.i:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/AviaoMenu.cpp.i
+.PHONY : Menu/AviaoMenu.cpp.i
+
+Menu/AviaoMenu.s: Menu/AviaoMenu.cpp.s
+
+.PHONY : Menu/AviaoMenu.s
+
+# target to generate assembly for a file
+Menu/AviaoMenu.cpp.s:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/AviaoMenu.cpp.s
+.PHONY : Menu/AviaoMenu.cpp.s
+
+Menu/FuncionariosMenu.obj: Menu/FuncionariosMenu.cpp.obj
+
+.PHONY : Menu/FuncionariosMenu.obj
+
+# target to build an object file
+Menu/FuncionariosMenu.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.obj
+.PHONY : Menu/FuncionariosMenu.cpp.obj
+
+Menu/FuncionariosMenu.i: Menu/FuncionariosMenu.cpp.i
+
+.PHONY : Menu/FuncionariosMenu.i
+
+# target to preprocess a source file
+Menu/FuncionariosMenu.cpp.i:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.i
+.PHONY : Menu/FuncionariosMenu.cpp.i
+
+Menu/FuncionariosMenu.s: Menu/FuncionariosMenu.cpp.s
+
+.PHONY : Menu/FuncionariosMenu.s
+
+# target to generate assembly for a file
+Menu/FuncionariosMenu.cpp.s:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.s
+.PHONY : Menu/FuncionariosMenu.cpp.s
+
+Menu/ListarAeroportoMenu.obj: Menu/ListarAeroportoMenu.cpp.obj
+
+.PHONY : Menu/ListarAeroportoMenu.obj
+
+# target to build an object file
+Menu/ListarAeroportoMenu.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/ListarAeroportoMenu.cpp.obj
+.PHONY : Menu/ListarAeroportoMenu.cpp.obj
+
+Menu/ListarAeroportoMenu.i: Menu/ListarAeroportoMenu.cpp.i
+
+.PHONY : Menu/ListarAeroportoMenu.i
+
+# target to preprocess a source file
+Menu/ListarAeroportoMenu.cpp.i:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/ListarAeroportoMenu.cpp.i
+.PHONY : Menu/ListarAeroportoMenu.cpp.i
+
+Menu/ListarAeroportoMenu.s: Menu/ListarAeroportoMenu.cpp.s
+
+.PHONY : Menu/ListarAeroportoMenu.s
+
+# target to generate assembly for a file
+Menu/ListarAeroportoMenu.cpp.s:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/ListarAeroportoMenu.cpp.s
+.PHONY : Menu/ListarAeroportoMenu.cpp.s
+
+Menu/MainMenu.obj: Menu/MainMenu.cpp.obj
+
+.PHONY : Menu/MainMenu.obj
+
+# target to build an object file
+Menu/MainMenu.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/MainMenu.cpp.obj
+.PHONY : Menu/MainMenu.cpp.obj
+
+Menu/MainMenu.i: Menu/MainMenu.cpp.i
+
+.PHONY : Menu/MainMenu.i
+
+# target to preprocess a source file
+Menu/MainMenu.cpp.i:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/MainMenu.cpp.i
+.PHONY : Menu/MainMenu.cpp.i
+
+Menu/MainMenu.s: Menu/MainMenu.cpp.s
+
+.PHONY : Menu/MainMenu.s
+
+# target to generate assembly for a file
+Menu/MainMenu.cpp.s:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/MainMenu.cpp.s
+.PHONY : Menu/MainMenu.cpp.s
+
 Menu/Menu.obj: Menu/Menu.cpp.obj
 
 .PHONY : Menu/Menu.obj
@@ -202,6 +337,33 @@ Menu/Menu.s: Menu/Menu.cpp.s
 Menu/Menu.cpp.s:
 	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/Menu.cpp.s
 .PHONY : Menu/Menu.cpp.s
+
+Menu/VooMenu.obj: Menu/VooMenu.cpp.obj
+
+.PHONY : Menu/VooMenu.obj
+
+# target to build an object file
+Menu/VooMenu.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/VooMenu.cpp.obj
+.PHONY : Menu/VooMenu.cpp.obj
+
+Menu/VooMenu.i: Menu/VooMenu.cpp.i
+
+.PHONY : Menu/VooMenu.i
+
+# target to preprocess a source file
+Menu/VooMenu.cpp.i:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/VooMenu.cpp.i
+.PHONY : Menu/VooMenu.cpp.i
+
+Menu/VooMenu.s: Menu/VooMenu.cpp.s
+
+.PHONY : Menu/VooMenu.s
+
+# target to generate assembly for a file
+Menu/VooMenu.cpp.s:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/VooMenu.cpp.s
+.PHONY : Menu/VooMenu.cpp.s
 
 Utils/sorts.obj: Utils/sorts.cpp.obj
 
@@ -299,9 +461,27 @@ help:
 	@echo ... Classes/Funcionario.obj
 	@echo ... Classes/Funcionario.i
 	@echo ... Classes/Funcionario.s
+	@echo ... Menu/AcessarAeroportoMenu.obj
+	@echo ... Menu/AcessarAeroportoMenu.i
+	@echo ... Menu/AcessarAeroportoMenu.s
+	@echo ... Menu/AviaoMenu.obj
+	@echo ... Menu/AviaoMenu.i
+	@echo ... Menu/AviaoMenu.s
+	@echo ... Menu/FuncionariosMenu.obj
+	@echo ... Menu/FuncionariosMenu.i
+	@echo ... Menu/FuncionariosMenu.s
+	@echo ... Menu/ListarAeroportoMenu.obj
+	@echo ... Menu/ListarAeroportoMenu.i
+	@echo ... Menu/ListarAeroportoMenu.s
+	@echo ... Menu/MainMenu.obj
+	@echo ... Menu/MainMenu.i
+	@echo ... Menu/MainMenu.s
 	@echo ... Menu/Menu.obj
 	@echo ... Menu/Menu.i
 	@echo ... Menu/Menu.s
+	@echo ... Menu/VooMenu.obj
+	@echo ... Menu/VooMenu.i
+	@echo ... Menu/VooMenu.s
 	@echo ... Utils/sorts.obj
 	@echo ... Utils/sorts.i
 	@echo ... Utils/sorts.s

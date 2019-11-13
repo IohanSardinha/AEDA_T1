@@ -1,7 +1,13 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Project1.dir/Classes/Aeroporto.cpp.obj"
   "CMakeFiles/Project1.dir/Classes/Funcionario.cpp.obj"
+  "CMakeFiles/Project1.dir/Menu/AcessarAeroportoMenu.cpp.obj"
+  "CMakeFiles/Project1.dir/Menu/AviaoMenu.cpp.obj"
+  "CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.obj"
+  "CMakeFiles/Project1.dir/Menu/ListarAeroportoMenu.cpp.obj"
+  "CMakeFiles/Project1.dir/Menu/MainMenu.cpp.obj"
   "CMakeFiles/Project1.dir/Menu/Menu.cpp.obj"
+  "CMakeFiles/Project1.dir/Menu/VooMenu.cpp.obj"
   "CMakeFiles/Project1.dir/Utils/sorts.cpp.obj"
   "CMakeFiles/Project1.dir/Utils/utils.cpp.obj"
   "CMakeFiles/Project1.dir/main.cpp.obj"

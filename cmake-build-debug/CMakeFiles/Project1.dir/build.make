@@ -134,6 +134,84 @@ CMakeFiles/Project1.dir/Utils/sorts.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project1.dir/Utils/sorts.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Utils\sorts.cpp -o CMakeFiles\Project1.dir\Utils\sorts.cpp.s
 
+CMakeFiles/Project1.dir/Menu/MainMenu.cpp.obj: CMakeFiles/Project1.dir/flags.make
+CMakeFiles/Project1.dir/Menu/MainMenu.cpp.obj: ../Menu/MainMenu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Project1.dir/Menu/MainMenu.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project1.dir\Menu\MainMenu.cpp.obj -c C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\MainMenu.cpp
+
+CMakeFiles/Project1.dir/Menu/MainMenu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project1.dir/Menu/MainMenu.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\MainMenu.cpp > CMakeFiles\Project1.dir\Menu\MainMenu.cpp.i
+
+CMakeFiles/Project1.dir/Menu/MainMenu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project1.dir/Menu/MainMenu.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\MainMenu.cpp -o CMakeFiles\Project1.dir\Menu\MainMenu.cpp.s
+
+CMakeFiles/Project1.dir/Menu/ListarAeroportoMenu.cpp.obj: CMakeFiles/Project1.dir/flags.make
+CMakeFiles/Project1.dir/Menu/ListarAeroportoMenu.cpp.obj: ../Menu/ListarAeroportoMenu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Project1.dir/Menu/ListarAeroportoMenu.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project1.dir\Menu\ListarAeroportoMenu.cpp.obj -c C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\ListarAeroportoMenu.cpp
+
+CMakeFiles/Project1.dir/Menu/ListarAeroportoMenu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project1.dir/Menu/ListarAeroportoMenu.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\ListarAeroportoMenu.cpp > CMakeFiles\Project1.dir\Menu\ListarAeroportoMenu.cpp.i
+
+CMakeFiles/Project1.dir/Menu/ListarAeroportoMenu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project1.dir/Menu/ListarAeroportoMenu.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\ListarAeroportoMenu.cpp -o CMakeFiles\Project1.dir\Menu\ListarAeroportoMenu.cpp.s
+
+CMakeFiles/Project1.dir/Menu/AcessarAeroportoMenu.cpp.obj: CMakeFiles/Project1.dir/flags.make
+CMakeFiles/Project1.dir/Menu/AcessarAeroportoMenu.cpp.obj: ../Menu/AcessarAeroportoMenu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Project1.dir/Menu/AcessarAeroportoMenu.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project1.dir\Menu\AcessarAeroportoMenu.cpp.obj -c C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\AcessarAeroportoMenu.cpp
+
+CMakeFiles/Project1.dir/Menu/AcessarAeroportoMenu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project1.dir/Menu/AcessarAeroportoMenu.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\AcessarAeroportoMenu.cpp > CMakeFiles\Project1.dir\Menu\AcessarAeroportoMenu.cpp.i
+
+CMakeFiles/Project1.dir/Menu/AcessarAeroportoMenu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project1.dir/Menu/AcessarAeroportoMenu.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\AcessarAeroportoMenu.cpp -o CMakeFiles\Project1.dir\Menu\AcessarAeroportoMenu.cpp.s
+
+CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.obj: CMakeFiles/Project1.dir/flags.make
+CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.obj: ../Menu/FuncionariosMenu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project1.dir\Menu\FuncionariosMenu.cpp.obj -c C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\FuncionariosMenu.cpp
+
+CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\FuncionariosMenu.cpp > CMakeFiles\Project1.dir\Menu\FuncionariosMenu.cpp.i
+
+CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\FuncionariosMenu.cpp -o CMakeFiles\Project1.dir\Menu\FuncionariosMenu.cpp.s
+
+CMakeFiles/Project1.dir/Menu/AviaoMenu.cpp.obj: CMakeFiles/Project1.dir/flags.make
+CMakeFiles/Project1.dir/Menu/AviaoMenu.cpp.obj: ../Menu/AviaoMenu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Project1.dir/Menu/AviaoMenu.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project1.dir\Menu\AviaoMenu.cpp.obj -c C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\AviaoMenu.cpp
+
+CMakeFiles/Project1.dir/Menu/AviaoMenu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project1.dir/Menu/AviaoMenu.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\AviaoMenu.cpp > CMakeFiles\Project1.dir\Menu\AviaoMenu.cpp.i
+
+CMakeFiles/Project1.dir/Menu/AviaoMenu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project1.dir/Menu/AviaoMenu.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\AviaoMenu.cpp -o CMakeFiles\Project1.dir\Menu\AviaoMenu.cpp.s
+
+CMakeFiles/Project1.dir/Menu/VooMenu.cpp.obj: CMakeFiles/Project1.dir/flags.make
+CMakeFiles/Project1.dir/Menu/VooMenu.cpp.obj: ../Menu/VooMenu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Project1.dir/Menu/VooMenu.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project1.dir\Menu\VooMenu.cpp.obj -c C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\VooMenu.cpp
+
+CMakeFiles/Project1.dir/Menu/VooMenu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project1.dir/Menu/VooMenu.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\VooMenu.cpp > CMakeFiles\Project1.dir\Menu\VooMenu.cpp.i
+
+CMakeFiles/Project1.dir/Menu/VooMenu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project1.dir/Menu/VooMenu.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\VooMenu.cpp -o CMakeFiles\Project1.dir\Menu\VooMenu.cpp.s
+
 # Object files for target Project1
 Project1_OBJECTS = \
 "CMakeFiles/Project1.dir/main.cpp.obj" \
@@ -141,7 +219,13 @@ Project1_OBJECTS = \
 "CMakeFiles/Project1.dir/Classes/Aeroporto.cpp.obj" \
 "CMakeFiles/Project1.dir/Menu/Menu.cpp.obj" \
 "CMakeFiles/Project1.dir/Utils/utils.cpp.obj" \
-"CMakeFiles/Project1.dir/Utils/sorts.cpp.obj"
+"CMakeFiles/Project1.dir/Utils/sorts.cpp.obj" \
+"CMakeFiles/Project1.dir/Menu/MainMenu.cpp.obj" \
+"CMakeFiles/Project1.dir/Menu/ListarAeroportoMenu.cpp.obj" \
+"CMakeFiles/Project1.dir/Menu/AcessarAeroportoMenu.cpp.obj" \
+"CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.obj" \
+"CMakeFiles/Project1.dir/Menu/AviaoMenu.cpp.obj" \
+"CMakeFiles/Project1.dir/Menu/VooMenu.cpp.obj"
 
 # External object files for target Project1
 Project1_EXTERNAL_OBJECTS =
@@ -152,11 +236,17 @@ Project1.exe: CMakeFiles/Project1.dir/Classes/Aeroporto.cpp.obj
 Project1.exe: CMakeFiles/Project1.dir/Menu/Menu.cpp.obj
 Project1.exe: CMakeFiles/Project1.dir/Utils/utils.cpp.obj
 Project1.exe: CMakeFiles/Project1.dir/Utils/sorts.cpp.obj
+Project1.exe: CMakeFiles/Project1.dir/Menu/MainMenu.cpp.obj
+Project1.exe: CMakeFiles/Project1.dir/Menu/ListarAeroportoMenu.cpp.obj
+Project1.exe: CMakeFiles/Project1.dir/Menu/AcessarAeroportoMenu.cpp.obj
+Project1.exe: CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.obj
+Project1.exe: CMakeFiles/Project1.dir/Menu/AviaoMenu.cpp.obj
+Project1.exe: CMakeFiles/Project1.dir/Menu/VooMenu.cpp.obj
 Project1.exe: CMakeFiles/Project1.dir/build.make
 Project1.exe: CMakeFiles/Project1.dir/linklibs.rsp
 Project1.exe: CMakeFiles/Project1.dir/objects1.rsp
 Project1.exe: CMakeFiles/Project1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Project1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable Project1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Project1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

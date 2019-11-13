@@ -1,6 +1,12 @@
 #include <iostream>
 #include <vector>
 #include "Menu/Menu.h"
+#include "Menu/MainMenu.h"
+#include "Menu/ListarAeroportoMenu.h"
+#include "Menu/AcessarAeroportoMenu.h"
+#include "Menu/FuncionariosMenu.h"
+#include "Menu/AviaoMenu.h"
+#include "Menu/VooMenu.h"
 
 using namespace std;
 extern map<string, Menu*> menus_to_call;

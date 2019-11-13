@@ -92,10 +92,46 @@
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Classes/Funcionario.h">
 			<Option target="Project1"/>
 		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/AcessarAeroportoMenu.cpp">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/AcessarAeroportoMenu.h">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/AviaoMenu.cpp">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/AviaoMenu.h">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/FuncionariosMenu.cpp">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/FuncionariosMenu.h">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/ListarAeroportoMenu.cpp">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/ListarAeroportoMenu.h">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/MainMenu.cpp">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/MainMenu.h">
+			<Option target="Project1"/>
+		</Unit>
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/Menu.cpp">
 			<Option target="Project1"/>
 		</Unit>
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/Menu.h">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/VooMenu.cpp">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/VooMenu.h">
 			<Option target="Project1"/>
 		</Unit>
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/sorts.cpp">
