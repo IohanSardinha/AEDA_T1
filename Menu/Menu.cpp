@@ -5,6 +5,7 @@ map<string, Menu*> menus_to_call;
 
 void Menu::print()
 {
+    //system("cls");
     cout << "-------------------------------------" << endl;
     for(int i = 0; i < opcoes.size(); i++)
     {

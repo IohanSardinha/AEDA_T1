@@ -4,7 +4,7 @@ extern vector<Aeroporto*> aeroportos;
 extern map<string, Menu*> menus_to_call;
 
 AcessarAeroportoMenu::AcessarAeroportoMenu() {
-    opcoes = {"Alterar gerente", "Alterar localizacao", "Acessar todos os funcionarios", "Acessar pilotos", "Acessar funcionarios administrativos", "Acessar membros da tripulacao", "Avioes"};
+    opcoes = {"Alterar gerente", "Alterar localizacao", "Acessar todos os funcionarios", "Acessar pilotos", "Acessar funcionarios administrativos", "Acessar membros da tripulacao", "Acessar Avioes", "Voltar"};
 }
 
 void AcessarAeroportoMenu::alterarGerente() {
@@ -127,6 +127,9 @@ void AcessarAeroportoMenu::CallMenu() {
         {
             menus_to_call["AvioesMenu"]->setAeroporto(aeroporto);
             menus_to_call["AvioesMenu"]->play();
+        }
+        case 7:{
+            menus_to_call["MainMenu"]->play();
         }
     }
 }
