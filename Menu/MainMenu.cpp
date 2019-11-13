@@ -4,7 +4,7 @@ extern vector<Aeroporto*> aeroportos;
 extern map<string, Menu*> menus_to_call;
 
 MainMenu::MainMenu() {
-    opcoes = {"Criar aeroporto","Listar aeroportos","Acessar aeroporto", "Remover Aeroporto"};
+    opcoes = {"Criar aeroporto","Listar aeroportos","Acessar aeroporto", "Remover Aeroporto", "Sair"};
 }
 
 void MainMenu::CallMenu() {
@@ -30,6 +30,10 @@ void MainMenu::CallMenu() {
         {
             deletarAeroporto();
             break;
+        }
+        case 4:
+        {
+            return;
         }
     }
 }

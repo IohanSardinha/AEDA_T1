@@ -47,6 +47,7 @@ void ListarAeroportoMenu::CallMenu() {
             break;
         }
     }
+    menus_to_call["MainMenu"]->play();
 }
 
 void ListarAeroportoMenu::porLocalizacao()
@@ -62,7 +63,7 @@ void ListarAeroportoMenu::porLocalizacao()
 void ListarAeroportoMenu::porQuantidadeFuncionarioAdministrativo()
 {
     sort(aeroportos.begin(), aeroportos.end(), compQuantidadeFuncionariosAdministrativos);
-    for(int i = 0; aeroportos.size(); i++)
+    for(int i = 0; i< aeroportos.size(); i++)
     {
         cout << *aeroportos.at(i);
     }
@@ -71,7 +72,7 @@ void ListarAeroportoMenu::porQuantidadeFuncionarioAdministrativo()
 void ListarAeroportoMenu::porQuantidadeFuncionario()
 {
     sort(aeroportos.begin(), aeroportos.end(), compQuantidadefuncionarios);
-    for(int i = 0; aeroportos.size(); i++)
+    for(int i = 0; i < aeroportos.size(); i++)
     {
         cout << *aeroportos.at(i);
     }
@@ -80,7 +81,7 @@ void ListarAeroportoMenu::porQuantidadeFuncionario()
 void ListarAeroportoMenu::porQuantidadePilotos()
 {
     sort(aeroportos.begin(), aeroportos.end(), compQuantidadePilotos);
-    for(int i = 0; aeroportos.size(); i++)
+    for(int i = 0; i< aeroportos.size(); i++)
     {
         cout << *aeroportos.at(i);
     }
@@ -89,7 +90,7 @@ void ListarAeroportoMenu::porQuantidadePilotos()
 void ListarAeroportoMenu::porQuantidadeMembroTripulacao()
 {
     sort(aeroportos.begin(), aeroportos.end(), compQuantidadeMembroTripulacao);
-    for(int i = 0; aeroportos.size(); i++)
+    for(int i = 0; i< aeroportos.size(); i++)
     {
         cout << *aeroportos.at(i);
     }
@@ -98,7 +99,7 @@ void ListarAeroportoMenu::porQuantidadeMembroTripulacao()
 void ListarAeroportoMenu::porQuantidadeAvioes()
 {
     sort(aeroportos.begin(), aeroportos.end(), compQuantidadeAvioes);
-    for(int i = 0; aeroportos.size(); i++)
+    for(int i = 0; i<aeroportos.size(); i++)
     {
         cout << *aeroportos.at(i);
     }
@@ -106,14 +107,20 @@ void ListarAeroportoMenu::porQuantidadeAvioes()
 
 void ListarAeroportoMenu::escolherAeroporto()
 {
-    string p, c;
-    cout << "Insira o pais: " << endl;
-    cin >> p;
-    cout << "Insira a cidade: " << endl;
-    cin >> c;
-    for(int i = 0; i < aeroportos.size(); i++)
+    while (1)
     {
-        if (aeroportos.at(i)->getLocalizacao().getPais() == p && aeroportos.at(i)->getLocalizacao().getCidade() == c)
-            cout << aeroportos.at(i);
+        string p, c;
+        cout << "Pais no qual o aeroporto esta localizado: ";
+        cin.ignore(1024, '\n');
+        getline(cin, p);
+        cout << "Cidade do aeroporto: ";
+        getline(cin, c);
+        for (int i = 0; i < aeroportos.size(); i++) {
+            if (aeroportos.at(i)->getLocalizacao().getPais() == p &aeroportos.at(i)->getLocalizacao().getCidade() == c) {
+                cout << *aeroportos.at(i);
+                return;
+            }
+        }
+        cout << "Parametros dados nao indicam nenhum aeroporto" << endl;
     }
 }
