@@ -94,8 +94,8 @@ Localizacao* MainMenu::inserirLocalizacao()
     cout << "Qual a nova longitude da nova localizacao: " << endl;
     cin >> longitude;
     GPS gps(latitude, longitude);
-    Localizacao localizacao(pais, cidade, gps);
-    return &localizacao;
+    Localizacao* localizacao = new Localizacao(pais, cidade, gps);
+    return localizacao;
 }
 
 void MainMenu::criarAeroporto()
