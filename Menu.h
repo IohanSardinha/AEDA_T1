@@ -4,7 +4,9 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <algorithm>
 #include "Aeroporto.h"
+#include "sorts.h"
 
 using namespace std;
 

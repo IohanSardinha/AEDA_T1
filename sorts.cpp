@@ -1,6 +1,4 @@
 #include "Aeroporto.h"
-#include <string>
-
 
 bool compLocalizacao(Aeroporto* &a1, Aeroporto* &a2)
 {

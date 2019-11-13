@@ -212,6 +212,10 @@ AcessarAeroportoMenu::AcessarAeroportoMenu() {
     opcoes = {"Alterar gerente", "Alterar localização", "Funcionarios", "Aviões"};
 }
 
+void AcessarAeroportoMenu::alterarGerente() {
+    //TODO
+}
+
 void AcessarAeroportoMenu::CallMenu() {
     switch(input)
     {

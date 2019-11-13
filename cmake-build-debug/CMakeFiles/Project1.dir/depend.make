@@ -14,13 +14,20 @@ CMakeFiles/Project1.dir/Menu.cpp.obj: ../Aeroporto.h
 CMakeFiles/Project1.dir/Menu.cpp.obj: ../Funcionario.h
 CMakeFiles/Project1.dir/Menu.cpp.obj: ../Menu.cpp
 CMakeFiles/Project1.dir/Menu.cpp.obj: ../Menu.h
+CMakeFiles/Project1.dir/Menu.cpp.obj: ../sorts.h
 CMakeFiles/Project1.dir/Menu.cpp.obj: ../utils.h
 
 CMakeFiles/Project1.dir/main.cpp.obj: ../Aeroporto.h
 CMakeFiles/Project1.dir/main.cpp.obj: ../Funcionario.h
 CMakeFiles/Project1.dir/main.cpp.obj: ../Menu.h
 CMakeFiles/Project1.dir/main.cpp.obj: ../main.cpp
+CMakeFiles/Project1.dir/main.cpp.obj: ../sorts.h
 CMakeFiles/Project1.dir/main.cpp.obj: ../utils.h
+
+CMakeFiles/Project1.dir/sorts.cpp.obj: ../Aeroporto.h
+CMakeFiles/Project1.dir/sorts.cpp.obj: ../Funcionario.h
+CMakeFiles/Project1.dir/sorts.cpp.obj: ../sorts.cpp
+CMakeFiles/Project1.dir/sorts.cpp.obj: ../utils.h
 
 CMakeFiles/Project1.dir/utils.cpp.obj: ../utils.cpp
 CMakeFiles/Project1.dir/utils.cpp.obj: ../utils.h

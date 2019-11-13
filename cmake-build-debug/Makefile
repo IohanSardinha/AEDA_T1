@@ -230,6 +230,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+sorts.obj: sorts.cpp.obj
+
+.PHONY : sorts.obj
+
+# target to build an object file
+sorts.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/sorts.cpp.obj
+.PHONY : sorts.cpp.obj
+
+sorts.i: sorts.cpp.i
+
+.PHONY : sorts.i
+
+# target to preprocess a source file
+sorts.cpp.i:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/sorts.cpp.i
+.PHONY : sorts.cpp.i
+
+sorts.s: sorts.cpp.s
+
+.PHONY : sorts.s
+
+# target to generate assembly for a file
+sorts.cpp.s:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/sorts.cpp.s
+.PHONY : sorts.cpp.s
+
 utils.obj: utils.cpp.obj
 
 .PHONY : utils.obj
@@ -278,6 +305,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... sorts.obj
+	@echo ... sorts.i
+	@echo ... sorts.s
 	@echo ... utils.obj
 	@echo ... utils.i
 	@echo ... utils.s
