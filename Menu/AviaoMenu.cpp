@@ -200,3 +200,8 @@ void AviaoMenu::editarCapacidade() {
     cin >> capacidade;
     aviao->setCapacidade(capacidade);
 }
+
+void AviaoMenu::setAeroporto(Aeroporto* a)
+{
+    aeroporto = a;
+}

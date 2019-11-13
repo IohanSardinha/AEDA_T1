@@ -17,34 +17,16 @@ int main() {
     Aeroporto a(&p,Localizacao("Brasil","Rio de Janeiro",GPS(10,10)),{&p},{},{&p},{},{});
     aeroportos.push_back(&a);
 
-    MainMenu mainMenu;
-    menus_to_call.insert(pair<string,Menu*>("MainMenu",&mainMenu));
-
-    ListarAeroportoMenu listarAeroportoMenu;
-    menus_to_call.insert(pair<string,Menu*>("ListarAeroportoMenu",&listarAeroportoMenu));
-
-    AcessarAeroportoMenu acessarAeroportoMenu;
-    menus_to_call.insert(pair<string,Menu*>("AcessarAeroportoMenu",&acessarAeroportoMenu));
-
-    FuncionariosMenu todosOsFuncionariosMenu(TODOS);
-    menus_to_call.insert(pair<string,Menu*>("TodosFuncionariosMenu",&todosOsFuncionariosMenu));
-
-    FuncionariosMenu pilotosFuncionariosMenu(PILOTO);
-    menus_to_call.insert(pair<string,Menu*>("PilotosFuncionariosMenu",&pilotosFuncionariosMenu));
-
-    FuncionariosMenu funcionariosAdministrativosMenu(ADMINISTRATIVO);
-    menus_to_call.insert(pair<string,Menu*>("FuncionariosAdministrativosMenu",&funcionariosAdministrativosMenu));
-
-    FuncionariosMenu membrosTripulacaoFuncionariosMenu(MEMBRO_TRIPULACAO);
-    menus_to_call.insert(pair<string,Menu*>("MembrosTripulacaoFuncionariosMenu",&membrosTripulacaoFuncionariosMenu));
-
-    AviaoMenu aviaoMenu;
-    menus_to_call.insert(pair<string,Menu*>("AviaoMenu",&aviaoMenu));
-
-    VooMenu vooMenu;
-    menus_to_call.insert(pair<string,Menu*>("VooMenu",&vooMenu));
-
-    mainMenu.play();
+    menus_to_call.insert(pair<string,Menu*>("MainMenu",new MainMenu));
+    menus_to_call.insert(pair<string,Menu*>("ListarAeroportoMenu",new ListarAeroportoMenu));
+    menus_to_call.insert(pair<string,Menu*>("AcessarAeroportoMenu",new AcessarAeroportoMenu));
+    menus_to_call.insert(pair<string,Menu*>("TodosFuncionariosMenu",new FuncionariosMenu(TODOS)));
+    menus_to_call.insert(pair<string,Menu*>("PilotosFuncionariosMenu",new FuncionariosMenu(PILOTO)));
+    menus_to_call.insert(pair<string,Menu*>("FuncionariosAdministrativosMenu",new FuncionariosMenu(ADMINISTRATIVO)));
+    menus_to_call.insert(pair<string,Menu*>("MembrosTripulacaoFuncionariosMenu",new FuncionariosMenu(MEMBRO_TRIPULACAO)));
+    menus_to_call.insert(pair<string,Menu*>("AviaoMenu",new AviaoMenu));
+    menus_to_call.insert(pair<string,Menu*>("VooMenu",new VooMenu));
+    menus_to_call["MainMenu"]->play();
 
     return 0;
 }

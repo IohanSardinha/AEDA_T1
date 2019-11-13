@@ -15,6 +15,6 @@ public:
     void escolherAeroporto();
     void CallMenu();
     void setAeroporto(Aeroporto* a){};
-
+    void setAviao(Aviao* a){};
 };
 #endif //PROJECT1_LISTARAEROPORTOMENU_H

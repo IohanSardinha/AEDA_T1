@@ -31,7 +31,8 @@ public:
     Funcionario_administrativos* acharFuncionarioAdministrativo();
     Piloto* acharPiloto();
     Membro_tripulacao* acharMembroTripulacao();
-    void setAeroporto(Aeroporto* a){};
+    void setAeroporto(Aeroporto* a);
+    void setAviao(Aviao* a){};
 };
 
 #endif //PROJECT1_FUNCIONARIOSMENU_H

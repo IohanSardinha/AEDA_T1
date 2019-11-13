@@ -11,6 +11,7 @@ public:
     void alterarGerente();
     void alterarLocalizacao();
     void setAeroporto(Aeroporto* a);
+    void setAviao(Aviao* a){};
     //classe funcionario e classe AVioes
 };
 

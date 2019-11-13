@@ -199,3 +199,8 @@ void VooMenu::alterarDestino() {
     cin >> destino;
     voo->setDestino(destino);
 }
+
+void VooMenu::setAviao(Aviao* a)
+{
+    this->a = a;
+}

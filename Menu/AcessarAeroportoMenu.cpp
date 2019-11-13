@@ -26,26 +26,31 @@ void AcessarAeroportoMenu::CallMenu() {
         }
         case 2:
         {
+            menus_to_call["TodosFuncionariosMenu"]->setAeroporto(aeroporto);
             menus_to_call["TodosFuncionariosMenu"]->play();
             break;
         }
         case 3:
         {
+            menus_to_call["PilotosFuncionariosMenu"]->setAeroporto(aeroporto);
             menus_to_call["PilotosFuncionariosMenu"]->play();
             break;
         }
         case 4:
         {
+            menus_to_call["FuncionariosAdministrativosMenu"]->setAeroporto(aeroporto);
             menus_to_call["FuncionariosAdministrativosMenu"]->play();
             break;
         }
         case 5:
         {
+            menus_to_call["MembrosTripulacaoFuncionariosMenu"]->setAeroporto(aeroporto);
             menus_to_call["MembrosTripulacaoFuncionariosMenu"]->play();
             break;
         }
         case 6:
         {
+            menus_to_call["AvioesMenu"]->setAeroporto(aeroporto);
             menus_to_call["AvioesMenu"]->play();
         }
     }

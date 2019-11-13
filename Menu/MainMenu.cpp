@@ -57,16 +57,20 @@ void MainMenu::deletarAeroporto()
 
 Aeroporto* MainMenu::escolherAeroporto()
 {
-    string p, c;
-    cout << "Insira o pais: " << endl;
-    cin >> p;
-    cout << "Insira a cidade: " << endl;
-    cin >> c;
-    cin.ignore(1024,'\n');
-    for(int i = 0; i < aeroportos.size(); i++) {
-        if (aeroportos.at(i)->getLocalizacao().getPais() == p && aeroportos.at(i)->getLocalizacao().getCidade() == c)
-        {
-            return aeroportos.at(i);
+    while (1)
+    {
+        string p, c;
+        cout << "Pais no qual o aeroporto esta localizado: ";
+        cin.ignore(1024, '\n');
+        getline(cin, p);
+        cout << "Cidade do aeroporto: ";
+        getline(cin, c);
+        for (int i = 0; i < aeroportos.size(); i++) {
+            if (aeroportos.at(i)->getLocalizacao().getPais() == p &&
+                aeroportos.at(i)->getLocalizacao().getCidade() == c) {
+                return aeroportos.at(i);
+            }
         }
+        cout << "Parametros dados nao indicam nenhum aeroporto" << endl;
     }
 }
