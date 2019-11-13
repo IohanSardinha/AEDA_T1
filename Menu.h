@@ -6,7 +6,6 @@
 #include <map>
 #include "Aeroporto.h"
 
-
 using namespace std;
 
 enum tipos_funcionarios
@@ -33,7 +32,7 @@ public:
 class MainMenu :public Menu{
 public:
     MainMenu();
-    void criarAeroporto();
+    void criarAeroporto(); //falta implementars
     void deletarAeroporto();
     void CallMenu();
 };
@@ -56,6 +55,7 @@ class AcessarAeroportoMenu: public Menu{
     Aeroporto* aeroporto;
 public:
     AcessarAeroportoMenu();
+    void escolherAeroporto();
     void CallMenu();
     void alterarGerente();
     void alterarLocalizacao();

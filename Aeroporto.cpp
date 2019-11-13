@@ -16,7 +16,6 @@ Funcionario* Aeroporto::getGerente() const
     return gerente;
 }
 
-
 Localizacao Aeroporto::getLocalizacao() const {
     return localizacao;
 }
