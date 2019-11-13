@@ -20,6 +20,11 @@ Localizacao Aeroporto::getLocalizacao() const {
     return localizacao;
 }
 
+void Aeroporto::setGerente(Funcionario* f)
+{
+    gerente = f;
+}
+
 void Aeroporto::adicionarFuncionario(Funcionario* f)
 {
     funcionarios.push_back(f);

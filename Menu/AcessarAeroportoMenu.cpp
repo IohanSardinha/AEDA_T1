@@ -8,7 +8,82 @@ AcessarAeroportoMenu::AcessarAeroportoMenu() {
 }
 
 void AcessarAeroportoMenu::alterarGerente() {
-    //TODO
+    string inp;
+    cout << "Novo gerente sera que tipo de funcionario(Administrativo, Piloto, Membro tripulacao):";
+    cin.ignore(1024,'\n');
+    getline(cin,inp);
+    if(inp == "Administrativo")
+    {
+        while(1)
+        {
+            cout << "Nome do funcionario que sera o gerente: ";
+            getline(cin, inp);
+            bool found = false;
+            for(Funcionario_administrativos* funcionario : aeroporto->getFuncionariosAdministrativos())
+            {
+                if(funcionario->getNome() == inp)
+                {
+                    aeroporto->setGerente(funcionario);
+                    found = true;
+                    break;
+                }
+            }
+            if(found)
+                break;
+            cout << "Nome inserido nao corresponde a nenhum funcionario" << endl;
+        }
+    }
+    else if(inp == "Piloto")
+    {
+        while(1)
+        {
+            cout << "Nome do piloto que sera o gerente: ";
+            getline(cin, inp);
+            bool found = false;
+            for(Piloto* funcionario : aeroporto->getPilotos())
+            {
+                if(funcionario->getNome() == inp)
+                {
+                    aeroporto->setGerente(funcionario);
+                    found = true;
+                    break;
+                }
+            }
+            if(found)
+                break;
+            cout << "Nome inserido nao corresponde a nenhum piloto" << endl;
+        }
+    }
+    else
+    {
+        while(1)
+        {
+            cout << "Destino de um voo do membro que sera o gerente: ";
+            getline(cin, inp);
+            bool found = false;
+            for(Membro_tripulacao* funcionario : aeroporto->getMembros())
+            {
+                bool b = false;
+                for(Voo* voo: funcionario->getVoos())
+                {
+                    if(voo->getDestino() == inp)
+                    {
+                        aeroporto->setGerente(funcionario);
+                        found = true;
+                        b = true;
+                        break;
+                    }
+                }
+                if(b)
+                    break;
+
+            }
+            if(found)
+                break;
+            cout << "Nome inserido nao corresponde a nenhum funcionario" << endl;
+        }
+    }
+    menus_to_call["AcessarAeroportoMenu"]->play();
 }
 
 void AcessarAeroportoMenu::CallMenu() {
