@@ -979,7 +979,7 @@ void AviaoMenu::criarAviao() {
     cin >> custo;
 
     Aviao a(tipo, capacidade, voo, funcionario, custo);
-    aeroporto.adicionarAviao(&a);
+    aeroporto->adicionarAviao(&a);
 
 }
 
@@ -1016,7 +1016,7 @@ Voo* AviaoMenu::criarVoo() {
     cout << "Diga o destino do voo: " << endl;
     cin >> destino;
 
-    Voo voo(data_c, hora_prevista, destino);
+    Voo* voo = new Voo(data_c, hora_prevista, destino);
 
     cout << "O voo foi cancelado: (sim/nao)" << endl;
     cin >> resp;
@@ -1025,9 +1025,9 @@ Voo* AviaoMenu::criarVoo() {
     else
         cancelado = false;
 
-    Informacao info(&voo, hora_prevista, hora_real, cancelado);
+    Informacao info(voo, hora_prevista, hora_real, cancelado);
 
-    return &voo;
+    return voo;
 
 }
 
@@ -1054,7 +1054,7 @@ Membro_tripulacao* AviaoMenu::criarMembroTripulacao()
         }
     }
 
-    Membro_tripulacao novoFuncionario(0,{},{});
+    Membro_tripulacao* novoFuncionario = new Membro_tripulacao(0,{},{});
     string in;
     while (1)
     {
@@ -1068,42 +1068,45 @@ Membro_tripulacao* AviaoMenu::criarMembroTripulacao()
         {
             if(voo->getDestino() == in)
             {
-                novoFuncionario.getVoos().push_back(voo);
-                novoFuncionario.getInfos().push_back(voo->getInfo());
+                novoFuncionario->getVoos().push_back(voo);
+                novoFuncionario->getInfos().push_back(voo->getInfo());
+                break;
             }
         }
     }
 
-    return &novoFuncionario);
+    return novoFuncionario;
 }
 
 Aviao* AviaoMenu::escolherAviao()
 {
     int i, capacidade;
     string tipo;
-    cout << "Deseja escolher o aviao por: " << endl;
-    cout << "0 - Tipo de avião" << endl << "1 - Capacidade do avião" << endl;
-    cin >> i;
-    switch (i)
-    {
-        case 0:
-        {
-            cout << "Qual o tipo de aviao que deseja: " << endl;
-            cin >> tipo;
-            for (int i = 0; i < aeroporto->getAvioes.size(); i++)
-            {
-                if(aeroporto->getAviaoes.at(i)->getTipo() == tipo)
-                    return aeroporto->getAviaoes.at(i);
+    while (1) {
+        cout << "Deseja escolher o aviao por: " << endl;
+        cout << "0 - Tipo de avião" << endl << "1 - Capacidade do avião" << endl;
+        cin >> i;
+        switch (i) {
+            case 0: {
+                cout << "Qual o tipo de aviao que deseja: " << endl;
+                cin >> tipo;
+                for (int i = 0; i < aeroporto->getAvioes().size(); i++) {
+                    if (aeroporto->getAvioes().at(i)->getTipo() == tipo)
+                        return aeroporto->getAvioes().at(i);
+                }
+                break;
+            }
+            case 1: {
+                cout << "Qual a capacidade do aviao que deseja: " << endl;
+                cin >> capacidade;
+                for (int i = 0; i < aeroporto->getAvioes().size(); i++) {
+                    if (aeroporto->getAvioes().at(i)->getCapacidade() == capacidade)
+                        return aeroporto->getAvioes().at(i);
+                }
+                break;
             }
         }
-        case 1: {
-            cout << "Qual a capacidade do aviao que deseja: " << endl;
-            cin >> capacidade;
-            for (int i = 0; i < aeroporto->getAvioes.size(); i++) {
-                if (aeroporto->getAviaoes.at(i)->getCapacidade() == capacidade)
-                    return aeroporto->getAviaoes.at(i);
-            }
-        }
+        cout << "Aviao com o campo indicado nao existe" << endl;
     }
 }
 
@@ -1220,47 +1223,45 @@ void VooMenu::criarVoo() {
 
 }
 
-Voo* VooMenu::escolherVoo()
-{
+Voo* VooMenu::escolherVoo() {
     string destino, data;
     int op;
     int ano, mes, dia;
-    cout << "Como desejar escolher o Voo? "<<endl;
-    cout << "0 - destino" << endl << "1 - data" << endl;
-    cin >> op;
-    switch (op)
-    {
-        case 0:
-        {
-            cout << "Qual o destino do voo que deseja?" << endl;
-            cin >> destino;
+    while (1) {
+        cout << "Como desejar escolher o Voo? " << endl;
+        cout << "0 - destino" << endl << "1 - data" << endl;
+        cin >> op;
+        switch (op) {
+            case 0: {
+                cout << "Qual o destino do voo que deseja?" << endl;
+                cin >> destino;
 
-            for (int i = 0; i < a->getVoos().size(); i++)
-            {
-                if (a->getVoos().at(i)->getDestino() == destino)
-                    return a->getVoos().at(i);
+                for (int i = 0; i < a->getVoos().size(); i++) {
+                    if (a->getVoos().at(i)->getDestino() == destino)
+                        return a->getVoos().at(i);
 
+                }
+            }
+            case 1: {
+                cout << "Qual a data do voo que deseja? (ano/mes/dia)" << endl;
+                cin >> data;
+                dia = stoi(data.substr(0, data.find_first_of("/")));
+                mes = stoi(data.substr(data.find_first_of("/") + 1, 2));
+                ano = stoi(data.substr(data.find_last_of("/") + 1, -1));
+                Data data_c(dia, mes, ano);
+                for (int i = 0; i < a->getVoos().size(); i++) {
+                    if (a->getVoos().at(i)->getData().getDia() == dia &&
+                        a->getVoos().at(i)->getData().getMes() == mes && a->getVoos().at(i)->getData().getAno() == ano)
+                        return a->getVoos().at(i);
+
+                }
             }
         }
-        case 1:
-        {
-            cout << "Qual a data do voo que deseja? (ano/mes/dia)" << endl;
-            cin >> data;
-            dia = stoi(data.substr(0, data.find_first_of("/")));
-            mes = stoi(data.substr(data.find_first_of("/")+1, 2));
-            ano = stoi(data.substr(data.find_last_of("/")+1, -1));
-            Data data_c(dia, mes, ano);
-            for (int i = 0; i < a->getVoos().size(); i++)
-            {
-                if (a->getVoos().at(i)->getData().getDia() == dia && a->getVoos().at(i)->getData().getMes() == mes && a->getVoos().at(i)->getData().getAno() == ano)
-                    return a->getVoos().at(i);
-
-            }
-        }
+        cout << "Voo com o campo indicado nao encontrado" << endl;
     }
-
     //fazer para data e hora se tivermos tempo
 }
+
 
 void VooMenu::visualizarVoo() {
     Voo* voo = escolherVoo();
