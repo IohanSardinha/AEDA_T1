@@ -1,6 +1,8 @@
 #include "FuncionariosMenu.h"
 #include "../Classes/Aviao.h"
 
+extern map<string, Menu*> menus_to_call;
+
 FuncionariosMenu::FuncionariosMenu(enum tipos_funcionarios t) {
     tipo = t;
     switch (tipo)
@@ -18,6 +20,7 @@ FuncionariosMenu::FuncionariosMenu(enum tipos_funcionarios t) {
             opcoes = {"Adicionar membro da tripulacao","Deletar membro da tripulacao","Ver membros da tripulacaos","Editar membro da tripulacao"};
             break;
     }
+    opcoes.push_back("Voltar");
 }
 
 void FuncionariosMenu::CallMenu() {
@@ -137,6 +140,10 @@ void FuncionariosMenu::CallMenu() {
             }
             break;
         }
+        case 4:
+        {
+            menus_to_call["AcessarAeroportoMenu"]->play();
+        }
     }
 }
 
@@ -233,6 +240,8 @@ void FuncionariosMenu::criarFuncionarioAdministrativo() {
                                                                                               Hora(horario_de_trabalhoH2,horario_de_trabalhoM2,horario_de_trabalhoS2)),funcao,departamento);
     a->adicionarFuncionario(&novoFuncionario);
     a->adicionarFuncionarioAdministrativo(&novoFuncionario);
+
+    editarFuncionarioAdministrativo();
 }
 
 void FuncionariosMenu::criarPiloto() {
@@ -255,6 +264,8 @@ void FuncionariosMenu::criarPiloto() {
     Piloto novoFuncionario = Piloto(0,nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),categoria,{},{});
     a->adicionarFuncionario(&novoFuncionario);
     a->adicionarPiloto(&novoFuncionario);
+
+    editarPiloto();
 }
 
 void FuncionariosMenu::criarMembroTripulacao()
@@ -302,6 +313,8 @@ void FuncionariosMenu::criarMembroTripulacao()
 
     a->adicionarFuncionario(&novoFuncionario);
     a->adicionarMembro(&novoFuncionario);
+
+    editarMembroTripulacao();
 }
 
 void FuncionariosMenu::editarFuncionarioAdministrativo() {
@@ -385,7 +398,7 @@ void FuncionariosMenu::editarFuncionarioAdministrativo() {
         }
         cout << "Entrada invalida" << endl;
     }
-
+    menus_to_call["AcessarAeroportoMenu"]->play();
 }
 
 void FuncionariosMenu::editarPiloto() {
@@ -560,6 +573,7 @@ void FuncionariosMenu::editarPiloto() {
         }
         cout << "Entrada invalida" << endl;
     }
+    editarPiloto();
 
 }
 
@@ -663,7 +677,7 @@ void FuncionariosMenu::editarMembroTripulacao(){
         }
         cout << "Entrada invalida" << endl;
     }
-
+    editarMembroTripulacao();
 }
 
 void FuncionariosMenu::deletarFuncionarioAdministrativo() {
@@ -689,14 +703,16 @@ void FuncionariosMenu::deletarFuncionarioAdministrativo() {
     }
     a->getFuncionariosAdministrativos().erase(a->getFuncionariosAdministrativos().begin()+i);
     a->getFuncionarios().erase(a->getFuncionarios().begin()+j);
-    delete(funcionario);
+    delete funcionario;
+    editarFuncionarioAdministrativo();
 }
 
 void FuncionariosMenu::deletarPiloto(){
     string nome;
     cout << "Nome do funcionario a ser removido: ";
     cin >> nome;
-    int i,j = 0;
+    int j = 0;
+    int i = 0;
     Funcionario* funcionario;
     for(; i<a->getPilotos().size(); i++)
     {
@@ -715,7 +731,8 @@ void FuncionariosMenu::deletarPiloto(){
     }
     a->getPilotos().erase(a->getPilotos().begin()+i);
     a->getFuncionarios().erase(a->getFuncionarios().begin()+j);
-    delete(funcionario);
+    delete funcionario;
+    editarPiloto();
 }
 
 void FuncionariosMenu::deletarMembroTripulacao(){
@@ -738,7 +755,8 @@ void FuncionariosMenu::deletarMembroTripulacao(){
     }
     a->getMembros().erase(a->getMembros().begin()+i);
     a->getFuncionarios().erase(a->getFuncionarios().begin()+j);
-    delete(funcionario);
+    delete funcionario;
+    editarMembroTripulacao();
 }
 
 void FuncionariosMenu::listarFuncionarios() {
@@ -769,6 +787,7 @@ void FuncionariosMenu::listarFuncionarios() {
             }
             break;
     }
+    menus_to_call["AcessarAeroportoMenu"]->play();
 }
 
 void FuncionariosMenu::setAeroporto(Aeroporto* a)

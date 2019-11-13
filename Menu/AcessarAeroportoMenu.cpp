@@ -59,16 +59,18 @@ void AcessarAeroportoMenu::CallMenu() {
 void AcessarAeroportoMenu::alterarLocalizacao() {
     string pais, cidade;
     float latitude, longitude;
-    cout << "Qual o país da nova localizacao: " << endl;
-    cin >> pais;
+    cin.ignore(1024, '\n');
+    cout << "Qual o pais da nova localizacao: ";
+    getline(cin, pais);
     cout << "Qual a cidade da nova localizacao: " << endl;
-    cin >> cidade;
+    getline(cin, cidade);
     cout << "Qual a latitude da nova localizacao: " << endl;
     cin >> latitude;
     cout << "Qual a nova longitude da nova localizacao: " << endl;
     cin >> longitude;
     GPS gps(latitude, longitude);
-    Localizacao localizacao(pais, cidade, gps);
+    aeroporto->setLocalizacao(pais, cidade, gps);
+    menus_to_call["MainMenu"]->play();
 }
 
 void AcessarAeroportoMenu::setAeroporto(Aeroporto* a)

@@ -18,6 +18,7 @@ public:
     Aeroporto(Funcionario* ger, Localizacao loc, vector<Funcionario*> fu, vector<Aviao*> av, vector<Piloto*> pil, vector<Membro_tripulacao*> mem, vector<Funcionario_administrativos*> f_adm );
     Funcionario* getGerente() const;
     Localizacao getLocalizacao() const;
+    void setLocalizacao(string p, string c, GPS g);
     void adicionarFuncionario(Funcionario* f);
     void adicionarPiloto(Piloto* p);
     void adicionarAviao(Aviao* a);

@@ -141,3 +141,10 @@ vector<Membro_tripulacao*> & Aeroporto::getMembros()
 {
     return membros;
 }
+
+void Aeroporto::setLocalizacao(string p, string c, GPS g)
+{
+    localizacao.setPais(p);
+    localizacao.setCidade(c);
+    localizacao.setCordenadas(g);
+}

@@ -116,7 +116,7 @@ void ListarAeroportoMenu::escolherAeroporto()
         cout << "Cidade do aeroporto: ";
         getline(cin, c);
         for (int i = 0; i < aeroportos.size(); i++) {
-            if (aeroportos.at(i)->getLocalizacao().getPais() == p &aeroportos.at(i)->getLocalizacao().getCidade() == c) {
+            if (aeroportos.at(i)->getLocalizacao().getPais() == p && aeroportos.at(i)->getLocalizacao().getCidade() == c) {
                 cout << *aeroportos.at(i);
                 return;
             }
