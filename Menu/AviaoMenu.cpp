@@ -1,4 +1,6 @@
 #include "AviaoMenu.h"
+#include "../Classes/Informacao.h"
+#include "../Classes/Aviao.h"
 
 extern map<string, Menu*> menus_to_call;
 

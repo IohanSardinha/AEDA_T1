@@ -108,18 +108,18 @@ CMakeFiles/Project1.dir/Menu/Menu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project1.dir/Menu/Menu.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Menu\Menu.cpp -o CMakeFiles\Project1.dir\Menu\Menu.cpp.s
 
-CMakeFiles/Project1.dir/Utils/utils.cpp.obj: CMakeFiles/Project1.dir/flags.make
-CMakeFiles/Project1.dir/Utils/utils.cpp.obj: ../Utils/utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Project1.dir/Utils/utils.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project1.dir\Utils\utils.cpp.obj -c C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Utils\utils.cpp
+CMakeFiles/Project1.dir/Utils/split.cpp.obj: CMakeFiles/Project1.dir/flags.make
+CMakeFiles/Project1.dir/Utils/split.cpp.obj: ../Utils/split.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Project1.dir/Utils/split.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project1.dir\Utils\split.cpp.obj -c C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Utils\split.cpp
 
-CMakeFiles/Project1.dir/Utils/utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project1.dir/Utils/utils.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Utils\utils.cpp > CMakeFiles\Project1.dir\Utils\utils.cpp.i
+CMakeFiles/Project1.dir/Utils/split.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project1.dir/Utils/split.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Utils\split.cpp > CMakeFiles\Project1.dir\Utils\split.cpp.i
 
-CMakeFiles/Project1.dir/Utils/utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project1.dir/Utils/utils.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Utils\utils.cpp -o CMakeFiles\Project1.dir\Utils\utils.cpp.s
+CMakeFiles/Project1.dir/Utils/split.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project1.dir/Utils/split.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ioXsa\Documents\FEUP\AEDA\AEDA_T1\Utils\split.cpp -o CMakeFiles\Project1.dir\Utils\split.cpp.s
 
 CMakeFiles/Project1.dir/Utils/sorts.cpp.obj: CMakeFiles/Project1.dir/flags.make
 CMakeFiles/Project1.dir/Utils/sorts.cpp.obj: ../Utils/sorts.cpp
@@ -218,7 +218,7 @@ Project1_OBJECTS = \
 "CMakeFiles/Project1.dir/Classes/Funcionario.cpp.obj" \
 "CMakeFiles/Project1.dir/Classes/Aeroporto.cpp.obj" \
 "CMakeFiles/Project1.dir/Menu/Menu.cpp.obj" \
-"CMakeFiles/Project1.dir/Utils/utils.cpp.obj" \
+"CMakeFiles/Project1.dir/Utils/split.cpp.obj" \
 "CMakeFiles/Project1.dir/Utils/sorts.cpp.obj" \
 "CMakeFiles/Project1.dir/Menu/MainMenu.cpp.obj" \
 "CMakeFiles/Project1.dir/Menu/ListarAeroportoMenu.cpp.obj" \
@@ -234,7 +234,7 @@ Project1.exe: CMakeFiles/Project1.dir/main.cpp.obj
 Project1.exe: CMakeFiles/Project1.dir/Classes/Funcionario.cpp.obj
 Project1.exe: CMakeFiles/Project1.dir/Classes/Aeroporto.cpp.obj
 Project1.exe: CMakeFiles/Project1.dir/Menu/Menu.cpp.obj
-Project1.exe: CMakeFiles/Project1.dir/Utils/utils.cpp.obj
+Project1.exe: CMakeFiles/Project1.dir/Utils/split.cpp.obj
 Project1.exe: CMakeFiles/Project1.dir/Utils/sorts.cpp.obj
 Project1.exe: CMakeFiles/Project1.dir/Menu/MainMenu.cpp.obj
 Project1.exe: CMakeFiles/Project1.dir/Menu/ListarAeroportoMenu.cpp.obj

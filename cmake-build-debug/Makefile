@@ -392,32 +392,32 @@ Utils/sorts.cpp.s:
 	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Utils/sorts.cpp.s
 .PHONY : Utils/sorts.cpp.s
 
-Utils/utils.obj: Utils/utils.cpp.obj
+Utils/split.obj: Utils/split.cpp.obj
 
-.PHONY : Utils/utils.obj
+.PHONY : Utils/split.obj
 
 # target to build an object file
-Utils/utils.cpp.obj:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Utils/utils.cpp.obj
-.PHONY : Utils/utils.cpp.obj
+Utils/split.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Utils/split.cpp.obj
+.PHONY : Utils/split.cpp.obj
 
-Utils/utils.i: Utils/utils.cpp.i
+Utils/split.i: Utils/split.cpp.i
 
-.PHONY : Utils/utils.i
+.PHONY : Utils/split.i
 
 # target to preprocess a source file
-Utils/utils.cpp.i:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Utils/utils.cpp.i
-.PHONY : Utils/utils.cpp.i
+Utils/split.cpp.i:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Utils/split.cpp.i
+.PHONY : Utils/split.cpp.i
 
-Utils/utils.s: Utils/utils.cpp.s
+Utils/split.s: Utils/split.cpp.s
 
-.PHONY : Utils/utils.s
+.PHONY : Utils/split.s
 
 # target to generate assembly for a file
-Utils/utils.cpp.s:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Utils/utils.cpp.s
-.PHONY : Utils/utils.cpp.s
+Utils/split.cpp.s:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Utils/split.cpp.s
+.PHONY : Utils/split.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -485,9 +485,9 @@ help:
 	@echo ... Utils/sorts.obj
 	@echo ... Utils/sorts.i
 	@echo ... Utils/sorts.s
-	@echo ... Utils/utils.obj
-	@echo ... Utils/utils.i
-	@echo ... Utils/utils.s
+	@echo ... Utils/split.obj
+	@echo ... Utils/split.i
+	@echo ... Utils/split.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

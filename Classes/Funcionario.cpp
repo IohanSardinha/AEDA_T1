@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Funcionario.h"
+#include "../Classes/Aviao.h"
+#include "../Classes/Informacao.h"
 #include <string>
 
 using namespace std;

@@ -1,11 +1,17 @@
 #ifndef PROJECT1_FUNCIONARIO_H
 #define PROJECT1_FUNCIONARIO_H
 
-#include "../Utils/utils.h"
+#include "../Utils/split.h"
+#include "../Utils/Data.h"
+#include "../Utils/Hora.h"
+#include "../Classes/Voo.h"
 #include <iostream>
 #include <utility>
 
+
 using namespace std;
+
+class Aviao;
 
 class Funcionario{
 protected:

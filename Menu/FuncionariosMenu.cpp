@@ -1,4 +1,5 @@
 #include "FuncionariosMenu.h"
+#include "../Classes/Aviao.h"
 
 FuncionariosMenu::FuncionariosMenu(enum tipos_funcionarios t) {
     tipo = t;

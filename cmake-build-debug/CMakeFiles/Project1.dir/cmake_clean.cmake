@@ -9,7 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Project1.dir/Menu/Menu.cpp.obj"
   "CMakeFiles/Project1.dir/Menu/VooMenu.cpp.obj"
   "CMakeFiles/Project1.dir/Utils/sorts.cpp.obj"
-  "CMakeFiles/Project1.dir/Utils/utils.cpp.obj"
+  "CMakeFiles/Project1.dir/Utils/split.cpp.obj"
   "CMakeFiles/Project1.dir/main.cpp.obj"
   "Project1.exe"
   "Project1.exe.manifest"

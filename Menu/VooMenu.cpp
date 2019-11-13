@@ -1,4 +1,6 @@
 #include "VooMenu.h"
+#include "../Classes/Informacao.h"
+#include "../Classes/Aviao.h"
 
 VooMenu::VooMenu(){
     opcoes = {"Alterar data", "Alterar hora prevista", "Alterar hora real", "Alterar destino", "Alterar estado voo", "Visualizar voo", "Criar voo"};

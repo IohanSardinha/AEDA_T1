@@ -86,10 +86,19 @@
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Classes/Aeroporto.h">
 			<Option target="Project1"/>
 		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Classes/Aviao.h">
+			<Option target="Project1"/>
+		</Unit>
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Classes/Funcionario.cpp">
 			<Option target="Project1"/>
 		</Unit>
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Classes/Funcionario.h">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Classes/Informacao.h">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Classes/Voo.h">
 			<Option target="Project1"/>
 		</Unit>
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/AcessarAeroportoMenu.cpp">
@@ -134,16 +143,28 @@
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/VooMenu.h">
 			<Option target="Project1"/>
 		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/Data.h">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/GPS.h">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/Hora.h">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/Localizacao.h">
+			<Option target="Project1"/>
+		</Unit>
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/sorts.cpp">
 			<Option target="Project1"/>
 		</Unit>
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/sorts.h">
 			<Option target="Project1"/>
 		</Unit>
-		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/utils.cpp">
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/split.cpp">
 			<Option target="Project1"/>
 		</Unit>
-		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/utils.h">
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/split.h">
 			<Option target="Project1"/>
 		</Unit>
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/main.cpp">
