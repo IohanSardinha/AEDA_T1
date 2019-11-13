@@ -351,16 +351,12 @@ class Aviao{
     vector<Funcionario*> tripulacao; //2 pilotos e 2 membros de cabine, talvez valha mais criar a classe tripulacao
     int custo_operacao;
 public:
-    Aviao(string tipo, int capacidade, vector<Voo*> voos, Funcionario* piloto1, Funcionario* piloto2,Funcionario* membro_cabine1,Funcionario* membro_cabine2, int custo_operacao)
+    Aviao(string tipo, int capacidade, vector<Voo*> voos, vector<Funcionario*> funcionarios, int custo_operacao)
     {
-        tripulacao.push_back(piloto1);
-        tripulacao.push_back(piloto2);
-        tripulacao.push_back(membro_cabine1);
-        tripulacao.push_back(membro_cabine2);
         this->tipo = tipo;
         this->capacidade = capacidade;
         this->voos = voos;
-        this->tripulacao = tripulacao;
+        this->tripulacao = funcionarios;
         this->custo_operacao = custo_operacao;
     }
 

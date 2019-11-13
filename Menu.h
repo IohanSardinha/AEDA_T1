@@ -6,6 +6,7 @@
 #include <map>
 #include "Aeroporto.h"
 
+
 using namespace std;
 
 class Menu {
@@ -44,13 +45,13 @@ public:
 };
 
 class AcessarAeroportoMenu: public Menu{
+    Aeroporto* aeroporto;
 public:
     AcessarAeroportoMenu();
     void escolherAeroporto();
     void CallMenu();
     void alterarGerente();
     void alterarLocalizacao();
-    int escolherAviao();
     //classe funcionario e classe AVioes
 };
 
@@ -74,15 +75,16 @@ public:
 };
 
 class AviaoMenu:public Menu{
+    Aeroporto* aeroporto;
 public:
-    void escolherAviao();
-    void setPos();
+    Aviao* escolherAviao();
     AviaoMenu();
     void CallMenu();
     void criarAviao();
     void editarTipo();
     void editarCapacidade();
-
+    Voo* criarVoo();
+    Membro_tripulacao* criarMembroTripulacao();
 };
 
 class VooMenu:public Menu{
@@ -99,7 +101,7 @@ public:
     void alterarEstado();
     void criarVoo();
     void CallMenu();
-    void escolherAviao();
+    void escolherAviao(); //como vou escolher aviao???
 };
 
 
