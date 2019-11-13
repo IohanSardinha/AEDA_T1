@@ -5,13 +5,13 @@ map<string, Menu*> menus_to_call;
 
 void Menu::print()
 {
-    cout << "--------------------------------" << endl;
+    cout << "-------------------------------------" << endl;
     for(int i = 0; i < opcoes.size(); i++)
     {
-        cout << opcoes.at(i) << "  -  " << i << endl;
+        cout << i  << "  -  "<< opcoes.at(i) << endl;
     }
 
-    cout << "--------------------------------" << endl;
+    cout << "-------------------------------------" << endl;
 }
 
 void Menu::play() {

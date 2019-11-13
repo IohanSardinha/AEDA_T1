@@ -14,6 +14,7 @@ public:
     void porQuantidadeAvioes();
     void escolherAeroporto();
     void CallMenu();
+    void setAeroporto(Aeroporto* a){};
 
 };
 #endif //PROJECT1_LISTARAEROPORTOMENU_H

@@ -14,6 +14,7 @@ public:
     void editarCapacidade();
     Voo* criarVoo();
     Membro_tripulacao* criarMembroTripulacao();
+    void setAeroporto(Aeroporto* a){};
 };
 
 #endif //PROJECT1_AVIAOMENU_H

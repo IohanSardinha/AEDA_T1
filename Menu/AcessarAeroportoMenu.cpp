@@ -4,7 +4,7 @@ extern vector<Aeroporto*> aeroportos;
 extern map<string, Menu*> menus_to_call;
 
 AcessarAeroportoMenu::AcessarAeroportoMenu() {
-    opcoes = {"Alterar gerente", "Alterar localizacao", "Funcionarios", "Avioes"};
+    opcoes = {"Alterar gerente", "Alterar localizacao", "Acessar todos os funcionarios", "Acessar pilotos", "Acessar funcionarios administrativos", "Acessar membros da tripulacao", "Avioes"};
 }
 
 void AcessarAeroportoMenu::alterarGerente() {
@@ -26,10 +26,25 @@ void AcessarAeroportoMenu::CallMenu() {
         }
         case 2:
         {
-            menus_to_call["FuncionariosMenu"]->play();
+            menus_to_call["TodosFuncionariosMenu"]->play();
             break;
         }
         case 3:
+        {
+            menus_to_call["PilotosFuncionariosMenu"]->play();
+            break;
+        }
+        case 4:
+        {
+            menus_to_call["FuncionariosAdministrativosMenu"]->play();
+            break;
+        }
+        case 5:
+        {
+            menus_to_call["MembrosTripulacaoFuncionariosMenu"]->play();
+            break;
+        }
+        case 6:
         {
             menus_to_call["AvioesMenu"]->play();
         }
@@ -51,18 +66,7 @@ void AcessarAeroportoMenu::alterarLocalizacao() {
     Localizacao localizacao(pais, cidade, gps);
 }
 
-void AcessarAeroportoMenu::escolherAeroporto()
+void AcessarAeroportoMenu::setAeroporto(Aeroporto* a)
 {
-    string p, c;
-    cout << "Insira o pais: " << endl;
-    cin >> p;
-    cout << "Insira a cidade: " << endl;
-    cin >> c;
-    for(int i = 0; i < aeroportos.size(); i++) {
-        if (aeroportos.at(i)->getLocalizacao().getPais() == p && aeroportos.at(i)->getLocalizacao().getCidade() == c)
-        {
-            aeroporto = aeroportos.at(i);
-            break;
-        }
-    }
+    aeroporto = a;
 }

@@ -9,6 +9,8 @@ public:
     void criarAeroporto(); //falta implementar
     void deletarAeroporto();
     void CallMenu();
+    Aeroporto* escolherAeroporto();
+    void setAeroporto(Aeroporto* a){};
 };
 
 #endif //PROJECT1_MAINMENU_H

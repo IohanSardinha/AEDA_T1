@@ -7,10 +7,10 @@ class AcessarAeroportoMenu: public Menu{
     Aeroporto* aeroporto;
 public:
     AcessarAeroportoMenu();
-    void escolherAeroporto();
     void CallMenu();
     void alterarGerente();
     void alterarLocalizacao();
+    void setAeroporto(Aeroporto* a);
     //classe funcionario e classe AVioes
 };
 

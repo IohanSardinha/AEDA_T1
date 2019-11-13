@@ -18,6 +18,7 @@ public:
     void criarVoo();
     void CallMenu();
     void escolherAviao(); //como vou escolher aviao???
+    void setAeroporto(Aeroporto* a){};
 };
 
 #endif //PROJECT1_VOOMENU_H

@@ -757,6 +757,7 @@ void FuncionariosMenu::listarFuncionarios() {
             }
             break;
         case PILOTO:
+            cout << "AQUI" << endl;
             for(Funcionario* funcionario: a->getPilotos())
             {
                 funcionario->print();

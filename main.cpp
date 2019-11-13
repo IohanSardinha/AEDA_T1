@@ -10,8 +10,13 @@
 
 using namespace std;
 extern map<string, Menu*> menus_to_call;
+extern vector<Aeroporto*> aeroportos;
 
 int main() {
+    Piloto p(0,"Sergio",Data(20,06,1958),"principal",{},{});
+    Aeroporto a(&p,Localizacao("Brasil","Rio de Janeiro",GPS(10,10)),{&p},{},{&p},{},{});
+    aeroportos.push_back(&a);
+
     MainMenu mainMenu;
     menus_to_call.insert(pair<string,Menu*>("MainMenu",&mainMenu));
 

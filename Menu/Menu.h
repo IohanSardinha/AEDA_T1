@@ -20,6 +20,7 @@ public:
     void play();
     void getInput();
     virtual void CallMenu() = 0;
+    virtual void setAeroporto(Aeroporto* a) = 0;
 };
 
 #endif //PROJECT1_MENU_H
