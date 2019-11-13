@@ -144,6 +144,20 @@ void AcessarAeroportoMenu::CallMenu() {
     }
 }
 
+void AcessarAeroportoMenu::alterarLocalizacao() {
+    string pais, cidade;
+    float latitude, longitude;
+    cout << "Qual o país da nova localizacao: " << endl;
+    cin >> pais;
+    cout << "Qual a cidade da nova localizacao: " << endl;
+    cin >> cidade;
+    cout << "Qual a latitude da nova localizacao: " << endl;
+    cin >> latitude;
+    cout << "Qual a nova longitude da nova localizacao: " << endl;
+    cin >> longitude;
+    GPS gps(latitude, longitude);
+    Localizacao localizacao(pais, cidade, gps);
+}
 
 AviaoMenu::AviaoMenu() {
     opcoes = {"Criar Aviao", "Editar Tipo do Aviao", "Editar Capacidade Aviao", "Editar Voos"};
