@@ -27,6 +27,7 @@ void AviaoMenu::CallMenu() {
         }
         case 3:
         {
+            menus_to_call["VooMenu"]->setAviao(escolherAviao());
             menus_to_call["VooMenu"]->play();
             break;
         }

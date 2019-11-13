@@ -17,7 +17,6 @@ public:
     void alterarEstado();
     void criarVoo();
     void CallMenu();
-    void escolherAviao(); //como vou escolher aviao???
     void setAeroporto(Aeroporto* a){};
     void setAviao(Aviao* a);
 };

@@ -19,6 +19,7 @@ public:
     Funcionario* getGerente() const;
     Localizacao getLocalizacao() const;
     void setLocalizacao(string p, string c, GPS g);
+    void setGerente(Funcionario* f);
     void adicionarFuncionario(Funcionario* f);
     void adicionarPiloto(Piloto* p);
     void adicionarAviao(Aviao* a);

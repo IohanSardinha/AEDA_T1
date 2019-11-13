@@ -1,4 +1,5 @@
 #include "MainMenu.h"
+#include "../Classes/Aviao.h"
 
 extern vector<Aeroporto*> aeroportos;
 extern map<string, Menu*> menus_to_call;
@@ -37,11 +38,6 @@ void MainMenu::CallMenu() {
             return;
         }
     }
-}
-
-void MainMenu::criarAeroporto()
-{
-    //TODO
 }
 
 void MainMenu::deletarAeroporto()
@@ -83,4 +79,44 @@ Aeroporto* MainMenu::escolherAeroporto()
         }
         cout << "Parametros dados nao indicam nenhum aeroporto" << endl;
     }
+}
+
+Localizacao* MainMenu::inserirLocalizacao()
+{
+    string pais, cidade;
+    float latitude, longitude;
+    cout << "Qual o país da nova localizacao: " << endl;
+    cin >> pais;
+    cout << "Qual a cidade da nova localizacao: " << endl;
+    cin >> cidade;
+    cout << "Qual a latitude da nova localizacao: " << endl;
+    cin >> latitude;
+    cout << "Qual a nova longitude da nova localizacao: " << endl;
+    cin >> longitude;
+    GPS gps(latitude, longitude);
+    Localizacao localizacao(pais, cidade, gps);
+    return &localizacao;
+}
+
+void MainMenu::criarAeroporto()
+{
+    //Localizacao
+    string cidade,pais;
+    cout << "Pais do novo aeroporto: ";
+    cin.ignore(1024,'\n');
+    getline(cin,pais);
+    cout << "Cidade do novo aeroporto: ";
+    getline(cin,cidade);
+        //GPS
+        float lat,lang;
+        cout << "Latitude do novo aeroporto: ";
+        cin >> lat;
+        cout << "Longitude do novo aeroporto: ";
+        cin >> lang;
+
+    Localizacao localizacao(pais,cidade,GPS(lat,lang));
+    aeroportos.push_back(new Aeroporto(NULL,localizacao,{},{},{},{},{}));
+    cout << "Para adicionar funcionarios e avioes ao aeroporto va para:"<< endl;
+    cout << "2 - Acessar aeroporto" << endl << endl;
+    menus_to_call["MainMenu"]->play();
 }
