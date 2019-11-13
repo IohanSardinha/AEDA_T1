@@ -1,6 +1,7 @@
 #include "Menu.h"
 
 vector<Aeroporto*> aeroportos;
+map<string, Menu*> menus_to_call;
 
 void Menu::print()
 {
@@ -94,7 +95,7 @@ void MainMenu::deletarAeroporto()
 }
 
 ListarAeroportoMenu::ListarAeroportoMenu(){
-    opcoes = {"Listar por localização", "Listar por quantidade de funcionario", "Listar por quantidade de funcionario administrativo",
+    opcoes = {"Listar por localizacao", "Listar por quantidade de funcionario", "Listar por quantidade de funcionario administrativo",
               "Listar por quantidade de pilotos", "Listar por quantidade de Membro de tripulacao", "Listar por quantidade de avioes",
               "Escolher um aeroporto"};
 }
@@ -209,7 +210,7 @@ void ListarAeroportoMenu::escolherAeroporto()
 }
 
 AcessarAeroportoMenu::AcessarAeroportoMenu() {
-    opcoes = {"Alterar gerente", "Alterar localização", "Funcionarios", "Aviões"};
+    opcoes = {"Alterar gerente", "Alterar localizacao", "Funcionarios", "Avioes"};
 }
 
 void AcessarAeroportoMenu::alterarGerente() {
@@ -241,7 +242,8 @@ void AcessarAeroportoMenu::CallMenu() {
     }
 }
 
-FuncionariosMenu::FuncionariosMenu() {
+FuncionariosMenu::FuncionariosMenu(enum tipos_funcionarios t) {
+    tipo = t;
     switch (tipo)
     {
         case TODOS:
@@ -1075,9 +1077,9 @@ void AviaoMenu::criarAviao() {
     int capacidade, v, f, custo;
     vector<Voo*> voo;
     vector<Funcionario*> funcionario;
-    cout << "Qual o tipo do avião: " << endl;
+    cout << "Qual o tipo do aviao: " << endl;
     cin >> tipo;
-    cout << "Qual a capacidade do avião: " << endl;
+    cout << "Qual a capacidade do aviao: " << endl;
     cin >> capacidade;
     cout << "Quantos voos deseja adicionar? " << endl;
     cin >> v;
@@ -1196,7 +1198,7 @@ Aviao* AviaoMenu::escolherAviao()
     string tipo;
     while (1) {
         cout << "Deseja escolher o aviao por: " << endl;
-        cout << "0 - Tipo de avião" << endl << "1 - Capacidade do avião" << endl;
+        cout << "0 - Tipo de aviao" << endl << "1 - Capacidade do aviao" << endl;
         cin >> i;
         switch (i) {
             case 0: {
@@ -1379,7 +1381,7 @@ void VooMenu::visualizarVoo() {
     cout << "Data: " << voo->getData() << endl;
     cout << "Hora: " << voo->getHora() << endl;
     cout << "Destino: " << voo->getDestino() << endl;
-    cout << "Informação: " << voo->getInfo() << endl;
+    cout << "Informacao: " << voo->getInfo() << endl;
 }
 
 void VooMenu::alterarData() {

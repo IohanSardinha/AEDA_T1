@@ -80,37 +80,37 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Aeroporto.cpp">
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Classes/Aeroporto.cpp">
 			<Option target="Project1"/>
 		</Unit>
-		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Aeroporto.h">
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Classes/Aeroporto.h">
 			<Option target="Project1"/>
 		</Unit>
-		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Funcionario.cpp">
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Classes/Funcionario.cpp">
 			<Option target="Project1"/>
 		</Unit>
-		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Funcionario.h">
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Classes/Funcionario.h">
 			<Option target="Project1"/>
 		</Unit>
-		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu.cpp">
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/Menu.cpp">
 			<Option target="Project1"/>
 		</Unit>
-		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu.h">
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Menu/Menu.h">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/sorts.cpp">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/sorts.h">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/utils.cpp">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/utils.h">
 			<Option target="Project1"/>
 		</Unit>
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/main.cpp">
-			<Option target="Project1"/>
-		</Unit>
-		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/sorts.cpp">
-			<Option target="Project1"/>
-		</Unit>
-		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/sorts.h">
-			<Option target="Project1"/>
-		</Unit>
-		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/utils.cpp">
-			<Option target="Project1"/>
-		</Unit>
-		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/utils.h">
 			<Option target="Project1"/>
 		</Unit>
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/CMakeLists.txt">

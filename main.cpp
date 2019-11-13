@@ -1,16 +1,39 @@
 #include <iostream>
 #include <vector>
-#include "utils.h"
-#include "Funcionario.h"
-#include "Menu.h"
-#include "Aeroporto.h"
+#include "Menu/Menu.h"
 
 using namespace std;
+extern map<string, Menu*> menus_to_call;
 
 int main() {
-    Piloto p(300,"Sergio",Data(30,06,199),"Classe A",{},{});
-    Aeroporto a(&p,Localizacao("Brasil","Rio de Janeiro",GPS(10,10)),{&p},{},{&p},{},{});
-    p.print();
-    cout << endl << endl << a;
+    MainMenu mainMenu;
+    menus_to_call.insert(pair<string,Menu*>("MainMenu",&mainMenu));
+
+    ListarAeroportoMenu listarAeroportoMenu;
+    menus_to_call.insert(pair<string,Menu*>("ListarAeroportoMenu",&listarAeroportoMenu));
+
+    AcessarAeroportoMenu acessarAeroportoMenu;
+    menus_to_call.insert(pair<string,Menu*>("AcessarAeroportoMenu",&acessarAeroportoMenu));
+
+    FuncionariosMenu todosOsFuncionariosMenu(TODOS);
+    menus_to_call.insert(pair<string,Menu*>("TodosFuncionariosMenu",&todosOsFuncionariosMenu));
+
+    FuncionariosMenu pilotosFuncionariosMenu(PILOTO);
+    menus_to_call.insert(pair<string,Menu*>("PilotosFuncionariosMenu",&pilotosFuncionariosMenu));
+
+    FuncionariosMenu funcionariosAdministrativosMenu(ADMINISTRATIVO);
+    menus_to_call.insert(pair<string,Menu*>("FuncionariosAdministrativosMenu",&funcionariosAdministrativosMenu));
+
+    FuncionariosMenu membrosTripulacaoFuncionariosMenu(MEMBRO_TRIPULACAO);
+    menus_to_call.insert(pair<string,Menu*>("MembrosTripulacaoFuncionariosMenu",&membrosTripulacaoFuncionariosMenu));
+
+    AviaoMenu aviaoMenu;
+    menus_to_call.insert(pair<string,Menu*>("AviaoMenu",&aviaoMenu));
+
+    VooMenu vooMenu;
+    menus_to_call.insert(pair<string,Menu*>("VooMenu",&vooMenu));
+
+    mainMenu.play();
+
     return 0;
 }

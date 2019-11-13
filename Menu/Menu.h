@@ -5,8 +5,8 @@
 #include <vector>
 #include <map>
 #include <algorithm>
-#include "Aeroporto.h"
-#include "sorts.h"
+#include "../Classes/Aeroporto.h"
+#include "../Utils/sorts.h"
 
 using namespace std;
 
@@ -22,7 +22,6 @@ class Menu {
 protected:
     vector<string> opcoes;
     int input;
-    map<string, Menu*> menus_to_call;
 public:
     Menu()= default;
     void print();
@@ -34,7 +33,7 @@ public:
 class MainMenu :public Menu{
 public:
     MainMenu();
-    void criarAeroporto(); //falta implementars
+    void criarAeroporto(); //falta implementar
     void deletarAeroporto();
     void CallMenu();
 };
@@ -69,7 +68,7 @@ class FuncionariosMenu:public Menu{
     Aeroporto* a;
 
 public:
-    FuncionariosMenu();
+    FuncionariosMenu(enum tipos_funcionarios t);
     void CallMenu();
     void criarFuncionarioAdministrativo();
     void criarPiloto();

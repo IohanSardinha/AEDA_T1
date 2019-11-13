@@ -122,86 +122,140 @@ Project1/fast:
 	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/build
 .PHONY : Project1/fast
 
-Aeroporto.obj: Aeroporto.cpp.obj
+Classes/Aeroporto.obj: Classes/Aeroporto.cpp.obj
 
-.PHONY : Aeroporto.obj
-
-# target to build an object file
-Aeroporto.cpp.obj:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Aeroporto.cpp.obj
-.PHONY : Aeroporto.cpp.obj
-
-Aeroporto.i: Aeroporto.cpp.i
-
-.PHONY : Aeroporto.i
-
-# target to preprocess a source file
-Aeroporto.cpp.i:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Aeroporto.cpp.i
-.PHONY : Aeroporto.cpp.i
-
-Aeroporto.s: Aeroporto.cpp.s
-
-.PHONY : Aeroporto.s
-
-# target to generate assembly for a file
-Aeroporto.cpp.s:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Aeroporto.cpp.s
-.PHONY : Aeroporto.cpp.s
-
-Funcionario.obj: Funcionario.cpp.obj
-
-.PHONY : Funcionario.obj
+.PHONY : Classes/Aeroporto.obj
 
 # target to build an object file
-Funcionario.cpp.obj:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Funcionario.cpp.obj
-.PHONY : Funcionario.cpp.obj
+Classes/Aeroporto.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Classes/Aeroporto.cpp.obj
+.PHONY : Classes/Aeroporto.cpp.obj
 
-Funcionario.i: Funcionario.cpp.i
+Classes/Aeroporto.i: Classes/Aeroporto.cpp.i
 
-.PHONY : Funcionario.i
+.PHONY : Classes/Aeroporto.i
 
 # target to preprocess a source file
-Funcionario.cpp.i:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Funcionario.cpp.i
-.PHONY : Funcionario.cpp.i
+Classes/Aeroporto.cpp.i:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Classes/Aeroporto.cpp.i
+.PHONY : Classes/Aeroporto.cpp.i
 
-Funcionario.s: Funcionario.cpp.s
+Classes/Aeroporto.s: Classes/Aeroporto.cpp.s
 
-.PHONY : Funcionario.s
+.PHONY : Classes/Aeroporto.s
 
 # target to generate assembly for a file
-Funcionario.cpp.s:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Funcionario.cpp.s
-.PHONY : Funcionario.cpp.s
+Classes/Aeroporto.cpp.s:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Classes/Aeroporto.cpp.s
+.PHONY : Classes/Aeroporto.cpp.s
 
-Menu.obj: Menu.cpp.obj
+Classes/Funcionario.obj: Classes/Funcionario.cpp.obj
 
-.PHONY : Menu.obj
+.PHONY : Classes/Funcionario.obj
 
 # target to build an object file
-Menu.cpp.obj:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu.cpp.obj
-.PHONY : Menu.cpp.obj
+Classes/Funcionario.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Classes/Funcionario.cpp.obj
+.PHONY : Classes/Funcionario.cpp.obj
 
-Menu.i: Menu.cpp.i
+Classes/Funcionario.i: Classes/Funcionario.cpp.i
 
-.PHONY : Menu.i
+.PHONY : Classes/Funcionario.i
 
 # target to preprocess a source file
-Menu.cpp.i:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu.cpp.i
-.PHONY : Menu.cpp.i
+Classes/Funcionario.cpp.i:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Classes/Funcionario.cpp.i
+.PHONY : Classes/Funcionario.cpp.i
 
-Menu.s: Menu.cpp.s
+Classes/Funcionario.s: Classes/Funcionario.cpp.s
 
-.PHONY : Menu.s
+.PHONY : Classes/Funcionario.s
 
 # target to generate assembly for a file
-Menu.cpp.s:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu.cpp.s
-.PHONY : Menu.cpp.s
+Classes/Funcionario.cpp.s:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Classes/Funcionario.cpp.s
+.PHONY : Classes/Funcionario.cpp.s
+
+Menu/Menu.obj: Menu/Menu.cpp.obj
+
+.PHONY : Menu/Menu.obj
+
+# target to build an object file
+Menu/Menu.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/Menu.cpp.obj
+.PHONY : Menu/Menu.cpp.obj
+
+Menu/Menu.i: Menu/Menu.cpp.i
+
+.PHONY : Menu/Menu.i
+
+# target to preprocess a source file
+Menu/Menu.cpp.i:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/Menu.cpp.i
+.PHONY : Menu/Menu.cpp.i
+
+Menu/Menu.s: Menu/Menu.cpp.s
+
+.PHONY : Menu/Menu.s
+
+# target to generate assembly for a file
+Menu/Menu.cpp.s:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/Menu.cpp.s
+.PHONY : Menu/Menu.cpp.s
+
+Utils/sorts.obj: Utils/sorts.cpp.obj
+
+.PHONY : Utils/sorts.obj
+
+# target to build an object file
+Utils/sorts.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Utils/sorts.cpp.obj
+.PHONY : Utils/sorts.cpp.obj
+
+Utils/sorts.i: Utils/sorts.cpp.i
+
+.PHONY : Utils/sorts.i
+
+# target to preprocess a source file
+Utils/sorts.cpp.i:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Utils/sorts.cpp.i
+.PHONY : Utils/sorts.cpp.i
+
+Utils/sorts.s: Utils/sorts.cpp.s
+
+.PHONY : Utils/sorts.s
+
+# target to generate assembly for a file
+Utils/sorts.cpp.s:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Utils/sorts.cpp.s
+.PHONY : Utils/sorts.cpp.s
+
+Utils/utils.obj: Utils/utils.cpp.obj
+
+.PHONY : Utils/utils.obj
+
+# target to build an object file
+Utils/utils.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Utils/utils.cpp.obj
+.PHONY : Utils/utils.cpp.obj
+
+Utils/utils.i: Utils/utils.cpp.i
+
+.PHONY : Utils/utils.i
+
+# target to preprocess a source file
+Utils/utils.cpp.i:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Utils/utils.cpp.i
+.PHONY : Utils/utils.cpp.i
+
+Utils/utils.s: Utils/utils.cpp.s
+
+.PHONY : Utils/utils.s
+
+# target to generate assembly for a file
+Utils/utils.cpp.s:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Utils/utils.cpp.s
+.PHONY : Utils/utils.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -230,60 +284,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-sorts.obj: sorts.cpp.obj
-
-.PHONY : sorts.obj
-
-# target to build an object file
-sorts.cpp.obj:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/sorts.cpp.obj
-.PHONY : sorts.cpp.obj
-
-sorts.i: sorts.cpp.i
-
-.PHONY : sorts.i
-
-# target to preprocess a source file
-sorts.cpp.i:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/sorts.cpp.i
-.PHONY : sorts.cpp.i
-
-sorts.s: sorts.cpp.s
-
-.PHONY : sorts.s
-
-# target to generate assembly for a file
-sorts.cpp.s:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/sorts.cpp.s
-.PHONY : sorts.cpp.s
-
-utils.obj: utils.cpp.obj
-
-.PHONY : utils.obj
-
-# target to build an object file
-utils.cpp.obj:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/utils.cpp.obj
-.PHONY : utils.cpp.obj
-
-utils.i: utils.cpp.i
-
-.PHONY : utils.i
-
-# target to preprocess a source file
-utils.cpp.i:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/utils.cpp.i
-.PHONY : utils.cpp.i
-
-utils.s: utils.cpp.s
-
-.PHONY : utils.s
-
-# target to generate assembly for a file
-utils.cpp.s:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/utils.cpp.s
-.PHONY : utils.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -293,24 +293,24 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Project1
 	@echo ... edit_cache
-	@echo ... Aeroporto.obj
-	@echo ... Aeroporto.i
-	@echo ... Aeroporto.s
-	@echo ... Funcionario.obj
-	@echo ... Funcionario.i
-	@echo ... Funcionario.s
-	@echo ... Menu.obj
-	@echo ... Menu.i
-	@echo ... Menu.s
+	@echo ... Classes/Aeroporto.obj
+	@echo ... Classes/Aeroporto.i
+	@echo ... Classes/Aeroporto.s
+	@echo ... Classes/Funcionario.obj
+	@echo ... Classes/Funcionario.i
+	@echo ... Classes/Funcionario.s
+	@echo ... Menu/Menu.obj
+	@echo ... Menu/Menu.i
+	@echo ... Menu/Menu.s
+	@echo ... Utils/sorts.obj
+	@echo ... Utils/sorts.i
+	@echo ... Utils/sorts.s
+	@echo ... Utils/utils.obj
+	@echo ... Utils/utils.i
+	@echo ... Utils/utils.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... sorts.obj
-	@echo ... sorts.i
-	@echo ... sorts.s
-	@echo ... utils.obj
-	@echo ... utils.i
-	@echo ... utils.s
 .PHONY : help
 
 

@@ -1,7 +1,7 @@
 #ifndef PROJECT1_FUNCIONARIO_H
 #define PROJECT1_FUNCIONARIO_H
 
-#include "utils.h"
+#include "../Utils/utils.h"
 #include <iostream>
 #include <utility>
 

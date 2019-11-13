@@ -1,4 +1,4 @@
-#include "Aeroporto.h"
+#include "../Classes/Aeroporto.h"
 
 bool compLocalizacao(Aeroporto* &a1, Aeroporto* &a2)
 {
