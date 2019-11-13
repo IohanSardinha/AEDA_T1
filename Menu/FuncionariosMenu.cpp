@@ -147,7 +147,7 @@ Funcionario_administrativos* FuncionariosMenu::acharFuncionarioAdministrativo() 
         cout << "Nome do funcionario: ";
         cin >> in;
         for (Funcionario_administrativos* funcionario: a->getFuncionariosAdministrativos())
-        {
+        {Funcionario* inserirFuncionario();
             if (funcionario->getNome() == in)
             {
                 return funcionario;
