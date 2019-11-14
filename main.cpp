@@ -26,6 +26,7 @@ int main() {
     menus_to_call.insert(pair<string,Menu*>("MembrosTripulacaoFuncionariosMenu",new FuncionariosMenu(MEMBRO_TRIPULACAO)));
     menus_to_call.insert(pair<string,Menu*>("AviaoMenu",new AviaoMenu));
     menus_to_call.insert(pair<string,Menu*>("VooMenu",new VooMenu));
+
     menus_to_call["MainMenu"]->play();
 
     return 0;

@@ -125,11 +125,13 @@ void AcessarAeroportoMenu::CallMenu() {
         }
         case 6:
         {
-            menus_to_call["AvioesMenu"]->setAeroporto(aeroporto);
-            menus_to_call["AvioesMenu"]->play();
+            menus_to_call["AviaoMenu"]->setAeroporto(aeroporto);
+            menus_to_call["AviaoMenu"]->play();
+            break;
         }
         case 7:{
             menus_to_call["MainMenu"]->play();
+            break;
         }
     }
 }

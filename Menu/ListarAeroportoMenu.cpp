@@ -6,7 +6,7 @@ extern map<string, Menu*> menus_to_call;
 ListarAeroportoMenu::ListarAeroportoMenu(){
     opcoes = {"Listar por localizacao", "Listar por quantidade de funcionario", "Listar por quantidade de funcionario administrativo",
               "Listar por quantidade de pilotos", "Listar por quantidade de Membro de tripulacao", "Listar por quantidade de avioes",
-              "Escolher um aeroporto"};
+              "Escolher um aeroporto", "Voltar"};
 }
 
 void ListarAeroportoMenu::CallMenu() {

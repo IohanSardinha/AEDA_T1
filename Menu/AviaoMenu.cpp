@@ -5,7 +5,7 @@
 extern map<string, Menu*> menus_to_call;
 
 AviaoMenu::AviaoMenu() {
-    opcoes = {"Criar Aviao", "Editar Tipo do Aviao", "Editar Capacidade Aviao", "Editar Voos"};
+    opcoes = {"Criar Aviao", "Editar Tipo do Aviao", "Editar Capacidade Aviao", "Editar Voos", "Voltar"};
 }
 
 void AviaoMenu::CallMenu() {
@@ -29,6 +29,11 @@ void AviaoMenu::CallMenu() {
         {
             menus_to_call["VooMenu"]->setAviao(escolherAviao());
             menus_to_call["VooMenu"]->play();
+            break;
+        }
+        case 4:
+        {
+            menus_to_call["AcessarAeroportoMenu"]->play();
             break;
         }
     }

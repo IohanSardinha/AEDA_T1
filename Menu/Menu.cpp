@@ -22,24 +22,18 @@ void Menu::play() {
 }
 
 void Menu::getInput() {
-    string string_input;
-    cout << "Selecione uma opcao: ";
-    cin >> string_input;
-    do
+    while (1)
     {
-        try
-        {
-            input = stoi(string_input);
-            if(input < 0 || input > opcoes.size())
-            {
-                cout << "Erro: " << string_input << " nao e uma opcao valida" << endl;
-                continue;
-            }
+        cout << "Selecione uma opcao: ";
+        cin >> input;
+        if (!cin.fail() && input < opcoes.size()) {
             break;
         }
-        catch(exception e)
+        else if(cin.fail())
         {
-            cout << "Erro: " << string_input << " nao e uma opcao valida" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
         }
-    }while(1);
+        cout << "Entrada invalida" << endl;
+    }
 }

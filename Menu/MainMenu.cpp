@@ -35,6 +35,13 @@ void MainMenu::CallMenu() {
         }
         case 4:
         {
+            cout << endl
+            << "Trabalho de AEDA T1 - 2019" << endl
+            << "Desenvolvido por:" << endl
+            << "    Bianca Mota" << endl
+            << "    Carolina Rosenback" << endl
+            << "    Iohan Sardinha" << endl << endl
+            << "Muito Obrigado e ate a proxima!!!" << endl;
             return;
         }
     }
@@ -63,11 +70,11 @@ void MainMenu::deletarAeroporto()
 
 Aeroporto* MainMenu::escolherAeroporto()
 {
+    cin.ignore(1024,'\n');
     while (1)
     {
         string p, c;
         cout << "Pais no qual o aeroporto esta localizado: ";
-        cin.ignore(1024, '\n');
         getline(cin, p);
         cout << "Cidade do aeroporto: ";
         getline(cin, c);

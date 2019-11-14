@@ -143,6 +143,7 @@ void FuncionariosMenu::CallMenu() {
         case 4:
         {
             menus_to_call["AcessarAeroportoMenu"]->play();
+            break;
         }
     }
 }
@@ -573,8 +574,6 @@ void FuncionariosMenu::editarPiloto() {
         }
         cout << "Entrada invalida" << endl;
     }
-    editarPiloto();
-
 }
 
 void FuncionariosMenu::editarMembroTripulacao(){
@@ -677,7 +676,6 @@ void FuncionariosMenu::editarMembroTripulacao(){
         }
         cout << "Entrada invalida" << endl;
     }
-    editarMembroTripulacao();
 }
 
 void FuncionariosMenu::deletarFuncionarioAdministrativo() {
@@ -704,7 +702,6 @@ void FuncionariosMenu::deletarFuncionarioAdministrativo() {
     a->getFuncionariosAdministrativos().erase(a->getFuncionariosAdministrativos().begin()+i);
     a->getFuncionarios().erase(a->getFuncionarios().begin()+j);
     delete funcionario;
-    editarFuncionarioAdministrativo();
 }
 
 void FuncionariosMenu::deletarPiloto(){
@@ -732,7 +729,6 @@ void FuncionariosMenu::deletarPiloto(){
     a->getPilotos().erase(a->getPilotos().begin()+i);
     a->getFuncionarios().erase(a->getFuncionarios().begin()+j);
     delete funcionario;
-    editarPiloto();
 }
 
 void FuncionariosMenu::deletarMembroTripulacao(){
@@ -756,7 +752,6 @@ void FuncionariosMenu::deletarMembroTripulacao(){
     a->getMembros().erase(a->getMembros().begin()+i);
     a->getFuncionarios().erase(a->getFuncionarios().begin()+j);
     delete funcionario;
-    editarMembroTripulacao();
 }
 
 void FuncionariosMenu::listarFuncionarios() {
