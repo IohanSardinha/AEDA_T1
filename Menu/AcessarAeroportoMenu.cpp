@@ -150,7 +150,7 @@ void AcessarAeroportoMenu::alterarLocalizacao() {
     cin >> longitude;
     GPS gps(latitude, longitude);
     aeroporto->setLocalizacao(pais, cidade, gps);
-    menus_to_call["MainMenu"]->play();
+    menus_to_call["AcessarAeroportoMenu"]->play();
 }
 
 void AcessarAeroportoMenu::setAeroporto(Aeroporto* a)

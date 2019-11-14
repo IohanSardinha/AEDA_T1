@@ -46,8 +46,13 @@ void ListarAeroportoMenu::CallMenu() {
             escolherAeroporto();
             break;
         }
+        case 7:
+        {
+            menus_to_call["MainMenu"]->play();
+            return;
+        }
     }
-    menus_to_call["MainMenu"]->play();
+    menus_to_call["ListarAeroportoMenu"]->play();
 }
 
 void ListarAeroportoMenu::porLocalizacao()
@@ -55,6 +60,7 @@ void ListarAeroportoMenu::porLocalizacao()
     sort(aeroportos.begin(), aeroportos.end(), compLocalizacao);
     for(int i=0; i< aeroportos.size(); i++)
     {
+        cout << "::::::::::::::::::::::::::" << endl;
         cout << *aeroportos.at(i);
     }
 
@@ -65,6 +71,7 @@ void ListarAeroportoMenu::porQuantidadeFuncionarioAdministrativo()
     sort(aeroportos.begin(), aeroportos.end(), compQuantidadeFuncionariosAdministrativos);
     for(int i = 0; i< aeroportos.size(); i++)
     {
+        cout << "::::::::::::::::::::::::::" << endl;
         cout << *aeroportos.at(i);
     }
 }
@@ -74,6 +81,7 @@ void ListarAeroportoMenu::porQuantidadeFuncionario()
     sort(aeroportos.begin(), aeroportos.end(), compQuantidadefuncionarios);
     for(int i = 0; i < aeroportos.size(); i++)
     {
+        cout << "::::::::::::::::::::::::::" << endl;
         cout << *aeroportos.at(i);
     }
 }
@@ -83,6 +91,7 @@ void ListarAeroportoMenu::porQuantidadePilotos()
     sort(aeroportos.begin(), aeroportos.end(), compQuantidadePilotos);
     for(int i = 0; i< aeroportos.size(); i++)
     {
+        cout << "::::::::::::::::::::::::::" << endl;
         cout << *aeroportos.at(i);
     }
 }
@@ -92,6 +101,7 @@ void ListarAeroportoMenu::porQuantidadeMembroTripulacao()
     sort(aeroportos.begin(), aeroportos.end(), compQuantidadeMembroTripulacao);
     for(int i = 0; i< aeroportos.size(); i++)
     {
+        cout << "::::::::::::::::::::::::::" << endl;
         cout << *aeroportos.at(i);
     }
 }
@@ -101,6 +111,7 @@ void ListarAeroportoMenu::porQuantidadeAvioes()
     sort(aeroportos.begin(), aeroportos.end(), compQuantidadeAvioes);
     for(int i = 0; i<aeroportos.size(); i++)
     {
+        cout << "::::::::::::::::::::::::::" << endl;
         cout << *aeroportos.at(i);
     }
 }

@@ -46,7 +46,7 @@ public:
 
     friend ostream& operator<<(ostream& os, const Localizacao& l)
     {
-        os << l.cidade << ", " << l.pais <<  l.cordenadas;
+        os << l.cidade << ", " << l.pais << " " <<  l.cordenadas;
         return os;
     }
 

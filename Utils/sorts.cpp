@@ -5,7 +5,7 @@ bool compLocalizacao(Aeroporto* &a1, Aeroporto* &a2)
     if(a1->getLocalizacao().getPais() < a2->getLocalizacao().getPais())
         return true;
     if(a2->getLocalizacao().getPais() < a1->getLocalizacao().getPais())
-        return true;
+        return false;
     if(a1->getLocalizacao().getCidade() < a2->getLocalizacao().getCidade())
         return true;
     return false;
