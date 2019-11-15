@@ -108,7 +108,7 @@ void Piloto::print() {
     cout << "Categoria: " << categoria << endl;
     cout << "Avioes pilotados: " << endl;
     for (Aviao* a: tipos_aviao)
-         cout << a->getTipo() << endl;
+         cout << *a << endl;
     cout << "Voos realizados: " << endl;
     for (Voo* voos_realiz : voos_realizados)
         cout << *voos_realiz << endl;

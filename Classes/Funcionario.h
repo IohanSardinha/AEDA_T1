@@ -85,6 +85,7 @@ public:
     void adicionarVoo(Voo* v){voos_realizados.push_back(v);}
 
     void adicionarAviao(Aviao* a){tipos_aviao.push_back(a);}
+
     void print();
 };
 

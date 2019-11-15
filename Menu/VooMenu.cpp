@@ -119,6 +119,8 @@ void VooMenu::criarVoo() {
 
     a->adicionarVoo(voo);
 
+    menus_to_call["VooMenu"]->play();
+
 }
 
 Voo* VooMenu::escolherVoo() {
@@ -132,7 +134,8 @@ Voo* VooMenu::escolherVoo() {
         switch (op) {
             case 0: {
                 cout << "Qual o destino do voo que deseja?" << endl;
-                cin >> destino;
+                cin.ignore(1024, '\n');
+                getline(cin, destino);
 
                 for (int i = 0; i < a->getVoos().size(); i++) {
                     if (a->getVoos().at(i)->getDestino() == destino)
@@ -167,6 +170,9 @@ void VooMenu::visualizarVoo() {
     cout << "Hora: " << voo->getHora() << endl;
     cout << "Destino: " << voo->getDestino() << endl;
     cout << "Informacao: " << *(voo->getInfo()) << endl;
+    cin.ignore(1024, '\n');
+    wait();
+    menus_to_call["VooMenu"]->play();
 }
 
 void VooMenu::alterarData() {
@@ -181,13 +187,13 @@ void VooMenu::alterarData() {
     ano =  stoi(splitted[2]);
     Data data_c(dia, mes, ano);
     voo->setData(data_c);
+    menus_to_call["VooMenu"]->play();
 }
 
 Hora VooMenu::alterarHora() {
-    Voo* voo = escolherVoo();
     int hora, min, seg;
     string horap;
-    cout << "Diga a nova hora: " << endl;
+    cout << "Diga a nova hora: (hh:mm:ss) " << endl;
     cin >> horap;
     vector<string> splitted = split(horap,":");
     hora = stoi(splitted[0]);
@@ -199,13 +205,16 @@ Hora VooMenu::alterarHora() {
 
 void VooMenu::alterarHoraPrevista() {
     Voo* voo = escolherVoo();
-    voo->setHora(alterarHora());
-    voo->getInfo()->setHoraPrevista(alterarHora());
+    Hora hora = alterarHora();
+    voo->setHora(hora);
+    voo->getInfo()->setHoraPrevista(hora);
+    menus_to_call["VooMenu"]->play();
 }
 
 void VooMenu::alterarHoraReal() {
     Voo* voo = escolherVoo();
     voo->getInfo()->setHoraReal(alterarHora());
+    menus_to_call["VooMenu"]->play();
 }
 
 void VooMenu::alterarEstado() {
@@ -217,7 +226,7 @@ void VooMenu::alterarEstado() {
         voo->getInfo()->setCancelado(true);
     else
         voo->getInfo()->setCancelado(false);
-
+    menus_to_call["VooMenu"]->play();
 }
 
 void VooMenu::alterarDestino() {
@@ -226,6 +235,7 @@ void VooMenu::alterarDestino() {
     cout << "Qual o nome destino: " << endl;
     cin >> destino;
     voo->setDestino(destino);
+    menus_to_call["VooMenu"]->play();
 }
 
 void VooMenu::setAviao(Aviao* a)

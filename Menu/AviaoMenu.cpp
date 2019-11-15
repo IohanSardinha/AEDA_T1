@@ -50,7 +50,8 @@ void AviaoMenu::criarAviao() {
     vector<Voo*> voo;
     vector<Funcionario*> funcionario;
     cout << "Qual o tipo do aviao: " << endl;
-    cin >> tipo;
+    cin.ignore(1024, '\n');
+    getline(cin, tipo);
     cout << "Qual a capacidade do aviao: " << endl;
     cin >> capacidade;
     cout << "Quantos voos deseja adicionar? " << endl;
@@ -186,19 +187,20 @@ Aviao* AviaoMenu::escolherAviao()
         switch (i) {
             case 0: {
                 cout << "Qual o tipo de aviao que deseja: " << endl;
-                cin >> tipo;
-                for (int i = 0; i < aeroporto->getAvioes().size(); i++) {
-                    if (aeroporto->getAvioes().at(i)->getTipo() == tipo)
-                        return aeroporto->getAvioes().at(i);
+                cin.ignore(1024, '\n');
+                getline(cin, tipo);
+                for (int j = 0; j < aeroporto->getAvioes().size(); j++) {
+                    if (aeroporto->getAvioes().at(j)->getTipo() == tipo)
+                        return aeroporto->getAvioes().at(j);
                 }
                 break;
             }
             case 1: {
                 cout << "Qual a capacidade do aviao que deseja: " << endl;
                 cin >> capacidade;
-                for (int i = 0; i < aeroporto->getAvioes().size(); i++) {
-                    if (aeroporto->getAvioes().at(i)->getCapacidade() == capacidade)
-                        return aeroporto->getAvioes().at(i);
+                for (int j = 0; j < aeroporto->getAvioes().size(); j++) {
+                    if (aeroporto->getAvioes().at(j)->getCapacidade() == capacidade)
+                        return aeroporto->getAvioes().at(j);
                 }
                 break;
             }
@@ -211,7 +213,7 @@ void AviaoMenu::editarTipo() {
     string tipo;
     Aviao* aviao = escolherAviao();
     cout << "Qual o novo tipo do aviao: " << endl;
-    cin >> tipo;
+    getline(cin, tipo);
     aviao->setTipo(tipo);
     menus_to_call["AviaoMenu"]->play();
 }
