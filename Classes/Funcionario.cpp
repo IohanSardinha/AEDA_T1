@@ -146,7 +146,7 @@ ostream& operator<<(ostream& os, const Aviao& a)
         cout << *voo;
         i++;
     }
-    os << "Tripulacao: " << a.getTripulacao().size() << " membros" << endl;
+    os << endl << "Tripulacao: " << a.getTripulacao().size() << " membros" << endl;
     os << "Custo de operacao: " << a.custo_operacao << endl;
     return os;
 }

@@ -7,15 +7,24 @@
 #include "Menu/FuncionariosMenu.h"
 #include "Menu/AviaoMenu.h"
 #include "Menu/VooMenu.h"
+#include "Classes/Informacao.h"
+#include "Classes/Aviao.h"
 
 using namespace std;
 extern map<string, Menu*> menus_to_call;
 extern vector<Aeroporto*> aeroportos;
 
 int main() {
-    Piloto p(0,"Sergio",Data(20,06,1958),"principal",{},{});
-    Aeroporto a(&p,Localizacao("Brasil","Rio de Janeiro",GPS(10,10)),{&p},{},{&p},{},{});
-    aeroportos.push_back(&a);
+
+    Voo v(Data(20,11,2019),Hora(10,00,00),"La Pas");
+    Informacao i(&v,Hora(10,00,00),Hora(10,10,00),false);
+    v.setInfo(&i);
+    Membro_tripulacao m(1000,{&v},{&i});
+    Funcionario_administrativos f("Gisele",Data(30,01,1990),pair<Hora,Hora>(Hora(8,00,00),Hora(17,0,0)),"Diretora","Financeiro");
+    Piloto p(3000,"Sergio",Data(20,06,1958),"principal",{},{});
+    Aviao a("Boing 747",500,{&v},{&m},10000);
+    Aeroporto ae(&f,Localizacao("Brasil","Rio de Janeiro",GPS(-22.908333,-43.196388)),{&p,&f,&m},{&a},{&p},{&m},{&f});
+    aeroportos.push_back(&ae);
 
     menus_to_call.insert(pair<string,Menu*>("MainMenu",new MainMenu));
     menus_to_call.insert(pair<string,Menu*>("ListarAeroportoMenu",new ListarAeroportoMenu));
