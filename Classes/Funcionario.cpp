@@ -139,15 +139,14 @@ ostream& operator<<(ostream& os, const Aviao& a)
     os << "Modelo: " << a.tipo << endl;
     os << "Capacidade: " << a.capacidade << endl;
     os << "Voos:" << endl;
+    int i = 0;
     for(Voo* voo : a.voos)
     {
-        cout << *voo << endl;
+        cout << "Voo " << i << endl;
+        cout << *voo;
+        i++;
     }
-    os << "Tripulacao: " << endl;
-    for(Funcionario* funcionario: a.tripulacao)
-    {
-        funcionario->print();
-    }
+    os << "Tripulacao: " << a.getTripulacao().size() << " membros" << endl;
     os << "Custo de operacao: " << a.custo_operacao << endl;
     return os;
 }

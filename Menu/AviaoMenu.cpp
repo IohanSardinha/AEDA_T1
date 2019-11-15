@@ -60,7 +60,11 @@ void AviaoMenu::criarAviao() {
     cout << "Quantos funcionarios deseja criar? " << endl;
     cin >> f;
     for (; f> 0;f--)
-        funcionario.push_back(criarMembroTripulacao());
+    {
+        Membro_tripulacao* membroTripulacao = criarMembroTripulacao(voo);
+        funcionario.push_back(membroTripulacao);
+        aeroporto->adicionarMembro(membroTripulacao);
+    }
     cout << "Qual o custo da operacao: " << endl;
     cin >> custo;
 
@@ -131,9 +135,8 @@ Voo* AviaoMenu::criarVoo() {
 
 }
 
-Membro_tripulacao* AviaoMenu::criarMembroTripulacao()
+Membro_tripulacao* AviaoMenu::criarMembroTripulacao(vector<Voo*> voos)
 {
-    vector<Voo*> voos;
     for(Aviao* aviao: aeroporto->getAvioes())
     {
         for(Voo* voo: aviao->getVoos())
@@ -163,8 +166,8 @@ Membro_tripulacao* AviaoMenu::criarMembroTripulacao()
     {
         if(voo->getDestino() == in)
         {
-            novoFuncionario->getVoos().push_back(voo);
-            novoFuncionario->getInfos().push_back(voo->getInfo());
+            novoFuncionario->adicionarVoo(voo);
+            novoFuncionario->adicionarInfo(voo->getInfo());
             break;
         }
     }

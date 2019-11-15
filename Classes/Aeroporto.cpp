@@ -33,6 +33,7 @@ void Aeroporto::adicionarFuncionario(Funcionario* f)
 void  Aeroporto::adicionarPiloto(Piloto* p)
 {
     pilotos.push_back(p);
+    funcionarios.push_back(p);
 }
 
 void  Aeroporto::adicionarAviao(Aviao* a)
@@ -43,11 +44,13 @@ void  Aeroporto::adicionarAviao(Aviao* a)
 void  Aeroporto::adicionarMembro(Membro_tripulacao* m)
 {
     membros.push_back(m);
+    funcionarios.push_back(m);
 }
 
 void  Aeroporto::adicionarFuncionarioAdministrativo(Funcionario_administrativos* f)
 {
     funcionarios_administrativos.push_back(f);
+    funcionarios.push_back(f);
 }
 
 void Aeroporto::removerFuncionario(Funcionario* f)
@@ -64,11 +67,22 @@ void Aeroporto::removerFuncionario(Funcionario* f)
 
 void  Aeroporto::removerPiloto(Piloto* p)
 {
+    Membro_tripulacao* funcionario;
     for(int i = 0; i < pilotos.size(); i++)
     {
         if(pilotos.at(i) == p)
         {
+            funcionario = membros.at(i);
             pilotos.erase(pilotos.begin()+i);
+            break;
+        }
+    }
+    for(int i = 0; i < funcionarios.size(); i++)
+    {
+        if(funcionarios.at(i) == p)
+        {
+            funcionarios.erase(funcionarios.begin()+i);
+            delete funcionario;
             break;
         }
     }
@@ -88,11 +102,22 @@ void  Aeroporto::removerAviao(Aviao* a)
 
 void  Aeroporto::removerMembro(Membro_tripulacao* m)
 {
+    Membro_tripulacao* funcionario;
     for(int i = 0; i < membros.size(); i++)
     {
         if(membros.at(i) == m)
         {
+            funcionario = membros.at(i);
             membros.erase(membros.begin()+i);
+            break;
+        }
+    }
+    for(int i = 0; i < funcionarios.size(); i++)
+    {
+        if(funcionarios.at(i) == m)
+        {
+            funcionarios.erase(funcionarios.begin()+i);
+            delete funcionario;
             break;
         }
     }
@@ -100,11 +125,22 @@ void  Aeroporto::removerMembro(Membro_tripulacao* m)
 
 void  Aeroporto::removerFuncionarioAdministrativo(Funcionario_administrativos* f)
 {
+    Funcionario_administrativos* funcionario;
     for(int i = 0; i < funcionarios_administrativos.size(); i++)
     {
         if(funcionarios_administrativos.at(i) == f)
         {
+            funcionario = funcionarios_administrativos.at(i);
             funcionarios_administrativos.erase(funcionarios_administrativos.begin()+i);
+            break;
+        }
+    }
+    for(int i = 0; i < funcionarios.size(); i++)
+    {
+        if(funcionarios.at(i) == f)
+        {
+            funcionarios.erase(funcionarios.begin()+i);
+            delete funcionario;
             break;
         }
     }

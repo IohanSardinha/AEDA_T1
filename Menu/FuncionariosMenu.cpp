@@ -254,7 +254,6 @@ void FuncionariosMenu::criarFuncionarioAdministrativo() {
     Funcionario_administrativos* novoFuncionario = new Funcionario_administrativos(nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),
                                                                               pair<Hora,Hora>(Hora(horario_de_trabalhoH1,horario_de_trabalhoM1,horario_de_trabalhoS1),
                                                                                               Hora(horario_de_trabalhoH2,horario_de_trabalhoM2,horario_de_trabalhoS2)),funcao,departamento);
-    a->adicionarFuncionario(novoFuncionario);
     a->adicionarFuncionarioAdministrativo(novoFuncionario);
 }
 
@@ -276,7 +275,6 @@ void FuncionariosMenu::criarPiloto() {
     cin >> categoria;
     cout << "OBS: para adicionar voos e avioes de voos ao piloto va para editar pilotos" << endl;
     Piloto* novoFuncionario = new Piloto(0,nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),categoria,{},{});
-    a->adicionarFuncionario(novoFuncionario);
     a->adicionarPiloto(novoFuncionario);
 }
 
@@ -323,7 +321,6 @@ void FuncionariosMenu::criarMembroTripulacao()
         }
     }
 
-    a->adicionarFuncionario(novoFuncionario);
     a->adicionarMembro(novoFuncionario);
 }
 
@@ -690,76 +687,40 @@ void FuncionariosMenu::deletarFuncionarioAdministrativo() {
     string nome;
     cout << "Nome do funcionario a ser removido: ";
     cin >> nome;
-    int i,j = 0;
-    Funcionario* funcionario;
-    for(; i<a->getFuncionariosAdministrativos().size(); i++)
+    for(Funcionario_administrativos* funcionario: a->getFuncionariosAdministrativos())
     {
-        if(a->getFuncionariosAdministrativos().at(i)->getNome() == nome)
+        if(funcionario->getNome() == nome)
         {
-            funcionario = a->getFuncionariosAdministrativos().at(i);
-            break;
+            a->removerFuncionarioAdministrativo(funcionario);
         }
     }
-    for(; j < a->getFuncionarios().size(); j++)
-    {
-        if(a->getFuncionarios().at(j) == funcionario)
-        {
-            break;
-        }
-    }
-    a->getFuncionariosAdministrativos().erase(a->getFuncionariosAdministrativos().begin()+i);
-    a->getFuncionarios().erase(a->getFuncionarios().begin()+j);
-    delete funcionario;
 }
 
 void FuncionariosMenu::deletarPiloto(){
     string nome;
     cout << "Nome do funcionario a ser removido: ";
     cin >> nome;
-    int j = 0;
-    int i = 0;
-    Funcionario* funcionario;
-    for(; i<a->getPilotos().size(); i++)
+    for(Piloto* funcionario: a->getPilotos())
     {
-        if(a->getPilotos().at(i)->getNome() == nome)
+        if(funcionario->getNome() == nome)
         {
-            funcionario = a->getPilotos().at(i);
-            break;
+            a->removerPiloto(funcionario);
         }
     }
-    for(; j < a->getFuncionarios().size(); j++)
-    {
-        if(a->getFuncionarios().at(j) == funcionario)
-        {
-            break;
-        }
-    }
-    a->getPilotos().erase(a->getPilotos().begin()+i);
-    a->getFuncionarios().erase(a->getFuncionarios().begin()+j);
-    delete funcionario;
 }
 
 void FuncionariosMenu::deletarMembroTripulacao(){
 
     for(int i = 0; i < a->getMembros().size(); i++)
     {
-        cout << "Mebro " << i << ":" << endl;
+        cout << "Membro " << i << ":" << endl;
         a->getMembros().at(i)->print();
     }
     cout << "Qual o membro que deseja remover?: ";
     int i,j;
     Funcionario* funcionario = a->getMembros().at(i);
     cin >> i;
-    for(; j < a->getFuncionarios().size(); j++)
-    {
-        if(funcionario == a->getFuncionarios().at(j))
-        {
-            break;
-        }
-    }
-    a->getMembros().erase(a->getMembros().begin()+i);
-    a->getFuncionarios().erase(a->getFuncionarios().begin()+j);
-    delete funcionario;
+    a->removerMembro(a->getMembros().at(i));
 }
 
 void FuncionariosMenu::listarFuncionarios() {

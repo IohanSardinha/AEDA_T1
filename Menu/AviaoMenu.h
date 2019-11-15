@@ -13,7 +13,7 @@ public:
     void editarTipo();
     void editarCapacidade();
     Voo* criarVoo();
-    Membro_tripulacao* criarMembroTripulacao();
+    Membro_tripulacao* criarMembroTripulacao(vector<Voo*> v);
     void setAeroporto(Aeroporto* a);
     void setAviao(Aviao* a){};
     void listarAvioes();

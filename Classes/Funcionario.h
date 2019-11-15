@@ -54,6 +54,8 @@ public:
     vector<Voo*> getVoos();
     vector<Informacao*> getInfos();
     void print();
+    void adicionarVoo(Voo* v){voos_alocados.push_back(v);}
+    void adicionarInfo(Informacao* i){info_voos.push_back(i);}
 };
 
 class Piloto :public Funcionario{
