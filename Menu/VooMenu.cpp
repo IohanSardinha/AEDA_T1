@@ -80,7 +80,7 @@ void VooMenu::criarVoo() {
     cout << "Diga o destino do voo: " << endl;
     cin >> destino;
 
-    Voo voo(data_c, hora_prevista, destino);
+    Voo* voo = new Voo(data_c, hora_prevista, destino);
 
     cout << "O voo foi cancelado: (sim/nao)" << endl;
     cin >> resp;
@@ -89,9 +89,9 @@ void VooMenu::criarVoo() {
     else
         cancelado = false;
 
-    Informacao info(&voo, hora_prevista, hora_real, cancelado);
+    Informacao* info = new Informacao(voo, hora_prevista, hora_real, cancelado);
 
-    a->adicionarVoo(&voo);
+    a->adicionarVoo(voo);
 
 }
 

@@ -91,7 +91,9 @@ CMakeFiles/Project1.dir/Menu/MainMenu.cpp.obj: ../Utils/sorts.h
 CMakeFiles/Project1.dir/Menu/MainMenu.cpp.obj: ../Utils/split.h
 
 CMakeFiles/Project1.dir/Menu/Menu.cpp.obj: ../Classes/Aeroporto.h
+CMakeFiles/Project1.dir/Menu/Menu.cpp.obj: ../Classes/Aviao.h
 CMakeFiles/Project1.dir/Menu/Menu.cpp.obj: ../Classes/Funcionario.h
+CMakeFiles/Project1.dir/Menu/Menu.cpp.obj: ../Classes/Informacao.h
 CMakeFiles/Project1.dir/Menu/Menu.cpp.obj: ../Classes/Voo.h
 CMakeFiles/Project1.dir/Menu/Menu.cpp.obj: ../Menu/Menu.cpp
 CMakeFiles/Project1.dir/Menu/Menu.cpp.obj: ../Menu/Menu.h

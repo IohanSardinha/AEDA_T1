@@ -59,8 +59,8 @@ void AviaoMenu::criarAviao() {
     cout << "Qual o custo da operacao: " << endl;
     cin >> custo;
 
-    Aviao a(tipo, capacidade, voo, funcionario, custo);
-    aeroporto->adicionarAviao(&a);
+    Aviao* a = new Aviao(tipo, capacidade, voo, funcionario, custo);
+    aeroporto->adicionarAviao(a);
 
 }
 

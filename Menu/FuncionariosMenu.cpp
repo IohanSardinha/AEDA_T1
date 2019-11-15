@@ -251,11 +251,11 @@ void FuncionariosMenu::criarFuncionarioAdministrativo() {
     cin >> funcao;
     cout << "Departamento: ";
     cin >> departamento;
-    Funcionario_administrativos novoFuncionario = Funcionario_administrativos(nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),
+    Funcionario_administrativos* novoFuncionario = new Funcionario_administrativos(nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),
                                                                               pair<Hora,Hora>(Hora(horario_de_trabalhoH1,horario_de_trabalhoM1,horario_de_trabalhoS1),
                                                                                               Hora(horario_de_trabalhoH2,horario_de_trabalhoM2,horario_de_trabalhoS2)),funcao,departamento);
-    a->adicionarFuncionario(&novoFuncionario);
-    a->adicionarFuncionarioAdministrativo(&novoFuncionario);
+    a->adicionarFuncionario(novoFuncionario);
+    a->adicionarFuncionarioAdministrativo(novoFuncionario);
 }
 
 void FuncionariosMenu::criarPiloto() {
@@ -275,9 +275,9 @@ void FuncionariosMenu::criarPiloto() {
     cout << "Categoria: ";
     cin >> categoria;
     cout << "OBS: para adicionar voos e avioes de voos ao piloto va para editar pilotos" << endl;
-    Piloto novoFuncionario = Piloto(0,nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),categoria,{},{});
-    a->adicionarFuncionario(&novoFuncionario);
-    a->adicionarPiloto(&novoFuncionario);
+    Piloto* novoFuncionario = new Piloto(0,nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),categoria,{},{});
+    a->adicionarFuncionario(novoFuncionario);
+    a->adicionarPiloto(novoFuncionario);
 }
 
 void FuncionariosMenu::criarMembroTripulacao()
@@ -303,7 +303,7 @@ void FuncionariosMenu::criarMembroTripulacao()
         }
     }
 
-    Membro_tripulacao novoFuncionario(0,{},{});
+    Membro_tripulacao* novoFuncionario = new Membro_tripulacao(0,{},{});
     string in;
     while (1)
     {
@@ -317,14 +317,14 @@ void FuncionariosMenu::criarMembroTripulacao()
         {
             if(voo->getDestino() == in)
             {
-                novoFuncionario.getVoos().push_back(voo);
-                novoFuncionario.getInfos().push_back(voo->getInfo());
+                novoFuncionario->getVoos().push_back(voo);
+                novoFuncionario->getInfos().push_back(voo->getInfo());
             }
         }
     }
 
-    a->adicionarFuncionario(&novoFuncionario);
-    a->adicionarMembro(&novoFuncionario);
+    a->adicionarFuncionario(novoFuncionario);
+    a->adicionarMembro(novoFuncionario);
 }
 
 void FuncionariosMenu::editarFuncionarioAdministrativo() {
