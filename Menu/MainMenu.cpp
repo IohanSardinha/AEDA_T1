@@ -23,7 +23,13 @@ void MainMenu::CallMenu() {
         }
         case 2:
         {
-            menus_to_call["AcessarAeroportoMenu"]->setAeroporto(escolherAeroporto());
+            Aeroporto* a = escolherAeroporto();
+            if(a == NULL)
+            {
+                menus_to_call["MainMenu"]->play();
+                break;
+            }
+            menus_to_call["AcessarAeroportoMenu"]->setAeroporto(a);
             menus_to_call["AcessarAeroportoMenu"]->play();
             break;
         }
@@ -72,21 +78,20 @@ void MainMenu::deletarAeroporto()
 Aeroporto* MainMenu::escolherAeroporto()
 {
     cin.ignore(1024,'\n');
-    while (1)
-    {
-        string p, c;
-        cout << "Pais no qual o aeroporto esta localizado: ";
-        getline(cin, p);
-        cout << "Cidade do aeroporto: ";
-        getline(cin, c);
-        for (int i = 0; i < aeroportos.size(); i++) {
-            if (aeroportos.at(i)->getLocalizacao().getPais() == p &&
-                aeroportos.at(i)->getLocalizacao().getCidade() == c) {
-                return aeroportos.at(i);
-            }
+    string p, c;
+    cout << "Pais no qual o aeroporto esta localizado: ";
+    getline(cin, p);
+    cout << "Cidade do aeroporto: ";
+    getline(cin, c);
+    for (int i = 0; i < aeroportos.size(); i++) {
+        if (aeroportos.at(i)->getLocalizacao().getPais() == p &&
+            aeroportos.at(i)->getLocalizacao().getCidade() == c) {
+            return aeroportos.at(i);
         }
-        cout << "Parametros dados nao indicam nenhum aeroporto" << endl;
     }
+    cout << "Parametros dados nao indicam nenhum aeroporto" << endl;
+    wait();
+    return NULL;
 }
 
 Localizacao* MainMenu::inserirLocalizacao()

@@ -52,6 +52,8 @@ void ListarAeroportoMenu::CallMenu() {
             return;
         }
     }
+    cin.ignore(1024,'\n');
+    wait();
     menus_to_call["ListarAeroportoMenu"]->play();
 }
 

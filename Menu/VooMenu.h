@@ -2,6 +2,7 @@
 #define PROJECT1_VOOMENU_H
 
 #include "Menu.h"
+#include "../Utils/split.h"
 
 class VooMenu:public Menu{
     Aviao* a;
@@ -19,6 +20,7 @@ public:
     void CallMenu();
     void setAeroporto(Aeroporto* a){};
     void setAviao(Aviao* a);
+    void listarVoos();
 };
 
 #endif //PROJECT1_VOOMENU_H

@@ -2,8 +2,11 @@
 #include "../Classes/Informacao.h"
 #include "../Classes/Aviao.h"
 
+
+extern map<string, Menu*> menus_to_call;
+
 VooMenu::VooMenu(){
-    opcoes = {"Alterar data", "Alterar hora prevista", "Alterar hora real", "Alterar destino", "Alterar estado voo", "Visualizar voo", "Criar voo"};
+    opcoes = {"Alterar data", "Alterar hora prevista", "Alterar hora real", "Alterar destino", "Alterar estado voo", "Visualizar um voo","Ver todos os voos", "Criar voo","Voltar"};
 }
 
 void VooMenu::CallMenu() {
@@ -41,10 +44,30 @@ void VooMenu::CallMenu() {
         }
         case 6:
         {
+            listarVoos();
+            break;
+        }
+        case 7:
+        {
             criarVoo();
             break;
         }
+        case 8:
+        {
+            menus_to_call["AviaoMenu"]->play();
+            return;
+        }
     }
+    menus_to_call["VooMenu"]->play();
+}
+
+void VooMenu::listarVoos() {
+    for(Voo* voo: a->getVoos())
+    {
+        cout << *voo;
+    }
+    cin.ignore(1024,'\n');
+    wait();
 }
 
 void VooMenu::criarVoo() {
@@ -58,23 +81,26 @@ void VooMenu::criarVoo() {
 
     cout << "Diga a data do novo voo: (dia/mes/ano) " << endl;
     cin >> data;
-    dia = stoi(data.substr(0, data.find_first_of("/")));
-    mes = stoi(data.substr(data.find_first_of("/")+1, 2));
-    ano = stoi(data.substr(data.find_last_of("/")+1, -1));
+    vector<string> splitted = split(data,"/");
+    dia = stoi(splitted[0]);
+    mes =  stoi(splitted[1]);
+    ano =  stoi(splitted[2]);
     Data data_c(dia, mes, ano);
 
     cout << "Diga a hora prevista do voo: (hora:min:seg)" << endl;
     cin >> horap;
-    hora1 = stoi(horap.substr(0, horap.find_first_of(":")));
-    min1 = stoi(horap.substr(horap.find_first_of(":")+1, 2));
-    seg1 = stoi(horap.substr(horap.find_last_of(":")+1, -1));
+    splitted = split(horap,":");
+    hora1 = stoi(splitted[0]);
+    min1 = stoi(splitted[1]);
+    seg1 = stoi(splitted[2]);
     Hora hora_prevista(hora1, min1, seg1);
 
     cout << "Diga a hora real do voo: (hora:min:seg) " << endl;
     cin >> horar;
-    hora2 = stoi(horar.substr(0, horar.find_first_of(":")));
-    min2 = stoi(horar.substr(horar.find_first_of(":")+1, 2));
-    seg2 = stoi(horar.substr(horar.find_last_of(":")+1, -1));
+    splitted = split(horar,":");
+    hora2 = stoi(splitted[0]);
+    min2 = stoi(splitted[1]);
+    seg2 = stoi(splitted[2]);
     Hora hora_real(hora2, min2, seg2);
 
     cout << "Diga o destino do voo: " << endl;
@@ -140,7 +166,7 @@ void VooMenu::visualizarVoo() {
     cout << "Data: " << voo->getData() << endl;
     cout << "Hora: " << voo->getHora() << endl;
     cout << "Destino: " << voo->getDestino() << endl;
-    cout << "Informacao: " << voo->getInfo() << endl;
+    cout << "Informacao: " << *(voo->getInfo()) << endl;
 }
 
 void VooMenu::alterarData() {
@@ -149,9 +175,10 @@ void VooMenu::alterarData() {
     Voo* voo = escolherVoo();
     cout << "Diga a nova data: (dia/mes/ano) " << endl;
     cin >> data;
-    dia = stoi(data.substr(0, data.find_first_of("/")));
-    mes = stoi(data.substr(data.find_first_of("/")+1, 2));
-    ano = stoi(data.substr(data.find_last_of("/")+1, -1));
+    vector<string> splitted = split(data,"/");
+    dia = stoi(splitted[0]);
+    mes =  stoi(splitted[1]);
+    ano =  stoi(splitted[2]);
     Data data_c(dia, mes, ano);
     voo->setData(data_c);
 }
@@ -162,9 +189,10 @@ Hora VooMenu::alterarHora() {
     string horap;
     cout << "Diga a nova hora: " << endl;
     cin >> horap;
-    hora = stoi(horap.substr(0, horap.find_first_of(":")));
-    min = stoi(horap.substr(horap.find_first_of(":")+1, 2));
-    seg = stoi(horap.substr(horap.find_last_of(":")+1, -1));
+    vector<string> splitted = split(horap,":");
+    hora = stoi(splitted[0]);
+    min = stoi(splitted[1]);
+    seg = stoi(splitted[2]);
     Hora horas(hora, min, seg);
     return horas;
 }

@@ -7,8 +7,8 @@ using namespace std;
 
 class Hora{
     int hora,
-            minuto,
-            segundo;
+    minuto,
+    segundo;
 public:
     Hora()
     {
@@ -31,6 +31,9 @@ public:
             throw runtime_error("Seconds must be between 0 and 59");
         }
 
+        hora = h;
+        minuto = m;
+        segundo = s;
     }
     int getHora() const {
         return hora;

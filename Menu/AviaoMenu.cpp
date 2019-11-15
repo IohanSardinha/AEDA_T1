@@ -5,7 +5,7 @@
 extern map<string, Menu*> menus_to_call;
 
 AviaoMenu::AviaoMenu() {
-    opcoes = {"Criar Aviao", "Editar Tipo do Aviao", "Editar Capacidade Aviao", "Editar Voos", "Voltar"};
+    opcoes = {"Criar Aviao", "Editar Tipo do Aviao", "Editar Capacidade Aviao", "Editar Voos","Ver avioes", "Voltar"};
 }
 
 void AviaoMenu::CallMenu() {
@@ -33,6 +33,11 @@ void AviaoMenu::CallMenu() {
         }
         case 4:
         {
+            listarAvioes();
+            break;
+        }
+        case 5:
+        {
             menus_to_call["AcessarAeroportoMenu"]->play();
             break;
         }
@@ -50,18 +55,28 @@ void AviaoMenu::criarAviao() {
     cin >> capacidade;
     cout << "Quantos voos deseja adicionar? " << endl;
     cin >> v;
-    for (v; v != 0; v--)
+    for (; v > 0; v--)
         voo.push_back(criarVoo());
     cout << "Quantos funcionarios deseja criar? " << endl;
     cin >> f;
-    for (f; f!= 0;f--)
+    for (; f> 0;f--)
         funcionario.push_back(criarMembroTripulacao());
     cout << "Qual o custo da operacao: " << endl;
     cin >> custo;
 
     Aviao* a = new Aviao(tipo, capacidade, voo, funcionario, custo);
     aeroporto->adicionarAviao(a);
+    menus_to_call["AviaoMenu"]->play();
+}
 
+void AviaoMenu::listarAvioes() {
+    for(Aviao* aviao: aeroporto->getAvioes())
+    {
+        cout << *aviao;
+    }
+    cin.ignore(1024,'\n');
+    wait();
+    menus_to_call["AviaoMenu"]->play();
 }
 
 Voo* AviaoMenu::criarVoo() {
@@ -75,23 +90,26 @@ Voo* AviaoMenu::criarVoo() {
 
     cout << "Diga a data do novo voo: (dia/mes/ano) " << endl;
     cin >> data;
-    dia = stoi(data.substr(0, data.find_first_of("/")));
-    mes = stoi(data.substr(data.find_first_of("/")+1, 2));
-    ano = stoi(data.substr(data.find_last_of("/")+1, -1));
+    vector<string> splitted = split(data,"/");
+    dia = stoi(splitted[0]);
+    mes =  stoi(splitted[1]);
+    ano =  stoi(splitted[2]);
     Data data_c(dia, mes, ano);
 
     cout << "Diga a hora prevista do voo: (hora:min:seg)" << endl;
     cin >> horap;
-    hora1 = stoi(horap.substr(0, horap.find_first_of(":")));
-    min1 = stoi(horap.substr(horap.find_first_of(":")+1, 2));
-    seg1 = stoi(horap.substr(horap.find_last_of(":")+1, -1));
+    splitted = split(horap,":");
+    hora1 = stoi(splitted[0]);
+    min1 = stoi(splitted[1]);
+    seg1 = stoi(splitted[2]);
     Hora hora_prevista(hora1, min1, seg1);
 
     cout << "Diga a hora real do voo: (hora:min:seg) " << endl;
     cin >> horar;
-    hora2 = stoi(horar.substr(0, horar.find_first_of(":")));
-    min2 = stoi(horar.substr(horar.find_first_of(":")+1, 2));
-    seg2 = stoi(horar.substr(horar.find_last_of(":")+1, -1));
+    splitted = split(horar,":");
+    hora2 = stoi(splitted[0]);
+    min2 = stoi(splitted[1]);
+    seg2 = stoi(splitted[2]);
     Hora hora_real(hora2, min2, seg2);
 
     cout << "Diga o destino do voo: " << endl;
@@ -106,7 +124,8 @@ Voo* AviaoMenu::criarVoo() {
     else
         cancelado = false;
 
-    Informacao info(voo, hora_prevista, hora_real, cancelado);
+    Informacao* info = new Informacao(voo, hora_prevista, hora_real, cancelado);
+    voo->setInfo(info);
 
     return voo;
 
@@ -137,22 +156,16 @@ Membro_tripulacao* AviaoMenu::criarMembroTripulacao()
 
     Membro_tripulacao* novoFuncionario = new Membro_tripulacao(0,{},{});
     string in;
-    while (1)
+
+    cout << "Destino voo o qual o funcionario vai trabalhar: ";
+    cin >> in;
+    for(Voo* voo: voos)
     {
-        cout << "Destino voo o qual o funcionario vai trabalhar(0 para sair): ";
-        cin >> in;
-        if(in == "0")
+        if(voo->getDestino() == in)
         {
+            novoFuncionario->getVoos().push_back(voo);
+            novoFuncionario->getInfos().push_back(voo->getInfo());
             break;
-        }
-        for(Voo* voo: voos)
-        {
-            if(voo->getDestino() == in)
-            {
-                novoFuncionario->getVoos().push_back(voo);
-                novoFuncionario->getInfos().push_back(voo->getInfo());
-                break;
-            }
         }
     }
 
@@ -197,6 +210,7 @@ void AviaoMenu::editarTipo() {
     cout << "Qual o novo tipo do aviao: " << endl;
     cin >> tipo;
     aviao->setTipo(tipo);
+    menus_to_call["AviaoMenu"]->play();
 }
 
 void AviaoMenu::editarCapacidade() {
@@ -205,6 +219,7 @@ void AviaoMenu::editarCapacidade() {
     cout << "Qual a nova capacidade do aviao: " << endl;
     cin >> capacidade;
     aviao->setCapacidade(capacidade);
+    menus_to_call["AviaoMenu"]->play();
 }
 
 void AviaoMenu::setAeroporto(Aeroporto* a)

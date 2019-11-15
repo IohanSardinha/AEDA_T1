@@ -17,6 +17,12 @@ void Menu::print()
     cout << "-------------------------------------" << endl;
 }
 
+void Menu::wait()
+{
+    cout << "Pressione qualquer tecla para continuar...";
+    cin.get();
+}
+
 void Menu::play() {
     print();
     getInput();

@@ -33,7 +33,7 @@ void Funcionario_administrativos::print() {
     cout << "Data: " << data_nascimento << endl;
     cout << "Categoria: " << categoria << endl;
     cout << "Horario de trabalho: de " << horario_de_trabalho.first << " as " << horario_de_trabalho.second << endl;
-    cout << "Função: " << funcao << endl;
+    cout << "Funcao: " << funcao << endl;
     cout << "Departamento: " << departamento << endl;
 }
 
@@ -129,7 +129,7 @@ void Membro_tripulacao::print() {
     cout << "Voos alocados: " << endl;
     for (Voo* voo : voos_alocados)
         cout << *voo << endl;
-    cout << "Informações de voos: " << endl;
+    cout << "Informacoes de voos: " << endl;
     for (Informacao* informacao : info_voos)
         cout << *informacao << endl;
 }

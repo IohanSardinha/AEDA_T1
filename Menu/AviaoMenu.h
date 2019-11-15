@@ -16,6 +16,7 @@ public:
     Membro_tripulacao* criarMembroTripulacao();
     void setAeroporto(Aeroporto* a);
     void setAviao(Aviao* a){};
+    void listarAvioes();
 };
 
 #endif //PROJECT1_AVIAOMENU_H

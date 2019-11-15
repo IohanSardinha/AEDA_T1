@@ -55,8 +55,8 @@ public:
     friend ostream& operator<<(ostream& os, const Voo& v)
     {
         os << "Destino: " << v.destino << endl;
-        os << "Dia: " << v.hora << endl;
-        os << v.hora << "horas" << endl;
+        os << "Dia: " << v.data << endl;
+        os << "Hora: " << v.hora  << endl;
         return os;
     }
 };

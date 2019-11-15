@@ -27,6 +27,7 @@ public:
     virtual void setAviao(Aviao* a) = 0;
     void save();
     void load();
+    void wait();
 };
 
 #endif //PROJECT1_MENU_H
