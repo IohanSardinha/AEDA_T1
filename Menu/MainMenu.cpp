@@ -46,7 +46,7 @@ void MainMenu::CallMenu() {
             << "Trabalho de AEDA T1 - 2019" << endl
             << "Desenvolvido por:" << endl
             << "    Bianca Mota" << endl
-            << "    Carolina Rosenback" << endl
+            << "    Carolina Rosemback" << endl
             << "    Iohan Sardinha" << endl << endl
             << "Muito Obrigado e ate a proxima!!!" << endl;
             return;

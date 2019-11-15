@@ -51,6 +51,7 @@ CMakeFiles/Project1.dir/Menu/AviaoMenu.cpp.obj: ../Utils/split.h
 CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.obj: ../Classes/Aeroporto.h
 CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.obj: ../Classes/Aviao.h
 CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.obj: ../Classes/Funcionario.h
+CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.obj: ../Classes/Informacao.h
 CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.obj: ../Classes/Voo.h
 CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.obj: ../Menu/FuncionariosMenu.cpp
 CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.obj: ../Menu/FuncionariosMenu.h

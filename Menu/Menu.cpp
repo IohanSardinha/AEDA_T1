@@ -184,7 +184,7 @@ void Menu::save()
        {
            file << funcionarioAdministrativos->getSalario() << endl;
            file << funcionarioAdministrativos->getNome() << endl;
-           file << funcionarioAdministrativos->getDataNascimento() << endl;
+           file << funcionarioAdministrativos->getDataNascimento();
            file << funcionarioAdministrativos->getCategoria() << endl;
            file << funcionarioAdministrativos->gethorario_de_trabalho().first << endl;
            file << funcionarioAdministrativos->gethorario_de_trabalho().second << endl;

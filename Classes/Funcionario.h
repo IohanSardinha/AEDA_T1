@@ -30,7 +30,7 @@ class Funcionario_administrativos :public Funcionario{
     string funcao;
     string departamento;
 public:
-    Funcionario_administrativos(const string& nome,const Data& data_nascimento,const pair<Hora,Hora> horario_de_trabalho,const string &funcao, const string &departamento);
+    Funcionario_administrativos(const string& nome,const Data& data_nascimento,const string& categoria,const pair<Hora,Hora> horario_de_trabalho,const string &funcao, const string &departamento);
     string getFuncao() const;
     void setFuncao(const string &funcao);
     string getDepartamento() const;
@@ -82,6 +82,9 @@ public:
 
     void setCategoria(const string &categoria);
 
+    void adicionarVoo(Voo* v){voos_realizados.push_back(v);}
+
+    void adicionarAviao(Aviao* a){tipos_aviao.push_back(a);}
     void print();
 };
 

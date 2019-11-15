@@ -37,8 +37,8 @@ void Funcionario_administrativos::print() {
     cout << "Departamento: " << departamento << endl;
 }
 
-Funcionario_administrativos::Funcionario_administrativos(const string& nome,const Data& data_nascimento,const pair<Hora,Hora> horario_de_trabalho,const string &funcao, const string &departamento)
-        :Funcionario(5000),nome(nome),data_nascimento(data_nascimento),horario_de_trabalho(horario_de_trabalho), funcao(funcao), departamento(departamento) {}
+Funcionario_administrativos::Funcionario_administrativos(const string& nome,const Data& data_nascimento,const string& categoria,const pair<Hora,Hora> horario_de_trabalho,const string &funcao, const string &departamento)
+        :Funcionario(5000),nome(nome),data_nascimento(data_nascimento),horario_de_trabalho(horario_de_trabalho),categoria(categoria), funcao(funcao), departamento(departamento) {}
 
 
 const string &Funcionario_administrativos::getNome() const {
@@ -108,10 +108,10 @@ void Piloto::print() {
     cout << "Categoria: " << categoria << endl;
     cout << "Avioes pilotados: " << endl;
     for (Aviao* a: tipos_aviao)
-         cout << *a << endl;
+         cout << a->getTipo() << endl;
     cout << "Voos realizados: " << endl;
     for (Voo* voos_realiz : voos_realizados)
-        cout << voos_realiz << endl;
+        cout << *voos_realiz << endl;
 }
 
 Membro_tripulacao::Membro_tripulacao(int salario, const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos):Funcionario (salario), voos_alocados(voosAlocados), info_voos(infoVoos) {}

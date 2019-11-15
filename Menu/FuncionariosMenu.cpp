@@ -1,5 +1,6 @@
 #include "FuncionariosMenu.h"
 #include "../Classes/Aviao.h"
+#include "../Classes/Informacao.h"
 
 extern map<string, Menu*> menus_to_call;
 
@@ -251,7 +252,7 @@ void FuncionariosMenu::criarFuncionarioAdministrativo() {
     cin >> funcao;
     cout << "Departamento: ";
     cin >> departamento;
-    Funcionario_administrativos* novoFuncionario = new Funcionario_administrativos(nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),
+    Funcionario_administrativos* novoFuncionario = new Funcionario_administrativos(nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),categoria,
                                                                               pair<Hora,Hora>(Hora(horario_de_trabalhoH1,horario_de_trabalhoM1,horario_de_trabalhoS1),
                                                                                               Hora(horario_de_trabalhoH2,horario_de_trabalhoM2,horario_de_trabalhoS2)),funcao,departamento);
     a->adicionarFuncionarioAdministrativo(novoFuncionario);
@@ -276,6 +277,8 @@ void FuncionariosMenu::criarPiloto() {
     cout << "OBS: para adicionar voos e avioes de voos ao piloto va para editar pilotos" << endl;
     Piloto* novoFuncionario = new Piloto(0,nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),categoria,{},{});
     a->adicionarPiloto(novoFuncionario);
+    cin.ignore(1024,'\n');
+    wait();
 }
 
 void FuncionariosMenu::criarMembroTripulacao()
@@ -315,8 +318,8 @@ void FuncionariosMenu::criarMembroTripulacao()
         {
             if(voo->getDestino() == in)
             {
-                novoFuncionario->getVoos().push_back(voo);
-                novoFuncionario->getInfos().push_back(voo->getInfo());
+                novoFuncionario->adicionarVoo(voo);
+                novoFuncionario->adicionarInfo(voo->getInfo());
             }
         }
     }
@@ -345,7 +348,7 @@ void FuncionariosMenu::editarFuncionarioAdministrativo() {
                 cout << "Digite o novo nome: ";
                 cin >> nome;
                 funcionario->setNome(nome);
-                break;
+                continue;
             }
             case 1: {
                 string inp;
@@ -356,14 +359,14 @@ void FuncionariosMenu::editarFuncionarioAdministrativo() {
                 data_nascimentoM = stoi(splitted[1]);
                 data_nascimentoA = stoi(splitted[2]);
                 funcionario->setDataNascimento(Data(data_nascimentoD,data_nascimentoM,data_nascimentoA));
-                break;
+                continue;
             }
             case 2: {
                 string cat;
                 cout << "Digite a nova categoria: ";
                 cin >> cat;
                 funcionario->setCategoria(cat);
-                break;
+                continue;
             }
             case 3:
             {
@@ -384,21 +387,21 @@ void FuncionariosMenu::editarFuncionarioAdministrativo() {
                 horario_de_trabalhoS2 = stoi(splitted[2]);
                 funcionario->setHorarioDeTrabalho(pair<Hora,Hora>(Hora(horario_de_trabalhoH1,horario_de_trabalhoM1,horario_de_trabalhoS1),
                                                                   Hora(horario_de_trabalhoH2,horario_de_trabalhoM2,horario_de_trabalhoS2)));
-                break;
+                continue;
             }
             case 4: {
                 string funcao;
                 cout << "Nova funcao: ";
                 cin >> funcao;
                 funcionario->setFuncao(funcao);
-                break;
+                continue;
             }
             case 5: {
                 string departamento;
                 cout << "Novo departamento: ";
                 cin >> departamento;
                 funcionario->setDepartamento(departamento);
-                break;
+                continue;
             }
             case 6:
                 return;
@@ -431,7 +434,7 @@ void FuncionariosMenu::editarPiloto() {
                 cout << "Digite o novo nome: ";
                 cin >> nome;
                 funcionario->setNome(nome);
-                break;
+                continue;
             }
             case 1: {
                 string inp;
@@ -442,29 +445,29 @@ void FuncionariosMenu::editarPiloto() {
                 data_nascimentoM = stoi(splitted[1]);
                 data_nascimentoA = stoi(splitted[2]);
                 funcionario->setDataNascimento(Data(data_nascimentoD,data_nascimentoM,data_nascimentoA));
-                break;
+                continue;
             }
             case 2: {
                 string cat;
                 cout << "Digite a nova categoria: ";
                 cin >> cat;
                 funcionario->setCategoria(cat);
-                break;
+                continue;
             }
             case 3:
             {
                 for(Voo* voo: funcionario->getVoos())
                 {
-                    cout << voo;
+                    cout << *voo;
                 }
-                break;
+                continue;
             }
             case 4: {
                 for(Aviao* aviao: funcionario->getAvioes())
                 {
-                    cout << aviao;
+                    cout << *aviao;
                 }
-                break;
+                continue;
             }
             case 5: {
                 vector<Voo*> voos;
@@ -505,11 +508,11 @@ void FuncionariosMenu::editarPiloto() {
                             }
                         }
                         if(add)
-                            funcionario->getVoos().push_back(voo);
+                            funcionario->adicionarVoo(voo);
                         break;
                     }
                 }
-                break;
+                continue;
             }
             case 6: {
                 string modelo;
@@ -530,11 +533,11 @@ void FuncionariosMenu::editarPiloto() {
                             }
                         }
                         if(add)
-                            funcionario->getAvioes().push_back(aviao);
+                            funcionario->adicionarAviao(aviao);
                         break;
                     }
                 }
-                break;
+                continue;
             }
             case 7: {
                 string destino;
@@ -553,7 +556,7 @@ void FuncionariosMenu::editarPiloto() {
                 {
                     cout << "Voo nao esta alocado para o funcionario" << endl;
                 }
-                break;
+                continue;
             }
             case 8: {
                 string modelo;
@@ -572,7 +575,7 @@ void FuncionariosMenu::editarPiloto() {
                 {
                     cout << "Piloto ja nao e habito a pilotar esse aviao" << endl;
                 }
-                break;
+                continue;
             }
             case 9:
                 return;
@@ -599,9 +602,9 @@ void FuncionariosMenu::editarMembroTripulacao(){
             {
                 for(Voo* voo: funcionario->getVoos())
                 {
-                    cout << voo;
+                    cout << *voo;
                 }
-                break;
+                continue;
             }
             case 1: {
                 vector<Voo*> voos;
@@ -646,7 +649,7 @@ void FuncionariosMenu::editarMembroTripulacao(){
                         break;
                     }
                 }
-                break;
+                continue;
             }
             case 2: {
                 string destino;
@@ -665,18 +668,17 @@ void FuncionariosMenu::editarMembroTripulacao(){
                 {
                     cout << "Voo nao esta alocado para o funcionario" << endl;
                 }
-                break;
+                continue;
             }
             case 3:
             {
                 for(Informacao* info: funcionario->getInfos())
                 {
-                    cout << info;
+                    cout << *info;
                 }
-                break;
-                break;
+                continue;
             }
-            case 9:
+            case 4:
                 return;
         }
         cout << "Entrada invalida" << endl;
@@ -717,9 +719,9 @@ void FuncionariosMenu::deletarMembroTripulacao(){
         a->getMembros().at(i)->print();
     }
     cout << "Qual o membro que deseja remover?: ";
-    int i,j;
-    Funcionario* funcionario = a->getMembros().at(i);
+    int i;
     cin >> i;
+    Funcionario* funcionario = a->getMembros().at(i);
     a->removerMembro(a->getMembros().at(i));
 }
 
@@ -751,6 +753,8 @@ void FuncionariosMenu::listarFuncionarios() {
             }
             break;
     }
+    cin.ignore(1024,'\n');
+    wait();
 }
 
 void FuncionariosMenu::setAeroporto(Aeroporto* a)
