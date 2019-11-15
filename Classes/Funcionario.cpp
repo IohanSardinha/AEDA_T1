@@ -37,8 +37,8 @@ void Funcionario_administrativos::print() {
     cout << "Departamento: " << departamento << endl;
 }
 
-Funcionario_administrativos::Funcionario_administrativos(const string& nome,const Data& data_nascimento,const pair<Hora,Hora> horario_de_trabalho,const string &funcao, const string &departamento)
-        :Funcionario(5000),nome(nome),data_nascimento(data_nascimento),horario_de_trabalho(horario_de_trabalho), funcao(funcao), departamento(departamento) {}
+Funcionario_administrativos::Funcionario_administrativos(const string& nome,const Data& data_nascimento,const pair<Hora,Hora> horario_de_trabalho,const string &funcao, const string &categoria, const string &departamento)
+        :Funcionario(5000),nome(nome),data_nascimento(data_nascimento),horario_de_trabalho(horario_de_trabalho), categoria(categoria), funcao(funcao), departamento(departamento) {}
 
 
 const string &Funcionario_administrativos::getNome() const {
@@ -136,8 +136,8 @@ void Membro_tripulacao::print() {
 
 ostream& operator<<(ostream& os, const Aviao& a)
 {
-    os << "Modelo: " << a.tipo << endl;
-    os << "Capacidade: " << a.capacidade << endl;
+    os << "Modelo: " << a.getTipo() << endl;
+    os << "Capacidade: " << a.getCapacidade() << endl;
     os << "Voos:" << endl;
     int i = 0;
     for(Voo* voo : a.voos)

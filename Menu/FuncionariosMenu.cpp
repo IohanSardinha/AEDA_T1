@@ -235,13 +235,13 @@ void FuncionariosMenu::criarFuncionarioAdministrativo() {
     data_nascimentoA = stoi(splitted[2]);
     cout << "Categoria: ";
     cin >> categoria;
-    cout << "Hora que comeca o servico: ";
+    cout << "Hora que comeca o servico: (hh:mm:ss) ";
     cin >> in;
     splitted = split(in,":");
     horario_de_trabalhoH1 = stoi(splitted[0]);
     horario_de_trabalhoM1 = stoi(splitted[1]);
     horario_de_trabalhoS1 = stoi(splitted[2]);
-    cout << "Hora que acaba o servico: ";
+    cout << "Hora que acaba o servico: (hh:mm:ss) ";
     cin >> in;
     splitted = split(in,":");
     horario_de_trabalhoH2 = stoi(splitted[0]);
@@ -253,7 +253,7 @@ void FuncionariosMenu::criarFuncionarioAdministrativo() {
     cin >> departamento;
     Funcionario_administrativos* novoFuncionario = new Funcionario_administrativos(nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),
                                                                               pair<Hora,Hora>(Hora(horario_de_trabalhoH1,horario_de_trabalhoM1,horario_de_trabalhoS1),
-                                                                                              Hora(horario_de_trabalhoH2,horario_de_trabalhoM2,horario_de_trabalhoS2)),funcao,departamento);
+                                                                                              Hora(horario_de_trabalhoH2,horario_de_trabalhoM2,horario_de_trabalhoS2)), categoria, funcao,departamento);
     a->adicionarFuncionarioAdministrativo(novoFuncionario);
 }
 
@@ -303,10 +303,11 @@ void FuncionariosMenu::criarMembroTripulacao()
 
     Membro_tripulacao* novoFuncionario = new Membro_tripulacao(0,{},{});
     string in;
+    cin.ignore(1024, '\n');
     while (1)
     {
-        cout << "Destino voo o qual o funcionario vai trabalhar(0 para sair): ";
-        cin >> in;
+        cout << "Destino do voo o qual o funcionario vai trabalhar(0 para parar de adicionar): ";
+        getline(cin, in);
         if(in == "0")
         {
             break;
@@ -315,8 +316,8 @@ void FuncionariosMenu::criarMembroTripulacao()
         {
             if(voo->getDestino() == in)
             {
-                novoFuncionario->getVoos().push_back(voo);
-                novoFuncionario->getInfos().push_back(voo->getInfo());
+                novoFuncionario->adicionarVoo(voo);
+                novoFuncionario->adicionarInfo(voo->getInfo());
             }
         }
     }
@@ -717,9 +718,10 @@ void FuncionariosMenu::deletarMembroTripulacao(){
         a->getMembros().at(i)->print();
     }
     cout << "Qual o membro que deseja remover?: ";
-    int i,j;
-    Funcionario* funcionario = a->getMembros().at(i);
+    int i;
+    cin.ignore(1024,'\n');
     cin >> i;
+    Funcionario* funcionario = a->getMembros().at(i);
     a->removerMembro(a->getMembros().at(i));
 }
 

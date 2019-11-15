@@ -17,7 +17,7 @@ public:
         cancelado = canc;
     }
 
-    Voo *getVoo() const {
+    Voo* getVoo() const {
         return voo;
     }
 
@@ -52,9 +52,9 @@ public:
     friend ostream& operator<<(ostream& os, const Informacao& i)
     {
         os << "Voo:" << endl;
-        os << *i.voo << endl;
-        os << "Horario previsto: " << i.hora_prevista << endl;
-        os << "Horario real: " << i.hora_real << endl;
+        os << i.getVoo() << endl;
+        os << "Horario previsto: " << i.getHoraPrevista() << endl;
+        os << "Horario real: " << i.getHoraReal() << endl;
         os << (i.cancelado ? "Cancelado" : "A tempo") << endl;
         return os;
     }

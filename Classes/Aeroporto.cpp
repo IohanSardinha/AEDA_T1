@@ -67,12 +67,12 @@ void Aeroporto::removerFuncionario(Funcionario* f)
 
 void  Aeroporto::removerPiloto(Piloto* p)
 {
-    Membro_tripulacao* funcionario;
+    Piloto* funcionario;
     for(int i = 0; i < pilotos.size(); i++)
     {
         if(pilotos.at(i) == p)
         {
-            funcionario = membros.at(i);
+            funcionario = pilotos.at(i);
             pilotos.erase(pilotos.begin()+i);
             break;
         }
@@ -102,12 +102,10 @@ void  Aeroporto::removerAviao(Aviao* a)
 
 void  Aeroporto::removerMembro(Membro_tripulacao* m)
 {
-    Membro_tripulacao* funcionario;
     for(int i = 0; i < membros.size(); i++)
     {
         if(membros.at(i) == m)
         {
-            funcionario = membros.at(i);
             membros.erase(membros.begin()+i);
             break;
         }
@@ -117,10 +115,10 @@ void  Aeroporto::removerMembro(Membro_tripulacao* m)
         if(funcionarios.at(i) == m)
         {
             funcionarios.erase(funcionarios.begin()+i);
-            delete funcionario;
             break;
         }
     }
+    delete m;
 }
 
 void  Aeroporto::removerFuncionarioAdministrativo(Funcionario_administrativos* f)
