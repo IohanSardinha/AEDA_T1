@@ -15,7 +15,6 @@ public:
     Aeroporto* escolherAeroporto();
     void setAeroporto(Aeroporto* a){};
     void setAviao(Aviao* a){};
-
 };
 
 #endif //PROJECT1_MAINMENU_H

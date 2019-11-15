@@ -35,6 +35,7 @@ void MainMenu::CallMenu() {
         }
         case 4:
         {
+            save();
             cout << endl
             << "Trabalho de AEDA T1 - 2019" << endl
             << "Desenvolvido por:" << endl

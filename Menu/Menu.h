@@ -5,6 +5,9 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <fstream>
+#include<iomanip>
+#include <iostream>
 #include "../Classes/Aeroporto.h"
 #include "../Utils/sorts.h"
 
@@ -22,6 +25,8 @@ public:
     virtual void CallMenu() = 0;
     virtual void setAeroporto(Aeroporto* a) = 0;
     virtual void setAviao(Aviao* a) = 0;
+    void save();
+    void load();
 };
 
 #endif //PROJECT1_MENU_H

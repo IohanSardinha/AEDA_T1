@@ -36,6 +36,8 @@ public:
         this->custo_operacao = custo_operacao;
     }
 
+    vector<Funcionario*> getTripulacao() const{ return tripulacao;}
+
     void adicionarTripulacao(Funcionario* funcionario)
     {
         tripulacao.push_back(funcionario);

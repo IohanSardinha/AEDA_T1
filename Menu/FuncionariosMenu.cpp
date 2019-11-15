@@ -46,15 +46,19 @@ void FuncionariosMenu::CallMenu() {
                     {
                         criarMembroTripulacao();
                     }
+                    menus_to_call["TodosFuncionariosMenu"]->play();
                     break;
                 case ADMINISTRATIVO:
                     criarFuncionarioAdministrativo();
+                    menus_to_call["FuncionariosAdministrativosMenu"]->play();
                     break;
                 case PILOTO:
                     criarPiloto();
+                    menus_to_call["PilotosFuncionariosMenu"]->play();
                     break;
                 case MEMBRO_TRIPULACAO:
                     criarMembroTripulacao();
+                    menus_to_call["MembrosTripulacaoFuncionariosMenu"]->play();
                     break;
             }
             break;
@@ -68,31 +72,29 @@ void FuncionariosMenu::CallMenu() {
                     cin >> in;
                     if(in == "Administrativo")
                     {
-                        tipo = ADMINISTRATIVO;
                         deletarFuncionarioAdministrativo();
-                        tipo = TODOS;
                     }
                     else if(in == "Piloto")
                     {
-                        tipo = PILOTO;
                         deletarPiloto();
-                        tipo = TODOS;
                     }
                     else if(in == "Tripulacao")
                     {
-                        tipo = MEMBRO_TRIPULACAO;
                         deletarMembroTripulacao();
-                        tipo = TODOS;
                     }
+                    menus_to_call["TodosFuncionariosMenu"]->play();
                     break;
                 case ADMINISTRATIVO:
                     deletarFuncionarioAdministrativo();
+                    menus_to_call["FuncionariosAdministrativosMenu"]->play();
                     break;
                 case PILOTO:
                     deletarPiloto();
+                    menus_to_call["PilotosFuncionariosMenu"]->play();
                     break;
                 case MEMBRO_TRIPULACAO:
                     deletarMembroTripulacao();
+                    menus_to_call["MembrosTripulacaoFuncionariosMenu"]->play();
                     break;
             }
             break;
@@ -100,6 +102,21 @@ void FuncionariosMenu::CallMenu() {
         case 2:
         {
             listarFuncionarios();
+            switch (tipo)
+            {
+                case TODOS:
+                    menus_to_call["TodosFuncionariosMenu"]->play();
+                    break;
+                case PILOTO:
+                    menus_to_call["PilotosFuncionariosMenu"]->play();
+                    break;
+                case MEMBRO_TRIPULACAO:
+                    menus_to_call["MembrosTripulacaoFuncionariosMenu"]->play();
+                    break;
+                case ADMINISTRATIVO:
+                    menus_to_call["FuncionariosAdministrativosMenu"]->play();
+                    break;
+            }
             break;
         }
         case 3:
@@ -111,31 +128,29 @@ void FuncionariosMenu::CallMenu() {
                     cin >> in;
                     if(in == "Administrativo")
                     {
-                        tipo = ADMINISTRATIVO;
                         editarFuncionarioAdministrativo();
-                        tipo = TODOS;
                     }
                     else if(in == "Piloto")
                     {
-                        tipo = PILOTO;
                         editarPiloto();
-                        tipo = TODOS;
                     }
                     else if(in == "Tripulacao")
                     {
-                        tipo = MEMBRO_TRIPULACAO;
                         editarMembroTripulacao();
-                        tipo = TODOS;
                     }
+                    menus_to_call["TodosFuncionariosMenu"]->play();
                     break;
                 case ADMINISTRATIVO:
                     editarFuncionarioAdministrativo();
+                    menus_to_call["FuncionariosAdministrativosMenu"]->play();
                     break;
                 case PILOTO:
                     editarPiloto();
+                    menus_to_call["PilotosFuncionariosMenu"]->play();
                     break;
                 case MEMBRO_TRIPULACAO:
                     editarMembroTripulacao();
+                    menus_to_call["MembrosTripulacaoFuncionariosMenu"]->play();
                     break;
             }
             break;
@@ -241,8 +256,6 @@ void FuncionariosMenu::criarFuncionarioAdministrativo() {
                                                                                               Hora(horario_de_trabalhoH2,horario_de_trabalhoM2,horario_de_trabalhoS2)),funcao,departamento);
     a->adicionarFuncionario(&novoFuncionario);
     a->adicionarFuncionarioAdministrativo(&novoFuncionario);
-
-    editarFuncionarioAdministrativo();
 }
 
 void FuncionariosMenu::criarPiloto() {
@@ -261,12 +274,10 @@ void FuncionariosMenu::criarPiloto() {
     data_nascimentoA = stoi(splitted[2]);
     cout << "Categoria: ";
     cin >> categoria;
-    cout << "OBS: para adicionar voos e informacoes de voos ao piloto va para editar pilotos" << endl;
+    cout << "OBS: para adicionar voos e avioes de voos ao piloto va para editar pilotos" << endl;
     Piloto novoFuncionario = Piloto(0,nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),categoria,{},{});
     a->adicionarFuncionario(&novoFuncionario);
     a->adicionarPiloto(&novoFuncionario);
-
-    editarPiloto();
 }
 
 void FuncionariosMenu::criarMembroTripulacao()
@@ -314,8 +325,6 @@ void FuncionariosMenu::criarMembroTripulacao()
 
     a->adicionarFuncionario(&novoFuncionario);
     a->adicionarMembro(&novoFuncionario);
-
-    editarMembroTripulacao();
 }
 
 void FuncionariosMenu::editarFuncionarioAdministrativo() {
@@ -399,7 +408,6 @@ void FuncionariosMenu::editarFuncionarioAdministrativo() {
         }
         cout << "Entrada invalida" << endl;
     }
-    menus_to_call["AcessarAeroportoMenu"]->play();
 }
 
 void FuncionariosMenu::editarPiloto() {
@@ -782,7 +790,6 @@ void FuncionariosMenu::listarFuncionarios() {
             }
             break;
     }
-    menus_to_call["AcessarAeroportoMenu"]->play();
 }
 
 void FuncionariosMenu::setAeroporto(Aeroporto* a)
