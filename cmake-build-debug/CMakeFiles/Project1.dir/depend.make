@@ -133,7 +133,9 @@ CMakeFiles/Project1.dir/Utils/split.cpp.obj: ../Utils/split.cpp
 CMakeFiles/Project1.dir/Utils/split.cpp.obj: ../Utils/split.h
 
 CMakeFiles/Project1.dir/main.cpp.obj: ../Classes/Aeroporto.h
+CMakeFiles/Project1.dir/main.cpp.obj: ../Classes/Aviao.h
 CMakeFiles/Project1.dir/main.cpp.obj: ../Classes/Funcionario.h
+CMakeFiles/Project1.dir/main.cpp.obj: ../Classes/Informacao.h
 CMakeFiles/Project1.dir/main.cpp.obj: ../Classes/Voo.h
 CMakeFiles/Project1.dir/main.cpp.obj: ../Menu/AcessarAeroportoMenu.h
 CMakeFiles/Project1.dir/main.cpp.obj: ../Menu/AviaoMenu.h
