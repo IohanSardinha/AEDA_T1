@@ -9,11 +9,16 @@ class GPS{
     float latitude,
             longitude;
 public:
+    ///implementacao do construtor
     GPS()
     {
         latitude = 0;
         longitude = 0;
     }
+
+    ///implementacao do construtor com parametros
+    ///@param lat
+    ///@param longi
     GPS(float lat, float longi)
     {
         if(lat > 90 || lat < -90)
@@ -28,10 +33,14 @@ public:
         this->latitude = lat;
         this->longitude = longi;
     }
+
+    ///getter da latitude
     float getLatitude() const {
         return latitude;
     }
 
+    ///setter da latitude
+    ///@param latitude
     void setLatitude(float latitude) {
         if(latitude > 90 || latitude < -90)
         {
@@ -40,10 +49,13 @@ public:
         GPS::latitude = latitude;
     }
 
+    ///getter da longitude
     float getLongitude() const {
         return longitude;
     }
 
+    ///setter de longitude
+    ///@param longitude
     void setLongitude(float longitude) {
         if(longitude > 180 || longitude < -180)
         {
@@ -52,6 +64,9 @@ public:
         GPS::longitude = longitude;
     }
 
+    ///implementcao do operator <<
+    ///@param os
+    ///@param gps
     friend ostream& operator<<(ostream& os, const GPS& gps){
         os << "(" << gps.latitude << ", " << gps.longitude << ")";
         return os;

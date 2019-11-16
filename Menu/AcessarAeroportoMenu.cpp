@@ -153,8 +153,24 @@ void AcessarAeroportoMenu::alterarLocalizacao() {
     {
         cout << "Qual a latitude da nova localizacao: ";
         cin >> latitude;
+        while (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(1000,'\n');
+            cout << "Latitude tem que ser um float." << endl;
+            cout << "Insira a nova latitude: ";
+            cin >> latitude;
+        }
         cout << "Qual a longitude da nova localizacao: ";
         cin >> longitude;
+        while (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(1000,'\n');
+            cout << "Longitude tem que ser um float." << endl;
+            cout << "Insira a nova Longitude: ";
+            cin >> longitude;
+        }
         try
         {
             GPS gps(latitude, longitude);
