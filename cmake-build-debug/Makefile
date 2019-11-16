@@ -122,6 +122,19 @@ Project1/fast:
 	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/build
 .PHONY : Project1/fast
 
+#=============================================================================
+# Target rules for targets named Doxygen
+
+# Build rule for target.
+Doxygen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 Doxygen
+.PHONY : Doxygen
+
+# fast build rule for target.
+Doxygen/fast:
+	$(MAKE) -f CMakeFiles\Doxygen.dir\build.make CMakeFiles/Doxygen.dir/build
+.PHONY : Doxygen/fast
+
 Classes/Aeroporto.obj: Classes/Aeroporto.cpp.obj
 
 .PHONY : Classes/Aeroporto.obj
@@ -481,6 +494,7 @@ help:
 	@echo ... depend
 	@echo ... rebuild_cache
 	@echo ... Project1
+	@echo ... Doxygen
 	@echo ... edit_cache
 	@echo ... Classes/Aeroporto.obj
 	@echo ... Classes/Aeroporto.i
