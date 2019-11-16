@@ -6,6 +6,7 @@
 #include "split.h"
 #include "GPS.h"
 
+///Localizacao
 class Localizacao{
     string pais;
     string cidade;

@@ -11,6 +11,7 @@ enum tipos_funcionarios
     MEMBRO_TRIPULACAO
 };
 
+///Menu com o CRUD dos Funcionario de um aerporto especifico
 class FuncionariosMenu:public Menu{
     enum tipos_funcionarios tipo;
     Aeroporto* a;

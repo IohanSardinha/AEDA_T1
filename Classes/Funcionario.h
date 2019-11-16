@@ -13,6 +13,7 @@ using namespace std;
 
 class Aviao;
 
+///Classe abstrata funcionario de aeroporto
 class Funcionario{
 protected:
     int salario;
@@ -32,6 +33,7 @@ public:
     virtual void print() = 0;
 };
 
+///Funcionario Administrativo de Aerporto
 class Funcionario_administrativos :public Funcionario{
     string nome;
     Data data_nascimento;
@@ -96,6 +98,7 @@ public:
     void setHorarioDeTrabalho(const pair<Hora,Hora> &horario_de_trabalho);
 };
 
+///Membro de tripulacao de aerporto
 class Membro_tripulacao :public Funcionario{
     vector<Voo*> voos_alocados;
     vector<Informacao*> info_voos;
@@ -123,6 +126,7 @@ public:
     void adicionarInfo(Informacao* i){info_voos.push_back(i);}
 };
 
+///Piloto de aerporto
 class Piloto :public Funcionario{
     string nome;
     Data data_nascimento;

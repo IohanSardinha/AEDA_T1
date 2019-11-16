@@ -7,6 +7,7 @@
 
 class Informacao;
 
+///Voo
 class Voo{
     Data data;
     Hora hora;

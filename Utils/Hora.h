@@ -5,6 +5,7 @@
 
 using namespace std;
 
+///Hora
 class Hora{
     int hora,
             minuto,

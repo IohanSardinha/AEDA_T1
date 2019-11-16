@@ -34,6 +34,7 @@ void FuncionariosMenu::CallMenu() {
             switch (tipo)
             {
                 case TODOS:
+                    cin.ignore(1024,'\n');
                     cout << "Tipo de funcionario(Administrativo, Piloto, Tripulacao): ";
                     getline(cin,in);
                     if(lower(in) == "administrativo")

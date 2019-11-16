@@ -5,6 +5,7 @@
 
 using namespace std;
 
+///GPS
 class GPS{
     float latitude,
             longitude;
