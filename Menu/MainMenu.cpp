@@ -93,23 +93,6 @@ Aeroporto* MainMenu::escolherAeroporto()
     return NULL;
 }
 
-Localizacao* MainMenu::inserirLocalizacao()
-{
-    string pais, cidade;
-    float latitude, longitude;
-    cout << "Qual o país da nova localizacao: " << endl;
-    getline(cin,pais);
-    cout << "Qual a cidade da nova localizacao: " << endl;
-    getline(cin,cidade);
-    cout << "Qual a latitude da nova localizacao: " << endl;
-    cin >> latitude;
-    cout << "Qual a nova longitude da nova localizacao: " << endl;
-    cin >> longitude;
-    GPS gps(latitude, longitude);
-    Localizacao* localizacao = new Localizacao(pais, cidade, gps);
-    return localizacao;
-}
-
 void MainMenu::criarAeroporto() {
     //Localizacao
     string cidade, pais;
