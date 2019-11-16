@@ -10,6 +10,7 @@
 #include <iostream>
 #include "../Classes/Aeroporto.h"
 #include "../Utils/sorts.h"
+#include "../Utils/lower.h"
 
 using namespace std;
 

@@ -110,7 +110,7 @@ void VooMenu::criarVoo() {
 
     cout << "O voo foi cancelado: (sim/nao)" << endl;
     getline(cin,resp);
-    if (resp == "sim")
+    if (lower(resp) == "sim")
         cancelado = true;
     else
         cancelado = false;
@@ -138,7 +138,7 @@ Voo* VooMenu::escolherVoo() {
                 getline(cin, destino);
 
                 for (int i = 0; i < a->getVoos().size(); i++) {
-                    if (a->getVoos().at(i)->getDestino() == destino)
+                    if (lower(a->getVoos().at(i)->getDestino()) == lower(destino))
                         return a->getVoos().at(i);
 
                 }
@@ -151,8 +151,7 @@ Voo* VooMenu::escolherVoo() {
                 ano = stoi(data.substr(data.find_last_of("/") + 1, -1));
                 Data data_c(dia, mes, ano);
                 for (int i = 0; i < a->getVoos().size(); i++) {
-                    if (a->getVoos().at(i)->getData().getDia() == dia &&
-                        a->getVoos().at(i)->getData().getMes() == mes && a->getVoos().at(i)->getData().getAno() == ano)
+                    if (a->getVoos().at(i)->getData().getDia() == dia && a->getVoos().at(i)->getData().getMes() == mes && a->getVoos().at(i)->getData().getAno() == ano)
                         return a->getVoos().at(i);
 
                 }
@@ -222,7 +221,7 @@ void VooMenu::alterarEstado() {
     string booleano;
     cout << "O voo foi cancelado? (sim/nao)" << endl;
     getline(cin,booleano);
-    if (booleano == "sim")
+    if (lower(booleano) == "sim")
         voo->getInfo()->setCancelado(true);
     else
         voo->getInfo()->setCancelado(false);

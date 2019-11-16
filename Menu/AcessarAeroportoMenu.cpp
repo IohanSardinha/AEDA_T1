@@ -12,7 +12,7 @@ void AcessarAeroportoMenu::alterarGerente() {
     cout << "Novo gerente sera que tipo de funcionario(Administrativo, Piloto, Membro tripulacao):";
     cin.ignore(1024,'\n');
     getline(cin,inp);
-    if(inp == "Administrativo")
+    if(lower(inp) == "administrativo")
     {
         while(1)
         {
@@ -21,7 +21,7 @@ void AcessarAeroportoMenu::alterarGerente() {
             bool found = false;
             for(Funcionario_administrativos* funcionario : aeroporto->getFuncionariosAdministrativos())
             {
-                if(funcionario->getNome() == inp)
+                if(lower(funcionario->getNome()) == lower(inp))
                 {
                     aeroporto->setGerente(funcionario);
                     found = true;
@@ -33,7 +33,7 @@ void AcessarAeroportoMenu::alterarGerente() {
             cout << "Nome inserido nao corresponde a nenhum funcionario" << endl;
         }
     }
-    else if(inp == "Piloto")
+    else if(lower(inp) == "piloto")
     {
         while(1)
         {
@@ -42,7 +42,7 @@ void AcessarAeroportoMenu::alterarGerente() {
             bool found = false;
             for(Piloto* funcionario : aeroporto->getPilotos())
             {
-                if(funcionario->getNome() == inp)
+                if(lower(funcionario->getNome()) == lower(inp))
                 {
                     aeroporto->setGerente(funcionario);
                     found = true;
@@ -66,7 +66,7 @@ void AcessarAeroportoMenu::alterarGerente() {
                 bool b = false;
                 for(Voo* voo: funcionario->getVoos())
                 {
-                    if(voo->getDestino() == inp)
+                    if(lower(voo->getDestino()) == lower(inp))
                     {
                         aeroporto->setGerente(funcionario);
                         found = true;

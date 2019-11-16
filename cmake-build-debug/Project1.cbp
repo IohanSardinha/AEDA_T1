@@ -155,6 +155,12 @@
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/Localizacao.h">
 			<Option target="Project1"/>
 		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/lower.cpp">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/lower.h">
+			<Option target="Project1"/>
+		</Unit>
 		<Unit filename="C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Utils/sorts.cpp">
 			<Option target="Project1"/>
 		</Unit>

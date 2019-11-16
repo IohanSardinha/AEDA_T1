@@ -125,7 +125,7 @@ Voo* AviaoMenu::criarVoo() {
 
     cout << "O voo foi cancelado: (sim/nao)" << endl;
     getline(cin,resp);
-    if (resp == "sim")
+    if (lower(resp) == "sim")
         cancelado = true;
     else
         cancelado = false;
@@ -166,7 +166,7 @@ Membro_tripulacao* AviaoMenu::criarMembroTripulacao(vector<Voo*> voos)
     getline(cin,in);
     for(Voo* voo: voos)
     {
-        if(voo->getDestino() == in)
+        if(lower(voo->getDestino()) == lower(in))
         {
             novoFuncionario->adicionarVoo(voo);
             novoFuncionario->adicionarInfo(voo->getInfo());
@@ -191,7 +191,7 @@ Aviao* AviaoMenu::escolherAviao()
                 cin.ignore(1024, '\n');
                 getline(cin, tipo);
                 for (int j = 0; j < aeroporto->getAvioes().size(); j++) {
-                    if (aeroporto->getAvioes().at(j)->getTipo() == tipo)
+                    if (lower(aeroporto->getAvioes().at(j)->getTipo()) == lower(tipo))
                         return aeroporto->getAvioes().at(j);
                 }
                 break;

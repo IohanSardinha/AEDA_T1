@@ -65,7 +65,7 @@ void MainMenu::deletarAeroporto()
         cout << "Cidade do aeroporto: ";
         getline(cin, c);
         for (int i = 0; i < aeroportos.size(); i++) {
-            if (aeroportos.at(i)->getLocalizacao().getPais() == p &aeroportos.at(i)->getLocalizacao().getCidade() == c)
+            if (lower(aeroportos.at(i)->getLocalizacao().getPais()) == lower(p) && lower(aeroportos.at(i)->getLocalizacao().getCidade()) == lower(c))
             {
                 aeroportos.erase(aeroportos.begin()+i);
                 return;
@@ -84,8 +84,7 @@ Aeroporto* MainMenu::escolherAeroporto()
     cout << "Cidade do aeroporto: ";
     getline(cin, c);
     for (int i = 0; i < aeroportos.size(); i++) {
-        if (aeroportos.at(i)->getLocalizacao().getPais() == p &&
-            aeroportos.at(i)->getLocalizacao().getCidade() == c) {
+        if (lower(aeroportos.at(i)->getLocalizacao().getPais()) == lower(p) && lower(aeroportos.at(i)->getLocalizacao().getCidade()) == lower(c)) {
             return aeroportos.at(i);
         }
     }

@@ -365,6 +365,33 @@ Menu/VooMenu.cpp.s:
 	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Menu/VooMenu.cpp.s
 .PHONY : Menu/VooMenu.cpp.s
 
+Utils/lower.obj: Utils/lower.cpp.obj
+
+.PHONY : Utils/lower.obj
+
+# target to build an object file
+Utils/lower.cpp.obj:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Utils/lower.cpp.obj
+.PHONY : Utils/lower.cpp.obj
+
+Utils/lower.i: Utils/lower.cpp.i
+
+.PHONY : Utils/lower.i
+
+# target to preprocess a source file
+Utils/lower.cpp.i:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Utils/lower.cpp.i
+.PHONY : Utils/lower.cpp.i
+
+Utils/lower.s: Utils/lower.cpp.s
+
+.PHONY : Utils/lower.s
+
+# target to generate assembly for a file
+Utils/lower.cpp.s:
+	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Utils/lower.cpp.s
+.PHONY : Utils/lower.cpp.s
+
 Utils/sorts.obj: Utils/sorts.cpp.obj
 
 .PHONY : Utils/sorts.obj
@@ -482,6 +509,9 @@ help:
 	@echo ... Menu/VooMenu.obj
 	@echo ... Menu/VooMenu.i
 	@echo ... Menu/VooMenu.s
+	@echo ... Utils/lower.obj
+	@echo ... Utils/lower.i
+	@echo ... Utils/lower.s
 	@echo ... Utils/sorts.obj
 	@echo ... Utils/sorts.i
 	@echo ... Utils/sorts.s

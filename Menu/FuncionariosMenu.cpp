@@ -36,15 +36,15 @@ void FuncionariosMenu::CallMenu() {
                 case TODOS:
                     cout << "Tipo de funcionario(Administrativo, Piloto, Tripulacao): ";
                     getline(cin,in);
-                    if(in == "Administrativo")
+                    if(lower(in) == "administrativo")
                     {
                         criarFuncionarioAdministrativo();
                     }
-                    else if(in == "Piloto")
+                    else if(lower(in) == "piloto")
                     {
                         criarPiloto();
                     }
-                    else if(in == "Tripulacao")
+                    else if(lower(in) == "tripulacao")
                     {
                         criarMembroTripulacao();
                     }
@@ -72,15 +72,15 @@ void FuncionariosMenu::CallMenu() {
                 case TODOS:
                     cout << "Tipo de funcionario(Administrativo, Piloto, Tripulacao): ";
                     getline(cin,in);
-                    if(in == "Administrativo")
+                    if(lower(in) == "administrativo")
                     {
                         deletarFuncionarioAdministrativo();
                     }
-                    else if(in == "Piloto")
+                    else if(lower(in) == "piloto")
                     {
                         deletarPiloto();
                     }
-                    else if(in == "Tripulacao")
+                    else if(lower(in) == "tripulacao")
                     {
                         deletarMembroTripulacao();
                     }
@@ -128,15 +128,15 @@ void FuncionariosMenu::CallMenu() {
                 case TODOS:
                     cout << "Tipo de funcionario(Administrativo, Piloto, Tripulacao): ";
                     getline(cin,in);
-                    if(in == "Administrativo")
+                    if(lower(in) == "administrativo")
                     {
                         editarFuncionarioAdministrativo();
                     }
-                    else if(in == "Piloto")
+                    else if(lower(in) == "piloto")
                     {
                         editarPiloto();
                     }
-                    else if(in == "Tripulacao")
+                    else if(lower(in) == "tripulacao")
                     {
                         editarMembroTripulacao();
                     }
@@ -174,7 +174,7 @@ Funcionario_administrativos* FuncionariosMenu::acharFuncionarioAdministrativo() 
         getline(cin,in);
         for (Funcionario_administrativos* funcionario: a->getFuncionariosAdministrativos())
         {Funcionario* inserirFuncionario();
-            if (funcionario->getNome() == in)
+            if (lower(funcionario->getNome()) == lower(in))
             {
                 return funcionario;
             }
@@ -191,7 +191,7 @@ Piloto* FuncionariosMenu::acharPiloto() {
         cout << "Nome do funcionario: ";
         getline(cin,in);
         for (Piloto* funcionario: a->getPilotos()) {
-            if (funcionario->getNome() == in) {
+            if (lower(funcionario->getNome()) == lower(in)) {
                 return funcionario;
             }
         }
@@ -210,7 +210,7 @@ Membro_tripulacao* FuncionariosMenu::acharMembroTripulacao(){
         {
             for(Voo* voo: funcionario->getVoos())
             {
-                if(voo->getDestino() == in)
+                if(lower(voo->getDestino()) == lower(in))
                 {
                     return funcionario;
                 }
@@ -321,7 +321,7 @@ void FuncionariosMenu::criarMembroTripulacao()
         }
         for(Voo* voo: voos)
         {
-            if(voo->getDestino() == in)
+            if(lower(voo->getDestino()) == lower(in))
             {
                 novoFuncionario->adicionarVoo(voo);
                 novoFuncionario->adicionarInfo(voo->getInfo());
@@ -500,7 +500,7 @@ void FuncionariosMenu::editarPiloto() {
                 getline(cin,destino);
                 for(Voo* voo : voos)
                 {
-                    if(destino == voo->getDestino())
+                    if(lower(destino) == lower(voo->getDestino()))
                     {
                         bool add = true;
                         for(Voo* v: funcionario->getVoos())
@@ -525,7 +525,7 @@ void FuncionariosMenu::editarPiloto() {
                 getline(cin,modelo);;
                 for(Aviao* aviao: a->getAvioes())
                 {
-                    if(modelo ==aviao->getTipo())
+                    if(lower(modelo) == lower(aviao->getTipo()))
                     {
                         bool add = true;
                         for(Aviao* av: funcionario->getAvioes())
@@ -551,7 +551,7 @@ void FuncionariosMenu::editarPiloto() {
                 bool found = false;
                 for(int i = 0; i < funcionario->getVoos().size(); i++)
                 {
-                    if(funcionario->getVoos().at(i)->getDestino() == destino)
+                    if(lower(funcionario->getVoos().at(i)->getDestino()) == lower(destino))
                     {
                         funcionario->getVoos().erase(funcionario->getVoos().begin()+i);
                         found = true;
@@ -570,7 +570,7 @@ void FuncionariosMenu::editarPiloto() {
                 bool found = false;
                 for(int i = 0; i < funcionario->getAvioes().size(); i++)
                 {
-                    if(funcionario->getAvioes().at(i)->getTipo() == modelo)
+                    if(lower(funcionario->getAvioes().at(i)->getTipo()) == lower(modelo))
                     {
                         funcionario->getAvioes().erase(funcionario->getAvioes().begin()+i);
                         found = true;
@@ -637,7 +637,7 @@ void FuncionariosMenu::editarMembroTripulacao(){
                 getline(cin,destino);
                 for(Voo* voo : voos)
                 {
-                    if(destino == voo->getDestino())
+                    if(lower(destino) == lower(voo->getDestino()))
                     {
                         bool add = true;
                         for(Voo* v: funcionario->getVoos())
@@ -663,7 +663,7 @@ void FuncionariosMenu::editarMembroTripulacao(){
                 bool found = false;
                 for(int i = 0; i < funcionario->getVoos().size(); i++)
                 {
-                    if(funcionario->getVoos().at(i)->getDestino() == destino)
+                    if(lower(funcionario->getVoos().at(i)->getDestino()) == lower(destino))
                     {
                         funcionario->getVoos().erase(funcionario->getVoos().begin()+i);
                         found = true;
@@ -696,7 +696,7 @@ void FuncionariosMenu::deletarFuncionarioAdministrativo() {
     getline(cin,nome);
     for(Funcionario_administrativos* funcionario: a->getFuncionariosAdministrativos())
     {
-        if(funcionario->getNome() == nome)
+        if(lower(funcionario->getNome()) == lower(nome))
         {
             a->removerFuncionarioAdministrativo(funcionario);
         }
@@ -709,7 +709,7 @@ void FuncionariosMenu::deletarPiloto(){
     getline(cin,nome);
     for(Piloto* funcionario: a->getPilotos())
     {
-        if(funcionario->getNome() == nome)
+        if(lower(funcionario->getNome()) == lower(nome))
         {
             a->removerPiloto(funcionario);
         }
