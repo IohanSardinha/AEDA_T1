@@ -110,21 +110,33 @@ Localizacao* MainMenu::inserirLocalizacao()
     return localizacao;
 }
 
-void MainMenu::criarAeroporto()
-{
+void MainMenu::criarAeroporto() {
     //Localizacao
-    string cidade,pais;
+    string cidade, pais;
     cout << "Pais do novo aeroporto: ";
-    cin.ignore(1024,'\n');
-    getline(cin,pais);
+    cin.ignore(1024, '\n');
+    getline(cin, pais);
     cout << "Cidade do novo aeroporto: ";
-    getline(cin,cidade);
-        //GPS
-        float lat,lang;
+    getline(cin, cidade);
+
+    //GPS
+    float lat, lang;
+    while(1)
+    {
         cout << "Latitude do novo aeroporto: ";
         cin >> lat;
         cout << "Longitude do novo aeroporto: ";
         cin >> lang;
+        try
+        {
+            Localizacao localizacao(pais,cidade,GPS(lat,lang));
+            break;
+        }
+        catch (runtime_error r)
+        {
+            cout << "latitude e longitude precisam ser float entre -90 e 90" << endl;
+        }
+    }
 
     Localizacao localizacao(pais,cidade,GPS(lat,lang));
     aeroportos.push_back(new Aeroporto(NULL,localizacao,{},{},{},{},{}));

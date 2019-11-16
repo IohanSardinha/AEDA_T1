@@ -10,7 +10,7 @@ class Aviao{
     int capacidade;
     //Escalonamento
     vector<Voo*> voos;
-    vector<Funcionario*> tripulacao; //2 pilotos e 2 membros de cabine, talvez valha mais criar a classe tripulacao
+    vector<Funcionario*> tripulacao; //2 pilotos e 2 membros de cabine
     int custo_operacao;
 public:
     Aviao(string tipo, int capacidade, vector<Voo*> voos, vector<Funcionario*> funcionarios, int custo_operacao)

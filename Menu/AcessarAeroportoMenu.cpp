@@ -12,6 +12,11 @@ void AcessarAeroportoMenu::alterarGerente() {
     cout << "Novo gerente sera que tipo de funcionario(Administrativo, Piloto, Membro tripulacao):";
     cin.ignore(1024,'\n');
     getline(cin,inp);
+    while(lower(inp) != "administrativo" && lower(inp) != "piloto" && lower(inp) != "membro tripulacao")
+    {
+        cout << "O tipo de funcionario so pode ser Administrativo, piloto ou mebro tripulacao. Diga um dos tres." << endl;
+        getline(cin, inp);
+    }
     if(lower(inp) == "administrativo")
     {
         while(1)
@@ -142,12 +147,25 @@ void AcessarAeroportoMenu::alterarLocalizacao() {
     cin.ignore(1024, '\n');
     cout << "Qual o pais da nova localizacao: ";
     getline(cin, pais);
-    cout << "Qual a cidade da nova localizacao: " << endl;
+    cout << "Qual a cidade da nova localizacao: ";
     getline(cin, cidade);
-    cout << "Qual a latitude da nova localizacao: " << endl;
-    cin >> latitude;
-    cout << "Qual a nova longitude da nova localizacao: " << endl;
-    cin >> longitude;
+    while(1)
+    {
+        cout << "Qual a latitude da nova localizacao: ";
+        cin >> latitude;
+        cout << "Qual a longitude da nova localizacao: ";
+        cin >> longitude;
+        try
+        {
+            GPS gps(latitude, longitude);
+            break;
+        }
+        catch (runtime_error r)
+        {
+            cout << "Latitude e longitude precisam estar entre -90 e 90" << endl;
+        }
+    }
+
     GPS gps(latitude, longitude);
     aeroporto->setLocalizacao(pais, cidade, gps);
     menus_to_call["AcessarAeroportoMenu"]->play();

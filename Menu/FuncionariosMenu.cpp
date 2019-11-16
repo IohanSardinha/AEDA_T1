@@ -26,7 +26,7 @@ FuncionariosMenu::FuncionariosMenu(enum tipos_funcionarios t) {
 
 void FuncionariosMenu::CallMenu() {
     string in;
-    cin.ignore(1024,'\n');
+    //cin.ignore(1024,'\n');
     switch(input)
     {
         case 0:
@@ -351,6 +351,7 @@ void FuncionariosMenu::editarFuncionarioAdministrativo() {
             case 0:{
                 string nome;
                 cout << "Digite o novo nome: ";
+                cin.ignore(1024, '\n');
                 getline(cin,nome);
                 funcionario->setNome(nome);
                 continue;
@@ -359,6 +360,8 @@ void FuncionariosMenu::editarFuncionarioAdministrativo() {
                 string inp;
                 int data_nascimentoD,data_nascimentoM,data_nascimentoA;
                 cout << "Digite a nova data de nascimento(DD/MM/AAAA): ";
+                cin.ignore(1024, '\n');
+                cin >> inp;
                 vector<string> splitted = split(inp,"/");
                 data_nascimentoD = stoi(splitted[0]);
                 data_nascimentoM = stoi(splitted[1]);
@@ -369,6 +372,7 @@ void FuncionariosMenu::editarFuncionarioAdministrativo() {
             case 2: {
                 string cat;
                 cout << "Digite a nova categoria: ";
+                cin.ignore(1024, '\n');
                 getline(cin,cat);
                 funcionario->setCategoria(cat);
                 continue;
@@ -379,6 +383,7 @@ void FuncionariosMenu::editarFuncionarioAdministrativo() {
                 int horario_de_trabalhoH1,horario_de_trabalhoM1,horario_de_trabalhoS1;
                 int horario_de_trabalhoH2,horario_de_trabalhoM2,horario_de_trabalhoS2;
                 cout << "Nova hora que comeca o servico: ";
+                cin.ignore(1024, '\n');
                 getline(cin,in);
                 vector<string> splitted = split(in,":");
                 horario_de_trabalhoH1 = stoi(splitted[0]);
@@ -397,6 +402,7 @@ void FuncionariosMenu::editarFuncionarioAdministrativo() {
             case 4: {
                 string funcao;
                 cout << "Nova funcao: ";
+                cin.ignore(1024, '\n');
                 getline(cin,funcao);
                 funcionario->setFuncao(funcao);
                 continue;
@@ -404,6 +410,7 @@ void FuncionariosMenu::editarFuncionarioAdministrativo() {
             case 5: {
                 string departamento;
                 cout << "Novo departamento: ";
+                cin.ignore(1024, '\n');
                 getline(cin,departamento);
                 funcionario->setDepartamento(departamento);
                 continue;
@@ -437,6 +444,7 @@ void FuncionariosMenu::editarPiloto() {
             case 0:{
                 string nome;
                 cout << "Digite o novo nome: ";
+                cin.ignore(1024, '\n');
                 getline(cin,nome);
                 funcionario->setNome(nome);
                 continue;
@@ -445,6 +453,7 @@ void FuncionariosMenu::editarPiloto() {
                 string inp;
                 int data_nascimentoD,data_nascimentoM,data_nascimentoA;
                 cout << "Digite a nova data de nascimento(DD/MM/AAAA): ";
+                cin >> inp;
                 vector<string> splitted = split(inp,"/");
                 data_nascimentoD = stoi(splitted[0]);
                 data_nascimentoM = stoi(splitted[1]);
@@ -455,6 +464,7 @@ void FuncionariosMenu::editarPiloto() {
             case 2: {
                 string cat;
                 cout << "Digite a nova categoria: ";
+                cin.ignore(1024, '\n');
                 getline(cin,cat);
                 funcionario->setCategoria(cat);
                 continue;
@@ -463,6 +473,7 @@ void FuncionariosMenu::editarPiloto() {
             {
                 for(Voo* voo: funcionario->getVoos())
                 {
+
                     cout << *voo;
                 }
                 continue;
@@ -496,6 +507,7 @@ void FuncionariosMenu::editarPiloto() {
                     }
                 }
                 string destino;
+                cin.ignore(1024, '\n');
                 cout << "Digite o destino do voo que quer adicionar: ";
                 getline(cin,destino);
                 for(Voo* voo : voos)
@@ -522,6 +534,7 @@ void FuncionariosMenu::editarPiloto() {
             case 6: {
                 string modelo;
                 cout << "Digite o modelo do aviao: ";
+                cin.ignore(1023, '\n');
                 getline(cin,modelo);;
                 for(Aviao* aviao: a->getAvioes())
                 {
@@ -547,6 +560,7 @@ void FuncionariosMenu::editarPiloto() {
             case 7: {
                 string destino;
                 cout << "Digite o destino do voo que quer remover: ";
+                cin.ignore(1024, '\n');
                 getline(cin,destino);
                 bool found = false;
                 for(int i = 0; i < funcionario->getVoos().size(); i++)
@@ -566,6 +580,7 @@ void FuncionariosMenu::editarPiloto() {
             case 8: {
                 string modelo;
                 cout << "Digite o modelo do aviao que quer remover: ";
+                cin.ignore(1024, '\n');
                 getline(cin,modelo);
                 bool found = false;
                 for(int i = 0; i < funcionario->getAvioes().size(); i++)
@@ -634,6 +649,7 @@ void FuncionariosMenu::editarMembroTripulacao(){
                 }
                 string destino;
                 cout << "Digite o destino do voo que quer adicionar: ";
+                cin.ignore(1024, '\n');
                 getline(cin,destino);
                 for(Voo* voo : voos)
                 {
@@ -659,6 +675,7 @@ void FuncionariosMenu::editarMembroTripulacao(){
             case 2: {
                 string destino;
                 cout << "Digite o destino do voo que quer remover: ";
+                cin.ignore(1024, '\n');
                 getline(cin,destino);
                 bool found = false;
                 for(int i = 0; i < funcionario->getVoos().size(); i++)
