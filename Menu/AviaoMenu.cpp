@@ -49,27 +49,43 @@ void AviaoMenu::criarAviao() {
     int capacidade, v, f, custo;
     vector<Voo*> voo;
     vector<Funcionario*> funcionario;
-    cout << "Qual o tipo do aviao: " << endl;
+    cout << "Qual o tipo do aviao: ";
     cin.ignore(1024, '\n');
+
     getline(cin, tipo);
-    cout << "Qual a capacidade do aviao: " << endl;
+    cout << "Qual a capacidade do aviao: ";
     cin >> capacidade;
-    cout << "Quantos voos deseja adicionar? " << endl;
+    cout << "Quantos voos deseja adicionar? ";
     cin >> v;
-    for (; v > 0; v--)
+    for (; v > 0; v--) {
+        cin.ignore(1024, '\n');
         voo.push_back(criarVoo());
-    cout << "Quantos funcionarios deseja criar? " << endl;
-    cin >> f;
-    for (; f> 0;f--)
-    {
-        Membro_tripulacao* membroTripulacao = criarMembroTripulacao(voo);
-        funcionario.push_back(membroTripulacao);
-        aeroporto->adicionarMembro(membroTripulacao);
     }
-    cout << "Qual o custo da operacao: " << endl;
+    cout << "Um voo precisa ter 2 pilotos e 2 membros tripulacao." << endl << "Diga as informacoes do novo piloto: " << endl;
+    //cin.ignore(1024, '\n');
+    Piloto* piloto1 = criarPiloto(voo);
+    funcionario.push_back(piloto1);
+    aeroporto->adicionarPiloto(piloto1);
+
+    cout << "Diga as informacoes do segundo piloto: " << endl;
+    Piloto* piloto2 = criarPiloto(voo);
+    funcionario.push_back(piloto1);
+    aeroporto->adicionarPiloto(piloto1);
+
+    cout << "Diga as informacoes do primeito membro tripulacao: " << endl;
+    Membro_tripulacao* membroTripulacao1 = criarMembroTripulacao(voo);
+    funcionario.push_back(membroTripulacao1);
+    aeroporto->adicionarMembro(membroTripulacao1);
+
+    cout << "Diga as informacoes do segundo membro tripulacao: " << endl;
+    Membro_tripulacao* membroTripulacao2 = criarMembroTripulacao(voo);
+    funcionario.push_back(membroTripulacao2);
+    aeroporto->adicionarMembro(membroTripulacao2);
+
+    cout << "Qual o custo da operacao: ";
     cin >> custo;
 
-    Aviao* a = new Aviao(tipo, capacidade, voo, funcionario, custo);
+    Aviao* a = new Aviao(tipo, capacidade, voo, piloto1, piloto2, membroTripulacao1, membroTripulacao2, funcionario, custo);
     aeroporto->adicionarAviao(a);
     menus_to_call["AviaoMenu"]->play();
 }
@@ -94,7 +110,6 @@ Voo* AviaoMenu::criarVoo() {
     bool cancelado;
 
     cout << "Diga a data do novo voo: (dia/mes/ano) " << endl;
-    cin.ignore(1024,'\n');
     getline(cin,data);
     vector<string> splitted = split(data,"/");
     dia = stoi(splitted[0]);
@@ -162,7 +177,7 @@ Membro_tripulacao* AviaoMenu::criarMembroTripulacao(vector<Voo*> voos)
     Membro_tripulacao* novoFuncionario = new Membro_tripulacao({},{});
     string in;
     cout << "Destino voo o qual o funcionario vai trabalhar: ";
-    cin.ignore(1024,'\n');
+    //cin.ignore(1024,'\n');
     getline(cin,in);
     for(Voo* voo: voos)
     {
@@ -174,6 +189,29 @@ Membro_tripulacao* AviaoMenu::criarMembroTripulacao(vector<Voo*> voos)
         }
     }
 
+    return novoFuncionario;
+}
+
+Piloto* AviaoMenu::criarPiloto(vector<Voo*> voos) {
+    string nome;
+    int data_nascimentoD,data_nascimentoM,data_nascimentoA;
+    string categoria;
+
+    string in;
+    cout << "Nome: ";
+    getline(cin,nome);
+    cout << "Data de nascimento: (DD/MM/AAAA) ";
+    getline(cin,in);
+    vector<string> splitted = split(in,"/");
+    data_nascimentoD = stoi(splitted[0]);
+    data_nascimentoM = stoi(splitted[1]);
+    data_nascimentoA = stoi(splitted[2]);
+    cout << "Categoria: ";
+    getline(cin,categoria);
+    cout << "OBS: para adicionar voos e avioes de voos ao piloto va para editar pilotos" << endl;
+    Piloto* novoFuncionario = new Piloto(nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),categoria,{},{});
+    aeroporto->adicionarPiloto(novoFuncionario);
+    cin.ignore(1024,'\n');
     return novoFuncionario;
 }
 
@@ -213,6 +251,7 @@ Aviao* AviaoMenu::escolherAviao()
 void AviaoMenu::editarTipo() {
     string tipo;
     Aviao* aviao = escolherAviao();
+    cin.ignore(1024, '\n');
     cout << "Qual o novo tipo do aviao: " << endl;
     getline(cin, tipo);
     aviao->setTipo(tipo);

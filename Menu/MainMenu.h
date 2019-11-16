@@ -8,8 +8,6 @@ public:
     MainMenu();
     void criarAeroporto(); //falta implementar
     Localizacao* inserirLocalizacao();
-    Funcionario* inserirFuncionario();
-    Aviao* inserirAviao();
     void deletarAeroporto();
     void CallMenu();
     Aeroporto* escolherAeroporto();

@@ -14,6 +14,7 @@ public:
     void editarCapacidade();
     Voo* criarVoo();
     Membro_tripulacao* criarMembroTripulacao(vector<Voo*> v);
+    Piloto* criarPiloto(vector<Voo*> v);
     void setAeroporto(Aeroporto* a);
     void setAviao(Aviao* a){};
     void listarAvioes();

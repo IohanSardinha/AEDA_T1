@@ -20,6 +20,7 @@ public:
         {
             throw runtime_error("Latitude must be between -90 and 90 degrees");
         }
+
         if(longi > 180 || longi < -180)
         {
             throw runtime_error("Latitude must be between -90 and 90 degrees");

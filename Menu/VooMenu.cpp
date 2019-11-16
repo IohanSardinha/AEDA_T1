@@ -145,6 +145,7 @@ Voo* VooMenu::escolherVoo() {
             }
             case 1: {
                 cout << "Qual a data do voo que deseja? (ano/mes/dia)" << endl;
+                cin.ignore(1024, '\n');
                 getline(cin,data);
                 dia = stoi(data.substr(0, data.find_first_of("/")));
                 mes = stoi(data.substr(data.find_first_of("/") + 1, 2));
@@ -161,7 +162,6 @@ Voo* VooMenu::escolherVoo() {
     }
     //fazer para data e hora se tivermos tempo
 }
-
 
 void VooMenu::visualizarVoo() {
     Voo* voo = escolherVoo();
