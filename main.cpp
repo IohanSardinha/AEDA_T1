@@ -19,10 +19,10 @@ int main() {
     Voo v(Data(20,11,2019),Hora(10,00,00),"Curitiba");
     Informacao i(&v,Hora(10,00,00),Hora(10,10,00),false);
     v.setInfo(&i);
-    Membro_tripulacao m(1000,{&v},{&i});
+    Membro_tripulacao m({&v},{&i});
     Funcionario_administrativos f("Gisele",Data(30,01,1990),"Master",pair<Hora,Hora>(Hora(8,00,00),Hora(17,0,0)),"Diretora","Financeiro");
     Aviao a("Boing747",500,{&v},{&m},10000);
-    Piloto p(3000,"Sergio",Data(20,06,1958),"principal",{&a},{&v});
+    Piloto p("Sergio",Data(20,06,1958),"principal",{&a},{&v});
     Aeroporto ae(&f,Localizacao("Brasil","Rio de Janeiro",GPS(-22.908333,-43.196388)),{&p,&f,&m},{&a},{&p},{&m},{&f});
     aeroportos.push_back(&ae);
 

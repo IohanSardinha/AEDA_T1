@@ -159,7 +159,7 @@ Membro_tripulacao* AviaoMenu::criarMembroTripulacao(vector<Voo*> voos)
         }
     }
 
-    Membro_tripulacao* novoFuncionario = new Membro_tripulacao(0,{},{});
+    Membro_tripulacao* novoFuncionario = new Membro_tripulacao({},{});
     string in;
     cout << "Destino voo o qual o funcionario vai trabalhar: ";
     cin.ignore(1024,'\n');

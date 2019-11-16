@@ -19,6 +19,7 @@ protected:
 public:
     Funcionario(int salario);
     int getSalario() const;
+    void setSalario(int s){salario=s;};
     virtual void print() = 0;
 };
 
@@ -50,7 +51,7 @@ class Membro_tripulacao :public Funcionario{
     vector<Voo*> voos_alocados;
     vector<Informacao*> info_voos;
 public:
-    Membro_tripulacao(int salario, const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos);
+    Membro_tripulacao(const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos);
     vector<Voo*> getVoos();
     vector<Informacao*> getInfos();
     void print();
@@ -67,7 +68,7 @@ class Piloto :public Funcionario{
 public:
     vector<Voo*> getVoos(){ return voos_realizados;};
     vector<Aviao*> getAvioes(){ return tipos_aviao;};
-    Piloto(int salario, const string &nome, const Data &dataNascimento, const string &categoria,
+    Piloto(const string &nome, const Data &dataNascimento, const string &categoria,
            const vector<Aviao*> &tiposAviao, const vector<Voo*> & voosRealizados);
 
     const string &getNome() const;
@@ -82,7 +83,7 @@ public:
 
     void setCategoria(const string &categoria);
 
-    void adicionarVoo(Voo* v){voos_realizados.push_back(v);}
+    void adicionarVoo(Voo* v){voos_realizados.push_back(v);salario+=250;}
 
     void adicionarAviao(Aviao* a){tipos_aviao.push_back(a);}
 

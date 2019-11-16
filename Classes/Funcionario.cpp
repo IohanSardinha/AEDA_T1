@@ -30,6 +30,7 @@ void Funcionario_administrativos::setDepartamento(const string &departamento) {
 
 void Funcionario_administrativos::print() {
     cout << "Nome: " << nome << endl;
+    cout << "Salario: " << salario << "$" << endl;
     cout << "Nasimento: " << data_nascimento << endl;
     cout << "Categoria: " << categoria << endl;
     cout << "Horario de trabalho: de " << horario_de_trabalho.first << " as " << horario_de_trabalho.second << endl;
@@ -95,15 +96,18 @@ const string &Piloto::getCategoria() const {
 
 void Piloto::setCategoria(const string &categoria) {
     Piloto::categoria = categoria;
+    Piloto::salario = 1000*categoria.size();
 }
 
-Piloto::Piloto(int salario, const string &nome, const Data &dataNascimento, const string &categoria,
-        const vector<Aviao*> &tiposAviao, const vector<Voo*> & voosRealizados):
-        Funcionario(salario), nome(nome), data_nascimento(dataNascimento), categoria(categoria),
-        tipos_aviao(tiposAviao), voos_realizados(voosRealizados) {};
+Piloto::Piloto(const string &nome, const Data &dataNascimento, const string &categoria,const vector<Aviao*> &tiposAviao, const vector<Voo*> & voosRealizados):
+        Funcionario(0), nome(nome), data_nascimento(dataNascimento), categoria(categoria),tipos_aviao(tiposAviao), voos_realizados(voosRealizados)
+{
+    salario = 1000*categoria.size();
+};
 
 void Piloto::print() {
     cout << "Nome: " << nome << endl;
+    cout << "Salario: " << salario << "$" << endl;
     cout << "Nascimento: " << data_nascimento << endl;
     cout << "Categoria: " << categoria << endl;
     cout << "Avioes pilotados: " << endl;
@@ -111,7 +115,10 @@ void Piloto::print() {
          cout << *a << endl;
 }
 
-Membro_tripulacao::Membro_tripulacao(int salario, const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos):Funcionario (salario), voos_alocados(voosAlocados), info_voos(infoVoos) {}
+Membro_tripulacao::Membro_tripulacao(const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos):Funcionario (0), voos_alocados(voosAlocados), info_voos(infoVoos)
+{
+    salario = 250*voosAlocados.size();
+}
 
 vector<Voo*> Membro_tripulacao::getVoos()
 {
@@ -124,6 +131,7 @@ vector<Informacao*> Membro_tripulacao::getInfos() {
 
 void Membro_tripulacao::print() {
     cout << "Membro de tripulacao" << endl;
+    cout << "Salario: " << salario << "$" << endl;
     cout << "Voos do membro: " << endl;
     for (Voo* voo : voos_alocados)
         cout << *voo;

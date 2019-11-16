@@ -279,7 +279,7 @@ void FuncionariosMenu::criarPiloto() {
     cout << "Categoria: ";
     getline(cin,categoria);
     cout << "OBS: para adicionar voos e avioes de voos ao piloto va para editar pilotos" << endl;
-    Piloto* novoFuncionario = new Piloto(0,nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),categoria,{},{});
+    Piloto* novoFuncionario = new Piloto(nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),categoria,{},{});
     a->adicionarPiloto(novoFuncionario);
     cin.ignore(1024,'\n');
     wait();
@@ -308,7 +308,7 @@ void FuncionariosMenu::criarMembroTripulacao()
         }
     }
 
-    Membro_tripulacao* novoFuncionario = new Membro_tripulacao(0,{},{});
+    Membro_tripulacao* novoFuncionario = new Membro_tripulacao({},{});
     string in;
     cin.ignore(1024, '\n');
     while (1)
@@ -666,6 +666,7 @@ void FuncionariosMenu::editarMembroTripulacao(){
                     if(lower(funcionario->getVoos().at(i)->getDestino()) == lower(destino))
                     {
                         funcionario->getVoos().erase(funcionario->getVoos().begin()+i);
+                        funcionario->setSalario(funcionario->getSalario()-250);
                         found = true;
                     }
                 }
