@@ -11,6 +11,7 @@
 #include "../Classes/Aeroporto.h"
 #include "../Utils/sorts.h"
 #include "../Utils/lower.h"
+#include "../Utils/split.h"
 
 using namespace std;
 

@@ -50,6 +50,7 @@ void Menu::save()
 {
     ofstream file;
     file.open("Airport.dt", ofstream::out);
+    int aeroporto_it = 0;
     for(Aeroporto* aeroporto: aeroportos)
     {
         //Localizacao
@@ -117,6 +118,7 @@ void Menu::save()
        {
            file << aviao->getTipo() << endl;
            file << aviao->getCustoOperacao() << endl;
+           file << aviao->getCapacidade() << endl;
            for(Funcionario* funcionario: aviao->getTripulacao())
            {
                for(int i = 0; i < funcionarios.size(); i++)
@@ -177,23 +179,233 @@ void Menu::save()
            }
            file << "--voos piloto--" << endl;
        }
-       file << "--piloto--" << endl;
+       file << "--pilotos--" << endl;
 
        //Funcionario Administrativo
        for(Funcionario_administrativos* funcionarioAdministrativos: aeroporto->getFuncionariosAdministrativos())
        {
            file << funcionarioAdministrativos->getSalario() << endl;
            file << funcionarioAdministrativos->getNome() << endl;
-           file << funcionarioAdministrativos->getDataNascimento();
+           file << funcionarioAdministrativos->getDataNascimento() << endl;
            file << funcionarioAdministrativos->getCategoria() << endl;
            file << funcionarioAdministrativos->gethorario_de_trabalho().first << endl;
            file << funcionarioAdministrativos->gethorario_de_trabalho().second << endl;
            file << funcionarioAdministrativos->getFuncao() << endl;
            file << funcionarioAdministrativos->getDepartamento() << endl;
        }
-       file << "--funcionario administrativo--" << endl;
-
-       file << "--aeroporto--" << endl;
+       file << "--funcionarios administrativos--" << endl;
+       aeroporto_it++;
+       if(aeroporto_it == aeroportos.size())
+            file << "--aeroporto--";
+       else
+           file << "--aeroporto--" << endl;
     }
     file.close();
+}
+
+void Menu::load()
+{
+    ifstream file("Airport.dt");
+    if(!file.is_open())
+    {
+        throw runtime_error("Could not open file Airport.dt");
+    }
+    string line;
+    vector<Aeroporto*> aeroportosLoad;
+    while (!file.eof())
+    {
+        string cidade,pais;
+        float lat,lng;
+        getline(file,cidade);
+        getline(file,pais);
+        getline(file,line);
+        lat = stof(line);
+        getline(file,line);
+        lng = stof(line);
+        Localizacao localizacao = Localizacao(pais,cidade, GPS(lat,lng));
+        getline(file,line);
+        //-----Localizacao-------
+
+        vector<Voo*> voos;
+        vector<Informacao*> informacoes;
+        vector<string> splitted;
+        while(1)
+        {
+            getline(file,line);
+            if(line == "--voos--")
+                break;
+            splitted = split(line,"/");
+            Data data(stoi(splitted[0]),stoi(splitted[1]),stoi(splitted[2]));
+            getline(file,line);
+            splitted = split(line,":");
+            Hora hora(stoi(splitted[0]),stoi(splitted[1]),stoi(splitted[2]));
+            string destino;
+            getline(file,destino);
+            getline(file,line);
+            splitted = split(line,":");
+            Hora hora_prevista(stoi(splitted[0]),stoi(splitted[1]),stoi(splitted[2]));
+            getline(file,line);
+            splitted = split(line,":");
+            Hora hora_real(stoi(splitted[0]),stoi(splitted[1]),stoi(splitted[2]));
+            getline(file,line);
+            bool canceled = (line == "0");
+
+            Voo* voo = new Voo(data,hora,destino);
+            Informacao* informacao = new Informacao(voo,hora_prevista,hora_real,canceled);
+            voo->setInfo(informacao);
+            voos.push_back(voo);
+            informacoes.push_back(informacao);
+        }
+        //---------Voos--------
+
+        vector<Funcionario*> funcionarios;
+        vector<Membro_tripulacao*> membros_tripulacao;
+        while(1)
+        {
+            getline(file,line);
+            if(line == "--membros--")
+                break;
+            int salario = stoi(line);
+            vector<Voo*> voos_membro;
+            vector<Informacao*> infos_membro;
+            while(1)
+            {
+                getline(file,line);
+                if(line == "--voos membro--")
+                    break;
+                int i = stoi(line);
+                voos_membro.push_back(voos.at(i));
+            }
+            while(1)
+            {
+                getline(file,line);
+                if(line == "--infos membro--")
+                    break;
+                int i = stoi(line);
+                infos_membro.push_back(informacoes.at(i));
+            }
+            Membro_tripulacao* membro = new Membro_tripulacao(voos_membro,infos_membro);
+            membros_tripulacao.push_back(membro);
+            funcionarios.push_back(membro);
+        }
+        //---------Membros--------
+
+        vector<Aviao*> avioes;
+        map<Aviao*, vector<int>> aviao_pos_func;
+        while (1)
+        {
+            string tipo;
+            getline(file,tipo);
+            if(tipo == "--avioes--")
+                break;
+            int custo_de_operacao;
+            getline(file,line);
+            custo_de_operacao = stoi(line);
+            int capacidade;
+            getline(file,line);
+            capacidade = stoi(line);
+            vector<int> pos_funcionarios_aviao;
+            while (1)
+            {
+                getline(file,line);
+                if(line == "--funcionarios aviao--")
+                    break;
+                int i = stoi(line);
+                pos_funcionarios_aviao.push_back(i);
+            }
+            vector<Voo*> voos_aviao;
+            while (1)
+            {
+                getline(file,line);
+                if(line == "--voos aviao--")
+                    break;
+                int i = stoi(line);
+                voos_aviao.push_back(voos.at(i));
+            }
+            Aviao* aviao = new Aviao(tipo,capacidade,voos_aviao,{},custo_de_operacao);
+            avioes.push_back(aviao);
+            aviao_pos_func.insert(pair<Aviao*,vector<int>>(aviao,pos_funcionarios_aviao));
+        }
+        //Avioes
+
+        vector<Piloto*> pilotos;
+        while(1)
+        {
+            getline(file,line);
+            if(line == "--pilotos--")
+                break;
+            int salario = stoi(line);
+            string nome;
+            getline(file,nome);
+            getline(file,line);
+            splitted = split(line,"/");
+            Data nascimento(stoi(splitted[0]),stoi(splitted[1]),stoi(splitted[2]));
+            string categoria;
+            getline(file,categoria);
+            vector<Aviao*> avioes_piloto;
+            while(1)
+            {
+                getline(file,line);
+                if(line == "--avioes piloto--")
+                    break;
+                int i = stoi(line);
+                avioes_piloto.push_back(avioes.at(i));
+            }
+            vector<Voo*> voos_piloto;
+            while(1)
+            {
+                getline(file,line);
+                if(line == "--voos piloto--")
+                    break;
+                int i = stoi(line);
+                voos_piloto.push_back(voos.at(i));
+            }
+            Piloto* piloto = new Piloto(nome,nascimento,categoria,avioes_piloto,voos_piloto);
+            pilotos.push_back(piloto);
+            funcionarios.push_back(piloto);
+        }
+
+        vector<Funcionario_administrativos*> funcionarios_administrativos;
+        while (1)
+        {
+            getline(file,line);
+            if(line == "--funcionarios administrativos--")
+                break;
+            int salario = stoi(line);
+            string nome;
+            getline(file,nome);
+            getline(file,line);
+            splitted = split(line,"/");
+            Data nascimento(stoi(splitted[0]),stoi(splitted[1]),stoi(splitted[2]));
+            string categoria;
+            getline(file,categoria);
+            getline(file,line);
+            splitted = split(line,":");
+            Hora hora_entrada(stoi(splitted[0]),stoi(splitted[1]),stoi(splitted[2]));
+            getline(file,line);
+            splitted = split(line,":");
+            Hora hora_saida(stoi(splitted[0]),stoi(splitted[1]),stoi(splitted[2]));
+            pair<Hora,Hora> hora_trabalho(hora_entrada,hora_saida);
+            string funcao;
+            getline(file,funcao);
+            string departamento;
+            getline(file,departamento);
+            Funcionario_administrativos* funcionarioAdministrativo = new Funcionario_administrativos(nome,nascimento,categoria,hora_trabalho,funcao,departamento);
+            funcionarios_administrativos.push_back(funcionarioAdministrativo);
+            funcionarios.push_back(funcionarioAdministrativo);
+        }
+        getline(file,line);
+
+        for(auto aviao_vec: aviao_pos_func)
+        {
+            for(int i : aviao_vec.second)
+            {
+                aviao_vec.first->adicionarTripulacao(funcionarios.at(i));
+            }
+        }
+
+        aeroportosLoad.push_back(new Aeroporto(nullptr,localizacao,funcionarios,avioes,pilotos,membros_tripulacao,funcionarios_administrativos));
+    }
+    aeroportos = aeroportosLoad;
+
 }
