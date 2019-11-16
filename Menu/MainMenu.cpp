@@ -99,9 +99,9 @@ Localizacao* MainMenu::inserirLocalizacao()
     string pais, cidade;
     float latitude, longitude;
     cout << "Qual o país da nova localizacao: " << endl;
-    cin >> pais;
+    getline(cin,pais);
     cout << "Qual a cidade da nova localizacao: " << endl;
-    cin >> cidade;
+    getline(cin,cidade);
     cout << "Qual a latitude da nova localizacao: " << endl;
     cin >> latitude;
     cout << "Qual a nova longitude da nova localizacao: " << endl;

@@ -30,11 +30,11 @@ void Funcionario_administrativos::setDepartamento(const string &departamento) {
 
 void Funcionario_administrativos::print() {
     cout << "Nome: " << nome << endl;
-    cout << "Data: " << data_nascimento << endl;
+    cout << "Nasimento: " << data_nascimento << endl;
     cout << "Categoria: " << categoria << endl;
     cout << "Horario de trabalho: de " << horario_de_trabalho.first << " as " << horario_de_trabalho.second << endl;
     cout << "Funcao: " << funcao << endl;
-    cout << "Departamento: " << departamento << endl;
+    cout << "Departamento: " << departamento << endl << endl;
 }
 
 Funcionario_administrativos::Funcionario_administrativos(const string& nome,const Data& data_nascimento,const string& categoria,const pair<Hora,Hora> horario_de_trabalho,const string &funcao, const string &departamento)
@@ -104,14 +104,11 @@ Piloto::Piloto(int salario, const string &nome, const Data &dataNascimento, cons
 
 void Piloto::print() {
     cout << "Nome: " << nome << endl;
-    cout << "Data: " << data_nascimento << endl;
+    cout << "Nascimento: " << data_nascimento << endl;
     cout << "Categoria: " << categoria << endl;
     cout << "Avioes pilotados: " << endl;
     for (Aviao* a: tipos_aviao)
          cout << *a << endl;
-    cout << "Voos realizados: " << endl;
-    for (Voo* voos_realiz : voos_realizados)
-        cout << *voos_realiz << endl;
 }
 
 Membro_tripulacao::Membro_tripulacao(int salario, const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos):Funcionario (salario), voos_alocados(voosAlocados), info_voos(infoVoos) {}
@@ -126,10 +123,11 @@ vector<Informacao*> Membro_tripulacao::getInfos() {
 }
 
 void Membro_tripulacao::print() {
-    cout << "Voos alocados: " << endl;
+    cout << "Membro de tripulacao" << endl;
+    cout << "Voos do membro: " << endl;
     for (Voo* voo : voos_alocados)
-        cout << *voo << endl;
-    cout << "Informacoes de voos: " << endl;
+        cout << *voo;
+    cout << "Informacoes dos voos: " << endl;
     for (Informacao* informacao : info_voos)
         cout << *informacao << endl;
 }
@@ -146,7 +144,7 @@ ostream& operator<<(ostream& os, const Aviao& a)
         cout << *voo;
         i++;
     }
-    os << endl << "Tripulacao: " << a.getTripulacao().size() << " membros" << endl;
+    os <<  "Tripulacao: " << a.getTripulacao().size() << " membro(s)" << endl;
     os << "Custo de operacao: " << a.custo_operacao << endl;
     return os;
 }

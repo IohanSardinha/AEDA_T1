@@ -94,7 +94,8 @@ Voo* AviaoMenu::criarVoo() {
     bool cancelado;
 
     cout << "Diga a data do novo voo: (dia/mes/ano) " << endl;
-    cin >> data;
+    cin.ignore(1024,'\n');
+    getline(cin,data);
     vector<string> splitted = split(data,"/");
     dia = stoi(splitted[0]);
     mes =  stoi(splitted[1]);
@@ -102,7 +103,7 @@ Voo* AviaoMenu::criarVoo() {
     Data data_c(dia, mes, ano);
 
     cout << "Diga a hora prevista do voo: (hora:min:seg)" << endl;
-    cin >> horap;
+    getline(cin,horap);
     splitted = split(horap,":");
     hora1 = stoi(splitted[0]);
     min1 = stoi(splitted[1]);
@@ -110,7 +111,7 @@ Voo* AviaoMenu::criarVoo() {
     Hora hora_prevista(hora1, min1, seg1);
 
     cout << "Diga a hora real do voo: (hora:min:seg) " << endl;
-    cin >> horar;
+    getline(cin,horar);
     splitted = split(horar,":");
     hora2 = stoi(splitted[0]);
     min2 = stoi(splitted[1]);
@@ -118,12 +119,12 @@ Voo* AviaoMenu::criarVoo() {
     Hora hora_real(hora2, min2, seg2);
 
     cout << "Diga o destino do voo: " << endl;
-    cin >> destino;
+    getline(cin,destino);
 
     Voo* voo = new Voo(data_c, hora_prevista, destino);
 
     cout << "O voo foi cancelado: (sim/nao)" << endl;
-    cin >> resp;
+    getline(cin,resp);
     if (resp == "sim")
         cancelado = true;
     else
@@ -160,9 +161,9 @@ Membro_tripulacao* AviaoMenu::criarMembroTripulacao(vector<Voo*> voos)
 
     Membro_tripulacao* novoFuncionario = new Membro_tripulacao(0,{},{});
     string in;
-
     cout << "Destino voo o qual o funcionario vai trabalhar: ";
-    cin >> in;
+    cin.ignore(1024,'\n');
+    getline(cin,in);
     for(Voo* voo: voos)
     {
         if(voo->getDestino() == in)

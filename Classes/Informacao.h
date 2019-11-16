@@ -51,8 +51,7 @@ public:
 
     friend ostream& operator<<(ostream& os, const Informacao& i)
     {
-        os << "Voo:" << endl;
-        os << i.getVoo() << endl;
+        os << i.getVoo()->getDestino() << ": " << i.getVoo()->getData() << endl;
         os << "Horario previsto: " << i.getHoraPrevista() << endl;
         os << "Horario real: " << i.getHoraReal() << endl;
         os << (i.cancelado ? "Cancelado" : "A tempo") << endl;

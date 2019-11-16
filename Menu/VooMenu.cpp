@@ -80,7 +80,7 @@ void VooMenu::criarVoo() {
     bool cancelado;
 
     cout << "Diga a data do novo voo: (dia/mes/ano) " << endl;
-    cin >> data;
+    getline(cin,data);
     vector<string> splitted = split(data,"/");
     dia = stoi(splitted[0]);
     mes =  stoi(splitted[1]);
@@ -88,7 +88,7 @@ void VooMenu::criarVoo() {
     Data data_c(dia, mes, ano);
 
     cout << "Diga a hora prevista do voo: (hora:min:seg)" << endl;
-    cin >> horap;
+    getline(cin,horap);
     splitted = split(horap,":");
     hora1 = stoi(splitted[0]);
     min1 = stoi(splitted[1]);
@@ -96,7 +96,7 @@ void VooMenu::criarVoo() {
     Hora hora_prevista(hora1, min1, seg1);
 
     cout << "Diga a hora real do voo: (hora:min:seg) " << endl;
-    cin >> horar;
+    getline(cin,horar);
     splitted = split(horar,":");
     hora2 = stoi(splitted[0]);
     min2 = stoi(splitted[1]);
@@ -104,19 +104,19 @@ void VooMenu::criarVoo() {
     Hora hora_real(hora2, min2, seg2);
 
     cout << "Diga o destino do voo: " << endl;
-    cin >> destino;
+    getline(cin,destino);
 
     Voo* voo = new Voo(data_c, hora_prevista, destino);
 
     cout << "O voo foi cancelado: (sim/nao)" << endl;
-    cin >> resp;
+    getline(cin,resp);
     if (resp == "sim")
         cancelado = true;
     else
         cancelado = false;
 
     Informacao* info = new Informacao(voo, hora_prevista, hora_real, cancelado);
-
+    voo->setInfo(info);
     a->adicionarVoo(voo);
 
     menus_to_call["VooMenu"]->play();
@@ -145,7 +145,7 @@ Voo* VooMenu::escolherVoo() {
             }
             case 1: {
                 cout << "Qual a data do voo que deseja? (ano/mes/dia)" << endl;
-                cin >> data;
+                getline(cin,data);
                 dia = stoi(data.substr(0, data.find_first_of("/")));
                 mes = stoi(data.substr(data.find_first_of("/") + 1, 2));
                 ano = stoi(data.substr(data.find_last_of("/") + 1, -1));
@@ -180,7 +180,7 @@ void VooMenu::alterarData() {
     int ano, mes, dia;
     Voo* voo = escolherVoo();
     cout << "Diga a nova data: (dia/mes/ano) " << endl;
-    cin >> data;
+    getline(cin,data);
     vector<string> splitted = split(data,"/");
     dia = stoi(splitted[0]);
     mes =  stoi(splitted[1]);
@@ -194,7 +194,7 @@ Hora VooMenu::alterarHora() {
     int hora, min, seg;
     string horap;
     cout << "Diga a nova hora: (hh:mm:ss) " << endl;
-    cin >> horap;
+    getline(cin,horap);
     vector<string> splitted = split(horap,":");
     hora = stoi(splitted[0]);
     min = stoi(splitted[1]);
@@ -221,7 +221,7 @@ void VooMenu::alterarEstado() {
     Voo* voo = escolherVoo();
     string booleano;
     cout << "O voo foi cancelado? (sim/nao)" << endl;
-    cin >> booleano;
+    getline(cin,booleano);
     if (booleano == "sim")
         voo->getInfo()->setCancelado(true);
     else
@@ -233,7 +233,7 @@ void VooMenu::alterarDestino() {
     Voo* voo = escolherVoo();
     string destino;
     cout << "Qual o nome destino: " << endl;
-    cin >> destino;
+    getline(cin,destino);
     voo->setDestino(destino);
     menus_to_call["VooMenu"]->play();
 }
