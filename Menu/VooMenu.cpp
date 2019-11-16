@@ -78,29 +78,65 @@ void VooMenu::criarVoo() {
     string destino;
     string resp;
     bool cancelado;
-
-    cout << "Diga a data do novo voo: (dia/mes/ano) " << endl;
-    getline(cin,data);
-    vector<string> splitted = split(data,"/");
-    dia = stoi(splitted[0]);
-    mes =  stoi(splitted[1]);
-    ano =  stoi(splitted[2]);
+    cin.ignore(1024, '\n');
+    while(1)
+    {
+        cout << "Diga a data do novo voo: (dia/mes/ano) " << endl;
+        getline(cin,data);
+        vector<string> splitted = split(data,"/");
+        dia = stoi(splitted[0]);
+        mes =  stoi(splitted[1]);
+        ano =  stoi(splitted[2]);
+        try
+        {
+            Data data_c(dia, mes, ano);
+            break;
+        }
+        catch (runtime_error r)
+        {
+            cout<< "Dia deve estar entre 1 e 31. Mes deve estar entre 1 e 12." << endl;
+        }
+    }
     Data data_c(dia, mes, ano);
 
-    cout << "Diga a hora prevista do voo: (hora:min:seg)" << endl;
-    getline(cin,horap);
-    splitted = split(horap,":");
-    hora1 = stoi(splitted[0]);
-    min1 = stoi(splitted[1]);
-    seg1 = stoi(splitted[2]);
+    while(1) {
+        cout << "Diga a hora prevista do voo: (hora:min:seg)" << endl;
+        getline(cin, horap);
+        vector<string> splitted = split(horap, ":");
+        hora1 = stoi(splitted[0]);
+        min1 = stoi(splitted[1]);
+        seg1 = stoi(splitted[2]);
+
+        try
+        {
+            Hora hora_prevista(hora1, min1, seg1);
+            break;
+        }
+        catch (runtime_error r)
+        {
+            cout<< "Hora deve estar entre 0 e 23. Minutos deve estar entre 00 e 59. Segundos deve estar entre 00 e 59." << endl;
+        }
+    }
     Hora hora_prevista(hora1, min1, seg1);
 
+    while(1)
+    {
     cout << "Diga a hora real do voo: (hora:min:seg) " << endl;
     getline(cin,horar);
-    splitted = split(horar,":");
+    vector<string> splitted = split(horar,":");
     hora2 = stoi(splitted[0]);
     min2 = stoi(splitted[1]);
     seg2 = stoi(splitted[2]);
+        try
+        {
+            Hora hora_real(hora2, min2, seg2);
+            break;
+        }
+        catch (runtime_error r)
+        {
+            cout<< "Hora deve estar entre 0 e 23. Minutos deve estar entre 00 e 59. Segundos deve estar entre 00 e 59." << endl;
+        }
+    }
     Hora hora_real(hora2, min2, seg2);
 
     cout << "Diga o destino do voo: " << endl;
@@ -160,7 +196,7 @@ Voo* VooMenu::escolherVoo() {
         }
         cout << "Voo com o campo indicado nao encontrado" << endl;
     }
-    //fazer para data e hora se tivermos tempo
+
 }
 
 void VooMenu::visualizarVoo() {
@@ -178,12 +214,25 @@ void VooMenu::alterarData() {
     string data;
     int ano, mes, dia;
     Voo* voo = escolherVoo();
-    cout << "Diga a nova data: (dia/mes/ano) " << endl;
-    getline(cin,data);
-    vector<string> splitted = split(data,"/");
-    dia = stoi(splitted[0]);
-    mes =  stoi(splitted[1]);
-    ano =  stoi(splitted[2]);
+    while(1)
+    {
+        cout << "Diga a data do novo voo: (dia/mes/ano) " << endl;
+
+        getline(cin,data);
+        vector<string> splitted = split(data,"/");
+        dia = stoi(splitted[0]);
+        mes =  stoi(splitted[1]);
+        ano =  stoi(splitted[2]);
+        try
+        {
+            Data data_c(dia, mes, ano);
+            break;
+        }
+        catch (runtime_error r)
+        {
+            cout<< "Dia deve estar entre 1 e 31. Mes deve estar entre 1 e 12." << endl;
+        }
+    }
     Data data_c(dia, mes, ano);
     voo->setData(data_c);
     menus_to_call["VooMenu"]->play();
@@ -192,12 +241,23 @@ void VooMenu::alterarData() {
 Hora VooMenu::alterarHora() {
     int hora, min, seg;
     string horap;
-    cout << "Diga a nova hora: (hh:mm:ss) " << endl;
-    getline(cin,horap);
-    vector<string> splitted = split(horap,":");
-    hora = stoi(splitted[0]);
-    min = stoi(splitted[1]);
-    seg = stoi(splitted[2]);
+    while(1) {
+        cout << "Diga a hora prevista do voo: (hora:min:seg)" << endl;
+        getline(cin, horap);
+        vector<string> splitted = split(horap, ":");
+        hora = stoi(splitted[0]);
+        min = stoi(splitted[1]);
+        seg = stoi(splitted[2]);
+        try
+        {
+            Hora horas(hora, min, seg);
+            break;
+        }
+        catch (runtime_error r)
+        {
+            cout<< "Hora deve estar entre 0 e 23. Minutos deve estar entre 00 e 59. Segundos deve estar entre 00 e 59." << endl;
+        }
+    }
     Hora horas(hora, min, seg);
     return horas;
 }

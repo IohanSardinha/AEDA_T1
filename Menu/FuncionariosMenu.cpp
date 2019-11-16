@@ -232,26 +232,69 @@ void FuncionariosMenu::criarFuncionarioAdministrativo() {
     string in;
     cout << "Nome:";
     getline(cin,nome);
-    cout << "Data de nascimento (DD/MM/AAAA)";
-    getline(cin,in);
-    vector<string> splitted = split(in,"/");
-    data_nascimentoD = stoi(splitted[0]);
-    data_nascimentoM = stoi(splitted[1]);
-    data_nascimentoA = stoi(splitted[2]);
+
+    while(1)
+    {
+        cout << "Data de nascimento: (DD/MM/AAAA) ";
+        getline(cin, in);
+        vector<string> splitted = split(in, "/");
+        data_nascimentoD = stoi(splitted[0]);
+        data_nascimentoM = stoi(splitted[1]);
+        data_nascimentoA = stoi(splitted[2]);
+        try
+        {
+            Data data_nasc(data_nascimentoD, data_nascimentoM, data_nascimentoA);
+            break;
+        }
+        catch (runtime_error r)
+        {
+            cout << "Dia deve estar entre 1 e 31. Mes deve estar entre 1 e 12." << endl;
+        }
+    }
+    Data data_nasc(data_nascimentoD, data_nascimentoM, data_nascimentoA);
+
     cout << "Categoria: ";
     getline(cin,categoria);
-    cout << "Hora que comeca o servico: (hh:mm:ss) ";
-    getline(cin,in);
-    splitted = split(in,":");
-    horario_de_trabalhoH1 = stoi(splitted[0]);
-    horario_de_trabalhoM1 = stoi(splitted[1]);
-    horario_de_trabalhoS1 = stoi(splitted[2]);
-    cout << "Hora que acaba o servico: (hh:mm:ss) ";
-    getline(cin,in);
-    splitted = split(in,":");
-    horario_de_trabalhoH2 = stoi(splitted[0]);
-    horario_de_trabalhoM2 = stoi(splitted[1]);
-    horario_de_trabalhoS2 = stoi(splitted[2]);
+
+    while(1) {
+        cout << "Hora que comeca o servico: (hh:mm:ss) ";
+        getline(cin, in);
+        vector<string> splitted = split(in, ":");
+        horario_de_trabalhoH1 = stoi(splitted[0]);
+        horario_de_trabalhoM1 = stoi(splitted[1]);
+        horario_de_trabalhoS1 = stoi(splitted[2]);
+
+        try
+        {
+            Hora horario_trabalho2(horario_de_trabalhoH1, horario_de_trabalhoM1, horario_de_trabalhoS1);
+            break;
+        }
+        catch (runtime_error r)
+        {
+            cout<< "Hora deve estar entre 0 e 23. Minutos deve estar entre 00 e 59. Segundos deve estar entre 00 e 59." << endl;
+        }
+    }
+    Hora horario_trabalho1(horario_de_trabalhoH1, horario_de_trabalhoM1, horario_de_trabalhoS1);
+
+    while (1) {
+        cout << "Hora que acaba o servico: (hh:mm:ss) ";
+        getline(cin, in);
+        vector<string> splitted = split(in, ":");
+        horario_de_trabalhoH2 = stoi(splitted[0]);
+        horario_de_trabalhoM2 = stoi(splitted[1]);
+        horario_de_trabalhoS2 = stoi(splitted[2]);
+        try
+        {
+            Hora horario_trabalho2(horario_de_trabalhoH2, horario_de_trabalhoM2, horario_de_trabalhoS2);
+            break;
+        }
+        catch (runtime_error r)
+        {
+            cout<< "Hora deve estar entre 0 e 23. Minutos deve estar entre 00 e 59. Segundos deve estar entre 00 e 59." << endl;
+        }
+    }
+    Hora horario_trabalho2(horario_de_trabalhoH2, horario_de_trabalhoM2, horario_de_trabalhoS2);
+
     cout << "Funcao: ";
     getline(cin,funcao);
     cout << "Departamento: ";
@@ -270,12 +313,28 @@ void FuncionariosMenu::criarPiloto() {
     string in;
     cout << "Nome:";
     getline(cin,nome);
-    cout << "Data de nascimento (DD/MM/AAAA)";
-    getline(cin,in);
-    vector<string> splitted = split(in,"/");
-    data_nascimentoD = stoi(splitted[0]);
-    data_nascimentoM = stoi(splitted[1]);
-    data_nascimentoA = stoi(splitted[2]);
+
+
+    while(1)
+    {
+        cout << "Data de nascimento: (DD/MM/AAAA) ";
+        getline(cin, in);
+        vector<string> splitted = split(in, "/");
+        data_nascimentoD = stoi(splitted[0]);
+        data_nascimentoM = stoi(splitted[1]);
+        data_nascimentoA = stoi(splitted[2]);
+        try
+        {
+            Data data_nasc(data_nascimentoD, data_nascimentoM, data_nascimentoA);
+            break;
+        }
+        catch (runtime_error r)
+        {
+            cout << "Dia deve estar entre 1 e 31. Mes deve estar entre 1 e 12." << endl;
+        }
+    }
+    Data data_nasc(data_nascimentoD, data_nascimentoM, data_nascimentoA);
+
     cout << "Categoria: ";
     getline(cin,categoria);
     cout << "OBS: para adicionar voos e avioes de voos ao piloto va para editar pilotos" << endl;
@@ -357,15 +416,28 @@ void FuncionariosMenu::editarFuncionarioAdministrativo() {
                 continue;
             }
             case 1: {
-                string inp;
+                string in;
                 int data_nascimentoD,data_nascimentoM,data_nascimentoA;
-                cout << "Digite a nova data de nascimento(DD/MM/AAAA): ";
                 cin.ignore(1024, '\n');
-                cin >> inp;
-                vector<string> splitted = split(inp,"/");
-                data_nascimentoD = stoi(splitted[0]);
-                data_nascimentoM = stoi(splitted[1]);
-                data_nascimentoA = stoi(splitted[2]);
+                while(1)
+                {
+                    cout << "Data de nascimento: (DD/MM/AAAA) ";
+                    getline(cin, in);
+                    vector<string> splitted = split(in, "/");
+                    data_nascimentoD = stoi(splitted[0]);
+                    data_nascimentoM = stoi(splitted[1]);
+                    data_nascimentoA = stoi(splitted[2]);
+                    try
+                    {
+                        Data data_nasc(data_nascimentoD, data_nascimentoM, data_nascimentoA);
+                        break;
+                    }
+                    catch (runtime_error r)
+                    {
+                        cout << "Dia deve estar entre 1 e 31. Mes deve estar entre 1 e 12." << endl;
+                    }
+                }
+                Data data_nasc(data_nascimentoD, data_nascimentoM, data_nascimentoA);
                 funcionario->setDataNascimento(Data(data_nascimentoD,data_nascimentoM,data_nascimentoA));
                 continue;
             }
@@ -382,19 +454,47 @@ void FuncionariosMenu::editarFuncionarioAdministrativo() {
                 string in;
                 int horario_de_trabalhoH1,horario_de_trabalhoM1,horario_de_trabalhoS1;
                 int horario_de_trabalhoH2,horario_de_trabalhoM2,horario_de_trabalhoS2;
-                cout << "Nova hora que comeca o servico: ";
                 cin.ignore(1024, '\n');
-                getline(cin,in);
-                vector<string> splitted = split(in,":");
-                horario_de_trabalhoH1 = stoi(splitted[0]);
-                horario_de_trabalhoM1 = stoi(splitted[1]);
-                horario_de_trabalhoS1 = stoi(splitted[2]);
-                cout << "Nova hora que acaba o servico: ";
-                getline(cin,in);
-                splitted = split(in,":");
-                horario_de_trabalhoH2 = stoi(splitted[0]);
-                horario_de_trabalhoM2 = stoi(splitted[1]);
-                horario_de_trabalhoS2 = stoi(splitted[2]);
+                while(1) {
+                    cout << "Hora que comeca o servico: (hh:mm:ss) ";
+                    getline(cin, in);
+                    vector<string> splitted = split(in, ":");
+                    horario_de_trabalhoH1 = stoi(splitted[0]);
+                    horario_de_trabalhoM1 = stoi(splitted[1]);
+                    horario_de_trabalhoS1 = stoi(splitted[2]);
+
+                    try
+                    {
+                        Hora horario_trabalho2(horario_de_trabalhoH1, horario_de_trabalhoM1, horario_de_trabalhoS1);
+                        break;
+                    }
+                    catch (runtime_error r)
+                    {
+                        cout<< "Hora deve estar entre 0 e 23. Minutos deve estar entre 00 e 59. Segundos deve estar entre 00 e 59." << endl;
+                    }
+                }
+                Hora horario_trabalho1(horario_de_trabalhoH1, horario_de_trabalhoM1, horario_de_trabalhoS1);
+
+
+                while (1) {
+                    cout << "Hora que acaba o servico: (hh:mm:ss) ";
+                    getline(cin, in);
+                    vector<string> splitted = split(in, ":");
+                    horario_de_trabalhoH2 = stoi(splitted[0]);
+                    horario_de_trabalhoM2 = stoi(splitted[1]);
+                    horario_de_trabalhoS2 = stoi(splitted[2]);
+                    try
+                    {
+                        Hora horario_trabalho2(horario_de_trabalhoH2, horario_de_trabalhoM2, horario_de_trabalhoS2);
+                        break;
+                    }
+                    catch (runtime_error r)
+                    {
+                        cout<< "Hora deve estar entre 0 e 23. Minutos deve estar entre 00 e 59. Segundos deve estar entre 00 e 59." << endl;
+                    }
+                }
+                Hora horario_trabalho2(horario_de_trabalhoH2, horario_de_trabalhoM2, horario_de_trabalhoS2);
+
                 funcionario->setHorarioDeTrabalho(pair<Hora,Hora>(Hora(horario_de_trabalhoH1,horario_de_trabalhoM1,horario_de_trabalhoS1),
                                                                   Hora(horario_de_trabalhoH2,horario_de_trabalhoM2,horario_de_trabalhoS2)));
                 continue;
@@ -450,14 +550,28 @@ void FuncionariosMenu::editarPiloto() {
                 continue;
             }
             case 1: {
-                string inp;
+                string in;
                 int data_nascimentoD,data_nascimentoM,data_nascimentoA;
-                cout << "Digite a nova data de nascimento(DD/MM/AAAA): ";
-                cin >> inp;
-                vector<string> splitted = split(inp,"/");
-                data_nascimentoD = stoi(splitted[0]);
-                data_nascimentoM = stoi(splitted[1]);
-                data_nascimentoA = stoi(splitted[2]);
+                cin.ignore(1024, '\n');
+                while(1)
+                {
+                    cout << "Data de nascimento: (DD/MM/AAAA) ";
+                    getline(cin, in);
+                    vector<string> splitted = split(in, "/");
+                    data_nascimentoD = stoi(splitted[0]);
+                    data_nascimentoM = stoi(splitted[1]);
+                    data_nascimentoA = stoi(splitted[2]);
+                    try
+                    {
+                        Data data_nasc(data_nascimentoD, data_nascimentoM, data_nascimentoA);
+                        break;
+                    }
+                    catch (runtime_error r)
+                    {
+                        cout << "Dia deve estar entre 1 e 31. Mes deve estar entre 1 e 12." << endl;
+                    }
+                }
+                Data data_nasc(data_nascimentoD, data_nascimentoM, data_nascimentoA);
                 funcionario->setDataNascimento(Data(data_nascimentoD,data_nascimentoM,data_nascimentoA));
                 continue;
             }
