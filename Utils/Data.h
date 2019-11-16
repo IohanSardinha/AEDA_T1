@@ -10,6 +10,7 @@ class Data{
             mes,
             ano;
 public:
+    ///construtor da classe data
     Data()
     {
         dia = 1;
@@ -17,6 +18,10 @@ public:
         ano = 1970;
     }
 
+    ///construtor com parametros da classe dat
+    ///@param a
+    ///@param m
+    ///@param d
     Data(int d, int m, int a)
     {
         if(d > 31 || d < 1)
@@ -32,10 +37,13 @@ public:
         ano = a;
     }
 
+    ///getter do dia
     int getDia() const {
         return dia;
     }
 
+    ///setter do dia
+    ///@param dia
     void setDia(int dia) {
         if(dia > 31)
         {
@@ -44,10 +52,13 @@ public:
         Data::dia = dia;
     }
 
+    ///getter do mes
     int getMes() const {
         return mes;
     }
 
+    ///setter do mes
+    ///@param  mes
     void setMes(int mes) {
         if(mes > 12)
         {
@@ -56,14 +67,20 @@ public:
         Data::mes = mes;
     }
 
+    ///getter do ano
     int getAno() const {
         return ano;
     }
 
+    ///setter do ano
+    ///@param ano
     void setAno(int ano) {
         Data::ano = ano;
     }
 
+    ///implementacao do operator <<
+    ///@param os
+    ///@param dt
     friend ostream& operator<<(ostream& os, const Data& dt)
     {
         os << dt.dia << "/" << dt.mes << "/" << dt.ano;

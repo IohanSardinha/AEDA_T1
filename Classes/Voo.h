@@ -13,6 +13,10 @@ class Voo{
     string destino;
     Informacao* info;
 public:
+    ///contrtutor da classe Voo
+    ///@param D
+    ///@param d
+    ///@param h
     Voo(Data D, Hora h, string d)
     {
         data = D;
@@ -20,38 +24,53 @@ public:
         destino = d;
     }
 
+    ///getter da data
     const Data &getData() const {
         return data;
     }
 
+    ///setter da data
+    ///@param data
     void setData(const Data &data) {
         Voo::data = data;
     }
 
+    ///getter da hora
     const Hora &getHora() const {
         return hora;
     }
 
+    ///setter da hora
+    ///@param  hora
     void setHora(const Hora &hora) {
         Voo::hora = hora;
     }
 
+    ///getter do destino
     const string &getDestino() const {
         return destino;
     }
 
+    ///setter do destino
+    ///@param destino
     void setDestino(const string &destino) {
         Voo::destino = destino;
     }
 
+    ///getter da informacao
     Informacao *getInfo() const {
         return info;
     }
 
+    ///setter da informacao
+    ///@param info
     void setInfo(Informacao *info) {
         Voo::info = info;
     }
 
+    ///implementacao do operator <<
+    ///@param os
+    ///@param v
     friend ostream& operator<<(ostream& os, const Voo& v)
     {
         os << "Destino: " << v.destino << endl;
@@ -62,3 +81,4 @@ public:
 };
 
 #endif //PROJECT1_VOO_H
+
