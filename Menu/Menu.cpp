@@ -4,6 +4,7 @@
 
 vector<Aeroporto*> aeroportos;
 map<string, Menu*> menus_to_call;
+priority_queue<Empresa> disponibilidade_empresas;
 
 void Menu::print()
 {

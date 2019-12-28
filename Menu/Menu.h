@@ -8,6 +8,7 @@
 #include <fstream>
 #include<iomanip>
 #include <iostream>
+#include "../Classes/Empresa.h"
 #include "../Classes/Aeroporto.h"
 #include "../Utils/sorts.h"
 #include "../Utils/lower.h"

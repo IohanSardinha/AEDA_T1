@@ -41,6 +41,7 @@ class Funcionario_administrativos :public Funcionario{
     pair<Hora,Hora> horario_de_trabalho;
     string funcao;
     string departamento;
+    bool atual; //true se for atual
 public:
     ///construtor da classe funcionario administrativo
     ///@param nome
