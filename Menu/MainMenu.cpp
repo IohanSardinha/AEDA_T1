@@ -3,9 +3,10 @@
 
 extern vector<Aeroporto*> aeroportos;
 extern map<string, Menu*> menus_to_call;
+extern priority_queue<Empresa> empresas;
 
 MainMenu::MainMenu() {
-    opcoes = {"Criar aeroporto","Listar aeroportos","Acessar aeroporto", "Remover Aeroporto", "Sair"};
+    opcoes = {"Criar aeroporto","Listar aeroportos","Acessar aeroporto", "Remover Aeroporto", "Acessar empresas de manutencao", "Sair"};
 }
 
 void MainMenu::CallMenu() {
@@ -40,6 +41,11 @@ void MainMenu::CallMenu() {
             break;
         }
         case 4:
+        {
+            menus_to_call["EmpresaMenu"]->play();
+            break;
+        }
+        case 5:
         {
             save();
             cout << endl

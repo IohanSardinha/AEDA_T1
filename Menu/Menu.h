@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 #include <map>
 #include <algorithm>
 #include <fstream>
@@ -10,6 +11,7 @@
 #include <iostream>
 #include "../Classes/Empresa.h"
 #include "../Classes/Aeroporto.h"
+#include "../Classes/Aviao.h"
 #include "../Utils/sorts.h"
 #include "../Utils/lower.h"
 #include "../Utils/split.h"

@@ -6,6 +6,7 @@
 ///Menu com o CRUD de um aeroporto especifico
 class AcessarAeroportoMenu: public Menu{
     Aeroporto* aeroporto;
+
 public:
     ///Construtor
     AcessarAeroportoMenu();

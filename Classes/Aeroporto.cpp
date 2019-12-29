@@ -11,14 +11,9 @@ Aeroporto::Aeroporto(Funcionario* ger, Localizacao loc, vector<Funcionario*> fu,
     funcionarios_administrativos = f_adm;
 }
 
-Funcionario* Aeroporto::getGerente() const
-{
-    return gerente;
-}
+Funcionario* Aeroporto::getGerente() const{return gerente;}
 
-Localizacao Aeroporto::getLocalizacao() const {
-    return localizacao;
-}
+Localizacao Aeroporto::getLocalizacao() const {return localizacao;}
 
 void Aeroporto::setGerente(Funcionario* f)
 {
@@ -161,29 +156,15 @@ ostream& operator<<(ostream& os, const Aeroporto& a)
     return os;
 }
 
-vector<Funcionario_administrativos*> & Aeroporto::getFuncionariosAdministrativos()
-{
-    return funcionarios_administrativos;
-}
+vector<Funcionario_administrativos*> & Aeroporto::getFuncionariosAdministrativos(){return funcionarios_administrativos;}
 
-vector<Funcionario*> & Aeroporto::getFuncionarios()
-{
-    return funcionarios;
-}
+vector<Funcionario*> & Aeroporto::getFuncionarios(){return funcionarios;}
 
-vector<Aviao*> & Aeroporto::getAvioes()
-{
-    return avioes;
-}
+vector<Aviao*> & Aeroporto::getAvioes(){return avioes;}
 
-vector<Piloto*> & Aeroporto::getPilotos()
-{
-    return pilotos;
-}
-vector<Membro_tripulacao*> & Aeroporto::getMembros()
-{
-    return membros;
-}
+vector<Piloto*> & Aeroporto::getPilotos(){return pilotos;}
+
+vector<Membro_tripulacao*> & Aeroporto::getMembros(){return membros;}
 
 void Aeroporto::setLocalizacao(string p, string c, GPS g)
 {

@@ -3,18 +3,27 @@
 
 #include <iostream>
 #include <queue>
+#include <string>
 
 using namespace std;
 
 class Empresa{
+    int id;
     int disponibilidade; //numero de horas que falta para que esteja disponivel
     int manutencoes; //numero de manutenccoes ja feitas
-    static const int duracao = 3; //tempo de manutencao de cada veiculo
+    //static const int duracao = 3; //tempo de manutencao de cada veiculo
      //ordenada de acordo com a disponibilidade
     //a do topo é a mais disponvivil
 public:
-    bool operator< (Empresa & e);
-    void somaDisponibilidade(Empresa e);
+    Empresa(int id, int disponibilidade, int manutencoes);
+    int getId() const;
+    void setId(int n);
+    int getDisponibilidade() const;
+    void setDisponibilidade(int n);
+    void setManutencao(int n);
+    int getManutencao();
+    bool operator< (Empresa e) const;
+    friend ostream& operator<<(ostream& os, Empresa e);
 };
 
 

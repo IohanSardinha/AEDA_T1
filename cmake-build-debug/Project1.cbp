@@ -103,6 +103,12 @@
 		<Unit filename="/home/bianca/Documentos/AEDA/AEDA_T1/Classes/Aviao.h">
 			<Option target="Project1"/>
 		</Unit>
+		<Unit filename="/home/bianca/Documentos/AEDA/AEDA_T1/Classes/Empresa.cpp">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="/home/bianca/Documentos/AEDA/AEDA_T1/Classes/Empresa.h">
+			<Option target="Project1"/>
+		</Unit>
 		<Unit filename="/home/bianca/Documentos/AEDA/AEDA_T1/Classes/Funcionario.cpp">
 			<Option target="Project1"/>
 		</Unit>
@@ -125,6 +131,12 @@
 			<Option target="Project1"/>
 		</Unit>
 		<Unit filename="/home/bianca/Documentos/AEDA/AEDA_T1/Menu/AviaoMenu.h">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="/home/bianca/Documentos/AEDA/AEDA_T1/Menu/EmpresaMenu.cpp">
+			<Option target="Project1"/>
+		</Unit>
+		<Unit filename="/home/bianca/Documentos/AEDA/AEDA_T1/Menu/EmpresaMenu.h">
 			<Option target="Project1"/>
 		</Unit>
 		<Unit filename="/home/bianca/Documentos/AEDA/AEDA_T1/Menu/FuncionariosMenu.cpp">

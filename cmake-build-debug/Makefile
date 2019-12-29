@@ -163,6 +163,33 @@ Classes/Aeroporto.cpp.s:
 	$(MAKE) -f CMakeFiles/Project1.dir/build.make CMakeFiles/Project1.dir/Classes/Aeroporto.cpp.s
 .PHONY : Classes/Aeroporto.cpp.s
 
+Classes/Empresa.o: Classes/Empresa.cpp.o
+
+.PHONY : Classes/Empresa.o
+
+# target to build an object file
+Classes/Empresa.cpp.o:
+	$(MAKE) -f CMakeFiles/Project1.dir/build.make CMakeFiles/Project1.dir/Classes/Empresa.cpp.o
+.PHONY : Classes/Empresa.cpp.o
+
+Classes/Empresa.i: Classes/Empresa.cpp.i
+
+.PHONY : Classes/Empresa.i
+
+# target to preprocess a source file
+Classes/Empresa.cpp.i:
+	$(MAKE) -f CMakeFiles/Project1.dir/build.make CMakeFiles/Project1.dir/Classes/Empresa.cpp.i
+.PHONY : Classes/Empresa.cpp.i
+
+Classes/Empresa.s: Classes/Empresa.cpp.s
+
+.PHONY : Classes/Empresa.s
+
+# target to generate assembly for a file
+Classes/Empresa.cpp.s:
+	$(MAKE) -f CMakeFiles/Project1.dir/build.make CMakeFiles/Project1.dir/Classes/Empresa.cpp.s
+.PHONY : Classes/Empresa.cpp.s
+
 Classes/Funcionario.o: Classes/Funcionario.cpp.o
 
 .PHONY : Classes/Funcionario.o
@@ -243,6 +270,33 @@ Menu/AviaoMenu.s: Menu/AviaoMenu.cpp.s
 Menu/AviaoMenu.cpp.s:
 	$(MAKE) -f CMakeFiles/Project1.dir/build.make CMakeFiles/Project1.dir/Menu/AviaoMenu.cpp.s
 .PHONY : Menu/AviaoMenu.cpp.s
+
+Menu/EmpresaMenu.o: Menu/EmpresaMenu.cpp.o
+
+.PHONY : Menu/EmpresaMenu.o
+
+# target to build an object file
+Menu/EmpresaMenu.cpp.o:
+	$(MAKE) -f CMakeFiles/Project1.dir/build.make CMakeFiles/Project1.dir/Menu/EmpresaMenu.cpp.o
+.PHONY : Menu/EmpresaMenu.cpp.o
+
+Menu/EmpresaMenu.i: Menu/EmpresaMenu.cpp.i
+
+.PHONY : Menu/EmpresaMenu.i
+
+# target to preprocess a source file
+Menu/EmpresaMenu.cpp.i:
+	$(MAKE) -f CMakeFiles/Project1.dir/build.make CMakeFiles/Project1.dir/Menu/EmpresaMenu.cpp.i
+.PHONY : Menu/EmpresaMenu.cpp.i
+
+Menu/EmpresaMenu.s: Menu/EmpresaMenu.cpp.s
+
+.PHONY : Menu/EmpresaMenu.s
+
+# target to generate assembly for a file
+Menu/EmpresaMenu.cpp.s:
+	$(MAKE) -f CMakeFiles/Project1.dir/build.make CMakeFiles/Project1.dir/Menu/EmpresaMenu.cpp.s
+.PHONY : Menu/EmpresaMenu.cpp.s
 
 Menu/FuncionariosMenu.o: Menu/FuncionariosMenu.cpp.o
 
@@ -500,6 +554,9 @@ help:
 	@echo "... Classes/Aeroporto.o"
 	@echo "... Classes/Aeroporto.i"
 	@echo "... Classes/Aeroporto.s"
+	@echo "... Classes/Empresa.o"
+	@echo "... Classes/Empresa.i"
+	@echo "... Classes/Empresa.s"
 	@echo "... Classes/Funcionario.o"
 	@echo "... Classes/Funcionario.i"
 	@echo "... Classes/Funcionario.s"
@@ -509,6 +566,9 @@ help:
 	@echo "... Menu/AviaoMenu.o"
 	@echo "... Menu/AviaoMenu.i"
 	@echo "... Menu/AviaoMenu.s"
+	@echo "... Menu/EmpresaMenu.o"
+	@echo "... Menu/EmpresaMenu.i"
+	@echo "... Menu/EmpresaMenu.s"
 	@echo "... Menu/FuncionariosMenu.o"
 	@echo "... Menu/FuncionariosMenu.i"
 	@echo "... Menu/FuncionariosMenu.s"

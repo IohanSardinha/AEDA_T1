@@ -187,8 +187,5 @@ void AcessarAeroportoMenu::alterarLocalizacao() {
     menus_to_call["AcessarAeroportoMenu"]->play();
 }
 
-void AcessarAeroportoMenu::setAeroporto(Aeroporto* a)
-{
-    aeroporto = a;
-}
+void AcessarAeroportoMenu::setAeroporto(Aeroporto* a){aeroporto = a;}
 

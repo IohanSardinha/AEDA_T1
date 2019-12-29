@@ -9,10 +9,12 @@
 #include "Menu/VooMenu.h"
 #include "Classes/Informacao.h"
 #include "Classes/Aviao.h"
+#include "Menu/EmpresaMenu.h"
 
 using namespace std;
 extern map<string, Menu*> menus_to_call;
 extern vector<Aeroporto*> aeroportos;
+extern priority_queue<Empresa> empresas;
 
 int main() {
 /*
@@ -36,6 +38,12 @@ int main() {
     Aeroporto ae2(&f,Localizacao("Brasil","Curitiba",GPS(-25.441105,-49.276855)),{&p2,&f2,&m2},{&a2},{&p2},{&m2},{&f2});
     aeroportos.push_back(&ae2);
 */
+    Empresa e(1, 2, 3);
+    Empresa e2(2, 3, 4);
+    Empresa e3(3, 4, 5);
+    empresas.push(e);
+    empresas.push(e2);
+    empresas.push(e3);
     menus_to_call.insert(pair<string,Menu*>("MainMenu",new MainMenu));
     menus_to_call.insert(pair<string,Menu*>("ListarAeroportoMenu",new ListarAeroportoMenu));
     menus_to_call.insert(pair<string,Menu*>("AcessarAeroportoMenu",new AcessarAeroportoMenu));
@@ -45,6 +53,7 @@ int main() {
     menus_to_call.insert(pair<string,Menu*>("MembrosTripulacaoFuncionariosMenu",new FuncionariosMenu(MEMBRO_TRIPULACAO)));
     menus_to_call.insert(pair<string,Menu*>("AviaoMenu",new AviaoMenu));
     menus_to_call.insert(pair<string,Menu*>("VooMenu",new VooMenu));
+    menus_to_call.insert(pair<string, Menu*>("EmpresaMenu", new EmpresaMenu));
 
     menus_to_call["MainMenu"]->load();
     menus_to_call["MainMenu"]->play();

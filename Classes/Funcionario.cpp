@@ -66,33 +66,19 @@ void Funcionario_administrativos::setCategoria(const string &categoria) {
     Funcionario_administrativos::categoria = categoria;
 }
 
-const pair<Hora, Hora> &Funcionario_administrativos::gethorario_de_trabalho() const {
-    return horario_de_trabalho;
-}
+const pair<Hora, Hora> &Funcionario_administrativos::gethorario_de_trabalho() const {return horario_de_trabalho;}
 
-void Funcionario_administrativos::setHorarioDeTrabalho(const pair<Hora, Hora> &horarioDeTrabalho) {
-    horario_de_trabalho = horarioDeTrabalho;
-}
+void Funcionario_administrativos::setHorarioDeTrabalho(const pair<Hora, Hora> &horarioDeTrabalho) {horario_de_trabalho = horarioDeTrabalho;}
 
-const string &Piloto::getNome() const {
-    return nome;
-}
+const string &Piloto::getNome() const {return nome;}
 
-void Piloto::setNome(const string &nome) {
-    Piloto::nome = nome;
-}
+void Piloto::setNome(const string &nome) {Piloto::nome = nome;}
 
-const Data &Piloto::getDataNascimento() const {
-    return data_nascimento;
-}
+const Data &Piloto::getDataNascimento() const {return data_nascimento;}
 
-void Piloto::setDataNascimento(const Data &dataNascimento) {
-    data_nascimento = dataNascimento;
-}
+void Piloto::setDataNascimento(const Data &dataNascimento) {data_nascimento = dataNascimento;}
 
-const string &Piloto::getCategoria() const {
-    return categoria;
-}
+const string &Piloto::getCategoria() const {return categoria;}
 
 void Piloto::setCategoria(const string &categoria) {
     Piloto::categoria = categoria;
@@ -101,9 +87,7 @@ void Piloto::setCategoria(const string &categoria) {
 
 Piloto::Piloto(const string &nome, const Data &dataNascimento, const string &categoria,const vector<Aviao*> &tiposAviao, const vector<Voo*> & voosRealizados):
         Funcionario(0), nome(nome), data_nascimento(dataNascimento), categoria(categoria),tipos_aviao(tiposAviao), voos_realizados(voosRealizados)
-{
-    salario = 1000*categoria.size();
-};
+{salario = 1000*categoria.size();};
 
 void Piloto::print() {
     cout << "Nome: " << nome << endl;
@@ -116,18 +100,11 @@ void Piloto::print() {
 }
 
 Membro_tripulacao::Membro_tripulacao(const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos):Funcionario (0), voos_alocados(voosAlocados), info_voos(infoVoos)
-{
-    salario = 250*voosAlocados.size();
-}
+{salario = 250*voosAlocados.size();}
 
-vector<Voo*> Membro_tripulacao::getVoos()
-{
-    return voos_alocados;
-}
+vector<Voo*> Membro_tripulacao::getVoos(){return voos_alocados;}
 
-vector<Informacao*> Membro_tripulacao::getInfos() {
-    return info_voos;
-}
+vector<Informacao*> Membro_tripulacao::getInfos() {return info_voos;}
 
 void Membro_tripulacao::print() {
     cout << "Membro de tripulacao" << endl;

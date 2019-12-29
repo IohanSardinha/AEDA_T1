@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Project1.dir/Classes/Aeroporto.cpp.o"
+  "CMakeFiles/Project1.dir/Classes/Empresa.cpp.o"
   "CMakeFiles/Project1.dir/Classes/Funcionario.cpp.o"
   "CMakeFiles/Project1.dir/Menu/AcessarAeroportoMenu.cpp.o"
   "CMakeFiles/Project1.dir/Menu/AviaoMenu.cpp.o"
+  "CMakeFiles/Project1.dir/Menu/EmpresaMenu.cpp.o"
   "CMakeFiles/Project1.dir/Menu/FuncionariosMenu.cpp.o"
   "CMakeFiles/Project1.dir/Menu/ListarAeroportoMenu.cpp.o"
   "CMakeFiles/Project1.dir/Menu/MainMenu.cpp.o"
