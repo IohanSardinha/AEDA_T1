@@ -19,7 +19,7 @@ public:
     Aviao* escolherAviao();
     void setAeroporto(Aeroporto* a);
     void setAviao(Aviao *a);
-    void teste();
+    int maiorId();
 };
 
 

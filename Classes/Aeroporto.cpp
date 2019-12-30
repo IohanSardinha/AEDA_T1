@@ -15,15 +15,9 @@ Funcionario* Aeroporto::getGerente() const{return gerente;}
 
 Localizacao Aeroporto::getLocalizacao() const {return localizacao;}
 
-void Aeroporto::setGerente(Funcionario* f)
-{
-    gerente = f;
-}
+void Aeroporto::setGerente(Funcionario* f){gerente = f;}
 
-void Aeroporto::adicionarFuncionario(Funcionario* f)
-{
-    funcionarios.push_back(f);
-}
+void Aeroporto::adicionarFuncionario(Funcionario* f){funcionarios.push_back(f);}
 
 void  Aeroporto::adicionarPiloto(Piloto* p)
 {
@@ -31,10 +25,7 @@ void  Aeroporto::adicionarPiloto(Piloto* p)
     funcionarios.push_back(p);
 }
 
-void  Aeroporto::adicionarAviao(Aviao* a)
-{
-    avioes.push_back(a);
-}
+void  Aeroporto::adicionarAviao(Aviao* a){avioes.push_back(a);}
 
 void  Aeroporto::adicionarMembro(Membro_tripulacao* m)
 {

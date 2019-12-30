@@ -8,7 +8,7 @@ Brasil
 Rio de Janeiro
 17:0:0
 17:10:0
-0
+1
 --voos--
 250
 0
@@ -53,7 +53,7 @@ Brasil
 Curitiba
 10:0:0
 10:10:0
-0
+1
 --voos--
 250
 0
@@ -120,19 +120,19 @@ Inglaterra
 Casablanca
 10:0:0
 11:0:0
-0
+1
 21/12/2019
 11:0:0
 Porto
 11:0:0
 12:0:0
-0
+1
 30/11/2019
 4:0:0
 Lisboa
 4:0:0
 5:0:0
-0
+1
 --voos--
 250
 1
@@ -206,4 +206,16 @@ Portugal
 --avioes--
 --pilotos--
 --funcionarios administrativos--
---aeroporto--
+--ultimoAeroporto--
+1
+2
+3
+--empresa--
+2
+3
+4
+--empresa--
+3
+4
+5
+--empresa--

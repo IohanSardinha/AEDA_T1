@@ -26,6 +26,12 @@ public:
     friend ostream& operator<<(ostream& os, Empresa e);
 };
 
+class EmpresaJaExiste{
+    int id;
+public:
+    EmpresaJaExiste(int i){id = i;}
+};
+
 
 
 

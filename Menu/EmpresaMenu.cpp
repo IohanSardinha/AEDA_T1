@@ -4,9 +4,7 @@ extern vector<Aeroporto*> aeroportos;
 extern map<string, Menu*> menus_to_call;
 extern priority_queue<Empresa> empresas;
 
-EmpresaMenu::EmpresaMenu() {
-    opcoes = {"Criar Empresa", "Editar Empresa", "Usar empresa mais disponivel", "Visualizar empresa", "Deletar empresa", "Voltar"};
-}
+EmpresaMenu::EmpresaMenu() {opcoes = {"Criar Empresa", "Editar Empresa", "Usar empresa mais disponivel", "Visualizar empresa", "Deletar empresa", "Voltar"};}
 
 void EmpresaMenu::CallMenu() {
     switch(input)
@@ -68,10 +66,25 @@ Empresa EmpresaMenu::escolherEmpresa() {
     }
 }
 
+int EmpresaMenu::maiorId() {
+    vector<Empresa> temp;
+    int maiorId = 0;
+    while (!empresas.empty()) {
+        Empresa em = empresas.top();
+        empresas.pop();
+        if (em.getId() > maiorId)
+            maiorId = em.getId();
+        temp.push_back(em);
+    }
+    for (unsigned i = 0; i < temp.size(); i++)
+        empresas.push(temp[i]);
+    return maiorId;
+}
+
 void EmpresaMenu::criarEmpresa(){
     int id, disponibilidade, manutencoes;
-    cout << "Qual o id da nova empresa? " << endl;
-    cin >> id;
+    id = maiorId()+1;
+    cout << "O id da nova empresa será: " << id << endl;
     cout << "Quanto tempo até a empresa estar disponivel? " << endl;
     cin >> disponibilidade;
     cout << "Quantas manutencoes a empresa já realizou? " << endl;
@@ -207,6 +220,8 @@ void EmpresaMenu::usarEmpresa() {
     Empresa e = empresas.top();
     empresas.pop();
     e.setDisponibilidade(x+3);
+    int m = e.getManutencao();
+    e.setManutencao(m+1);
     empresas.push(e);
     cout << "A nova disponibilidade dessa empresa é: " << endl;
     cout << e.getDisponibilidade();

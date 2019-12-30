@@ -59,15 +59,11 @@ public:
     }
 
     ///getter da informacao
-    Informacao *getInfo() const {
-        return info;
-    }
+    Informacao *getInfo() const {return info;}
 
     ///setter da informacao
     ///@param info
-    void setInfo(Informacao *info) {
-        Voo::info = info;
-    }
+    void setInfo(Informacao *info) {Voo::info = info;}
 
     ///implementacao do operator <<
     ///@param os

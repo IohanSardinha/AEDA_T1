@@ -196,11 +196,25 @@ void Menu::save()
        }
        file << "--funcionarios administrativos--" << endl;
        aeroporto_it++;
-       if(aeroporto_it == aeroportos.size())
-            file << "--aeroporto--";
-       else
-           file << "--aeroporto--" << endl;
+        if(aeroporto_it == aeroportos.size())
+            file << "--ultimoAeroporto--";
+        else
+            file << "--aeroporto--" << endl;
     }
+    vector<Empresa> temp;
+    while(!empresas.empty())
+    {
+        Empresa em = empresas.top();
+        empresas.pop();
+        file << endl;
+        file << em.getId() << endl;
+        file << em.getDisponibilidade() << endl;
+        file << em.getManutencao() << endl;
+        temp.push_back(em);
+        file << "--empresa--";
+    }
+    for (unsigned i=0; i<temp.size(); i++)
+        empresas.push(temp[i]);
     file.close();
 }
 
@@ -395,7 +409,7 @@ void Menu::load()
             funcionarios_administrativos.push_back(funcionarioAdministrativo);
             funcionarios.push_back(funcionarioAdministrativo);
         }
-        getline(file,line);
+        getline(file,line); //--aeroporto--
 
         for(auto aviao_vec: aviao_pos_func)
         {
@@ -406,7 +420,22 @@ void Menu::load()
         }
 
         aeroportosLoad.push_back(new Aeroporto(nullptr,localizacao,funcionarios,avioes,pilotos,membros_tripulacao,funcionarios_administrativos));
+
+        if (line == "--ultimoAeroporto--")
+        {
+            while(getline(file, line))
+            {
+                int id, disp, manut;
+                id = stoi(line);
+                getline(file, line);
+                disp = stoi(line);
+                getline(file, line);
+                manut = stoi(line);
+                Empresa e(id, disp, manut);
+                empresas.push(e);
+                getline(file, line); //"--empresa--"
+            }
+        }
     }
     aeroportos = aeroportosLoad;
-
 }
