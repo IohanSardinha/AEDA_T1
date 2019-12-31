@@ -207,6 +207,11 @@ void Menu::save()
            }
            i++;
        }
+       if(funcionarios.empty())
+       {
+           file << "-1" << endl;
+           file << "----Gerente----" << endl;
+       }
        aeroporto_it++;
        if(aeroporto_it == aeroportos.size())
             file << "--aeroporto--";
