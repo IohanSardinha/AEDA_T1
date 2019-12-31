@@ -5,6 +5,7 @@
 vector<Aeroporto*> aeroportos;
 map<string, Menu*> menus_to_call;
 priority_queue<Empresa> disponibilidade_empresas;
+unordered_set<Funcionario*,hash_func,equality_func> tab_funcionarios;
 
 void Menu::print()
 {
@@ -426,7 +427,10 @@ void Menu::load()
                 aviao_vec.first->adicionarTripulacao(funcionarios.at(i));
             }
         }
-
+        for(Funcionario* f : funcionarios)
+        {
+            tab_funcionarios.insert(f);
+        }
         aeroportosLoad.push_back(new Aeroporto(funcionarios.empty() ? nullptr : funcionarios[gerenteIndex],localizacao,funcionarios,avioes,pilotos,membros_tripulacao,funcionarios_administrativos));
     }
     aeroportos = aeroportosLoad;
