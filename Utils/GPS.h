@@ -5,6 +5,26 @@
 
 using namespace std;
 
+class LatInvalida : std::exception{
+    int lat;
+public:
+    LatInvalida(int l){lat = l;}
+    const char* what() const throw()
+    {
+        return "Latitude must be between -90 and 90 degrees";
+    }
+};
+
+class LongInvalida : std::exception{
+    int longe;
+public:
+    LongInvalida(int l){longe = l;}
+    const char* what() const throw()
+    {
+        return "Longitude must be between -90 and 90 degrees";
+    }
+};
+
 ///GPS
 class GPS{
     float latitude,
@@ -24,12 +44,12 @@ public:
     {
         if(lat > 90 || lat < -90)
         {
-            throw runtime_error("Latitude must be between -90 and 90 degrees");
+            throw LatInvalida(lat);
         }
 
         if(longi > 180 || longi < -180)
         {
-            throw runtime_error("Latitude must be between -90 and 90 degrees");
+            throw LongInvalida(longi);
         }
         this->latitude = lat;
         this->longitude = longi;

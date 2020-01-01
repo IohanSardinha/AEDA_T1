@@ -176,9 +176,13 @@ void AcessarAeroportoMenu::alterarLocalizacao() {
             GPS gps(latitude, longitude);
             break;
         }
-        catch (runtime_error r)
+        catch (LatInvalida l)
         {
-            cout << "Latitude e longitude precisam estar entre -90 e 90" << endl;
+            cout << l.what() << endl;
+        }
+        catch(LongInvalida l)
+        {
+            cout << l.what() << endl;
         }
     }
 

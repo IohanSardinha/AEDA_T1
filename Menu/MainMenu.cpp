@@ -138,9 +138,13 @@ void MainMenu::criarAeroporto() {
             Localizacao localizacao(pais,cidade,GPS(lat,lang));
             break;
         }
-        catch (runtime_error r)
+        catch (LatInvalida l)
         {
-            cout << "latitude e longitude precisam ser float entre -90 e 90" << endl;
+            cout << l.what() << endl;
+        }
+        catch (LongInvalida l)
+        {
+            cout << l.what() << endl;
         }
     }
 

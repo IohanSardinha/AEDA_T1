@@ -248,9 +248,13 @@ void FuncionariosMenu::criarFuncionarioAdministrativo() {
             Data data_nasc(data_nascimentoD, data_nascimentoM, data_nascimentoA);
             break;
         }
-        catch (runtime_error r)
+        catch (DiaInvalida d)
         {
-            cout << "Dia deve estar entre 1 e 31. Mes deve estar entre 1 e 12." << endl;
+            cout << d.what() << endl;
+        }
+        catch (MesInvalido d)
+        {
+            cout << d.what() << endl;
         }
     }
     Data data_nasc(data_nascimentoD, data_nascimentoM, data_nascimentoA);
@@ -271,9 +275,17 @@ void FuncionariosMenu::criarFuncionarioAdministrativo() {
             Hora horario_trabalho2(horario_de_trabalhoH1, horario_de_trabalhoM1, horario_de_trabalhoS1);
             break;
         }
-        catch (runtime_error r)
+        catch (HoraInvalida h)
         {
-            cout<< "Hora deve estar entre 0 e 23. Minutos deve estar entre 00 e 59. Segundos deve estar entre 00 e 59." << endl;
+            cout<< h.what() << endl;
+        }
+        catch (MinInvalida h)
+        {
+            cout<< h.what() << endl;
+        }
+        catch (SegInvalida h)
+        {
+            cout<< h.what() << endl;
         }
     }
     Hora horario_trabalho1(horario_de_trabalhoH1, horario_de_trabalhoM1, horario_de_trabalhoS1);
@@ -290,9 +302,17 @@ void FuncionariosMenu::criarFuncionarioAdministrativo() {
             Hora horario_trabalho2(horario_de_trabalhoH2, horario_de_trabalhoM2, horario_de_trabalhoS2);
             break;
         }
-        catch (runtime_error r)
+        catch (HoraInvalida h)
         {
-            cout<< "Hora deve estar entre 0 e 23. Minutos deve estar entre 00 e 59. Segundos deve estar entre 00 e 59." << endl;
+            cout<< h.what() << endl;
+        }
+        catch (MinInvalida h)
+        {
+            cout<< h.what() << endl;
+        }
+        catch (SegInvalida h)
+        {
+            cout<< h.what() << endl;
         }
     }
     Hora horario_trabalho2(horario_de_trabalhoH2, horario_de_trabalhoM2, horario_de_trabalhoS2);
@@ -331,9 +351,13 @@ void FuncionariosMenu::criarPiloto() {
             Data data_nasc(data_nascimentoD, data_nascimentoM, data_nascimentoA);
             break;
         }
-        catch (runtime_error r)
+        catch (DiaInvalida d)
         {
-            cout << "Dia deve estar entre 1 e 31. Mes deve estar entre 1 e 12." << endl;
+            cout << d.what() << endl;
+        }
+        catch (MesInvalido d)
+        {
+            cout << d.what() << endl;
         }
     }
     Data data_nasc(data_nascimentoD, data_nascimentoM, data_nascimentoA);
@@ -437,9 +461,13 @@ void FuncionariosMenu::editarFuncionarioAdministrativo() {
                         Data data_nasc(data_nascimentoD, data_nascimentoM, data_nascimentoA);
                         break;
                     }
-                    catch (runtime_error r)
+                    catch (DiaInvalida d)
                     {
-                        cout << "Dia deve estar entre 1 e 31. Mes deve estar entre 1 e 12." << endl;
+                        cout << d.what() << endl;
+                    }
+                    catch (MesInvalido d)
+                    {
+                        cout << d.what() << endl;
                     }
                 }
                 Data data_nasc(data_nascimentoD, data_nascimentoM, data_nascimentoA);
@@ -473,9 +501,17 @@ void FuncionariosMenu::editarFuncionarioAdministrativo() {
                         Hora horario_trabalho2(horario_de_trabalhoH1, horario_de_trabalhoM1, horario_de_trabalhoS1);
                         break;
                     }
-                    catch (runtime_error r)
+                    catch (HoraInvalida h)
                     {
-                        cout<< "Hora deve estar entre 0 e 23. Minutos deve estar entre 00 e 59. Segundos deve estar entre 00 e 59." << endl;
+                        cout<< h.what() << endl;
+                    }
+                    catch (MinInvalida h)
+                    {
+                        cout<< h.what() << endl;
+                    }
+                    catch (SegInvalida h)
+                    {
+                        cout<< h.what() << endl;
                     }
                 }
                 Hora horario_trabalho1(horario_de_trabalhoH1, horario_de_trabalhoM1, horario_de_trabalhoS1);
@@ -493,9 +529,17 @@ void FuncionariosMenu::editarFuncionarioAdministrativo() {
                         Hora horario_trabalho2(horario_de_trabalhoH2, horario_de_trabalhoM2, horario_de_trabalhoS2);
                         break;
                     }
-                    catch (runtime_error r)
+                    catch (HoraInvalida h)
                     {
-                        cout<< "Hora deve estar entre 0 e 23. Minutos deve estar entre 00 e 59. Segundos deve estar entre 00 e 59." << endl;
+                        cout<< h.what() << endl;
+                    }
+                    catch (MinInvalida h)
+                    {
+                        cout<< h.what() << endl;
+                    }
+                    catch (SegInvalida h)
+                    {
+                        cout<< h.what() << endl;
                     }
                 }
                 Hora horario_trabalho2(horario_de_trabalhoH2, horario_de_trabalhoM2, horario_de_trabalhoS2);
@@ -571,9 +615,17 @@ void FuncionariosMenu::editarPiloto() {
                         Data data_nasc(data_nascimentoD, data_nascimentoM, data_nascimentoA);
                         break;
                     }
-                    catch (runtime_error r)
+                    catch (HoraInvalida h)
                     {
-                        cout << "Dia deve estar entre 1 e 31. Mes deve estar entre 1 e 12." << endl;
+                        cout<< h.what() << endl;
+                    }
+                    catch (MinInvalida h)
+                    {
+                        cout<< h.what() << endl;
+                    }
+                    catch (SegInvalida h)
+                    {
+                        cout<< h.what() << endl;
                     }
                 }
                 Data data_nasc(data_nascimentoD, data_nascimentoM, data_nascimentoA);

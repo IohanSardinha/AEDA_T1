@@ -5,6 +5,36 @@
 
 using namespace std;
 
+class HoraInvalida : std::exception{
+    int hora;
+public:
+    HoraInvalida(int h){hora = h;}
+    const char* what() const throw()
+    {
+        return "Hora deve estar entre 0 e 24";
+    }
+};
+
+class MinInvalida : std::exception{
+    int min;
+public:
+    MinInvalida(int m){min = m;}
+    const char* what() const throw()
+    {
+        return "Hora deve estar entre 0 e 59";
+    }
+};
+
+class SegInvalida : std::exception{
+    int seg;
+public:
+    SegInvalida(int s){seg = s;}
+    const char* what() const throw()
+    {
+        return "Segundo deve estar entre 0 e 59";
+    }
+};
+
 ///Hora
 class Hora{
     int hora,
@@ -27,15 +57,15 @@ public:
     {
         if(h > 24 || h < 0)
         {
-            throw runtime_error("Hour must be between 0 and 24");
+            throw HoraInvalida(h);
         }
         if(m > 59 || m < 0)
         {
-            throw runtime_error("Minutes must be between 0 and 59");
+            throw MinInvalida(m);
         }
         if(s > 59 || s < 0)
         {
-            throw runtime_error("Seconds must be between 0 and 59");
+            throw SegInvalida(s);
         }
 
         hora = h;

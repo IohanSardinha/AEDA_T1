@@ -92,9 +92,13 @@ void VooMenu::criarVoo() {
             Data data_c(dia, mes, ano);
             break;
         }
-        catch (runtime_error r)
+        catch (DiaInvalida d)
         {
-            cout<< "Dia deve estar entre 1 e 31. Mes deve estar entre 1 e 12." << endl;
+            cout<< d.what() << endl;
+        }
+        catch (MesInvalido d)
+        {
+            cout<< d.what() << endl;
         }
     }
     Data data_c(dia, mes, ano);
@@ -112,9 +116,17 @@ void VooMenu::criarVoo() {
             Hora hora_prevista(hora1, min1, seg1);
             break;
         }
-        catch (runtime_error r)
+        catch (HoraInvalida h)
         {
-            cout<< "Hora deve estar entre 0 e 23. Minutos deve estar entre 00 e 59. Segundos deve estar entre 00 e 59." << endl;
+            cout<< h.what() << endl;
+        }
+        catch (MinInvalida h)
+        {
+            cout<< h.what() << endl;
+        }
+        catch (SegInvalida h)
+        {
+            cout<< h.what() << endl;
         }
     }
     Hora hora_prevista(hora1, min1, seg1);
@@ -132,9 +144,17 @@ void VooMenu::criarVoo() {
             Hora hora_real(hora2, min2, seg2);
             break;
         }
-        catch (runtime_error r)
+        catch (HoraInvalida h)
         {
-            cout<< "Hora deve estar entre 0 e 23. Minutos deve estar entre 00 e 59. Segundos deve estar entre 00 e 59." << endl;
+            cout<< h.what() << endl;
+        }
+        catch (MinInvalida h)
+        {
+            cout<< h.what() << endl;
+        }
+        catch (SegInvalida h)
+        {
+            cout<< h.what() << endl;
         }
     }
     Hora hora_real(hora2, min2, seg2);
@@ -228,9 +248,13 @@ void VooMenu::alterarData() {
             Data data_c(dia, mes, ano);
             break;
         }
-        catch (runtime_error r)
+        catch (DiaInvalida d)
         {
-            cout<< "Dia deve estar entre 1 e 31. Mes deve estar entre 1 e 12." << endl;
+            cout << d.what() << endl;
+        }
+        catch (MesInvalido d)
+        {
+            cout << d.what() << endl;
         }
     }
     Data data_c(dia, mes, ano);
@@ -253,9 +277,17 @@ Hora VooMenu::alterarHora() {
             Hora horas(hora, min, seg);
             break;
         }
-        catch (runtime_error r)
+        catch (HoraInvalida h)
         {
-            cout<< "Hora deve estar entre 0 e 23. Minutos deve estar entre 00 e 59. Segundos deve estar entre 00 e 59." << endl;
+            cout<< h.what() << endl;
+        }
+        catch (MinInvalida h)
+        {
+            cout<< h.what() << endl;
+        }
+        catch (SegInvalida h)
+        {
+            cout<< h.what() << endl;
         }
     }
     Hora horas(hora, min, seg);

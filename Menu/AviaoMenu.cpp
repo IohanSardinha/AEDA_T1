@@ -121,9 +121,12 @@ Voo* AviaoMenu::criarVoo() {
             Data data_c(dia, mes, ano);
             break;
         }
-        catch (runtime_error r)
+        catch (DiaInvalida d)
         {
-            cout<< "Dia deve estar entre 1 e 31. Mes deve estar entre 1 e 12." << endl;
+            cout<< d.what() << endl;
+        }
+        catch(MesInvalido m){
+            cout << m.what() << endl;
         }
     }
     Data data_c(dia, mes, ano);
@@ -140,9 +143,17 @@ Voo* AviaoMenu::criarVoo() {
             Hora hora_prevista(hora1, min1, seg1);
             break;
         }
-        catch (runtime_error r)
+        catch (HoraInvalida h)
         {
-            cout<< "Hora deve estar entre 0 e 23. Minutos deve estar entre 00 e 59. Segundos deve estar entre 00 e 59." << endl;
+            cout<< h.what() << endl;
+        }
+        catch (MinInvalida m)
+        {
+            cout << m.what() << endl;
+        }
+        catch (SegInvalida m)
+        {
+            cout << m.what() << endl;
         }
     }
     Hora hora_prevista(hora1, min1, seg1);
@@ -160,9 +171,17 @@ Voo* AviaoMenu::criarVoo() {
             Hora hora_real(hora2, min2, seg2);
             break;
         }
-        catch (runtime_error r)
+        catch (HoraInvalida h)
         {
-            cout<< "Hora deve estar entre 0 e 23. Minutos deve estar entre 00 e 59. Segundos deve estar entre 00 e 59." << endl;
+            cout<< h.what() << endl;
+        }
+        catch (MinInvalida m)
+        {
+            cout << m.what() << endl;
+        }
+        catch (SegInvalida m)
+        {
+            cout << m.what() << endl;
         }
     }
     Hora hora_real(hora2, min2, seg2);

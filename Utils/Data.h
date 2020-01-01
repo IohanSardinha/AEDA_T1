@@ -5,6 +5,26 @@
 
 using namespace std;
 
+class DiaInvalida : std::exception{
+    int dia;
+public:
+    DiaInvalida(int d){dia = d;}
+    const char* what() const throw()
+    {
+        return "Dia deve estar entre 1 e 31";
+    }
+};
+
+class MesInvalido : std::exception{
+    int mes;
+public:
+    MesInvalido(int m){mes = m;}
+    const char* what() const throw()
+    {
+        return "Mes deve estar entre 1 e 12";
+    }
+};
+
 ///Data
 class Data{
     int dia,
@@ -27,11 +47,11 @@ public:
     {
         if(d > 31 || d < 1)
         {
-            throw runtime_error("Day must be between 1 and 31");
+            throw DiaInvalida(d);
         }
-        if(m > 12 || d < 1)
+        if(m > 12 || m < 1)
         {
-            throw runtime_error("Month must be between 1 and 12");
+            throw MesInvalido(m);
         }
         dia = d;
         mes = m;
@@ -88,5 +108,7 @@ public:
         return os;
     }
 };
+
+
 
 #endif //PROJECT1_DATA_H
