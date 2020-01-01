@@ -421,10 +421,8 @@ void Menu::load()
 
         aeroportosLoad.push_back(new Aeroporto(nullptr,localizacao,funcionarios,avioes,pilotos,membros_tripulacao,funcionarios_administrativos));
 
-        if (line == "--ultimoAeroporto--")
-        {
-            while(getline(file, line))
-            {
+        if (line == "--ultimoAeroporto--") {
+            while (getline(file, line)) {
                 int id, disp, manut;
                 id = stoi(line);
                 getline(file, line);
