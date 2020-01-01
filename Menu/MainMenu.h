@@ -16,6 +16,7 @@ public:
     ///Remove um aeroporto de acordo com os inputs do usarios
     void deletarAeroporto();
 
+    void verFuncionarios();
 
     void CallMenu();
 

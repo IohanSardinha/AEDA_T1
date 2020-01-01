@@ -4,9 +4,10 @@
 extern vector<Aeroporto*> aeroportos;
 extern map<string, Menu*> menus_to_call;
 extern priority_queue<Empresa> empresas;
+extern unordered_set<Funcionario*,hash_func,equality_func> tab_funcionarios;
 
 MainMenu::MainMenu() {
-    opcoes = {"Criar aeroporto","Listar aeroportos","Acessar aeroporto", "Remover Aeroporto", "Acessar empresas de manutencao", "Sair"};
+    opcoes = {"Ver todos os funcionarios", "Criar aeroporto","Listar aeroportos","Acessar aeroporto", "Remover Aeroporto", "Acessar empresas de manutencao", "Sair"};
 }
 
 void MainMenu::CallMenu() {
@@ -14,15 +15,20 @@ void MainMenu::CallMenu() {
     {
         case 0:
         {
-            criarAeroporto();
+            verFuncionarios();
             break;
         }
         case 1:
         {
-            menus_to_call["ListarAeroportoMenu"]->play();
+            criarAeroporto();
             break;
         }
         case 2:
+        {
+            menus_to_call["ListarAeroportoMenu"]->play();
+            break;
+        }
+        case 3:
         {
             Aeroporto* a = escolherAeroporto();
             if(a == NULL)
@@ -34,18 +40,18 @@ void MainMenu::CallMenu() {
             menus_to_call["AcessarAeroportoMenu"]->play();
             break;
         }
-        case 3:
+        case 4:
         {
             deletarAeroporto();
             menus_to_call["MainMenu"]->play();
             break;
         }
-        case 4:
+        case 5:
         {
             menus_to_call["EmpresaMenu"]->play();
             break;
         }
-        case 5:
+        case 6:
         {
             save();
             cout << endl
@@ -73,6 +79,17 @@ void MainMenu::deletarAeroporto()
         for (int i = 0; i < aeroportos.size(); i++) {
             if (lower(aeroportos.at(i)->getLocalizacao().getPais()) == lower(p) && lower(aeroportos.at(i)->getLocalizacao().getCidade()) == lower(c))
             {
+                for(Funcionario* f: aeroportos[i]->getFuncionarios())
+                {
+                    for(auto it = tab_funcionarios.begin(); it != tab_funcionarios.end(); it++)
+                    {
+                        if(*it == f)
+                        {
+                            (*it)->setAtual(false);
+                            break;
+                        }
+                    }
+                }
                 aeroportos.erase(aeroportos.begin()+i);
                 return;
             }
@@ -131,5 +148,95 @@ void MainMenu::criarAeroporto() {
     aeroportos.push_back(new Aeroporto(NULL,localizacao,{},{},{},{},{}));
     cout << "Para adicionar funcionarios e avioes ao aeroporto va para:"<< endl;
     cout << "2 - Acessar aeroporto" << endl << endl;
+    menus_to_call["MainMenu"]->play();
+}
+
+void MainMenu::verFuncionarios()
+{
+    cout << string(40,'\n');
+    cout << "0-Atuais" << endl;
+    cout << "1-Antigos" << endl;
+    cout << "2-Todos" << endl;
+    string field;
+    cin.ignore(1024,'\n');
+    getline(cin, field);
+
+    cout << string(40,'\n');
+    cout << "0-Administrativos" << endl;
+    cout << "1-Pilotos" << endl;
+    cout << "2-Membros de tripulacao" << endl;
+    cout << "3-Todos" << endl;
+    string type;
+    getline(cin, type);
+
+    auto it = tab_funcionarios.begin();
+    while(it!=tab_funcionarios.end())
+    {
+        Funcionario* funcionario = *it;
+
+        if(type == "0")
+        {
+            if(field == "0")
+            {
+                if(funcionario->tipo() == "ADM" && funcionario->isAtual()) funcionario->print();
+            }
+            else if(field == "1")
+            {
+                if(funcionario->tipo() == "ADM" && !funcionario->isAtual()) funcionario->print();
+            }
+            else
+            {
+                if(funcionario->tipo() == "ADM") funcionario->print();
+            }
+        }
+        else if(type == "1")
+        {
+            if(field == "0")
+            {
+                if(funcionario->tipo() == "PIL" && funcionario->isAtual()) funcionario->print();
+            }
+            else if(field == "1")
+            {
+                if(funcionario->tipo() == "PIL" && !funcionario->isAtual()) funcionario->print();
+            }
+            else
+            {
+                if(funcionario->tipo() == "PIL") funcionario->print();
+            }
+        }
+        else if(type == "2")
+        {
+            if(field == "0")
+            {
+                if(funcionario->tipo() == "MEM" && funcionario->isAtual()) funcionario->print();
+            }
+            else if(field == "1")
+            {
+                if(funcionario->tipo() == "MEM" && !funcionario->isAtual()) funcionario->print();
+            }
+            else
+            {
+                if(funcionario->tipo() == "MEM") funcionario->print();
+            }
+        }
+        else
+        {
+            if(field == "0")
+            {
+                if(funcionario->isAtual()) funcionario->print();
+            }
+            else if(field == "1")
+            {
+                if(!funcionario->isAtual()) funcionario->print();
+            }
+            else
+            {
+                funcionario->print();
+            }
+        }
+
+        it++;
+    }
+    wait();
     menus_to_call["MainMenu"]->play();
 }

@@ -4,6 +4,7 @@
 
 vector<Aeroporto*> aeroportos;
 map<string, Menu*> menus_to_call;
+unordered_set<Funcionario*,hash_func,equality_func> tab_funcionarios;
 priority_queue<Empresa> empresas;
 
 void Menu::print()
@@ -185,6 +186,7 @@ void Menu::save()
        //Funcionario Administrativo
        for(Funcionario_administrativos* funcionarioAdministrativos: aeroporto->getFuncionariosAdministrativos())
        {
+           funcionarios.push_back(funcionarioAdministrativos);
            file << funcionarioAdministrativos->getSalario() << endl;
            file << funcionarioAdministrativos->getNome() << endl;
            file << funcionarioAdministrativos->getDataNascimento() << endl;
@@ -195,6 +197,22 @@ void Menu::save()
            file << funcionarioAdministrativos->getDepartamento() << endl;
        }
        file << "--funcionarios administrativos--" << endl;
+       int i = 0;
+       for(Funcionario* funcionario1 : funcionarios)
+       {
+           if(funcionario1 == aeroporto->getGerente())
+           {
+               file << i << endl;
+               file << "----Gerente----" << endl;
+               break;
+           }
+           i++;
+       }
+       if(funcionarios.empty())
+       {
+           file << "-1" << endl;
+           file << "----Gerente----" << endl;
+       }
        aeroporto_it++;
         if(aeroporto_it == aeroportos.size())
             file << "--ultimoAeroporto--";
@@ -409,7 +427,12 @@ void Menu::load()
             funcionarios_administrativos.push_back(funcionarioAdministrativo);
             funcionarios.push_back(funcionarioAdministrativo);
         }
-        getline(file,line); //--aeroporto--
+
+        getline(file,line);
+        int gerenteIndex = stoi(line);
+        getline(file,line);
+
+        getline(file,line);
 
         for(auto aviao_vec: aviao_pos_func)
         {
@@ -418,6 +441,11 @@ void Menu::load()
                 aviao_vec.first->adicionarTripulacao(funcionarios.at(i));
             }
         }
+        for(Funcionario* f : funcionarios)
+        {
+            tab_funcionarios.insert(f);
+        }
+        aeroportosLoad.push_back(new Aeroporto(funcionarios.empty() ? nullptr : funcionarios[gerenteIndex],localizacao,funcionarios,avioes,pilotos,membros_tripulacao,funcionarios_administrativos));
 
         aeroportosLoad.push_back(new Aeroporto(nullptr,localizacao,funcionarios,avioes,pilotos,membros_tripulacao,funcionarios_administrativos));
 

@@ -3,6 +3,7 @@
 #include "../Classes/Informacao.h"
 
 extern map<string, Menu*> menus_to_call;
+extern unordered_set<Funcionario*,hash_func,equality_func> tab_funcionarios;
 
 FuncionariosMenu::FuncionariosMenu(enum tipos_funcionarios t) {
     tipo = t;
@@ -304,6 +305,7 @@ void FuncionariosMenu::criarFuncionarioAdministrativo() {
                                                                               pair<Hora,Hora>(Hora(horario_de_trabalhoH1,horario_de_trabalhoM1,horario_de_trabalhoS1),
                                                                                               Hora(horario_de_trabalhoH2,horario_de_trabalhoM2,horario_de_trabalhoS2)),funcao,departamento);
     a->adicionarFuncionarioAdministrativo(novoFuncionario);
+    tab_funcionarios.insert(novoFuncionario);
 }
 
 void FuncionariosMenu::criarPiloto() {
@@ -341,6 +343,7 @@ void FuncionariosMenu::criarPiloto() {
     cout << "OBS: para adicionar voos e avioes de voos ao piloto va para editar pilotos" << endl;
     Piloto* novoFuncionario = new Piloto(nome,Data(data_nascimentoD,data_nascimentoM,data_nascimentoA),categoria,{},{});
     a->adicionarPiloto(novoFuncionario);
+    tab_funcionarios.insert(novoFuncionario);
     cin.ignore(1024,'\n');
     wait();
 }
@@ -390,6 +393,7 @@ void FuncionariosMenu::criarMembroTripulacao()
     }
 
     a->adicionarMembro(novoFuncionario);
+    tab_funcionarios.insert(novoFuncionario);
 }
 
 void FuncionariosMenu::editarFuncionarioAdministrativo() {
@@ -823,6 +827,18 @@ void FuncionariosMenu::editarMembroTripulacao(){
     }
 }
 
+void remove_from_tab(Funcionario* f)
+{
+    for(auto it = tab_funcionarios.begin(); it != tab_funcionarios.end(); it++)
+    {
+        if(*it == f)
+        {
+            (*it)->setAtual(false);
+            return;
+        }
+    }
+}
+
 void FuncionariosMenu::deletarFuncionarioAdministrativo() {
     string nome;
     cout << "Nome do funcionario a ser removido: ";
@@ -832,6 +848,7 @@ void FuncionariosMenu::deletarFuncionarioAdministrativo() {
         if(lower(funcionario->getNome()) == lower(nome))
         {
             a->removerFuncionarioAdministrativo(funcionario);
+            remove_from_tab(funcionario);
         }
     }
 }
@@ -845,6 +862,7 @@ void FuncionariosMenu::deletarPiloto(){
         if(lower(funcionario->getNome()) == lower(nome))
         {
             a->removerPiloto(funcionario);
+            remove_from_tab(funcionario);
         }
     }
 }
@@ -862,6 +880,7 @@ void FuncionariosMenu::deletarMembroTripulacao(){
     cin >> i;
     Funcionario* funcionario = a->getMembros().at(i);
     a->removerMembro(a->getMembros().at(i));
+    remove_from_tab(funcionario);
 }
 
 void FuncionariosMenu::listarFuncionarios() {

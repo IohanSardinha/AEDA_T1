@@ -16,11 +16,11 @@ class Aviao;
 ///Classe abstrata funcionario de aeroporto
 class Funcionario{
 protected:
-    int salario;
+    int salario; bool atual;
 public:
     ///contutor da classe funcionario
     ///@param salario
-    Funcionario(int salario);
+    Funcionario(int salario, bool atual = true);
 
     ///getter do salario
     int getSalario() const;
@@ -29,8 +29,17 @@ public:
     ///@param s
     void setSalario(int s){salario=s;};
 
+    ///getter do atual
+    bool isAtual() const{return atual;};
+
+    ///setter do atual
+    ///@param s
+    void setAtual(bool a){atual = a;};
+
     ///class pure virctual criada par printar os funcionario
     virtual void print() = 0;
+
+    virtual string tipo()= 0;
 };
 
 ///Funcionario Administrativo de Aerporto
@@ -51,7 +60,7 @@ public:
     ///@param horario_de_trabalho
     ///@param funcao
     ///@param departamento
-    Funcionario_administrativos(const string& nome,const Data& data_nascimento,const string& categoria,const pair<Hora,Hora> horario_de_trabalho,const string &funcao, const string &departamento);
+    Funcionario_administrativos(const string& nome,const Data& data_nascimento,const string& categoria,const pair<Hora,Hora> horario_de_trabalho,const string &funcao, const string &departamento, bool atual = true);
 
     ///getter da funcao
     string getFuncao() const;
@@ -69,6 +78,8 @@ public:
 
     ///printter do funcionario administrativo
     void print();
+
+    string tipo(){return "ADM";};
 
     ///getter do nome
     const string &getNome() const;
@@ -107,7 +118,7 @@ public:
     ///contrutor da classe membro tripulacao
     ///@param voosAlocados
     ///@param infoVoos
-    Membro_tripulacao(const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos);
+    Membro_tripulacao(const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos, bool atual = true);
 
     ///getter dos voos
     vector<Voo*> getVoos();
@@ -117,6 +128,8 @@ public:
 
     ///print da classe membro tripulacao
     void print();
+
+    string tipo(){return "MEM";};
 
     ///funcao que adiciona o voo ao final do vetor de voos
     ///@param v
@@ -148,7 +161,7 @@ public:
     ///@param tiposAviao
     ///@param voosRealizados
     Piloto(const string &nome, const Data &dataNascimento, const string &categoria,
-           const vector<Aviao*> &tiposAviao, const vector<Voo*> & voosRealizados);
+           const vector<Aviao*> &tiposAviao, const vector<Voo*> & voosRealizados,bool atual = true);
 
     ///getter do nome
     const string &getNome() const;
@@ -181,6 +194,8 @@ public:
 
     ///funcao que printa o piloto
     void print();
+
+    string tipo(){return "PIL";};
 };
 
 #endif //PROJECT1_FUNCIONARIO_H

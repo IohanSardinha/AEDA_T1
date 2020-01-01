@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <unordered_set>
 #include <map>
 #include <algorithm>
 #include <fstream>
@@ -18,6 +19,18 @@
 
 using namespace std;
 
+struct equality_func {
+    bool operator() (const Funcionario* f1, const Funcionario* f2) const {
+        return f1 == f2;
+    }
+};
+
+struct hash_func {
+    int operator() (const Funcionario* f) const {
+        int v = f->getSalario();
+        return v;
+    }
+};
 ///Classe Abstrata Menu com funcoes comuns a todos os menus
 class Menu {
 protected:
