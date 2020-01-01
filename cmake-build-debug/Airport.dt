@@ -42,6 +42,8 @@ Gold
 Secretaria
 Administrativo
 --funcionarios administrativos--
+0
+----
 --aeroporto--
 Rio de Janeiro
 Brasil
@@ -87,6 +89,8 @@ Master
 Diretora
 Financeiro
 --funcionarios administrativos--
+0
+------
 --aeroporto--
 Abu Dhabi
 Emirados Arabes Unidos
@@ -98,6 +102,8 @@ Emirados Arabes Unidos
 --avioes--
 --pilotos--
 --funcionarios administrativos--
+0
+------
 --aeroporto--
 Dubai
 Emirados Arabes Unidos
@@ -109,6 +115,8 @@ Emirados Arabes Unidos
 --avioes--
 --pilotos--
 --funcionarios administrativos--
+0
+------
 --aeroporto--
 Londres
 Inglaterra
@@ -184,6 +192,8 @@ Piloto
 --voos piloto--
 --pilotos--
 --funcionarios administrativos--
+0
+----
 --aeroporto--
 Lisboa
 Portugal
@@ -195,6 +205,8 @@ Portugal
 --avioes--
 --pilotos--
 --funcionarios administrativos--
+0
+------
 --aeroporto--
 Porto
 Portugal
@@ -206,6 +218,8 @@ Portugal
 --avioes--
 --pilotos--
 --funcionarios administrativos--
+0
+-----
 --ultimoAeroporto--
 1
 2
