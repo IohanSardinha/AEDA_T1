@@ -4,6 +4,7 @@
 #include "../Utils/split.h"
 #include "../Utils/Hora.h"
 #include "../Utils/Data.h"
+#include "../Classes/BinaryTree.h"
 
 class Informacao;
 
@@ -13,16 +14,20 @@ class Voo{
     Hora hora;
     string destino;
     Informacao* info;
+    int tempoPista;
+
+
 public:
     ///contrtutor da classe Voo
     ///@param D
     ///@param d
     ///@param h
-    Voo(Data D, Hora h, string d)
+    Voo(Data D, Hora h, string d, int tpista)
     {
         data = D;
         hora = h;
         destino = d;
+        tempoPista = tpista;
     }
 
     ///getter da data
@@ -75,6 +80,17 @@ public:
         os << "Hora: " << v.hora  << endl;
         return os;
     }
+
+    ///Setter tempo em pista
+    ///@param min
+    void setTempoPista(int min)
+    {
+        tempoPista = min;
+    }
+
+    /// Getter tempo em pista
+    int getTempoPista() const
+    {return tempoPista;}
 };
 
 #endif //PROJECT1_VOO_H

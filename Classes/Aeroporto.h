@@ -4,6 +4,9 @@
 #include <iostream>
 #include "Funcionario.h"
 #include "../Utils/Localizacao.h"
+#include "Aviao.h"
+#include "../Classes/BinaryTree.h"
+
 ///Aeroporto da rede O connor
 class Aeroporto{
     Funcionario* gerente;
@@ -13,6 +16,7 @@ class Aeroporto{
     vector<Piloto*> pilotos;
     vector<Membro_tripulacao*> membros;
     vector<Funcionario_administrativos*> funcionarios_administrativos;
+
 
 public:
     ///Construtor de Aeroporto
@@ -100,6 +104,16 @@ public:
 
     ///Getter vetor Funcionarios Administrativos
     vector<Funcionario_administrativos*> & getFuncionariosAdministrativos();
+
+    ///Getter do numero do paragens no aeroporto
+    int getParagens() const;
+
+    ///Getter do tempo medio
+    int getTempoMedio();
+
+    bool operator < (Aeroporto &a1);
+
+    bool operator == (Aeroporto &a1);
 
 };
 

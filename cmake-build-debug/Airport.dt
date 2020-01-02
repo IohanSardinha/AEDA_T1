@@ -6,6 +6,7 @@ Brasil
 23/12/2019
 17:0:0
 Rio de Janeiro
+15
 17:0:0
 17:10:0
 0
@@ -43,7 +44,7 @@ Secretaria
 Administrativo
 --funcionarios administrativos--
 0
-----
+----Gerente----
 --aeroporto--
 Rio de Janeiro
 Brasil
@@ -53,6 +54,7 @@ Brasil
 20/11/2019
 10:0:0
 Curitiba
+20
 10:0:0
 10:10:0
 0
@@ -90,7 +92,7 @@ Diretora
 Financeiro
 --funcionarios administrativos--
 0
-------
+----Gerente----
 --aeroporto--
 Abu Dhabi
 Emirados Arabes Unidos
@@ -102,8 +104,8 @@ Emirados Arabes Unidos
 --avioes--
 --pilotos--
 --funcionarios administrativos--
-0
-------
+-1
+----Gerente----
 --aeroporto--
 Dubai
 Emirados Arabes Unidos
@@ -115,8 +117,8 @@ Emirados Arabes Unidos
 --avioes--
 --pilotos--
 --funcionarios administrativos--
-0
-------
+-1
+----Gerente----
 --aeroporto--
 Londres
 Inglaterra
@@ -126,18 +128,21 @@ Inglaterra
 10/10/2020
 10:0:0
 Casablanca
+10
 10:0:0
 11:0:0
 0
 21/12/2019
 11:0:0
 Porto
+13
 11:0:0
 12:0:0
 0
 30/11/2019
 4:0:0
 Lisboa
+12
 4:0:0
 5:0:0
 0
@@ -193,7 +198,7 @@ Piloto
 --pilotos--
 --funcionarios administrativos--
 0
-----
+----Gerente----
 --aeroporto--
 Lisboa
 Portugal
@@ -205,8 +210,8 @@ Portugal
 --avioes--
 --pilotos--
 --funcionarios administrativos--
-0
-------
+-1
+----Gerente----
 --aeroporto--
 Porto
 Portugal
@@ -218,8 +223,8 @@ Portugal
 --avioes--
 --pilotos--
 --funcionarios administrativos--
-0
------
+-1
+----Gerente----
 --ultimoAeroporto--
 1
 2
@@ -228,6 +233,10 @@ Portugal
 2
 3
 4
+--empresa--
+5
+3
+6
 --empresa--
 4
 4

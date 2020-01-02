@@ -144,6 +144,7 @@ ostream& operator<<(ostream& os, const Aeroporto& a)
     os << "Quantidade de pilotos: " << a.pilotos.size() << endl;
     os << "Quantidade de membros de tripulacao: " << a.membros.size() << endl;
     os << "Quantidade de funcionarios administrativos: " << a.funcionarios_administrativos.size() << endl;
+    os << "Quantidade de voos: " << a.getParagens() << endl;
     return os;
 }
 
@@ -162,4 +163,37 @@ void Aeroporto::setLocalizacao(string p, string c, GPS g)
     localizacao.setPais(p);
     localizacao.setCidade(c);
     localizacao.setCordenadas(g);
+}
+
+int Aeroporto::getParagens() const
+{
+    int n = 0;
+    for(int i=0; i < avioes.size(); i++)
+    {
+        n += avioes.at(i)->getVoos().size();
+    }
+    return n;
+}
+
+bool Aeroporto::operator< (Aeroporto &a1)
+{
+    if(this->getParagens() == a1.getParagens())
+        return this->getTempoMedio() < a1.getTempoMedio();
+    return this->getParagens() < a1.getParagens();
+}
+bool Aeroporto:: operator == ( Aeroporto &a1)
+{
+    return this==&a1;
+}
+
+int Aeroporto::getTempoMedio()
+{
+    int n = 0, tempMedioPista = 0;
+    for (int i = 0; i < avioes.size(); i++) {
+        n += avioes.at(i)->getTempoMedio();
+    }
+    if (getParagens() == 0)
+        return 0;
+    tempMedioPista = n / getParagens();
+    return tempMedioPista;
 }

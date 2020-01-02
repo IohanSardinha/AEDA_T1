@@ -4,15 +4,20 @@
 #include <iostream>
 #include <string>
 #include "../Classes/Voo.h"
+#include "Aeroporto.h"
+#include "../Classes/BinaryTree.h"
+
 
 ///Aviao
 class Aviao{
     string tipo;
     int capacidade;
-    //Escalonamento
     vector<Voo*> voos;
     vector<Funcionario*> tripulacao; //2 pilotos e 2 membros de cabine
     int custo_operacao;
+
+
+
 public:
     ///Construtor de Aviao
     ///@param [in] tipo Modelo do aviao
@@ -27,6 +32,7 @@ public:
         this->voos = voos;
         this->tripulacao = funcionarios;
         this->custo_operacao = custo_operacao;
+
     }
 
     ///Construtor de Aviao
@@ -51,6 +57,7 @@ public:
         this->voos = voos;
         this->tripulacao = tripulacao;
         this->custo_operacao = custo_operacao;
+
     }
 
     ///Getter do vetor Tripulacao do aviao
@@ -146,6 +153,23 @@ public:
     ///@param [in] os ostream no qual sera escrito
     ///@param [in] a aviao a ser escrito
     friend ostream& operator<<(ostream& os, const Aviao& a);
+
+
+    ///Getter do tempo medio
+    int getTempoMedio()
+    {
+        int tempMedio =0;
+        tempMedio = getTempoTotal()/(voos.size());
+        return tempMedio;
+    }
+
+    int getTempoTotal()
+    {
+        int tempTotal;
+        for(int i= 0; i < voos.size(); i++)
+            tempTotal += voos[i]->getTempoPista();
+        return tempTotal;
+    }
 };
 
 #endif //PROJECT1_AVIAO_H

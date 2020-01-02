@@ -6,6 +6,7 @@ vector<Aeroporto*> aeroportos;
 map<string, Menu*> menus_to_call;
 unordered_set<Funcionario*,hash_func,equality_func> tab_funcionarios;
 priority_queue<Empresa> empresas;
+BST<Aeroporto*> ArvAeroporto(nullptr);
 
 void Menu::print()
 {
@@ -76,6 +77,7 @@ void Menu::save()
                file << voo->getData() << endl;
                file << voo->getHora() << endl;
                file << voo->getDestino() << endl;
+               file << voo->getTempoPista() << endl;
                file << voo->getInfo()->getHoraPrevista() << endl;
                file << voo->getInfo()->getHoraReal() << endl;
                file << voo->getInfo()->isCancelado() << endl;
@@ -270,6 +272,9 @@ void Menu::load() {
             Hora hora(stoi(splitted[0]), stoi(splitted[1]), stoi(splitted[2]));
             string destino;
             getline(file, destino);
+            string temp;
+            getline(file, temp);
+            int tempPista = stoi(temp);
             getline(file, line);
             splitted = split(line, ":");
             Hora hora_prevista(stoi(splitted[0]), stoi(splitted[1]), stoi(splitted[2]));
@@ -279,7 +284,7 @@ void Menu::load() {
             getline(file, line);
             bool canceled = (line == "0");
 
-            Voo *voo = new Voo(data, hora, destino);
+            Voo *voo = new Voo(data, hora, destino, tempPista);
             Informacao *informacao = new Informacao(voo, hora_prevista, hora_real, canceled);
             voo->setInfo(informacao);
             voos.push_back(voo);
@@ -432,12 +437,13 @@ void Menu::load() {
         for (Funcionario *f : funcionarios) {
             tab_funcionarios.insert(f);
         }
-        aeroportosLoad.push_back(
-                new Aeroporto(funcionarios.empty() ? nullptr : funcionarios[gerenteIndex], localizacao, funcionarios,
-                              avioes, pilotos, membros_tripulacao, funcionarios_administrativos));
 
-        aeroportosLoad.push_back(new Aeroporto(nullptr, localizacao, funcionarios, avioes, pilotos, membros_tripulacao,
-                                               funcionarios_administrativos));
+        Aeroporto* a = new Aeroporto(funcionarios.empty() ? nullptr : funcionarios[gerenteIndex], localizacao, funcionarios,
+        avioes, pilotos, membros_tripulacao, funcionarios_administrativos);
+
+        aeroportosLoad.push_back(a);
+
+        ArvAeroporto.insert(a);
 
         if (line == "--ultimoAeroporto--") {
             while (getline(file, line)) {

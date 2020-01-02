@@ -2,11 +2,12 @@
 
 extern vector<Aeroporto*> aeroportos;
 extern map<string, Menu*> menus_to_call;
+extern BST<Aeroporto*> ArvAeroporto;
 
 ListarAeroportoMenu::ListarAeroportoMenu(){
     opcoes = {"Listar por localizacao", "Listar por quantidade de funcionario", "Listar por quantidade de funcionario administrativo",
               "Listar por quantidade de pilotos", "Listar por quantidade de Membro de tripulacao", "Listar por quantidade de avioes",
-              "Escolher um aeroporto", "Voltar"};
+              "Listar por numeros de voos", "Listar pelo pais", "Escolher um aeroporto" , "Voltar"};
 }
 
 void ListarAeroportoMenu::CallMenu() {
@@ -43,10 +44,21 @@ void ListarAeroportoMenu::CallMenu() {
         }
         case 6:
         {
-            escolherAeroporto();
+            porNumeroVoos();
             break;
         }
         case 7:
+        {
+            porPais();
+            break;
+        }
+
+        case 8:
+        {
+            escolherAeroporto();
+            break;
+        }
+        case 9:
         {
             menus_to_call["MainMenu"]->play();
             return;
@@ -135,5 +147,33 @@ void ListarAeroportoMenu::escolherAeroporto()
             }
         }
         cout << "Parametros dados nao indicam nenhum aeroporto" << endl;
+    }
+}
+
+void ListarAeroportoMenu::porNumeroVoos()
+{
+    ArvAeroporto.printTree();
+}
+
+void ListarAeroportoMenu::porPais() {
+    string pais;
+    vector<Aeroporto*> aero;
+    cout << "Pais no qual os aeroportos estao localizados: " << endl;
+    cin.ignore(1024, '\n');
+    getline(cin, pais);
+
+    for (int i = 0; i < aeroportos.size(); i++)
+    {
+        if (lower(aeroportos.at(i)->getLocalizacao().getPais()) == lower(pais))
+            aero.push_back(aeroportos.at(i));
+    }
+    sort(aero.begin(), aero.end());
+
+    if (aero.size() == 0)
+        cout << "Nao ha aeroportos nesse pais" << endl;
+
+    for (int j = 0; j < aero.size(); j++)
+    {
+        cout << *aero.at(j) << endl;
     }
 }

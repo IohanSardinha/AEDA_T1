@@ -27,6 +27,7 @@ void AviaoMenu::CallMenu() {
         }
         case 3:
         {
+            menus_to_call["VooMenu"]->setAeroporto(aeroporto);
             menus_to_call["VooMenu"]->setAviao(escolherAviao());
             menus_to_call["VooMenu"]->play();
             break;
@@ -84,6 +85,14 @@ void AviaoMenu::criarAviao() {
 
     cout << "Qual o custo da operacao: ";
     cin >> custo;
+
+    string tempoMed;
+    cout << "Quanto tempo de pista? " << endl;
+    cin >> tempoMed;
+
+    string tempoTot;
+    cout << "Quanto tempo de pista? " << endl;
+    cin >> tempoTot;
 
     Aviao* a = new Aviao(tipo, capacidade, voo, piloto1, piloto2, membroTripulacao1, membroTripulacao2, funcionario, custo);
     aeroporto->adicionarAviao(a);
@@ -189,7 +198,12 @@ Voo* AviaoMenu::criarVoo() {
     cout << "Diga o destino do voo: " << endl;
     getline(cin,destino);
 
-    Voo* voo = new Voo(data_c, hora_prevista, destino);
+    string tempo;
+    cout << "Quanto tempo de pista? " << endl;
+    cin >> tempo;
+
+
+    Voo* voo = new Voo(data_c, hora_prevista, destino, stoi(tempo));
 
     cout << "O voo foi cancelado: (sim/nao)" << endl;
     getline(cin,resp);
@@ -319,6 +333,7 @@ void AviaoMenu::editarCapacidade() {
     aviao->setCapacidade(capacidade);
     menus_to_call["AviaoMenu"]->play();
 }
+
 
 void AviaoMenu::setAeroporto(Aeroporto* a)
 {

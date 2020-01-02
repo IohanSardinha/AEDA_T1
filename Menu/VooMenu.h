@@ -7,6 +7,7 @@
 ///Menu com o CRUD dos voos
 class VooMenu:public Menu{
     Aviao* a;
+    Aeroporto* aeroporto;
 public:
 
     ///Construtor
@@ -37,6 +38,9 @@ public:
 
     ///Altera o estado de um voo de acordo com os inputs do usaurio
     void alterarEstado();
+
+    ///Altera o tempo de pista de um voo de acordo com os inputs do usaurio
+    void alterarTempoPista();
 
     ///Cria um novo voo de acordo com os inputs do usaurio
     void criarVoo();

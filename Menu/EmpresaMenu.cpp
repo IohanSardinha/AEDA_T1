@@ -84,10 +84,10 @@ int EmpresaMenu::maiorId() {
 void EmpresaMenu::criarEmpresa(){
     int id, disponibilidade, manutencoes;
     id = maiorId()+1;
-    cout << "O id da nova empresa será: " << id << endl;
-    cout << "Quanto tempo até a empresa estar disponivel? " << endl;
+    cout << "O id da nova empresa sera: " << id << endl;
+    cout << "Quanto tempo ate a empresa estar disponivel? " << endl;
     cin >> disponibilidade;
-    cout << "Quantas manutencoes a empresa já realizou? " << endl;
+    cout << "Quantas manutencoes a empresa ja realizou? " << endl;
     cin >> manutencoes;
     Empresa e(id, disponibilidade, manutencoes);
     empresas.push(e);

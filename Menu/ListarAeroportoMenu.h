@@ -2,6 +2,7 @@
 #define PROJECT1_LISTARAEROPORTOMENU_H
 
 #include "MainMenu.h"
+#include "../Classes/BinaryTree.h"
 
 ///Permite listar os aeroportos de diversas maneiras
 class ListarAeroportoMenu: public Menu{
@@ -26,6 +27,12 @@ public:
 
     ///lista pela quantidade de avioes
     void porQuantidadeAvioes();
+
+    ///Lista pelo numero de voos
+    void porNumeroVoos();
+
+    ///Lista pelo pais do aeroporto
+    void porPais();
 
     ///Escolhe um aeroporto de acordo com os inputs do usuario
     void escolherAeroporto();

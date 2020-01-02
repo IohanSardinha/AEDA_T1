@@ -6,7 +6,7 @@
 extern map<string, Menu*> menus_to_call;
 
 VooMenu::VooMenu(){
-    opcoes = {"Alterar data", "Alterar hora prevista", "Alterar hora real", "Alterar destino", "Alterar estado voo", "Visualizar um voo","Ver todos os voos", "Criar voo","Voltar"};
+    opcoes = {"Alterar data", "Alterar hora prevista", "Alterar hora real", "Alterar destino", "Alterar estado voo", "Visualizar um voo","Ver todos os voos", "Criar voo", "Alterar tempo de pista","Voltar"};
 }
 
 void VooMenu::CallMenu() {
@@ -52,7 +52,14 @@ void VooMenu::CallMenu() {
             criarVoo();
             break;
         }
+
         case 8:
+        {
+            alterarTempoPista();
+            break;
+        }
+
+        case 9:
         {
             menus_to_call["AviaoMenu"]->play();
             return;
@@ -162,7 +169,12 @@ void VooMenu::criarVoo() {
     cout << "Diga o destino do voo: " << endl;
     getline(cin,destino);
 
-    Voo* voo = new Voo(data_c, hora_prevista, destino);
+    string tempo;
+
+    cout << "Quanto tempo de pista? " << endl;
+    cin >> tempo;
+
+    Voo* voo = new Voo(data_c, hora_prevista, destino, stoi(tempo));
 
     cout << "O voo foi cancelado: (sim/nao)" << endl;
     getline(cin,resp);
@@ -326,6 +338,15 @@ void VooMenu::alterarDestino() {
     cout << "Qual o nome destino: " << endl;
     getline(cin,destino);
     voo->setDestino(destino);
+    menus_to_call["VooMenu"]->play();
+}
+
+void VooMenu::alterarTempoPista() {
+    Voo* voo = escolherVoo();
+    int tpista;
+    cout << "Qual o tempo de pista: " << endl;
+    cin >> tpista;
+    voo->setTempoPista(tpista);
     menus_to_call["VooMenu"]->play();
 }
 
