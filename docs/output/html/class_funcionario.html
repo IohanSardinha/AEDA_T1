@@ -71,45 +71,66 @@ $(function() {
 <div class="title">Funcionario Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe abstrata funcionario de aeroporto.  
+ <a href="class_funcionario.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_funcionario_8h_source.html">Funcionario.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Funcionario:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_funcionario.png" usemap="#Funcionario_map" alt=""/>
   <map id="Funcionario_map" name="Funcionario_map">
-<area href="class_funcionario__administrativos.html" alt="Funcionario_administrativos" shape="rect" coords="0,56,170,80"/>
-<area href="class_membro__tripulacao.html" alt="Membro_tripulacao" shape="rect" coords="180,56,350,80"/>
-<area href="class_piloto.html" alt="Piloto" shape="rect" coords="360,56,530,80"/>
+<area href="class_funcionario__administrativos.html" title="Funcionario Administrativo de Aerporto." alt="Funcionario_administrativos" shape="rect" coords="0,56,170,80"/>
+<area href="class_membro__tripulacao.html" title="Membro de tripulacao de aerporto." alt="Membro_tripulacao" shape="rect" coords="180,56,350,80"/>
+<area href="class_piloto.html" title="Piloto de aerporto." alt="Piloto" shape="rect" coords="360,56,530,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a20b687e28f0e186bb9d869eaea3e5cf1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_funcionario.html#a20b687e28f0e186bb9d869eaea3e5cf1">Funcionario</a> (int salario)</td></tr>
-<tr class="separator:a20b687e28f0e186bb9d869eaea3e5cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42bef9794b1604d0095a5404a8bf48aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_funcionario.html#a42bef9794b1604d0095a5404a8bf48aa">Funcionario</a> (int salario, bool atual=true)</td></tr>
+<tr class="separator:a42bef9794b1604d0095a5404a8bf48aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace5307d75c27070b19dd107dde24cf92"><td class="memItemLeft" align="right" valign="top"><a id="ace5307d75c27070b19dd107dde24cf92"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_funcionario.html#ace5307d75c27070b19dd107dde24cf92">getSalario</a> () const</td></tr>
 <tr class="memdesc:ace5307d75c27070b19dd107dde24cf92"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter do salario <br /></td></tr>
 <tr class="separator:ace5307d75c27070b19dd107dde24cf92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4a4bf8ffcf8beef44e5ae3cdabfa601"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_funcionario.html#ac4a4bf8ffcf8beef44e5ae3cdabfa601">setSalario</a> (int s)</td></tr>
 <tr class="separator:ac4a4bf8ffcf8beef44e5ae3cdabfa601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a44ca21be722b272ac72a8ac433d9d"><td class="memItemLeft" align="right" valign="top"><a id="aa8a44ca21be722b272ac72a8ac433d9d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_funcionario.html#aa8a44ca21be722b272ac72a8ac433d9d">isAtual</a> () const</td></tr>
+<tr class="memdesc:aa8a44ca21be722b272ac72a8ac433d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter do atual <br /></td></tr>
+<tr class="separator:aa8a44ca21be722b272ac72a8ac433d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adda663bb57ff73fc3403de7d7a685d9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_funcionario.html#adda663bb57ff73fc3403de7d7a685d9e">setAtual</a> (bool a)</td></tr>
+<tr class="separator:adda663bb57ff73fc3403de7d7a685d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9088f169f41a04f338404990b62c6c8"><td class="memItemLeft" align="right" valign="top"><a id="ad9088f169f41a04f338404990b62c6c8"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_funcionario.html#ad9088f169f41a04f338404990b62c6c8">print</a> ()=0</td></tr>
 <tr class="memdesc:ad9088f169f41a04f338404990b62c6c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">class pure virctual criada par printar os funcionario <br /></td></tr>
 <tr class="separator:ad9088f169f41a04f338404990b62c6c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2d1b47c30b96c4dac7abdd5b0da6db2"><td class="memItemLeft" align="right" valign="top"><a id="aa2d1b47c30b96c4dac7abdd5b0da6db2"></a>
+virtual string&#160;</td><td class="memItemRight" valign="bottom"><b>tipo</b> ()=0</td></tr>
+<tr class="separator:aa2d1b47c30b96c4dac7abdd5b0da6db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad4dfcaf3d65f2fb2347f43ab640ac60"><td class="memItemLeft" align="right" valign="top"><a id="aad4dfcaf3d65f2fb2347f43ab640ac60"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>save</b> (ofstream *file, bool tag)=0</td></tr>
+<tr class="separator:aad4dfcaf3d65f2fb2347f43ab640ac60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ad305ae6211b99d73461cccc647abb62c"><td class="memItemLeft" align="right" valign="top"><a id="ad305ae6211b99d73461cccc647abb62c"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>salario</b></td></tr>
 <tr class="separator:ad305ae6211b99d73461cccc647abb62c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7ea79de42f97d212375e1f27e820554"><td class="memItemLeft" align="right" valign="top"><a id="ae7ea79de42f97d212375e1f27e820554"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>atual</b></td></tr>
+<tr class="separator:ae7ea79de42f97d212375e1f27e820554"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_funcionario_8h_source.html#l00016">16</a> of file <a class="el" href="_funcionario_8h_source.html">Funcionario.h</a>.</p>
+<div class="textblock"><p>Classe abstrata funcionario de aeroporto. </p>
+
+<p class="definition">Definition at line <a class="el" href="_funcionario_8h_source.html#l00018">18</a> of file <a class="el" href="_funcionario_8h_source.html">Funcionario.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a20b687e28f0e186bb9d869eaea3e5cf1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20b687e28f0e186bb9d869eaea3e5cf1">&#9670;&nbsp;</a></span>Funcionario()</h2>
+<a id="a42bef9794b1604d0095a5404a8bf48aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42bef9794b1604d0095a5404a8bf48aa">&#9670;&nbsp;</a></span>Funcionario()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,8 +139,18 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>salario</b></td></tr>
           <td class="memname">Funcionario::Funcionario </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>salario</em></td><td>)</td>
+          <td class="paramname"><em>salario</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>atual</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -131,11 +162,46 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>salario</b></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_funcionario_8cpp_source.html#l00013">13</a> of file <a class="el" href="_funcionario_8cpp_source.html">Funcionario.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;: salario(salario) {}</div>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;: salario(salario), atual(atual) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="adda663bb57ff73fc3403de7d7a685d9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adda663bb57ff73fc3403de7d7a685d9e">&#9670;&nbsp;</a></span>setAtual()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Funcionario::setAtual </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>setter do atual </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_funcionario_8h_source.html#l00038">38</a> of file <a class="el" href="_funcionario_8h_source.html">Funcionario.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{atual = a;};</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ac4a4bf8ffcf8beef44e5ae3cdabfa601"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac4a4bf8ffcf8beef44e5ae3cdabfa601">&#9670;&nbsp;</a></span>setSalario()</h2>
 
@@ -166,8 +232,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>salario</b></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_funcionario_8h_source.html#l00029">29</a> of file <a class="el" href="_funcionario_8h_source.html">Funcionario.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{salario=s;};</div>
+<p class="definition">Definition at line <a class="el" href="_funcionario_8h_source.html#l00031">31</a> of file <a class="el" href="_funcionario_8h_source.html">Funcionario.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{salario=s;};</div>
 </div><!-- fragment -->
 </div>
 </div>

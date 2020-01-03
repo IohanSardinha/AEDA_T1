@@ -4,8 +4,6 @@ Empresa::Empresa(int id, int disp, int m):id(id), disponibilidade(disp), manuten
 
 int Empresa::getId() const {return id;}
 
-void Empresa::setId(int n) {id = n;}
-
 int Empresa::getDisponibilidade() const {return disponibilidade;}
 
 void Empresa::setDisponibilidade(int n) { disponibilidade = n;}

@@ -120,6 +120,13 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="separator:a2e75c5485ad2462877a77cf02d2049ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c78129026dfa86e3bf1bef9de7ee159"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aviao.html#a7c78129026dfa86e3bf1bef9de7ee159">setCustoOperacao</a> (int custoOperacao)</td></tr>
 <tr class="separator:a7c78129026dfa86e3bf1bef9de7ee159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b84e0d56742ce8e8d754c27697258b9"><td class="memItemLeft" align="right" valign="top"><a id="a2b84e0d56742ce8e8d754c27697258b9"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aviao.html#a2b84e0d56742ce8e8d754c27697258b9">getTempoMedio</a> ()</td></tr>
+<tr class="memdesc:a2b84e0d56742ce8e8d754c27697258b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter do tempo medio. <br /></td></tr>
+<tr class="separator:a2b84e0d56742ce8e8d754c27697258b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a981f454ea91bbc35e148c1dc190f8c15"><td class="memItemLeft" align="right" valign="top"><a id="a981f454ea91bbc35e148c1dc190f8c15"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getTempoTotal</b> ()</td></tr>
+<tr class="separator:a981f454ea91bbc35e148c1dc190f8c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -147,7 +154,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_aviao.html" title="Aviao.">Aviao</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00009">9</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00012">12</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0f9e9e2ac92cd8350542d796e00cc6ea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f9e9e2ac92cd8350542d796e00cc6ea">&#9670;&nbsp;</a></span>Aviao() <span class="overload">[1/2]</span></h2>
@@ -211,14 +218,15 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00023">23</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        this-&gt;tipo = tipo;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        this-&gt;capacidade = capacidade;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        this-&gt;voos = voos;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        this-&gt;tripulacao = funcionarios;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        this-&gt;custo_operacao = custo_operacao;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00028">28</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        this-&gt;tipo = tipo;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        this-&gt;capacidade = capacidade;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        this-&gt;voos = voos;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        this-&gt;tripulacao = funcionarios;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        this-&gt;custo_operacao = custo_operacao;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -302,7 +310,7 @@ Friends</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">tipo</td><td>Modelo do aviao </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">capacidade</td><td>Quantas pessoas cabem no aviao </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">voos</td><td>Voos que o aviao esta alocado para realizar </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">piloto1</td><td><a class="el" href="class_piloto.html">Piloto</a> principal do aviao </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">piloto1</td><td><a class="el" href="class_piloto.html" title="Piloto de aerporto.">Piloto</a> principal do aviao </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">piloto2</td><td>Co-piloto do aviao </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">membro_cabine1</td><td>Primeiro membro de Cabine do aviao </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">membro_cabine2</td><td>Primeiro membro de Cabine do aviao </td></tr>
@@ -312,19 +320,20 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00042">42</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        tripulacao.push_back(piloto1);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        tripulacao.push_back(piloto2);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        tripulacao.push_back(membro_cabine1);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        tripulacao.push_back(membro_cabine2);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        tripulacao.insert(tripulacao.end(),mais_tripulacao.begin(),mais_tripulacao.end());</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        this-&gt;tipo = tipo;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        this-&gt;capacidade = capacidade;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        this-&gt;voos = voos;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        this-&gt;tripulacao = tripulacao;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        this-&gt;custo_operacao = custo_operacao;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00048">48</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        tripulacao.push_back(piloto1);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        tripulacao.push_back(piloto2);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        tripulacao.push_back(membro_cabine1);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        tripulacao.push_back(membro_cabine2);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        tripulacao.insert(tripulacao.end(),mais_tripulacao.begin(),mais_tripulacao.end());</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        this-&gt;tipo = tipo;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        this-&gt;capacidade = capacidade;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        this-&gt;voos = voos;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        this-&gt;tripulacao = tripulacao;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        this-&gt;custo_operacao = custo_operacao;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -352,17 +361,17 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Adiciona um novo <a class="el" href="class_funcionario.html">Funcionario</a> ao vetor Tripulacao do aviao </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Adiciona um novo <a class="el" href="class_funcionario.html" title="Classe abstrata funcionario de aeroporto.">Funcionario</a> ao vetor Tripulacao do aviao </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">funcionario</td><td><a class="el" href="class_funcionario.html">Funcionario</a> a ser adicionado </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">funcionario</td><td><a class="el" href="class_funcionario.html" title="Classe abstrata funcionario de aeroporto.">Funcionario</a> a ser adicionado </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00061">61</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        tripulacao.push_back(funcionario);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00068">68</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        tripulacao.push_back(funcionario);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -391,15 +400,15 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Adiciona um novo voo ao vetor Voos alocados do aviao </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">voo</td><td><a class="el" href="class_voo.html">Voo</a> a ser adicionado </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">voo</td><td><a class="el" href="class_voo.html" title="Voo.">Voo</a> a ser adicionado </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00068">68</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        voos.push_back(voo);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00075">75</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        voos.push_back(voo);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -426,24 +435,24 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Remove um <a class="el" href="class_funcionario.html">Funcionario</a> do vetor funcionarios do aeroporto </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Remove um <a class="el" href="class_funcionario.html" title="Classe abstrata funcionario de aeroporto.">Funcionario</a> do vetor funcionarios do aeroporto </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td><a class="el" href="class_funcionario.html">Funcionario</a> a ser removido </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td><a class="el" href="class_funcionario.html" title="Classe abstrata funcionario de aeroporto.">Funcionario</a> a ser removido </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00075">75</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; tripulacao.size(); i++)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">if</span>(tripulacao.at(i) == funcionario)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                tripulacao.erase(tripulacao.begin()+i);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00082">82</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; tripulacao.size(); i++)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">if</span>(tripulacao.at(i) == funcionario)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                tripulacao.erase(tripulacao.begin()+i);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -470,24 +479,24 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Remove um <a class="el" href="class_voo.html">Voo</a> do vetor voos do aeroporto </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Remove um <a class="el" href="class_voo.html" title="Voo.">Voo</a> do vetor voos do aeroporto </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">voo</td><td><a class="el" href="class_voo.html">Voo</a> a ser removido </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">voo</td><td><a class="el" href="class_voo.html" title="Voo.">Voo</a> a ser removido </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00089">89</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; voos.size(); i++)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span>(voos.at(i) == voo)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                voos.erase(voos.begin()+i);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00096">96</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; voos.size(); i++)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">if</span>(voos.at(i) == voo)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                voos.erase(voos.begin()+i);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -521,10 +530,10 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00119">119</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                       {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        Aviao::capacidade = capacidade;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00126">126</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                       {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        Aviao::capacidade = capacidade;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -558,10 +567,10 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00141">141</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                                             {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        custo_operacao = custoOperacao;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00148">148</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                             {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        custo_operacao = custoOperacao;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -595,10 +604,10 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00108">108</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                     {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        Aviao::tipo = tipo;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00115">115</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                     {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        Aviao::tipo = tipo;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -632,10 +641,10 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00130">130</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                          {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        Aviao::voos = voos;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_aviao_8h_source.html#l00137">137</a> of file <a class="el" href="_aviao_8h_source.html">Aviao.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                          {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        Aviao::voos = voos;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -681,22 +690,22 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_funcionario_8cpp_source.html#l00143">143</a> of file <a class="el" href="_funcionario_8cpp_source.html">Funcionario.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    os &lt;&lt; <span class="stringliteral">&quot;Modelo: &quot;</span> &lt;&lt; a.tipo &lt;&lt; endl;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    os &lt;&lt; <span class="stringliteral">&quot;Capacidade: &quot;</span> &lt;&lt; a.capacidade &lt;&lt; endl;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    os &lt;&lt; <span class="stringliteral">&quot;Voos:&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">for</span>(<a class="code" href="class_voo.html">Voo</a>* voo : a.voos)</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Voo &quot;</span> &lt;&lt; i &lt;&lt; endl;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        cout &lt;&lt; *voo;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        i++;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    os &lt;&lt;  <span class="stringliteral">&quot;Tripulacao: &quot;</span> &lt;&lt; a.<a class="code" href="class_aviao.html#a13cd425ea1a525a3614bf31e7e977480">getTripulacao</a>().size() &lt;&lt; <span class="stringliteral">&quot; membro(s)&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    os &lt;&lt; <span class="stringliteral">&quot;Custo de operacao: &quot;</span> &lt;&lt; a.custo_operacao &lt;&lt; endl;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">return</span> os;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_funcionario_8cpp_source.html#l00158">158</a> of file <a class="el" href="_funcionario_8cpp_source.html">Funcionario.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    os &lt;&lt; <span class="stringliteral">&quot;Modelo: &quot;</span> &lt;&lt; a.tipo &lt;&lt; endl;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    os &lt;&lt; <span class="stringliteral">&quot;Capacidade: &quot;</span> &lt;&lt; a.capacidade &lt;&lt; endl;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    os &lt;&lt; <span class="stringliteral">&quot;Voos:&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">for</span>(<a class="code" href="class_voo.html">Voo</a>* voo : a.voos)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Voo &quot;</span> &lt;&lt; i &lt;&lt; endl;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        cout &lt;&lt; *voo;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        i++;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    os &lt;&lt;  <span class="stringliteral">&quot;Tripulacao: &quot;</span> &lt;&lt; a.<a class="code" href="class_aviao.html#a13cd425ea1a525a3614bf31e7e977480">getTripulacao</a>().size() &lt;&lt; <span class="stringliteral">&quot; membro(s)&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    os &lt;&lt; <span class="stringliteral">&quot;Custo de operacao: &quot;</span> &lt;&lt; a.custo_operacao &lt;&lt; endl;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">return</span> os;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -704,8 +713,8 @@ Friends</h2></td></tr>
 <li>C:/Users/ioXsa/Documents/FEUP/AEDA/AEDA_T1/Classes/<a class="el" href="_aviao_8h_source.html">Aviao.h</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclass_voo_html"><div class="ttname"><a href="class_voo.html">Voo</a></div><div class="ttdef"><b>Definition:</b> <a href="_voo_8h_source.html#l00010">Voo.h:10</a></div></div>
-<div class="ttc" id="aclass_aviao_html_a13cd425ea1a525a3614bf31e7e977480"><div class="ttname"><a href="class_aviao.html#a13cd425ea1a525a3614bf31e7e977480">Aviao::getTripulacao</a></div><div class="ttdeci">vector&lt; Funcionario * &gt; getTripulacao() const</div><div class="ttdoc">Getter do vetor Tripulacao do aviao.</div><div class="ttdef"><b>Definition:</b> <a href="_aviao_8h_source.html#l00057">Aviao.h:57</a></div></div>
+<div class="ttc" id="aclass_voo_html"><div class="ttname"><a href="class_voo.html">Voo</a></div><div class="ttdoc">Voo.</div><div class="ttdef"><b>Definition:</b> <a href="_voo_8h_source.html#l00012">Voo.h:12</a></div></div>
+<div class="ttc" id="aclass_aviao_html_a13cd425ea1a525a3614bf31e7e977480"><div class="ttname"><a href="class_aviao.html#a13cd425ea1a525a3614bf31e7e977480">Aviao::getTripulacao</a></div><div class="ttdeci">vector&lt; Funcionario * &gt; getTripulacao() const</div><div class="ttdoc">Getter do vetor Tripulacao do aviao.</div><div class="ttdef"><b>Definition:</b> <a href="_aviao_8h_source.html#l00064">Aviao.h:64</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

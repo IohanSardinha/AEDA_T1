@@ -71,6 +71,11 @@ $(function() {
 <div class="title">FuncionariosMenu Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="class_menu.html" title="Classe Abstrata Menu com funcoes comuns a todos os menus.">Menu</a> com o CRUD dos <a class="el" href="class_funcionario.html" title="Classe abstrata funcionario de aeroporto.">Funcionario</a> de um aerporto especifico.  
+ <a href="class_funcionarios_menu.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_funcionarios_menu_8h_source.html">FuncionariosMenu.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for FuncionariosMenu:</div>
 <div class="dyncontent">
@@ -195,8 +200,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>input</b></td></tr>
 <tr class="separator:aa8a82c301fac15f6d528f75ea60c5c2a inherit pro_attribs_class_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_funcionarios_menu_8h_source.html#l00014">14</a> of file <a class="el" href="_funcionarios_menu_8h_source.html">FuncionariosMenu.h</a>.</p>
+<div class="textblock"><p><a class="el" href="class_menu.html" title="Classe Abstrata Menu com funcoes comuns a todos os menus.">Menu</a> com o CRUD dos <a class="el" href="class_funcionario.html" title="Classe abstrata funcionario de aeroporto.">Funcionario</a> de um aerporto especifico. </p>
+
+<p class="definition">Definition at line <a class="el" href="_funcionarios_menu_8h_source.html#l00015">15</a> of file <a class="el" href="_funcionarios_menu_8h_source.html">FuncionariosMenu.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a74ae601757ed0745665900a12eada1fc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a74ae601757ed0745665900a12eada1fc">&#9670;&nbsp;</a></span>FuncionariosMenu()</h2>
@@ -220,26 +226,26 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>input</b></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_funcionarios_menu_8cpp_source.html#l00007">7</a> of file <a class="el" href="_funcionarios_menu_8cpp_source.html">FuncionariosMenu.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                                            {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    tipo = t;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">switch</span> (tipo)</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordflow">case</span> TODOS:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            opcoes = {<span class="stringliteral">&quot;Adicionar funcionario&quot;</span>,<span class="stringliteral">&quot;Deletar funcionario&quot;</span>,<span class="stringliteral">&quot;Ver funcionarios&quot;</span>,<span class="stringliteral">&quot;Editar funcionarios&quot;</span>};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">case</span> ADMINISTRATIVO:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            opcoes = {<span class="stringliteral">&quot;Adicionar funcionario administrativo&quot;</span>,<span class="stringliteral">&quot;Deletar funcionario administrativo&quot;</span>,<span class="stringliteral">&quot;Ver funcionarios administrativos&quot;</span>,<span class="stringliteral">&quot;Editar funcionario administrativo&quot;</span>};</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">case</span> PILOTO:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            opcoes = {<span class="stringliteral">&quot;Adicionar piloto&quot;</span>,<span class="stringliteral">&quot;Deletar piloto&quot;</span>,<span class="stringliteral">&quot;Ver pilotos&quot;</span>,<span class="stringliteral">&quot;Editar pilotos&quot;</span>};</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">case</span> MEMBRO_TRIPULACAO:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            opcoes = {<span class="stringliteral">&quot;Adicionar membro da tripulacao&quot;</span>,<span class="stringliteral">&quot;Deletar membro da tripulacao&quot;</span>,<span class="stringliteral">&quot;Ver membros da tripulacaos&quot;</span>,<span class="stringliteral">&quot;Editar membro da tripulacao&quot;</span>};</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    opcoes.push_back(<span class="stringliteral">&quot;Voltar&quot;</span>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_funcionarios_menu_8cpp_source.html#l00008">8</a> of file <a class="el" href="_funcionarios_menu_8cpp_source.html">FuncionariosMenu.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                                                            {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    tipo = t;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">switch</span> (tipo)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">case</span> TODOS:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            opcoes = {<span class="stringliteral">&quot;Adicionar funcionario&quot;</span>,<span class="stringliteral">&quot;Deletar funcionario&quot;</span>,<span class="stringliteral">&quot;Ver funcionarios&quot;</span>,<span class="stringliteral">&quot;Editar funcionarios&quot;</span>};</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">case</span> ADMINISTRATIVO:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            opcoes = {<span class="stringliteral">&quot;Adicionar funcionario administrativo&quot;</span>,<span class="stringliteral">&quot;Deletar funcionario administrativo&quot;</span>,<span class="stringliteral">&quot;Ver funcionarios administrativos&quot;</span>,<span class="stringliteral">&quot;Editar funcionario administrativo&quot;</span>};</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">case</span> PILOTO:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            opcoes = {<span class="stringliteral">&quot;Adicionar piloto&quot;</span>,<span class="stringliteral">&quot;Deletar piloto&quot;</span>,<span class="stringliteral">&quot;Ver pilotos&quot;</span>,<span class="stringliteral">&quot;Editar pilotos&quot;</span>};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">case</span> MEMBRO_TRIPULACAO:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            opcoes = {<span class="stringliteral">&quot;Adicionar membro da tripulacao&quot;</span>,<span class="stringliteral">&quot;Deletar membro da tripulacao&quot;</span>,<span class="stringliteral">&quot;Ver membros da tripulacaos&quot;</span>,<span class="stringliteral">&quot;Editar membro da tripulacao&quot;</span>};</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    opcoes.push_back(<span class="stringliteral">&quot;Voltar&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -276,10 +282,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>input</b></td></tr>
 
 <p>Implements <a class="el" href="class_menu.html#a5823c0f35f3a169e396d3a48e81faf02">Menu</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_funcionarios_menu_8cpp_source.html#l00898">898</a> of file <a class="el" href="_funcionarios_menu_8cpp_source.html">FuncionariosMenu.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;{</div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;    this-&gt;a = a;</div>
-<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_funcionarios_menu_8cpp_source.html#l00979">979</a> of file <a class="el" href="_funcionarios_menu_8cpp_source.html">FuncionariosMenu.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;{</div>
+<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;    this-&gt;a = a;</div>
+<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -315,8 +321,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>input</b></td></tr>
 
 <p>Implements <a class="el" href="class_menu.html#acc04662a1de09673497ce71fa86a703c">Menu</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_funcionarios_menu_8h_source.html#l00070">70</a> of file <a class="el" href="_funcionarios_menu_8h_source.html">FuncionariosMenu.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{};</div>
+<p class="definition">Definition at line <a class="el" href="_funcionarios_menu_8h_source.html#l00071">71</a> of file <a class="el" href="_funcionarios_menu_8h_source.html">FuncionariosMenu.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{};</div>
 </div><!-- fragment -->
 </div>
 </div>

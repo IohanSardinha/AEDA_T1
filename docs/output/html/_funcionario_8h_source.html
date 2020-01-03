@@ -80,129 +80,155 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../Classes/Voo.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span><a class="code" href="class_aviao.html">Aviao</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_funcionario.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_funcionario.html">Funcionario</a>{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> salario;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_funcionario.html">Funcionario</a>(<span class="keywordtype">int</span> salario);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> getSalario() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_funcionario.html#ac4a4bf8ffcf8beef44e5ae3cdabfa601">   29</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_funcionario.html#ac4a4bf8ffcf8beef44e5ae3cdabfa601">setSalario</a>(<span class="keywordtype">int</span> s){salario=s;};</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> print() = 0;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_funcionario__administrativos.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_funcionario__administrativos.html">Funcionario_administrativos</a> :<span class="keyword">public</span> <a class="code" href="class_funcionario.html">Funcionario</a>{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">string</span> nome;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="class_data.html">Data</a> data_nascimento;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">string</span> categoria;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    pair&lt;Hora,Hora&gt; horario_de_trabalho;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">string</span> funcao;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">string</span> departamento;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="class_funcionario__administrativos.html">Funcionario_administrativos</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; nome,<span class="keyword">const</span> <a class="code" href="class_data.html">Data</a>&amp; data_nascimento,<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; categoria,<span class="keyword">const</span> pair&lt;Hora,Hora&gt; horario_de_trabalho,<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;funcao, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;departamento);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">string</span> getFuncao() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> setFuncao(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;funcao);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">string</span> getDepartamento() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> setDepartamento(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;departamento);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> print();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;getNome() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> setNome(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;nome);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">const</span> <a class="code" href="class_data.html">Data</a> &amp;getDataNascimento() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> setDataNascimento(<span class="keyword">const</span> <a class="code" href="class_data.html">Data</a> &amp;dataNascimento);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;getCategoria() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="class_aviao.html">Aviao</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_funcionario.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_funcionario.html">Funcionario</a>{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> salario; <span class="keywordtype">bool</span> atual;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_funcionario.html">Funcionario</a>(<span class="keywordtype">int</span> salario, <span class="keywordtype">bool</span> atual = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> getSalario() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_funcionario.html#ac4a4bf8ffcf8beef44e5ae3cdabfa601">   31</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_funcionario.html#ac4a4bf8ffcf8beef44e5ae3cdabfa601">setSalario</a>(<span class="keywordtype">int</span> s){salario=s;};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_funcionario.html#aa8a44ca21be722b272ac72a8ac433d9d">   34</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_funcionario.html#aa8a44ca21be722b272ac72a8ac433d9d">isAtual</a>()<span class="keyword"> const</span>{<span class="keywordflow">return</span> atual;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_funcionario.html#adda663bb57ff73fc3403de7d7a685d9e">   38</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_funcionario.html#adda663bb57ff73fc3403de7d7a685d9e">setAtual</a>(<span class="keywordtype">bool</span> a){atual = a;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> print() = 0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">string</span> tipo()= 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> save(ofstream* file, <span class="keywordtype">bool</span> tag)=0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_funcionario__administrativos.html">   49</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_funcionario__administrativos.html">Funcionario_administrativos</a> :<span class="keyword">public</span> <a class="code" href="class_funcionario.html">Funcionario</a>{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">string</span> nome;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="class_data.html">Data</a> data_nascimento;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">string</span> categoria;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    pair&lt;Hora,Hora&gt; horario_de_trabalho;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">string</span> funcao;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">string</span> departamento;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">bool</span> atual; <span class="comment">//true se for atual</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="class_funcionario__administrativos.html">Funcionario_administrativos</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; nome,<span class="keyword">const</span> <a class="code" href="class_data.html">Data</a>&amp; data_nascimento,<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; categoria,<span class="keyword">const</span> pair&lt;Hora,Hora&gt; horario_de_trabalho,<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;funcao, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;departamento, <span class="keywordtype">bool</span> atual = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">string</span> getFuncao() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> setFuncao(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;funcao);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">string</span> getDepartamento() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> setDepartamento(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;departamento);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> print();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> save(ofstream* file, <span class="keywordtype">bool</span> tag);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> setCategoria(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;categoria);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">const</span> pair&lt;Hora,Hora&gt; &amp;gethorario_de_trabalho() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> setHorarioDeTrabalho(<span class="keyword">const</span> pair&lt;Hora,Hora&gt; &amp;horario_de_trabalho);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">string</span> tipo(){<span class="keywordflow">return</span> <span class="stringliteral">&quot;ADM&quot;</span>;};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;getNome() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> setNome(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;nome);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">const</span> <a class="code" href="class_data.html">Data</a> &amp;getDataNascimento() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_membro__tripulacao.html">   99</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_membro__tripulacao.html">Membro_tripulacao</a> :<span class="keyword">public</span> <a class="code" href="class_funcionario.html">Funcionario</a>{</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    vector&lt;Voo*&gt; voos_alocados;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    vector&lt;Informacao*&gt; info_voos;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="class_membro__tripulacao.html">Membro_tripulacao</a>(<span class="keyword">const</span> vector&lt;Voo*&gt; &amp; voosAlocados, <span class="keyword">const</span> vector&lt;Informacao*&gt; &amp;infoVoos);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    vector&lt;Voo*&gt; getVoos();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    vector&lt;Informacao*&gt; getInfos();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> print();</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="class_membro__tripulacao.html#a4f211543e73853d414d9304d771139bc">  119</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_membro__tripulacao.html#a4f211543e73853d414d9304d771139bc">adicionarVoo</a>(<a class="code" href="class_voo.html">Voo</a>* v){voos_alocados.push_back(v);}</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="class_membro__tripulacao.html#a309ab912734bf435f5572e5674a3fe3f">  123</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_membro__tripulacao.html#a309ab912734bf435f5572e5674a3fe3f">adicionarInfo</a>(<a class="code" href="class_informacao.html">Informacao</a>* i){info_voos.push_back(i);}</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;};</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="class_piloto.html">  126</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_piloto.html">Piloto</a> :<span class="keyword">public</span> <a class="code" href="class_funcionario.html">Funcionario</a>{</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">string</span> nome;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="class_data.html">Data</a> data_nascimento;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">string</span> categoria;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    vector&lt;Aviao*&gt; tipos_aviao; <span class="comment">//vetor com tipos de aviao habilitado a pilotar</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    vector&lt;Voo*&gt; voos_realizados;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="class_piloto.html#aaffd09391fadd8b7c317169e53140382">  134</a></span>&#160;    vector&lt;Voo*&gt; <a class="code" href="class_piloto.html#aaffd09391fadd8b7c317169e53140382">getVoos</a>(){ <span class="keywordflow">return</span> voos_realizados;};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> setDataNascimento(<span class="keyword">const</span> <a class="code" href="class_data.html">Data</a> &amp;dataNascimento);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;getCategoria() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">void</span> setCategoria(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;categoria);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">const</span> pair&lt;Hora,Hora&gt; &amp;gethorario_de_trabalho() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> setHorarioDeTrabalho(<span class="keyword">const</span> pair&lt;Hora,Hora&gt; &amp;horario_de_trabalho);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;};</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="class_membro__tripulacao.html">  119</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_membro__tripulacao.html">Membro_tripulacao</a> :<span class="keyword">public</span> <a class="code" href="class_funcionario.html">Funcionario</a>{</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    vector&lt;Voo*&gt; voos_alocados;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    vector&lt;Informacao*&gt; info_voos;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="class_membro__tripulacao.html">Membro_tripulacao</a>(<span class="keyword">const</span> vector&lt;Voo*&gt; &amp; voosAlocados, <span class="keyword">const</span> vector&lt;Informacao*&gt; &amp;infoVoos, <span class="keywordtype">bool</span> atual = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="class_membro__tripulacao.html">Membro_tripulacao</a>(<span class="keywordtype">int</span> salario):<a class="code" href="class_funcionario.html">Funcionario</a>(salario,<span class="keyword">false</span>){};</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    vector&lt;Voo*&gt; getVoos();</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    vector&lt;Informacao*&gt; getInfos();</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="class_piloto.html#aa7f6ca6c464e0e898c43faa9987d3812">  137</a></span>&#160;    vector&lt;Aviao*&gt; <a class="code" href="class_piloto.html#aa7f6ca6c464e0e898c43faa9987d3812">getAvioes</a>(){ <span class="keywordflow">return</span> tipos_aviao;};</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> print();</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="class_piloto.html">Piloto</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;nome, <span class="keyword">const</span> <a class="code" href="class_data.html">Data</a> &amp;dataNascimento, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;categoria,</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;           <span class="keyword">const</span> vector&lt;Aviao*&gt; &amp;tiposAviao, <span class="keyword">const</span> vector&lt;Voo*&gt; &amp; voosRealizados);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;getNome() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">void</span> setNome(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;nome);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keyword">const</span> <a class="code" href="class_data.html">Data</a> &amp;getDataNascimento() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">void</span> setDataNascimento(<span class="keyword">const</span> <a class="code" href="class_data.html">Data</a> &amp;dataNascimento);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;getCategoria() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">void</span> setCategoria(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;categoria);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="class_piloto.html#a78f1c2d26c3623ee09a0cefa311b50bb">  171</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_piloto.html#a78f1c2d26c3623ee09a0cefa311b50bb">adicionarVoo</a>(<a class="code" href="class_voo.html">Voo</a>* v){voos_realizados.push_back(v);salario+=250;}</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="class_piloto.html#ae5186ebcc6255583050b36fd048b703e">  175</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_piloto.html#ae5186ebcc6255583050b36fd048b703e">adicionarAviao</a>(<a class="code" href="class_aviao.html">Aviao</a>* a){tipos_aviao.push_back(a);}</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordtype">void</span> print();</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;};</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#endif //PROJECT1_FUNCIONARIO_H</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">void</span> save(ofstream* file, <span class="keywordtype">bool</span> tag);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">string</span> tipo(){<span class="keywordflow">return</span> <span class="stringliteral">&quot;MEM&quot;</span>;};</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="class_membro__tripulacao.html#a4f211543e73853d414d9304d771139bc">  145</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_membro__tripulacao.html#a4f211543e73853d414d9304d771139bc">adicionarVoo</a>(<a class="code" href="class_voo.html">Voo</a>* v){voos_alocados.push_back(v);}</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="class_membro__tripulacao.html#a309ab912734bf435f5572e5674a3fe3f">  149</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_membro__tripulacao.html#a309ab912734bf435f5572e5674a3fe3f">adicionarInfo</a>(<a class="code" href="class_informacao.html">Informacao</a>* i){info_voos.push_back(i);}</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;};</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="class_piloto.html">  153</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_piloto.html">Piloto</a> :<span class="keyword">public</span> <a class="code" href="class_funcionario.html">Funcionario</a>{</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">string</span> nome;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="class_data.html">Data</a> data_nascimento;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">string</span> categoria;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    vector&lt;Aviao*&gt; tipos_aviao; <span class="comment">//vetor com tipos de aviao habilitado a pilotar</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    vector&lt;Voo*&gt; voos_realizados;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="class_piloto.html#aaffd09391fadd8b7c317169e53140382">  161</a></span>&#160;    vector&lt;Voo*&gt; <a class="code" href="class_piloto.html#aaffd09391fadd8b7c317169e53140382">getVoos</a>(){ <span class="keywordflow">return</span> voos_realizados;};</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="class_piloto.html#aa7f6ca6c464e0e898c43faa9987d3812">  164</a></span>&#160;    vector&lt;Aviao*&gt; <a class="code" href="class_piloto.html#aa7f6ca6c464e0e898c43faa9987d3812">getAvioes</a>(){ <span class="keywordflow">return</span> tipos_aviao;};</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="class_piloto.html">Piloto</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;nome, <span class="keyword">const</span> <a class="code" href="class_data.html">Data</a> &amp;dataNascimento, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;categoria,</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;           <span class="keyword">const</span> vector&lt;Aviao*&gt; &amp;tiposAviao, <span class="keyword">const</span> vector&lt;Voo*&gt; &amp; voosRealizados,<span class="keywordtype">int</span> salario = 0, <span class="keywordtype">bool</span> atual = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;getNome() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">void</span> setNome(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;nome);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keyword">const</span> <a class="code" href="class_data.html">Data</a> &amp;getDataNascimento() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordtype">void</span> setDataNascimento(<span class="keyword">const</span> <a class="code" href="class_data.html">Data</a> &amp;dataNascimento);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;getCategoria() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">void</span> setCategoria(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;categoria);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="class_piloto.html#a78f1c2d26c3623ee09a0cefa311b50bb">  198</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_piloto.html#a78f1c2d26c3623ee09a0cefa311b50bb">adicionarVoo</a>(<a class="code" href="class_voo.html">Voo</a>* v){voos_realizados.push_back(v);salario+=250;}</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="class_piloto.html#ae5186ebcc6255583050b36fd048b703e">  202</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_piloto.html#ae5186ebcc6255583050b36fd048b703e">adicionarAviao</a>(<a class="code" href="class_aviao.html">Aviao</a>* a){tipos_aviao.push_back(a);}</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordtype">void</span> print();</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordtype">void</span> save(ofstream* file, <span class="keywordtype">bool</span> tag);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">string</span> tipo(){<span class="keywordflow">return</span> <span class="stringliteral">&quot;PIL&quot;</span>;};</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;};</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">#endif //PROJECT1_FUNCIONARIO_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_piloto_html_ae5186ebcc6255583050b36fd048b703e"><div class="ttname"><a href="class_piloto.html#ae5186ebcc6255583050b36fd048b703e">Piloto::adicionarAviao</a></div><div class="ttdeci">void adicionarAviao(Aviao *a)</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00175">Funcionario.h:175</a></div></div>
-<div class="ttc" id="aclass_funcionario_html"><div class="ttname"><a href="class_funcionario.html">Funcionario</a></div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00016">Funcionario.h:16</a></div></div>
-<div class="ttc" id="aclass_voo_html"><div class="ttname"><a href="class_voo.html">Voo</a></div><div class="ttdef"><b>Definition:</b> <a href="_voo_8h_source.html#l00010">Voo.h:10</a></div></div>
-<div class="ttc" id="aclass_aviao_html"><div class="ttname"><a href="class_aviao.html">Aviao</a></div><div class="ttdoc">Aviao.</div><div class="ttdef"><b>Definition:</b> <a href="_aviao_8h_source.html#l00009">Aviao.h:9</a></div></div>
-<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_8h_source.html#l00008">Data.h:8</a></div></div>
-<div class="ttc" id="aclass_piloto_html"><div class="ttname"><a href="class_piloto.html">Piloto</a></div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00126">Funcionario.h:126</a></div></div>
-<div class="ttc" id="aclass_membro__tripulacao_html_a4f211543e73853d414d9304d771139bc"><div class="ttname"><a href="class_membro__tripulacao.html#a4f211543e73853d414d9304d771139bc">Membro_tripulacao::adicionarVoo</a></div><div class="ttdeci">void adicionarVoo(Voo *v)</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00119">Funcionario.h:119</a></div></div>
-<div class="ttc" id="aclass_piloto_html_a78f1c2d26c3623ee09a0cefa311b50bb"><div class="ttname"><a href="class_piloto.html#a78f1c2d26c3623ee09a0cefa311b50bb">Piloto::adicionarVoo</a></div><div class="ttdeci">void adicionarVoo(Voo *v)</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00171">Funcionario.h:171</a></div></div>
-<div class="ttc" id="aclass_funcionario_html_ac4a4bf8ffcf8beef44e5ae3cdabfa601"><div class="ttname"><a href="class_funcionario.html#ac4a4bf8ffcf8beef44e5ae3cdabfa601">Funcionario::setSalario</a></div><div class="ttdeci">void setSalario(int s)</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00029">Funcionario.h:29</a></div></div>
-<div class="ttc" id="aclass_piloto_html_aa7f6ca6c464e0e898c43faa9987d3812"><div class="ttname"><a href="class_piloto.html#aa7f6ca6c464e0e898c43faa9987d3812">Piloto::getAvioes</a></div><div class="ttdeci">vector&lt; Aviao * &gt; getAvioes()</div><div class="ttdoc">getter de avioes</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00137">Funcionario.h:137</a></div></div>
-<div class="ttc" id="aclass_funcionario__administrativos_html"><div class="ttname"><a href="class_funcionario__administrativos.html">Funcionario_administrativos</a></div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00035">Funcionario.h:35</a></div></div>
-<div class="ttc" id="aclass_membro__tripulacao_html"><div class="ttname"><a href="class_membro__tripulacao.html">Membro_tripulacao</a></div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00099">Funcionario.h:99</a></div></div>
-<div class="ttc" id="aclass_piloto_html_aaffd09391fadd8b7c317169e53140382"><div class="ttname"><a href="class_piloto.html#aaffd09391fadd8b7c317169e53140382">Piloto::getVoos</a></div><div class="ttdeci">vector&lt; Voo * &gt; getVoos()</div><div class="ttdoc">getter de voos</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00134">Funcionario.h:134</a></div></div>
+<div class="ttc" id="aclass_piloto_html_ae5186ebcc6255583050b36fd048b703e"><div class="ttname"><a href="class_piloto.html#ae5186ebcc6255583050b36fd048b703e">Piloto::adicionarAviao</a></div><div class="ttdeci">void adicionarAviao(Aviao *a)</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00202">Funcionario.h:202</a></div></div>
+<div class="ttc" id="aclass_funcionario_html_adda663bb57ff73fc3403de7d7a685d9e"><div class="ttname"><a href="class_funcionario.html#adda663bb57ff73fc3403de7d7a685d9e">Funcionario::setAtual</a></div><div class="ttdeci">void setAtual(bool a)</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00038">Funcionario.h:38</a></div></div>
+<div class="ttc" id="aclass_funcionario_html"><div class="ttname"><a href="class_funcionario.html">Funcionario</a></div><div class="ttdoc">Classe abstrata funcionario de aeroporto.</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00018">Funcionario.h:18</a></div></div>
+<div class="ttc" id="aclass_voo_html"><div class="ttname"><a href="class_voo.html">Voo</a></div><div class="ttdoc">Voo.</div><div class="ttdef"><b>Definition:</b> <a href="_voo_8h_source.html#l00012">Voo.h:12</a></div></div>
+<div class="ttc" id="aclass_aviao_html"><div class="ttname"><a href="class_aviao.html">Aviao</a></div><div class="ttdoc">Aviao.</div><div class="ttdef"><b>Definition:</b> <a href="_aviao_8h_source.html#l00012">Aviao.h:12</a></div></div>
+<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdoc">Data.</div><div class="ttdef"><b>Definition:</b> <a href="_data_8h_source.html#l00029">Data.h:29</a></div></div>
+<div class="ttc" id="aclass_piloto_html"><div class="ttname"><a href="class_piloto.html">Piloto</a></div><div class="ttdoc">Piloto de aerporto.</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00153">Funcionario.h:153</a></div></div>
+<div class="ttc" id="aclass_funcionario_html_aa8a44ca21be722b272ac72a8ac433d9d"><div class="ttname"><a href="class_funcionario.html#aa8a44ca21be722b272ac72a8ac433d9d">Funcionario::isAtual</a></div><div class="ttdeci">bool isAtual() const</div><div class="ttdoc">getter do atual</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00034">Funcionario.h:34</a></div></div>
+<div class="ttc" id="aclass_membro__tripulacao_html_a4f211543e73853d414d9304d771139bc"><div class="ttname"><a href="class_membro__tripulacao.html#a4f211543e73853d414d9304d771139bc">Membro_tripulacao::adicionarVoo</a></div><div class="ttdeci">void adicionarVoo(Voo *v)</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00145">Funcionario.h:145</a></div></div>
+<div class="ttc" id="aclass_piloto_html_a78f1c2d26c3623ee09a0cefa311b50bb"><div class="ttname"><a href="class_piloto.html#a78f1c2d26c3623ee09a0cefa311b50bb">Piloto::adicionarVoo</a></div><div class="ttdeci">void adicionarVoo(Voo *v)</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00198">Funcionario.h:198</a></div></div>
+<div class="ttc" id="aclass_funcionario_html_ac4a4bf8ffcf8beef44e5ae3cdabfa601"><div class="ttname"><a href="class_funcionario.html#ac4a4bf8ffcf8beef44e5ae3cdabfa601">Funcionario::setSalario</a></div><div class="ttdeci">void setSalario(int s)</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00031">Funcionario.h:31</a></div></div>
+<div class="ttc" id="aclass_piloto_html_aa7f6ca6c464e0e898c43faa9987d3812"><div class="ttname"><a href="class_piloto.html#aa7f6ca6c464e0e898c43faa9987d3812">Piloto::getAvioes</a></div><div class="ttdeci">vector&lt; Aviao * &gt; getAvioes()</div><div class="ttdoc">getter de avioes</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00164">Funcionario.h:164</a></div></div>
+<div class="ttc" id="aclass_funcionario__administrativos_html"><div class="ttname"><a href="class_funcionario__administrativos.html">Funcionario_administrativos</a></div><div class="ttdoc">Funcionario Administrativo de Aerporto.</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00049">Funcionario.h:49</a></div></div>
+<div class="ttc" id="aclass_membro__tripulacao_html"><div class="ttname"><a href="class_membro__tripulacao.html">Membro_tripulacao</a></div><div class="ttdoc">Membro de tripulacao de aerporto.</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00119">Funcionario.h:119</a></div></div>
+<div class="ttc" id="aclass_piloto_html_aaffd09391fadd8b7c317169e53140382"><div class="ttname"><a href="class_piloto.html#aaffd09391fadd8b7c317169e53140382">Piloto::getVoos</a></div><div class="ttdeci">vector&lt; Voo * &gt; getVoos()</div><div class="ttdoc">getter de voos</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00161">Funcionario.h:161</a></div></div>
 <div class="ttc" id="aclass_informacao_html"><div class="ttname"><a href="class_informacao.html">Informacao</a></div><div class="ttdoc">Informacao de um voo.</div><div class="ttdef"><b>Definition:</b> <a href="_informacao_8h_source.html#l00007">Informacao.h:7</a></div></div>
-<div class="ttc" id="aclass_membro__tripulacao_html_a309ab912734bf435f5572e5674a3fe3f"><div class="ttname"><a href="class_membro__tripulacao.html#a309ab912734bf435f5572e5674a3fe3f">Membro_tripulacao::adicionarInfo</a></div><div class="ttdeci">void adicionarInfo(Informacao *i)</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00123">Funcionario.h:123</a></div></div>
+<div class="ttc" id="aclass_membro__tripulacao_html_a309ab912734bf435f5572e5674a3fe3f"><div class="ttname"><a href="class_membro__tripulacao.html#a309ab912734bf435f5572e5674a3fe3f">Membro_tripulacao::adicionarInfo</a></div><div class="ttdeci">void adicionarInfo(Informacao *i)</div><div class="ttdef"><b>Definition:</b> <a href="_funcionario_8h_source.html#l00149">Funcionario.h:149</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
