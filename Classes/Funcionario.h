@@ -7,6 +7,7 @@
 #include "../Classes/Voo.h"
 #include <iostream>
 #include <utility>
+#include <fstream>
 
 
 using namespace std;
@@ -40,6 +41,8 @@ public:
     virtual void print() = 0;
 
     virtual string tipo()= 0;
+
+    virtual void save(ofstream* file, bool tag)=0;
 };
 
 ///Funcionario Administrativo de Aerporto
@@ -78,6 +81,8 @@ public:
 
     ///printter do funcionario administrativo
     void print();
+
+    void save(ofstream* file, bool tag);
 
     string tipo(){return "ADM";};
 
@@ -120,6 +125,8 @@ public:
     ///@param infoVoos
     Membro_tripulacao(const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos, bool atual = true);
 
+    Membro_tripulacao(int salario):Funcionario(salario,false){};
+
     ///getter dos voos
     vector<Voo*> getVoos();
 
@@ -128,6 +135,8 @@ public:
 
     ///print da classe membro tripulacao
     void print();
+
+    void save(ofstream* file, bool tag);
 
     string tipo(){return "MEM";};
 
@@ -161,7 +170,7 @@ public:
     ///@param tiposAviao
     ///@param voosRealizados
     Piloto(const string &nome, const Data &dataNascimento, const string &categoria,
-           const vector<Aviao*> &tiposAviao, const vector<Voo*> & voosRealizados,bool atual = true);
+           const vector<Aviao*> &tiposAviao, const vector<Voo*> & voosRealizados,int salario = 0, bool atual = true);
 
     ///getter do nome
     const string &getNome() const;
@@ -194,6 +203,8 @@ public:
 
     ///funcao que printa o piloto
     void print();
+
+    void save(ofstream* file, bool tag);
 
     string tipo(){return "PIL";};
 };

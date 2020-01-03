@@ -68,7 +68,6 @@ void  Aeroporto::removerPiloto(Piloto* p)
         if(funcionarios.at(i) == p)
         {
             funcionarios.erase(funcionarios.begin()+i);
-            delete funcionario;
             break;
         }
     }
@@ -124,7 +123,6 @@ void  Aeroporto::removerFuncionarioAdministrativo(Funcionario_administrativos* f
         if(funcionarios.at(i) == f)
         {
             funcionarios.erase(funcionarios.begin()+i);
-            delete funcionario;
             break;
         }
     }

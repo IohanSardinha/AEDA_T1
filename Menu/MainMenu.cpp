@@ -178,6 +178,8 @@ void MainMenu::verFuncionarios()
     {
         Funcionario* funcionario = *it;
 
+        if(field != "0" && field != "1") cout << (funcionario->isAtual() ? "Atual" : "Antigo") << endl;
+            
         if(type == "0")
         {
             if(field == "0")
@@ -238,7 +240,7 @@ void MainMenu::verFuncionarios()
                 funcionario->print();
             }
         }
-
+        cout << endl;
         it++;
     }
     wait();

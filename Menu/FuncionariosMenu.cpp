@@ -35,8 +35,8 @@ void FuncionariosMenu::CallMenu() {
             switch (tipo)
             {
                 case TODOS:
-                    cin.ignore(1024,'\n');
                     cout << "Tipo de funcionario(Administrativo, Piloto, Tripulacao): ";
+                    cin.ignore(1024,'\n');
                     getline(cin,in);
                     if(lower(in) == "administrativo")
                     {
@@ -73,6 +73,7 @@ void FuncionariosMenu::CallMenu() {
             {
                 case TODOS:
                     cout << "Tipo de funcionario(Administrativo, Piloto, Tripulacao): ";
+                    cin.ignore(1024,'\n');
                     getline(cin,in);
                     if(lower(in) == "administrativo")
                     {
@@ -129,6 +130,7 @@ void FuncionariosMenu::CallMenu() {
             {
                 case TODOS:
                     cout << "Tipo de funcionario(Administrativo, Piloto, Tripulacao): ";
+                    cin.ignore(1024,'\n');
                     getline(cin,in);
                     if(lower(in) == "administrativo")
                     {
@@ -173,6 +175,7 @@ Funcionario_administrativos* FuncionariosMenu::acharFuncionarioAdministrativo() 
     while (1)
     {
         cout << "Nome do funcionario: ";
+        cin.ignore(1024,'\n');
         getline(cin,in);
         for (Funcionario_administrativos* funcionario: a->getFuncionariosAdministrativos())
         {Funcionario* inserirFuncionario();
@@ -191,6 +194,7 @@ Piloto* FuncionariosMenu::acharPiloto() {
     while (1)
     {
         cout << "Nome do funcionario: ";
+        cin.ignore(1024,'\n');
         getline(cin,in);
         for (Piloto* funcionario: a->getPilotos()) {
             if (lower(funcionario->getNome()) == lower(in)) {
@@ -207,6 +211,7 @@ Membro_tripulacao* FuncionariosMenu::acharMembroTripulacao(){
     while (1)
     {
         cout << "Destino para qual o funcionario vai: ";
+        cin.ignore(1024,'\n');
         getline(cin,in);
         for(Membro_tripulacao* funcionario: a->getMembros())
         {
@@ -233,6 +238,7 @@ void FuncionariosMenu::criarFuncionarioAdministrativo() {
 
     string in;
     cout << "Nome:";
+    cin.ignore(1024,'\n');
     getline(cin,nome);
 
     while(1)
@@ -335,6 +341,7 @@ void FuncionariosMenu::criarPiloto() {
 
     string in;
     cout << "Nome:";
+    cin.ignore(1024,'\n');
     getline(cin,nome);
 
 
@@ -894,13 +901,14 @@ void remove_from_tab(Funcionario* f)
 void FuncionariosMenu::deletarFuncionarioAdministrativo() {
     string nome;
     cout << "Nome do funcionario a ser removido: ";
+    cin.ignore(1024,'\n');
     getline(cin,nome);
     for(Funcionario_administrativos* funcionario: a->getFuncionariosAdministrativos())
     {
         if(lower(funcionario->getNome()) == lower(nome))
         {
-            a->removerFuncionarioAdministrativo(funcionario);
             remove_from_tab(funcionario);
+            a->removerFuncionarioAdministrativo(funcionario);
         }
     }
 }
@@ -908,13 +916,14 @@ void FuncionariosMenu::deletarFuncionarioAdministrativo() {
 void FuncionariosMenu::deletarPiloto(){
     string nome;
     cout << "Nome do funcionario a ser removido: ";
+    cin.ignore(1024,'\n');
     getline(cin,nome);
     for(Piloto* funcionario: a->getPilotos())
     {
         if(lower(funcionario->getNome()) == lower(nome))
         {
-            a->removerPiloto(funcionario);
             remove_from_tab(funcionario);
+            a->removerPiloto(funcionario);
         }
     }
 }
@@ -931,8 +940,8 @@ void FuncionariosMenu::deletarMembroTripulacao(){
     cin.ignore(1024,'\n');
     cin >> i;
     Funcionario* funcionario = a->getMembros().at(i);
-    a->removerMembro(a->getMembros().at(i));
     remove_from_tab(funcionario);
+    a->removerMembro(a->getMembros().at(i));
 }
 
 void FuncionariosMenu::listarFuncionarios() {

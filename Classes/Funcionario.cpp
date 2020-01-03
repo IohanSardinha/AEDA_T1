@@ -38,6 +38,19 @@ void Funcionario_administrativos::print() {
     cout << "Departamento: " << departamento << endl << endl;
 }
 
+void Funcionario_administrativos::save(ofstream* file, bool tag)
+{
+    if(tag) *file << tipo() << endl;
+    *file << nome << endl;
+    *file << salario << endl;
+    *file << data_nascimento << endl;
+    *file << categoria << endl;
+    *file << horario_de_trabalho.first << endl;
+    *file << horario_de_trabalho.second << endl;
+    *file << funcao << endl;
+    *file << departamento << endl << endl;
+}
+
 Funcionario_administrativos::Funcionario_administrativos(const string& nome,const Data& data_nascimento,const string& categoria,const pair<Hora,Hora> horario_de_trabalho,const string &funcao, const string &departamento,
                                                          bool atual)
         :Funcionario(5000,atual),nome(nome),data_nascimento(data_nascimento),horario_de_trabalho(horario_de_trabalho),categoria(categoria), funcao(funcao), departamento(departamento) {}
@@ -86,10 +99,10 @@ void Piloto::setCategoria(const string &categoria) {
     Piloto::salario = 1000*categoria.size();
 }
 
-Piloto::Piloto(const string &nome, const Data &dataNascimento, const string &categoria,const vector<Aviao*> &tiposAviao, const vector<Voo*> & voosRealizados,bool atual):
-        Funcionario(0,atual), nome(nome), data_nascimento(dataNascimento), categoria(categoria),tipos_aviao(tiposAviao), voos_realizados(voosRealizados)
+Piloto::Piloto(const string &nome, const Data &dataNascimento, const string &categoria,const vector<Aviao*> &tiposAviao, const vector<Voo*> & voosRealizados,int sal, bool atual):
+        Funcionario(sal,atual), nome(nome), data_nascimento(dataNascimento), categoria(categoria),tipos_aviao(tiposAviao), voos_realizados(voosRealizados)
 {
-    salario = 1000*categoria.size();
+    if(atual)salario = 1000*categoria.size();
 };
 
 void Piloto::print() {
@@ -100,6 +113,15 @@ void Piloto::print() {
     cout << "Avioes pilotados: " << endl;
     for (Aviao* a: tipos_aviao)
          cout << *a << endl;
+}
+
+void Piloto::save(ofstream* file, bool tag)
+{
+    if(tag) *file << tipo() << endl;
+    *file << nome << endl;
+    *file << salario << endl;
+    *file  << data_nascimento << endl;
+    *file  << categoria << endl;
 }
 
 Membro_tripulacao::Membro_tripulacao(const vector<Voo*> & voosAlocados, const vector<Informacao*> &infoVoos,bool atual):Funcionario (0,atual), voos_alocados(voosAlocados), info_voos(infoVoos)
@@ -125,6 +147,12 @@ void Membro_tripulacao::print() {
     cout << "Informacoes dos voos: " << endl;
     for (Informacao* informacao : info_voos)
         cout << *informacao << endl;
+}
+
+void Membro_tripulacao::save(ofstream* file, bool tag)
+{
+    if(tag) *file << tipo() << endl;
+    *file << salario << endl;
 }
 
 ostream& operator<<(ostream& os, const Aviao& a)

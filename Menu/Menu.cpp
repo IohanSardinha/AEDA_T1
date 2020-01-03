@@ -233,8 +233,16 @@ void Menu::save()
         temp.push_back(em);
         file << "--empresa--";
     }
+    file << endl << "--Empresas--" << endl;
     for (unsigned i=0; i<temp.size(); i++)
         empresas.push(temp[i]);
+
+    for(auto it = tab_funcionarios.begin(); it != tab_funcionarios.end(); it++)
+    {
+        Funcionario* f = *it;
+        if(!f->isAtual()) f->save(&file, true);
+    }
+
     file.close();
 }
 
@@ -447,6 +455,7 @@ void Menu::load() {
 
         if (line == "--ultimoAeroporto--") {
             while (getline(file, line)) {
+                if(line == "--Empresas--") break;
                 int id, disp, manut;
                 id = stoi(line);
                 getline(file, line);
@@ -457,6 +466,52 @@ void Menu::load() {
                 empresas.push(e);
                 getline(file, line); //"--empresa--"
             }
+        }
+        if(line == "--Empresas--") break;
+    }
+    while(getline(file,line)) {
+        if (line == "PIL")
+        {
+            string nome,categoria;
+            getline(file,nome);
+            getline(file,line);
+            int salario = stoi(line);
+            getline(file,line);
+            vector<string> splitted = split(line, "/");
+            Data data(stoi(splitted[0]), stoi(splitted[1]), stoi(splitted[2]));
+            getline(file,categoria);
+            Piloto* piloto = new Piloto(nome,data,categoria,{},{},salario,false);
+            tab_funcionarios.insert(piloto);
+        }
+        else if (line == "ADM")
+        {
+            string nome, categoria,funcao,departamento;
+            getline(file,nome);
+            getline(file,line);
+            int salario = stoi(line);
+            getline(file,line);
+            vector<string> splitted = split(line, "/");
+            Data nascimento(stoi(splitted[0]), stoi(splitted[1]), stoi(splitted[2]));
+            getline(file,categoria);
+            getline(file,line);
+            splitted = split(line, ":");
+            Hora hora_entrada(stoi(splitted[0]), stoi(splitted[1]), stoi(splitted[2]));
+            getline(file,line);
+            splitted = split(line, ":");
+            Hora hora_saida(stoi(splitted[0]), stoi(splitted[1]), stoi(splitted[2]));
+            getline(file,funcao);
+            getline(file,departamento);
+
+            Funcionario_administrativos* funcionarioAdministrativos = new Funcionario_administrativos(nome,nascimento,categoria,pair<Hora,Hora>(hora_entrada,hora_saida),funcao,departamento,false);
+            tab_funcionarios.insert(funcionarioAdministrativos);
+        }
+        else if (line == "MEM")
+        {
+            getline(file,line);
+            int salario = stoi(line);
+
+            Membro_tripulacao* membroTripulacao = new Membro_tripulacao(salario);
+            tab_funcionarios.insert(membroTripulacao);
         }
     }
     aeroportos = aeroportosLoad;

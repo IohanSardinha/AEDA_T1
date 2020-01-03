@@ -30,7 +30,16 @@ int main() {
     menus_to_call.insert(pair<string,Menu*>("VooMenu",new VooMenu));
     menus_to_call.insert(pair<string, Menu*>("EmpresaMenu", new EmpresaMenu));
 
-    menus_to_call["MainMenu"]->load();
+    try
+    {
+        menus_to_call["MainMenu"]->load();
+    }
+    catch (exception)
+    {
+        cout << "Arquivo de dados mal formatado" << endl;
+        return 1;
+    }
+
     menus_to_call["MainMenu"]->play();
 
     return 0;
