@@ -33,6 +33,18 @@ Co-piloto
 --avioes piloto--
 0
 --voos piloto--
+6000
+Luana
+20/4/1998
+Piloto
+--avioes piloto--
+--voos piloto--
+7000
+Jorge
+25/12/0
+Tecnico
+--avioes piloto--
+--voos piloto--
 --pilotos--
 5000
 Joana
@@ -42,6 +54,14 @@ Gold
 20:30:0
 Secretaria
 Administrativo
+5000
+Amarildo
+3/3/1930
+Muita
+0:0:0
+10:0:0
+Limpeza
+Internacional
 --funcionarios administrativos--
 0
 ----Gerente----
@@ -73,14 +93,6 @@ Boing747
 0
 --voos aviao--
 --avioes--
-9000
-Sergio
-20/6/1958
-principal
-0
---avioes piloto--
-0
---voos piloto--
 --pilotos--
 5000
 Gisele
@@ -246,3 +258,49 @@ Portugal
 4
 5
 --empresa--
+--Empresas--
+PIL
+Juliana
+8000
+8/4/1991
+Co-Piloto
+PIL
+Maria
+15000
+24/7/1956
+Pilota
+PIL
+Thiago
+9050
+2/6/1979
+Co-Piloto
+MEM
+1000
+MEM
+1030
+MEM
+1050
+ADM
+Carla
+5000
+10/1/1980
+Secretaria
+8:0:0
+17:0:0
+Alta
+Financeiro
+
+PIL
+Sergio
+6000
+31/1/1999
+Piloto
+PIL
+Roberto
+9000
+22/11/1979
+Co-Piloto
+MEM
+800
+MEM
+2000
